@@ -1,0 +1,3119 @@
+<resources>
+    <string name="app_name">ENCAL</string>
+
+    <string name="texto_usuario">USUARIO</string>
+    <string name="texto_password">CONTRASEÑA</string>
+    <string name="texto_ingresar">INGRESAR</string>
+    <string name="cancelar_gps">CANCELAR CON VALORES POR DEFECTO</string>
+    <string name="capturar_gps">CAPTURAR GPS</string>
+
+    <!--CARATULA-->
+    <string name="caratula_loc">LOCALIZACIÓN DE LA EMPRESA</string>
+    <string name="caratula_loc_ubicacion_geo">A.UBICACIÓN GEOGRÁFICA</string>
+    <string name="caratula_loc_ubicacion_geo_departamento">1.Departamento</string>
+    <string name="caratula_loc_ubicacion_geo_provincia">2.Provincia</string>
+    <string name="caratula_loc_ubicacion_geo_distrito">3.Distrito</string>
+    <string name="caratula_loc_identificacion">IDENTIFICADOR UNICO DE LA EMPRESA</string>
+    <string name="caratula_loc_cambiodistrito">Cambio de Distrito</string>
+
+    <string name="caratula_loc_coordenadas">B.COORDENADAS DEL PUNTO GPS</string>
+    <string name="caratula_loc_coordenadas_gps_latitud">4.GPS LATITUD</string>
+    <string name="caratula_loc_coordenadas_gps_altitud">4.GPS ALTITUD</string>
+    <string name="caratula_loc_coordenadas_gps_longitud">4.GPS LONGITUD</string>
+
+    <string name="caratula_loc_ubicacion_muestral">C.UBICACIÓN MUESTRAL</string>
+    <string name="caratula_loc_ubicacion_muestral_sector">5.Sector de Trabajo</string>
+    <string name="caratula_loc_ubicacion_muestral_area">6.Área de Trabajo</string>
+    <string name="caratula_loc_ubicacion_muestral_zona">7.Zona</string>
+    <string name="caratula_loc_ubicacion_muestral_manzana">8.Manzana</string>
+    <string name="caratula_loc_ubicacion_muestral_frente">9.Frente</string>
+
+    <string name="caratula_loc_direccion">10.Dirección </string>
+    <string name="caratula_loc_tipo">Tipo Vía </string>
+    <string name="caratula_loc_nombrevia">Nombre de la Vía </string>
+    <string name="caratula_loc_direccion_nombre">Tipo Vía:</string>
+    <string name="caratula_loc_direccion_nombre_avenida">Avenida</string>
+    <string name="caratula_loc_direccion_nombre_jiron">Jirón</string>
+    <string name="caratula_loc_direccion_nombre_calle">Calle</string>
+    <string name="caratula_loc_direccion_nombre_pasaje">Pasaje</string>
+    <string name="caratula_loc_direccion_nombre_carretera">Carretera</string>
+    <string name="caratula_loc_direccion_nombre_prolongacion">Prolongación</string>
+
+    <string name="caratula_loc_direccion_npuerta">Nº puerta</string>
+    <string name="caratula_loc_direccion_block">Block</string>
+    <string name="caratula_loc_direccion_interior">Interior</string>
+    <string name="caratula_loc_direccion_piso">Piso</string>
+    <string name="caratula_loc_direccion_manzana">Manzana</string>
+    <string name="caratula_loc_direccion_lote">Lote</string>
+    <string name="caratula_loc_direccion_km">Km.</string>
+    <string name="caratula_loc_direccion_referencia">11.Referencia de la dirección</string>
+
+
+    <string name="caratula_datos">DATOS DE LA ENTREVISTA</string>
+    <string name="caratula_datos_operador">OPERADOR DE EMPRESAS</string>
+    <string name="caratula_datos_jefe">JEFE DE EQUIPO</string>
+    <string name="caratula_datos_supervisor">SUPERVISOR NACIONAL</string>
+    <string name="caratula_datos_dni">DNI</string>
+    <string name="caratula_datos_nombres">NOMBRES Y APELLIDOS</string>
+
+    <string name="caratula_identificacion">IDENTIFICACIÓN DE LA EMPRESA Y CONDUCTOR DE LA EMPRESA</string>
+    <string name="caratula_identificacion_ruc">1.Nº de RUC</string>
+    <string name="caratula_identificacion_razon_social">2.Razón social o apellidos y nombres del propietario</string>
+    <string name="caratula_identificacion_nombre_comercial">3.Nombre comercial de la empresa</string>
+    <string name="caratula_identificacion_anio_fundacion">4.Año inicio de funcionamiento</string>
+    <string name="caratula_identificacion_pagina_web">5.Página web</string>
+    <string name="caratula_identificacion_correo">6.Correo electrónico</string>
+    <string name="caratula_identificacion_nopagina_web">No tiene página web</string>
+    <string name="caratula_identificacion_nocorreo">No tiene correo electrónico</string>
+    <string name="caratula_identificacion_telefono_fijo">7.Teléfono fijo</string>
+    <string name="caratula_identificacion_telefono_movil">8.Teléfono móvil</string>
+    <string name="caratula_identificacion_telefono_nofijo">No tiene teléfono fijo</string>
+    <string name="caratula_identificacion_telefono_nomovil">No tiene teléfono móvil</string>
+
+    <string name="caratula_identificacion_conductor_informante">DEL CONDUCTOR E INFORMANTE</string>
+    <string name="caratula_identificacion_conductor_informante_apellidos">9.Apellidos y nombres del conductor o responsable de la gestión de la empresa (o gerente general)</string>
+    <string name="caratula_identificacion_conductor_informante_sexo">10.Sexo</string>
+    <string name="caratula_identificacion_conductor_informante_edad">11.Edad</string>
+    <string name="nivel_estudios">12.Último nivel de estudios alcanzado</string>
+    <string name="caratula_identificacion_conductor_informante_cargo">13.Cargo</string>
+    <string name="caratula_identificacion_conductor_informante_N">14.Apellidos y Nombres del informante</string>
+    <string name="caratula_identificacion_conocimiento">CONOCIMIENTO DEL ENTE RECTOR DEL SISTEMA NACIONAL PARA LA CALIDAD</string>
+    <string name="caratula_identificacion_conocimiento_instituto">15.¿Conoce o ha oído hablar del Instituto Nacional de Calidad (INACAL)?</string>
+
+    <string-array name="nivel_estudios">
+        <item>Seleccione Nivel</item>
+        <item>1.Sin nivel</item>
+        <item>2.Primaria</item>
+        <item>3.Secundaria</item>
+        <item>4.Superior no univ. incompleta</item>
+        <item>5.Superior no univ. completa</item>
+        <item>6.Superior univ. incompleta</item>
+        <item>7.Superior univ. completa</item>
+        <item>8.Post grado</item>
+        <item>9.No sabe</item>
+    </string-array>
+
+
+    <string-array name="array_tipo_via">
+        <item>Seleccione tipo</item>
+        <item>1.Avenida</item>
+        <item>2.Jirón</item>
+        <item>3.Calle</item>
+        <item>4.Pasaje</item>
+        <item>5.Carretera</item>
+        <item>6.Prolongación</item>
+        <item>7.Otro</item>
+    </string-array>
+
+    <string-array name="sexo">
+        <item>Seleccionar</item>
+        <item>Masculino</item>
+        <item>Femenino</item>
+    </string-array>
+
+    <string-array name="cargos">
+        <item>Seleccione cargo</item>
+        <item>Conductor</item>
+        <item>Administrador</item>
+        <item>Gerente</item>
+        <item>Otro</item>
+    </string-array>
+
+    <string-array name="item_spinner">
+        <item>item1</item>
+        <item>item2</item>
+        <item>item3</item>
+        <item>item4</item>
+        <item>item5</item>
+    </string-array>
+
+
+    <string-array name="array_resultado_visita">
+        <item>Seleccione</item>
+        <item>1.Completa</item>
+        <item>2.Incompleta</item>
+        <item>3.Ausente</item>
+        <item>4.Pendiente con cita</item>
+        <item>5.Rechazo</item>
+        <item>6.No ubicado</item>
+        <item>7.Otro</item>
+    </string-array>
+
+    <string name="titulo_seccion100">SECCION 100: PERFIL ORGANIZACIONAL DE LA EMPRESA</string>
+    <string name="titulo_seccion200">SECCION 200: USO DE NORMAS TÉCNICAS O ESTÁNDARES DE CALIDAD</string>
+    <string name="titulo_seccion300">SECCION 300: SOBRE SERVICIOS DE MEDICIÓN Y CALIBRACIÓN</string>
+    <string name="titulo_seccion400">SECCION 400: EVALUACIÓN DE LA CALIDAD</string>
+
+
+    <string name="sec100_p101">101. Actividad económica principal de la empresa (Registre el código CllU Rev. 4 que corresponde la principal actividad que realiza la empresa)</string>
+    <string name="sec100_p102">102. Actividades económicas secundarias de la empresa (Registre las actividades secundarias que realiza la empresa)</string>
+    <string name="sec100_p103">103. ¿Cuál es la constitución legal de la empresa?</string>
+    <string name="sec100_p103_sp1">Persona natural</string>
+    <string name="sec100_p103_sp2">Sociedad anónima abierta</string>
+    <string name="sec100_p103_sp3">Sociedad anónima cerrada</string>
+    <string name="sec100_p103_sp4">Sociedad comercial de responsabilidad limitada</string>
+    <string name="sec100_p103_sp5">Empresa individual de responsabilidad limitada</string>
+    <string name="sec100_p103_sp6">Otra</string>
+    <string name="sec100_p104">104. Sus ventas totales del año 2016, se encuentran en el rango de:</string>
+    <string name="sec100_p104_sp1">Hasta  592 500 soles</string>
+    <string name="sec100_p104_sp2">Mayor a  592 500 soles</string>
+    <string name="sec100_p105">105. En el año 2016 ¿Cuántos trabajadores tenía en promedio su empresa? (Incluidos los que no estuvieron en planillas).</string>
+    <string name="sec100_p106">106. En el año 2016 ¿Cuál fue el nivel educativo de sus trabajadores? (Indique el número de trabajadores según nivel de educación máximo alcanzado)</string>
+    <string name="sec100_p106_sp1">Superior Universitaria (completa o incompleta)</string>
+    <string name="sec100_p106_sp2">Superior Técnica (completa o incompleta)</string>
+    <string name="sec100_p106_sp3">Secundaria/Primaria</string>
+    <string name="sec100_p106_sp4">Inicial/Sin nivel</string>
+    <string name="sec100_p106_sp5">Total</string>
+    <string name="sec100_p107">107. ¿En qué mercados vende su principal producto o servicio industrial? </string>
+    <string name="sec100_p107_sp1">Local (en la región donde se ubica la empresa)</string>
+    <string name="sec100_p107_sp2">Nacional (dos o más regiones)</string>
+    <string name="sec100_p107_sp3">Internacional</string>
+    <string name="sec100_p108">108. En el año 2016, ¿ha exportado algún producto o servicio industrial?</string>
+    <string name="sec100_p108_sp1">Si</string>
+    <string name="sec100_p108_sp2">No</string>
+    <string name="sec100_p109">109. ¿Cuáles son las principales dificultades para que su empresa exporte? </string>
+    <string name="sec100_p109_sp1">El cumplimiento de requisitos de calidad exigidos por los compradores</string>
+    <string name="sec100_p109_sp2">El cumplimiento de requisitos de cantidad exigidos por los compradores</string>
+    <string name="sec100_p109_sp3">Falta de información sobre los trámites requeridos para exportar</string>
+    <string name="sec100_p109_sp4">La identificación de mercados y/o compradores potenciales</string>
+    <string name="sec100_p109_sp5">Altos costos logísticos y/o difícil acceso al financiamiento de las operaciones de comercio exterior</string>
+    <string name="sec100_p109_sp6">Otra</string>
+    <string name="sec100_p110">110. ¿Cuáles de los siguientes factores son importantes para mantenerse o posicionarse mejor en el mercado? </string>
+    <string name="sec100_p110_sp1">Precio del producto o servicio industrial que ofrece</string>
+    <string name="sec100_p110_sp2">Calidad del producto o servicio industrial que ofrece</string>
+    <string name="sec100_p110_sp3">Grado de diferenciación del producto o servicio industrial que ofrece con respecto al de otras empresas</string>
+    <string name="sec100_p110_sp4">Tiempo de entrega</string>
+    <string name="sec100_p110_sp5">Servicio al cliente</string>
+    <string name="sec100_p110_sp6">Uso de TIC (Redes sociales, página web, email)</string>
+    <string name="sec100_p110_sp7">Otra</string>
+    <string name="sec100_p111">111. Su empresa, ¿pertenece a alguna asociación, organización o gremio empresarial?</string>
+    <string name="sec100_p111_sp1">Si</string>
+    <string name="sec100_p111_sp2">No</string>
+    <string name="sec100_p112">112. ¿A qué tipo de organización o agrupación pertenece? (Lea y seleccione la alternativa que corresponda)</string>
+    <string name="sec100_p112_sp1">Asociación</string>
+    <string name="sec100_p112_sp2">Cooperativa</string>
+    <string name="sec100_p112_sp3">Consorcio</string>
+    <string name="sec100_p112_sp4">Grupo sin personería jurídica para realizar operaciones empresariales</string>
+    <string name="sec100_p112_sp5">Otro</string>
+    <string name="sec100_p113">113. ¿Cuáles fueron los motivos por los que se incorporó a una o más organizaciones o agrupaciones? </string>
+    <string name="sec100_p113_sp1">Para mejorar su poder de negociación con sus proveedores</string>
+    <string name="sec100_p113_sp2">Para acceder a servicios financieros</string>
+    <string name="sec100_p113_sp3">Para acceder a nuevos mercados</string>
+    <string name="sec100_p113_sp4">Para acceder a servicios de capacitación y asistencia técnica</string>
+    <string name="sec100_p113_sp5">Otro</string>
+    <string name="sec100_p114">114. ¿Por qué su empresa no pertenece a una organización o agrupación? (Solo para quienes respondieron NO en 111).</string>
+    <string name="sec100_p114_sp1">Altos costos (aportes/cuotas)</string>
+    <string name="sec100_p114_sp2">Falta de confianza en la asociación o en los asociados</string>
+    <string name="sec100_p114_sp3">Limita capacidad de decisión de la empresa</string>
+    <string name="sec100_p114_sp4">No existe asociación para el rubro de la empresa</string>
+    <string name="sec100_p114_sp5">No percibe beneficios/no lo necesita</string>
+    <string name="sec100_p114_sp6">Falta de información</string>
+    <string name="sec100_p114_sp7">Otro</string>
+
+    <string name="sec200_p201">201. En su empresa, ¿Cómo establecen las características o especificaciones técnicas de sus productos o servicios industriales?</string>
+    <string name="sec200_p201_sp1">Lo establece la empresa (especificación propia)</string>
+    <string name="sec200_p201_sp2">Lo establece el cliente</string>
+    <string name="sec200_p201_sp3">Toma como referencia a otras empresas</string>
+    <string name="sec200_p201_sp4">Lo establece utilizando una norma técnica o estándar de calidad</string>
+    <string name="sec200_p202">202. En el año 2016, ¿su empresa ha utilizado o ha implementado algún estándar de calidad o alguna norma técnica para elaborar su producto o prestación de sus servicios industriales?</string>
+    <string name="sec200_p202_sp1">Si</string>
+    <string name="sec200_p202_sp2">No</string>
+    <string name="sec200_p203">203. ¿Cuál es el origen de la norma técnica o estándar de calidad más importante que utilizó o implementó?</string>
+    <string name="sec200_p203_sp1">Nacional (NTP)</string>
+    <string name="sec200_p203_sp2">Internacional</string>
+    <string name="sec200_p203_sp3">Norma de Asociación (Ej. ASTM, FNOR, UNE, etc.)</string>
+    <string name="sec200_p203_sp4">Otra</string>
+    <string name="sec200_p204">204. ¿En qué año implementó la norma técnica o estándar de calidad más importante?</string>
+    <string name="sec200_p205">205. ¿Qué beneficios consiguió con la implementación o utilización de la norma técnica o estándar de calidad?</string>
+    <string name="sec200_p205_sp1">Le ha permitido mejorar su productividad</string>
+    <string name="sec200_p205_sp2">Le ha permitido reducir sus costos</string>
+    <string name="sec200_p205_sp3">Le ha permitido mejorar la calidad de su producto final</string>
+    <string name="sec200_p205_sp4">Le ha permitido ampliar su mercado</string>
+    <string name="sec200_p205_sp5">Ningún beneficio / No ha sido útil</string>
+    <string name="sec200_p205_sp6">Otro</string>
+
+    <string name="sec300_p301">301. Algún producto o servicio industrial que ofrece su empresa ¿ha tenido rechazo o problemas por errores de medición?</string>
+    <string name="sec300_p301_sp1">Si</string>
+    <string name="sec300_p301_sp2">No</string>
+    <string name="sec300_p302">302. En su empresa, ¿utiliza algún instrumento de medición?</string>
+    <string name="sec300_p302_sp1">Si</string>
+    <string name="sec300_p302_sp2">No</string>
+    <string name="sec300_p302_sp1A">¿Que instrumento utiliza?</string>
+    <string name="sec300_p302_sp1B">¿El instrumento a sido calibrado en el año 2016?</string>
+    <string name="sec300_p302_sp1C">¿Cuantos instrumentos a calibrado en el año 2016?</string>
+    <string name="sec300_p303">303. ¿Quién ha calibrado sus instrumentos de medición?</string>
+    <string name="sec300_p303_sp1">Los propios trabajadores de la empresa</string>
+    <string name="sec300_p303_sp2">Su empresa en su propio taller de calibración</string>
+    <string name="sec300_p303_sp3">Un técnico externo o ajeno</string>
+    <string name="sec300_p303_sp4">El INACAL</string>
+    <string name="sec300_p303_sp5">Otra entidad o laboratorio especializado</string>
+    <string name="sec300_p304">304. En caso de que haya utilizado servicios de calibración de una entidad o laboratorio especializado ¿Ésta estuvo acreditada por el Organismo Nacional de Acreditación (INACAL)?</string>
+    <string name="sec300_p304_sp1">Si</string>
+    <string name="sec300_p304_sp2">No</string>
+    <string name="sec300_p304_sp3">No sabe</string>
+    <string name="sec300_p305">305. ¿Cuál es el gasto aproximado incurrido en las calibraciones realizadas durante el 2016?</string>
+
+    <string name="sec400_p401">401. En su empresa ¿Cómo verifican la calidad de los productos o servicios industriales?</string>
+    <string name="sec400_p401_sp1">No se verifica, porque ya está establecido desde el inicio</string>
+    <string name="sec400_p401_sp2">Mediante control de calidad dentro de la empresa</string>
+    <string name="sec400_p401_sp3">Mediante el servicio de una empresa externa sin acreditación</string>
+    <string name="sec400_p401_sp4">Mediante un laboratorio de ensayo acreditado en el Perú</string>
+    <string name="sec400_p401_sp5">Mediante un laboratorio de ensayo acreditado en el extranjero</string>
+    <string name="sec400_p402">402. Alguna entidad acreditada en el Perú, ha evaluado la conformidad de la calidad de su producto o servicio industrial, o algún proceso o gestión de su empresa.</string>
+    <string name="sec400_p402_sp1">Si</string>
+    <string name="sec400_p402_sp2">No</string>
+    <string name="sec400_p403">403. Su empresa cuenta con alguna de las siguientes certificaciones.</string>
+    <string name="sec400_p403_sp1">Certificación de producto o servicio industrial</string>
+    <string name="sec400_p403_sp2">Certificación de proceso o gestión</string>
+    <string name="sec400_p403_sp3">Certificación de la empresa</string>
+    <string name="sec400_p403_sp4">Ninguna certificación</string>
+    <string name="sec400_p404">404. Respecto a la principal certificación con la que cuenta su empresa, ¿cuál es el origen de la entidad que emitió la certificación?</string>
+    <string name="sec400_p404_sp1">Nacional</string>
+    <string name="sec400_p404_sp2">Internacional</string>
+    <string name="sec400_p405">405. Respecto a la principal certificación con la que cuenta su empresa, ¿la entidad que ha emitido la certificación está acreditada en el Perú (INACAL)?</string>
+    <string name="sec400_p405_sp1">Si</string>
+    <string name="sec400_p405_sp2">No</string>
+    <string name="sec400_p405_sp3">No sabe</string>
+    <string name="sec400_p406">406. Respecto a la principal certificación con la que cuenta su empresa, ¿Cuál fue el año de obtención de la certificación?</string>
+    <string name="sec400_p407">407. ¿Por qué razones certificó los procesos, gestión o productos?</string>
+    <string name="sec400_p407_sp1">Para cumplir requerimientos de exportación</string>
+    <string name="sec400_p407_sp2">Para cumplir requerimientos de compras estatales</string>
+    <string name="sec400_p407_sp3">Para cumplir requerimientos de clientes locales (diferentes al Estado)</string>
+    <string name="sec400_p407_sp4">Para cumplir con la exigencia de entes reguladores (SANIPES, SENASA, DIGESA, OSINERGMIN, PRODUCE, MUNICIPALIDADES, etc.)</string>
+    <string name="sec400_p407_sp5">Para diferenciar el producto</string>
+    <string name="sec400_p407_sp6">Para ser más eficiente / productivo</string>
+    <string name="sec400_p407_sp7">Otra</string>
+    <string name="sec400_p408">408. ¿Por qué no tiene certificación?</string>
+    <string name="sec400_p408_sp1">Falta de información sobre certificaciones (desconoce los requerimientos)</string>
+    <string name="sec400_p408_sp2">Requiere adecuaciones para estandarizar procesos/gestión/productos</string>
+    <string name="sec400_p408_sp3">Es muy costoso</string>
+    <string name="sec400_p408_sp4">No logra diferenciar su producto</string>
+    <string name="sec400_p408_sp5">No hay suficientes entidades certificadoras</string>
+    <string name="sec400_p408_sp6">Otro</string>
+    <string name="sec400_p409">409. En el año 2016 ¿El personal de la empresa, ha recibido asistencia técnica o asesoría sobre aspectos relacionados a la mejora de la calidad de sus productos o servicios industriales?</string>
+    <string name="sec400_p409_sp1">No recibió ninguna asistencia técnica</string>
+    <string name="sec400_p409_sp2">Sí, recibió asistencia sobre implementación de sistemas de gestión de la calidad</string>
+    <string name="sec400_p409_sp3">Sí, recibió asistencia sobre implementación de normas técnicas o estándares de producto o servicio</string>
+    <string name="sec400_p409_sp4">Sí, recibió asistencia o cursos en mediciones y/o calibración de instrumentos</string>
+    <string name="sec400_p409_sp5">Sí, recibió otro tipo de asistencia técnica</string>
+    <string name="sec400_p410">410. ¿Quién le brindó la asistencia técnica?</string>
+    <string name="sec400_p410_sp1">El INACAL</string>
+    <string name="sec400_p410_sp2">Un programa del Ministerio de la Producción</string>
+    <string name="sec400_p410_sp3">Empresas Internacionales</string>
+    <string name="sec400_p410_sp4">Otra entidad</string>
+
+
+    <string-array name="DEPARTAMENTOS">
+        <item>Seleccione</item>
+        <item>AMAZONAS</item>
+        <item>ANCASH</item>
+        <item>APURIMAC</item>
+        <item>AREQUIPA</item>
+        <item>AYACUCHO</item>
+        <item>CAJAMARCA</item>
+        <item>CALLAO</item>
+        <item>CUSCO</item>
+        <item>HUANCAVELICA</item>
+        <item>HUANUCO</item>
+        <item>ICA</item>
+        <item>JUNIN</item>
+        <item>LA LIBERTAD</item>
+        <item>LAMBAYEQUE</item>
+        <item>LIMA</item>
+        <item>LORETO</item>
+        <item>MADRE DE DIOS</item>
+        <item>MOQUEGUA</item>
+        <item>PASCO</item>
+        <item>PIURA</item>
+        <item>PUNO</item>
+        <item>SAN MARTIN</item>
+        <item>TACNA</item>
+        <item>TUMBES</item>
+        <item>UCAYALI</item>
+    </string-array>
+
+    <string-array name="D_AMAZONAS">
+        <item>Seleccione</item>
+        <item>CHACHAPOYAS [01]</item>
+        <item>BAGUA [02]</item>
+        <item>BONGARA [03]</item>
+        <item>CONDORCANQUI [04]</item>
+        <item>LUYA [05]</item>
+        <item>RODRIGUEZ DE MENDOZA [06]</item>
+        <item>UTCUBAMBA [07]</item>
+    </string-array>
+    <string-array name="D_ANCASH">
+        <item>Seleccione</item>
+        <item>HUARAZ [01]</item>
+        <item>AIJA [02]</item>
+        <item>ANTONIO RAYMONDI [03]</item>
+        <item>ASUNCION [04]</item>
+        <item>BOLOGNESI [05]</item>
+        <item>CARHUAZ [06]</item>
+        <item>CARLOS FERMIN FITZCARRALD [07]</item>
+        <item>CASMA [08]</item>
+        <item>CORONGO [09]</item>
+        <item>HUARI [10]</item>
+        <item>HUARMEY [11]</item>
+        <item>HUAYLAS [12]</item>
+        <item>MARISCAL LUZURIAGA [13]</item>
+        <item>OCROS [14]</item>
+        <item>PALLASCA [15]</item>
+        <item>POMABAMBA [16]</item>
+        <item>RECUAY [17]</item>
+        <item>SANTA [18]</item>
+        <item>SIHUAS [19]</item>
+        <item>YUNGAY [20]</item>
+    </string-array>
+    <string-array name="D_APURIMAC">
+        <item>Seleccione</item>
+        <item>ABANCAY [01]</item>
+        <item>ANDAHUAYLAS [02]</item>
+        <item>ANTABAMBA [03]</item>
+        <item>AYMARAES [04]</item>
+        <item>COTABAMBAS [05]</item>
+        <item>CHINCHEROS [06]</item>
+        <item>GRAU [07]</item>
+    </string-array>
+    <string-array name="D_AREQUIPA">
+        <item>Seleccione</item>
+        <item>AREQUIPA [01]</item>
+        <item>CAMANA [02]</item>
+        <item>CARAVELI [03]</item>
+        <item>CASTILLA [04]</item>
+        <item>CAYLLOMA [05]</item>
+        <item>CONDESUYOS [06]</item>
+        <item>ISLAY [07]</item>
+        <item>LA UNION [08]</item>
+    </string-array>
+    <string-array name="D_AYACUCHO">
+        <item>Seleccione</item>
+        <item>HUAMANGA [01]</item>
+        <item>CANGALLO [02]</item>
+        <item>HUANCA SANCOS [03]</item>
+        <item>HUANTA [04]</item>
+        <item>LA MAR [05]</item>
+        <item>LUCANAS [06]</item>
+        <item>PARINACOCHAS [07]</item>
+        <item>PAUCAR DEL SARA SARA [08]</item>
+        <item>SUCRE [09]</item>
+        <item>VICTOR FAJARDO [10]</item>
+        <item>VILCAS HUAMAN [11]</item>
+    </string-array>
+    <string-array name="D_CAJAMARCA">
+        <item>Seleccione</item>
+        <item>CAJAMARCA [01]</item>
+        <item>CAJABAMBA [02]</item>
+        <item>CELENDIN [03]</item>
+        <item>CHOTA [04]</item>
+        <item>CONTUMAZA [05]</item>
+        <item>CUTERVO [06]</item>
+        <item>HUALGAYOC [07]</item>
+        <item>JAEN [08]</item>
+        <item>SAN IGNACIO [09]</item>
+        <item>SAN MARCOS [10]</item>
+        <item>SAN MIGUEL [11]</item>
+        <item>SAN PABLO [12]</item>
+        <item>SANTA CRUZ [13]</item>
+    </string-array>
+    <string-array name="D_CALLAO">
+        <item>Seleccione</item>
+        <item>CALLAO [01]</item>
+    </string-array>
+    <string-array name="D_CUSCO">
+        <item>Seleccione</item>
+        <item>CUSCO [01]</item>
+        <item>ACOMAYO [02]</item>
+        <item>ANTA [03]</item>
+        <item>CALCA [04]</item>
+        <item>CANAS [05]</item>
+        <item>CANCHIS [06]</item>
+        <item>CHUMBIVILCAS [07]</item>
+        <item>ESPINAR [08]</item>
+        <item>LA CONVENCION [09]</item>
+        <item>PARURO [10]</item>
+        <item>PAUCARTAMBO [11]</item>
+        <item>QUISPICANCHI [12]</item>
+        <item>URUBAMBA [13]</item>
+    </string-array>
+    <string-array name="D_HUANCAVELICA">
+        <item>Seleccione</item>
+        <item>HUANCAVELICA [01]</item>
+        <item>ACOBAMBA [02]</item>
+        <item>ANGARAES [03]</item>
+        <item>CASTROVIRREYNA [04]</item>
+        <item>CHURCAMPA [05]</item>
+        <item>HUAYTARA [06]</item>
+        <item>TAYACAJA [07]</item>
+    </string-array>
+    <string-array name="D_HUANUCO">
+        <item>Seleccione</item>
+        <item>HUANUCO [01]</item>
+        <item>AMBO [02]</item>
+        <item>DOS DE MAYO [03]</item>
+        <item>HUACAYBAMBA [04]</item>
+        <item>HUAMALIES [05]</item>
+        <item>LEONCIO PRADO [06]</item>
+        <item>MARAÑON [07]</item>
+        <item>PACHITEA [08]</item>
+        <item>PUERTO INCA [09]</item>
+        <item>LAURICOCHA [10]</item>
+        <item>YAROWILCA [11]</item>
+    </string-array>
+    <string-array name="D_ICA">
+        <item>Seleccione</item>
+        <item>ICA [01]</item>
+        <item>CHINCHA [02]</item>
+        <item>NAZCA [03]</item>
+        <item>PALPA [04]</item>
+        <item>PISCO [05]</item>
+    </string-array>
+    <string-array name="D_JUNIN">
+        <item>Seleccione</item>
+        <item>HUANCAYO [01]</item>
+        <item>CONCEPCION [02]</item>
+        <item>CHANCHAMAYO [03]</item>
+        <item>JAUJA [04]</item>
+        <item>JUNIN [05]</item>
+        <item>SATIPO [06]</item>
+        <item>TARMA [07]</item>
+        <item>YAULI [08]</item>
+        <item>CHUPACA [09]</item>
+    </string-array>
+    <string-array name="D_LA_LIBERTAD">
+        <item>Seleccione</item>
+        <item>TRUJILLO [01]</item>
+        <item>ASCOPE [02]</item>
+        <item>BOLIVAR [03]</item>
+        <item>CHEPEN [04]</item>
+        <item>JULCAN [05]</item>
+        <item>OTUZCO [06]</item>
+        <item>PACASMAYO [07]</item>
+        <item>PATAZ [08]</item>
+        <item>SANCHEZ CARRION [09]</item>
+        <item>SANTIAGO DE CHUCO [10]</item>
+        <item>GRAN CHIMU [11]</item>
+        <item>VIRU [12]</item>
+    </string-array>
+    <string-array name="D_LAMBAYEQUE">
+        <item>Seleccione</item>
+        <item>CHICLAYO [01]</item>
+        <item>FERREÑAFE [02]</item>
+        <item>LAMBAYEQUE [03]</item>
+    </string-array>
+    <string-array name="D_LIMA">
+        <item>Seleccione</item>
+        <item>LIMA [01]</item>
+        <item>BARRANCA [02]</item>
+        <item>CAJATAMBO [03]</item>
+        <item>CANTA [04]</item>
+        <item>CAÑETE [05]</item>
+        <item>HUARAL [06]</item>
+        <item>HUAROCHIRI [07]</item>
+        <item>HUAURA [08]</item>
+        <item>OYON [09]</item>
+        <item>YAUYOS [10]</item>
+    </string-array>
+    <string-array name="D_LORETO">
+        <item>Seleccione</item>
+        <item>MAYNAS [01]</item>
+        <item>ALTO AMAZONAS [02]</item>
+        <item>LORETO [03]</item>
+        <item>MARISCAL RAMON CASTILLA [04]</item>
+        <item>REQUENA [05]</item>
+        <item>UCAYALI [06]</item>
+        <item>DATEM DEL MARAÑON [07]</item>
+        <item>PUTUMAYO [08]</item>
+    </string-array>
+    <string-array name="D_MADRE_DE_DIOS">
+        <item>Seleccione</item>
+        <item>TAMBOPATA [01]</item>
+        <item>MANU [02]</item>
+        <item>TAHUAMANU [03]</item>
+    </string-array>
+    <string-array name="D_MOQUEGUA">
+        <item>Seleccione</item>
+        <item>MARISCAL NIETO [01]</item>
+        <item>GENERAL SANCHEZ CERRO [02]</item>
+        <item>ILO [03]</item>
+    </string-array>
+    <string-array name="D_PASCO">
+        <item>Seleccione</item>
+        <item>PASCO [01]</item>
+        <item>DANIEL ALCIDES CARRION [02]</item>
+        <item>OXAPAMPA [03]</item>
+    </string-array>
+    <string-array name="D_PIURA">
+        <item>Seleccione</item>
+        <item>PIURA [01]</item>
+        <item>AYABACA [02]</item>
+        <item>HUANCABAMBA [03]</item>
+        <item>MORROPON [04]</item>
+        <item>PAITA [05]</item>
+        <item>SULLANA [06]</item>
+        <item>TALARA [07]</item>
+        <item>SECHURA [08]</item>
+    </string-array>
+    <string-array name="D_PUNO">
+        <item>Seleccione</item>
+        <item>PUNO [01]</item>
+        <item>AZANGARO [02]</item>
+        <item>CARABAYA [03]</item>
+        <item>CHUCUITO [04]</item>
+        <item>EL COLLAO [05]</item>
+        <item>HUANCANE [06]</item>
+        <item>LAMPA [07]</item>
+        <item>MELGAR [08]</item>
+        <item>MOHO [09]</item>
+        <item>SAN ANTONIO DE PUTINA [10]</item>
+        <item>SAN ROMAN [11]</item>
+        <item>SANDIA [12]</item>
+        <item>YUNGUYO [13]</item>
+    </string-array>
+    <string-array name="D_SAN_MARTIN">
+        <item>Seleccione</item>
+        <item>MOYOBAMBA [01]</item>
+        <item>BELLAVISTA [02]</item>
+        <item>EL DORADO [03]</item>
+        <item>HUALLAGA [04]</item>
+        <item>LAMAS [05]</item>
+        <item>MARISCAL CACERES [06]</item>
+        <item>PICOTA [07]</item>
+        <item>RIOJA [08]</item>
+        <item>SAN MARTIN [09]</item>
+        <item>TOCACHE [10]</item>
+    </string-array>
+    <string-array name="D_TACNA">
+        <item>Seleccione</item>
+        <item>TACNA [01]</item>
+        <item>CANDARAVE [02]</item>
+        <item>JORGE BASADRE [03]</item>
+        <item>TARATA [04]</item>
+    </string-array>
+    <string-array name="D_TUMBES">
+        <item>Seleccione</item>
+        <item>TUMBES [01]</item>
+        <item>CONTRALMIRANTE VILLAR [02]</item>
+        <item>ZARUMILLA [03]</item>
+    </string-array>
+    <string-array name="D_UCAYALI">
+        <item>Seleccione</item>
+        <item>CORONEL PORTILLO [01]</item>
+        <item>ATALAYA [02]</item>
+        <item>PADRE ABAD [03]</item>
+        <item>PURUS [04]</item>
+    </string-array>
+
+
+    <string-array name="P_CHACHAPOYAS">
+        <item>Seleccione</item>
+        <item>CHACHAPOYAS [01]</item>
+        <item>ASUNCION [02]</item>
+        <item>BALSAS [03]</item>
+        <item>CHETO [04]</item>
+        <item>CHILIQUIN [05]</item>
+        <item>CHUQUIBAMBA [06]</item>
+        <item>GRANADA [07]</item>
+        <item>HUANCAS [08]</item>
+        <item>LA JALCA [09]</item>
+        <item>LEIMEBAMBA [10]</item>
+        <item>LEVANTO [11]</item>
+        <item>MAGDALENA [12]</item>
+        <item>MARISCAL CASTILLA [13]</item>
+        <item>MOLINOPAMPA [14]</item>
+        <item>MONTEVIDEO [15]</item>
+        <item>OLLEROS [16]</item>
+        <item>QUINJALCA [17]</item>
+        <item>SAN FRANCISCO DE DAGUAS [18]</item>
+        <item>SAN ISIDRO DE MAINO [19]</item>
+        <item>SOLOCO [20]</item>
+        <item>SONCHE [21]</item>
+    </string-array>
+    <string-array name="P_BAGUA">
+        <item>Seleccione</item>
+        <item>BAGUA [01]</item>
+        <item>ARAMANGO [02]</item>
+        <item>COPALLIN [03]</item>
+        <item>EL PARCO [04]</item>
+        <item>IMAZA [05]</item>
+        <item>LA PECA [06]</item>
+    </string-array>
+    <string-array name="P_BONGARA">
+        <item>Seleccione</item>
+        <item>JUMBILLA [01]</item>
+        <item>CHISQUILLA [02]</item>
+        <item>CHURUJA [03]</item>
+        <item>COROSHA [04]</item>
+        <item>CUISPES [05]</item>
+        <item>FLORIDA [06]</item>
+        <item>JAZAN [07]</item>
+        <item>RECTA [08]</item>
+        <item>SAN CARLOS [09]</item>
+        <item>SHIPASBAMBA [10]</item>
+        <item>VALERA [11]</item>
+        <item>YAMBRASBAMBA [12]</item>
+    </string-array>
+    <string-array name="P_CONDORCANQUI">
+        <item>Seleccione</item>
+        <item>NIEVA [01]</item>
+        <item>EL CENEPA [02]</item>
+        <item>RIO SANTIAGO [03]</item>
+    </string-array>
+    <string-array name="P_LUYA">
+        <item>Seleccione</item>
+        <item>LAMUD [01]</item>
+        <item>CAMPORREDONDO [02]</item>
+        <item>COCABAMBA [03]</item>
+        <item>COLCAMAR [04]</item>
+        <item>CONILA [05]</item>
+        <item>INGUILPATA [06]</item>
+        <item>LONGUITA [07]</item>
+        <item>LONYA CHICO [08]</item>
+        <item>LUYA [09]</item>
+        <item>LUYA VIEJO [10]</item>
+        <item>MARIA [11]</item>
+        <item>OCALLI [12]</item>
+        <item>OCUMAL [13]</item>
+        <item>PISUQUIA [14]</item>
+        <item>PROVIDENCIA [15]</item>
+        <item>SAN CRISTOBAL [16]</item>
+        <item>SAN FRANCISCO DEL YESO [17]</item>
+        <item>SAN JERONIMO [18]</item>
+        <item>SAN JUAN DE LOPECANCHA [19]</item>
+        <item>SANTA CATALINA [20]</item>
+        <item>SANTO TOMAS [21]</item>
+        <item>TINGO [22]</item>
+        <item>TRITA [23]</item>
+    </string-array>
+    <string-array name="P_RODRIGUEZ_DE_MENDOZA">
+        <item>Seleccione</item>
+        <item>SAN NICOLAS [01]</item>
+        <item>CHIRIMOTO [02]</item>
+        <item>COCHAMAL [03]</item>
+        <item>HUAMBO [04]</item>
+        <item>LIMABAMBA [05]</item>
+        <item>LONGAR [06]</item>
+        <item>MARISCAL BENAVIDES [07]</item>
+        <item>MILPUC [08]</item>
+        <item>OMIA [09]</item>
+        <item>SANTA ROSA [10]</item>
+        <item>TOTORA [11]</item>
+        <item>VISTA ALEGRE [12]</item>
+    </string-array>
+    <string-array name="P_UTCUBAMBA">
+        <item>Seleccione</item>
+        <item>BAGUA GRANDE [01]</item>
+        <item>CAJARURO [02]</item>
+        <item>CUMBA [03]</item>
+        <item>EL MILAGRO [04]</item>
+        <item>JAMALCA [05]</item>
+        <item>LONYA GRANDE [06]</item>
+        <item>YAMON [07]</item>
+    </string-array>
+
+
+    <string-array name="P_HUARAZ">
+        <item>Seleccione</item>
+        <item>HUARAZ [01]</item>
+        <item>COCHABAMBA [02]</item>
+        <item>COLCABAMBA [03]</item>
+        <item>HUANCHAY [04]</item>
+        <item>INDEPENDENCIA [05]</item>
+        <item>JANGAS [06]</item>
+        <item>LA LIBERTAD [07]</item>
+        <item>OLLEROS [08]</item>
+        <item>PAMPAS [09]</item>
+        <item>PARIACOTO [10]</item>
+        <item>PIRA [11]</item>
+        <item>TARICA [12]</item>
+    </string-array>
+    <string-array name="P_AIJA">
+        <item>Seleccione</item>
+        <item>AIJA [01]</item>
+        <item>CORIS [02]</item>
+        <item>HUACLLAN [03]</item>
+        <item>LA MERCED [04]</item>
+        <item>SUCCHA [05]</item>
+    </string-array>
+    <string-array name="P_ANTONIO_RAYMONDI">
+        <item>Seleccione</item>
+        <item>LLAMELLIN [01]</item>
+        <item>ACZO [02]</item>
+        <item>CHACCHO [03]</item>
+        <item>CHINGAS [04]</item>
+        <item>MIRGAS [05]</item>
+        <item>SAN JUAN DE RONTOY [06]</item>
+    </string-array>
+    <string-array name="P_ASUNCION">
+        <item>Seleccione</item>
+        <item>CHACAS [01]</item>
+        <item>ACOCHACA [02]</item>
+    </string-array>
+    <string-array name="P_BOLOGNESI">
+        <item>Seleccione</item>
+        <item>CHIQUIAN [01]</item>
+        <item>ABELARDO PARDO LEZAMETA [02]</item>
+        <item>ANTONIO RAYMONDI [03]</item>
+        <item>AQUIA [04]</item>
+        <item>CAJACAY [05]</item>
+        <item>CANIS [06]</item>
+        <item>COLQUIOC [07]</item>
+        <item>HUALLANCA [08]</item>
+        <item>HUASTA [09]</item>
+        <item>HUAYLLACAYAN [10]</item>
+        <item>LA PRIMAVERA [11]</item>
+        <item>MANGAS [12]</item>
+        <item>PACLLON [13]</item>
+        <item>SAN MIGUEL DE CORPANQUI [14]</item>
+        <item>TICLLOS [15]</item>
+    </string-array>
+    <string-array name="P_CARHUAZ">
+        <item>Seleccione</item>
+        <item>CARHUAZ [01]</item>
+        <item>ACOPAMPA [02]</item>
+        <item>AMASHCA [03]</item>
+        <item>ANTA [04]</item>
+        <item>ATAQUERO [05]</item>
+        <item>MARCARA [06]</item>
+        <item>PARIAHUANCA [07]</item>
+        <item>SAN MIGUEL DE ACO [08]</item>
+        <item>SHILLA [09]</item>
+        <item>TINCO [10]</item>
+        <item>YUNGAR [11]</item>
+    </string-array>
+    <string-array name="P_CARLOS_FERMIN_FITZCARRALD">
+        <item>Seleccione</item>
+        <item>SAN LUIS [01]</item>
+        <item>SAN NICOLAS [02]</item>
+        <item>YAUYA [03]</item>
+    </string-array>
+    <string-array name="P_CASMA">
+        <item>Seleccione</item>
+        <item>CASMA [01]</item>
+        <item>BUENA VISTA ALTA [02]</item>
+        <item>COMANDANTE NOEL [03]</item>
+        <item>YAUTAN [04]</item>
+    </string-array>
+    <string-array name="P_CORONGO">
+        <item>Seleccione</item>
+        <item>CORONGO [01]</item>
+        <item>ACO [02]</item>
+        <item>BAMBAS [03]</item>
+        <item>CUSCA [04]</item>
+        <item>LA PAMPA [05]</item>
+        <item>YANAC [06]</item>
+        <item>YUPAN [07]</item>
+    </string-array>
+    <string-array name="P_HUARI">
+        <item>Seleccione</item>
+        <item>HUARI [01]</item>
+        <item>ANRA [02]</item>
+        <item>CAJAY [03]</item>
+        <item>CHAVIN DE HUANTAR [04]</item>
+        <item>HUACACHI [05]</item>
+        <item>HUACCHIS [06]</item>
+        <item>HUACHIS [07]</item>
+        <item>HUANTAR [08]</item>
+        <item>MASIN [09]</item>
+        <item>PAUCAS [10]</item>
+        <item>PONTO [11]</item>
+        <item>RAHUAPAMPA [12]</item>
+        <item>RAPAYAN [13]</item>
+        <item>SAN MARCOS [14]</item>
+        <item>SAN PEDRO DE CHANA [15]</item>
+        <item>UCO [16]</item>
+    </string-array>
+    <string-array name="P_HUARMEY">
+        <item>Seleccione</item>
+        <item>HUARMEY [01]</item>
+        <item>COCHAPETI [02]</item>
+        <item>CULEBRAS [03]</item>
+        <item>HUAYAN [04]</item>
+        <item>MALVAS [05]</item>
+    </string-array>
+    <string-array name="P_HUAYLAS">
+        <item>Seleccione</item>
+        <item>CARAZ [01]</item>
+        <item>HUALLANCA [02]</item>
+        <item>HUATA [03]</item>
+        <item>HUAYLAS [04]</item>
+        <item>MATO [05]</item>
+        <item>PAMPAROMAS [06]</item>
+        <item>PUEBLO LIBRE [07]</item>
+        <item>SANTA CRUZ [08]</item>
+        <item>SANTO TORIBIO [09]</item>
+        <item>YURACMARCA [10]</item>
+    </string-array>
+    <string-array name="P_MARISCAL_LUZURIAGA">
+        <item>Seleccione</item>
+        <item>PISCOBAMBA [01]</item>
+        <item>CASCA [02]</item>
+        <item>ELEAZAR GUZMAN BARRON [03]</item>
+        <item>FIDEL OLIVAS ESCUDERO [04]</item>
+        <item>LLAMA [05]</item>
+        <item>LLUMPA [06]</item>
+        <item>LUCMA [07]</item>
+        <item>MUSGA [08]</item>
+    </string-array>
+    <string-array name="P_OCROS">
+        <item>Seleccione</item>
+        <item>OCROS [01]</item>
+        <item>ACAS [02]</item>
+        <item>CAJAMARQUILLA [03]</item>
+        <item>CARHUAPAMPA [04]</item>
+        <item>COCHAS [05]</item>
+        <item>CONGAS [06]</item>
+        <item>LLIPA [07]</item>
+        <item>SAN CRISTOBAL DE RAJAN [08]</item>
+        <item>SAN PEDRO [09]</item>
+        <item>SANTIAGO DE CHILCAS [10]</item>
+    </string-array>
+    <string-array name="P_PALLASCA">
+        <item>Seleccione</item>
+        <item>CABANA [01]</item>
+        <item>BOLOGNESI [02]</item>
+        <item>CONCHUCOS [03]</item>
+        <item>HUACASCHUQUE [04]</item>
+        <item>HUANDOVAL [05]</item>
+        <item>LACABAMBA [06]</item>
+        <item>LLAPO [07]</item>
+        <item>PALLASCA [08]</item>
+        <item>PAMPAS [09]</item>
+        <item>SANTA ROSA [10]</item>
+        <item>TAUCA [11]</item>
+    </string-array>
+    <string-array name="P_POMABAMBA">
+        <item>Seleccione</item>
+        <item>POMABAMBA [01]</item>
+        <item>HUAYLLAN [02]</item>
+        <item>PAROBAMBA [03]</item>
+        <item>QUINUABAMBA [04]</item>
+    </string-array>
+    <string-array name="P_RECUAY">
+        <item>Seleccione</item>
+        <item>RECUAY [01]</item>
+        <item>CATAC [02]</item>
+        <item>COTAPARACO [03]</item>
+        <item>HUAYLLAPAMPA [04]</item>
+        <item>LLACLLIN [05]</item>
+        <item>MARCA [06]</item>
+        <item>PAMPAS CHICO [07]</item>
+        <item>PARARIN [08]</item>
+        <item>TAPACOCHA [09]</item>
+        <item>TICAPAMPA [10]</item>
+    </string-array>
+    <string-array name="P_SANTA">
+        <item>Seleccione</item>
+        <item>CHIMBOTE [01]</item>
+        <item>CACERES DEL PERU [02]</item>
+        <item>COISHCO [03]</item>
+        <item>MACATE [04]</item>
+        <item>MORO [05]</item>
+        <item>NEPEÑA [06]</item>
+        <item>SAMANCO [07]</item>
+        <item>SANTA [08]</item>
+        <item>NUEVO CHIMBOTE [09]</item>
+    </string-array>
+    <string-array name="P_SIHUAS">
+        <item>Seleccione</item>
+        <item>SIHUAS [01]</item>
+        <item>ACOBAMBA [02]</item>
+        <item>ALFONSO UGARTE [03]</item>
+        <item>CASHAPAMPA [04]</item>
+        <item>CHINGALPO [05]</item>
+        <item>HUAYLLABAMBA [06]</item>
+        <item>QUICHES [07]</item>
+        <item>RAGASH [08]</item>
+        <item>SAN JUAN [09]</item>
+        <item>SICSIBAMBA [10]</item>
+    </string-array>
+    <string-array name="P_YUNGAY">
+        <item>Seleccione</item>
+        <item>YUNGAY [01]</item>
+        <item>CASCAPARA [02]</item>
+        <item>MANCOS [03]</item>
+        <item>MATACOTO [04]</item>
+        <item>QUILLO [05]</item>
+        <item>RANRAHIRCA [06]</item>
+        <item>SHUPLUY [07]</item>
+        <item>YANAMA [08]</item>
+    </string-array>
+
+
+    <string-array name="P_ABANCAY">
+        <item>Seleccione</item>
+        <item>ABANCAY [01]</item>
+        <item>CHACOCHE [02]</item>
+        <item>CIRCA [03]</item>
+        <item>CURAHUASI [04]</item>
+        <item>HUANIPACA [05]</item>
+        <item>LAMBRAMA [06]</item>
+        <item>PICHIRHUA [07]</item>
+        <item>SAN PEDRO DE CACHORA [08]</item>
+        <item>TAMBURCO [09]</item>
+    </string-array>
+    <string-array name="P_ANDAHUAYLAS">
+        <item>Seleccione</item>
+        <item>ANDAHUAYLAS [01]</item>
+        <item>ANDARAPA [02]</item>
+        <item>CHIARA [03]</item>
+        <item>HUANCARAMA [04]</item>
+        <item>HUANCARAY [05]</item>
+        <item>HUAYANA [06]</item>
+        <item>KISHUARA [07]</item>
+        <item>PACOBAMBA [08]</item>
+        <item>PACUCHA [09]</item>
+        <item>PAMPACHIRI [10]</item>
+        <item>POMACOCHA [11]</item>
+        <item>SAN ANTONIO DE CACHI [12]</item>
+        <item>SAN JERONIMO [13]</item>
+        <item>SAN MIGUEL DE CHACCRAMPA [14]</item>
+        <item>SANTA MARIA DE CHICMO [15]</item>
+        <item>TALAVERA [16]</item>
+        <item>TUMAY HUARACA [17]</item>
+        <item>TURPO [18]</item>
+        <item>KAQUIABAMBA [19]</item>
+        <item>JOSÉ MARÍA ARGUEDAS [20]</item>
+    </string-array>
+    <string-array name="P_ANTABAMBA">
+        <item>Seleccione</item>
+        <item>ANTABAMBA [01]</item>
+        <item>EL ORO [02]</item>
+        <item>HUAQUIRCA [03]</item>
+        <item>JUAN ESPINOZA MEDRANO [04]</item>
+        <item>OROPESA [05]</item>
+        <item>PACHACONAS [06]</item>
+        <item>SABAINO [07]</item>
+    </string-array>
+    <string-array name="P_AYMARAES">
+        <item>Seleccione</item>
+        <item>CHALHUANCA [01]</item>
+        <item>CAPAYA [02]</item>
+        <item>CARAYBAMBA [03]</item>
+        <item>CHAPIMARCA [04]</item>
+        <item>COLCABAMBA [05]</item>
+        <item>COTARUSE [06]</item>
+        <item>HUAYLLO [07]</item>
+        <item>JUSTO APU SAHUARAURA [08]</item>
+        <item>LUCRE [09]</item>
+        <item>POCOHUANCA [10]</item>
+        <item>SAN JUAN DE CHACÑA [11]</item>
+        <item>SAÑAYCA [12]</item>
+        <item>SORAYA [13]</item>
+        <item>TAPAIRIHUA [14]</item>
+        <item>TINTAY [15]</item>
+        <item>TORAYA [16]</item>
+        <item>YANACA [17]</item>
+    </string-array>
+    <string-array name="P_COTABAMBAS">
+        <item>Seleccione</item>
+        <item>TAMBOBAMBA [01]</item>
+        <item>COTABAMBAS [02]</item>
+        <item>COYLLURQUI [03]</item>
+        <item>HAQUIRA [04]</item>
+        <item>MARA [05]</item>
+        <item>CHALLHUAHUACHO [06]</item>
+    </string-array>
+    <string-array name="P_CHINCHEROS">
+        <item>Seleccione</item>
+        <item>CHINCHEROS [01]</item>
+        <item>ANCO_HUALLO [02]</item>
+        <item>COCHARCAS [03]</item>
+        <item>HUACCANA [04]</item>
+        <item>OCOBAMBA [05]</item>
+        <item>ONGOY [06]</item>
+        <item>URANMARCA [07]</item>
+        <item>RANRACANCHA [08]</item>
+        <item>ROCCHACC [09]</item>
+        <item>EL PORVENIR [10]</item>
+    </string-array>
+    <string-array name="P_GRAU">
+        <item>Seleccione</item>
+        <item>CHUQUIBAMBILLA [01]</item>
+        <item>CURPAHUASI [02]</item>
+        <item>GAMARRA [03]</item>
+        <item>HUAYLLATI [04]</item>
+        <item>MAMARA [05]</item>
+        <item>MICAELA BASTIDAS [06]</item>
+        <item>PATAYPAMPA [07]</item>
+        <item>PROGRESO [08]</item>
+        <item>SAN ANTONIO [09]</item>
+        <item>SANTA ROSA [10]</item>
+        <item>TURPAY [11]</item>
+        <item>VILCABAMBA [12]</item>
+        <item>VIRUNDO [13]</item>
+        <item>CURASCO [14]</item>
+    </string-array>
+
+
+    <string-array name="P_AREQUIPA">
+        <item>Seleccione</item>
+        <item>AREQUIPA [01]</item>
+        <item>ALTO SELVA ALEGRE [02]</item>
+        <item>CAYMA [03]</item>
+        <item>CERRO COLORADO [04]</item>
+        <item>CHARACATO [05]</item>
+        <item>CHIGUATA [06]</item>
+        <item>JACOBO HUNTER [07]</item>
+        <item>LA JOYA [08]</item>
+        <item>MARIANO MELGAR [09]</item>
+        <item>MIRAFLORES [10]</item>
+        <item>MOLLEBAYA [11]</item>
+        <item>PAUCARPATA [12]</item>
+        <item>POCSI [13]</item>
+        <item>POLOBAYA [14]</item>
+        <item>QUEQUEÑA [15]</item>
+        <item>SABANDIA [16]</item>
+        <item>SACHACA [17]</item>
+        <item>SAN JUAN DE SIGUAS [18]</item>
+        <item>SAN JUAN DE TARUCANI [19]</item>
+        <item>SANTA ISABEL DE SIGUAS [20]</item>
+        <item>SANTA RITA DE SIGUAS [21]</item>
+        <item>SOCABAYA [22]</item>
+        <item>TIABAYA [23]</item>
+        <item>UCHUMAYO [24]</item>
+        <item>VITOR [25]</item>
+        <item>YANAHUARA [26]</item>
+        <item>YARABAMBA [27]</item>
+        <item>YURA [28]</item>
+        <item>JOSE LUIS BUSTAMANTE Y RIVERO [29]</item>
+    </string-array>
+    <string-array name="P_CAMANA">
+        <item>Seleccione</item>
+        <item>CAMANA [01]</item>
+        <item>JOSE MARIA QUIMPER [02]</item>
+        <item>MARIANO NICOLAS VALCARCEL [03]</item>
+        <item>MARISCAL CACERES [04]</item>
+        <item>NICOLAS DE PIEROLA [05]</item>
+        <item>OCOÑA [06]</item>
+        <item>QUILCA [07]</item>
+        <item>SAMUEL PASTOR [08]</item>
+    </string-array>
+    <string-array name="P_CARAVELI">
+        <item>Seleccione</item>
+        <item>CARAVELI [01]</item>
+        <item>ACARI [02]</item>
+        <item>ATICO [03]</item>
+        <item>ATIQUIPA [04]</item>
+        <item>BELLA UNION [05]</item>
+        <item>CAHUACHO [06]</item>
+        <item>CHALA [07]</item>
+        <item>CHAPARRA [08]</item>
+        <item>HUANUHUANU [09]</item>
+        <item>JAQUI [10]</item>
+        <item>LOMAS [11]</item>
+        <item>QUICACHA [12]</item>
+        <item>YAUCA [13]</item>
+    </string-array>
+    <string-array name="P_CASTILLA">
+        <item>Seleccione</item>
+        <item>APLAO [01]</item>
+        <item>ANDAGUA [02]</item>
+        <item>AYO [03]</item>
+        <item>CHACHAS [04]</item>
+        <item>CHILCAYMARCA [05]</item>
+        <item>CHOCO [06]</item>
+        <item>HUANCARQUI [07]</item>
+        <item>MACHAGUAY [08]</item>
+        <item>ORCOPAMPA [09]</item>
+        <item>PAMPACOLCA [10]</item>
+        <item>TIPAN [11]</item>
+        <item>UÑON [12]</item>
+        <item>URACA [13]</item>
+        <item>VIRACO [14]</item>
+    </string-array>
+    <string-array name="P_CAYLLOMA">
+        <item>Seleccione</item>
+        <item>CHIVAY [01]</item>
+        <item>ACHOMA [02]</item>
+        <item>CABANACONDE [03]</item>
+        <item>CALLALLI [04]</item>
+        <item>CAYLLOMA [05]</item>
+        <item>COPORAQUE [06]</item>
+        <item>HUAMBO [07]</item>
+        <item>HUANCA [08]</item>
+        <item>ICHUPAMPA [09]</item>
+        <item>LARI [10]</item>
+        <item>LLUTA [11]</item>
+        <item>MACA [12]</item>
+        <item>MADRIGAL [13]</item>
+        <item>SAN ANTONIO DE CHUCA [14]</item>
+        <item>SIBAYO [15]</item>
+        <item>TAPAY [16]</item>
+        <item>TISCO [17]</item>
+        <item>TUTI [18]</item>
+        <item>YANQUE [19]</item>
+        <item>MAJES [20]</item>
+    </string-array>
+    <string-array name="P_CONDESUYOS">
+        <item>Seleccione</item>
+        <item>CHUQUIBAMBA [01]</item>
+        <item>ANDARAY [02]</item>
+        <item>CAYARANI [03]</item>
+        <item>CHICHAS [04]</item>
+        <item>IRAY [05]</item>
+        <item>RIO GRANDE [06]</item>
+        <item>SALAMANCA [07]</item>
+        <item>YANAQUIHUA [08]</item>
+    </string-array>
+    <string-array name="P_ISLAY">
+        <item>Seleccione</item>
+        <item>MOLLENDO [01]</item>
+        <item>COCACHACRA [02]</item>
+        <item>DEAN VALDIVIA [03]</item>
+        <item>ISLAY [04]</item>
+        <item>MEJIA [05]</item>
+        <item>PUNTA DE BOMBON [06]</item>
+    </string-array>
+    <string-array name="P_LA_UNION">
+        <item>Seleccione</item>
+        <item>COTAHUASI [01]</item>
+        <item>ALCA [02]</item>
+        <item>CHARCANA [03]</item>
+        <item>HUAYNACOTAS [04]</item>
+        <item>PAMPAMARCA [05]</item>
+        <item>PUYCA [06]</item>
+        <item>QUECHUALLA [07]</item>
+        <item>SAYLA [08]</item>
+        <item>TAURIA [09]</item>
+        <item>TOMEPAMPA [10]</item>
+        <item>TORO [11]</item>
+    </string-array>
+
+    <string-array name="P_HUAMANGA">
+        <item>Seleccione</item>
+        <item>AYACUCHO [01]</item>
+        <item>ACOCRO [02]</item>
+        <item>ACOS VINCHOS [03]</item>
+        <item>CARMEN ALTO [04]</item>
+        <item>CHIARA [05]</item>
+        <item>OCROS [06]</item>
+        <item>PACAYCASA [07]</item>
+        <item>QUINUA [08]</item>
+        <item>SAN JOSE DE TICLLAS [09]</item>
+        <item>SAN JUAN BAUTISTA [10]</item>
+        <item>SANTIAGO DE PISCHA [11]</item>
+        <item>SOCOS [12]</item>
+        <item>TAMBILLO [13]</item>
+        <item>VINCHOS [14]</item>
+        <item>JESUS NAZARENO [15]</item>
+        <item>ANDRÉS AVELINO CÁCERES DORREGARAY [16]</item>
+    </string-array>
+    <string-array name="P_CANGALLO">
+        <item>Seleccione</item>
+        <item>CANGALLO [01]</item>
+        <item>CHUSCHI [02]</item>
+        <item>LOS MOROCHUCOS [03]</item>
+        <item>MARIA PARADO DE BELLIDO [04]</item>
+        <item>PARAS [05]</item>
+        <item>TOTOS [06]</item>
+    </string-array>
+    <string-array name="P_HUANCA_SANCOS">
+        <item>Seleccione</item>
+        <item>SANCOS [01]</item>
+        <item>CARAPO [02]</item>
+        <item>SACSAMARCA [03]</item>
+        <item>SANTIAGO DE LUCANAMARCA [04]</item>
+    </string-array>
+    <string-array name="P_HUANTA">
+        <item>Seleccione</item>
+        <item>HUANTA [01]</item>
+        <item>AYAHUANCO [02]</item>
+        <item>HUAMANGUILLA [03]</item>
+        <item>IGUAIN [04]</item>
+        <item>LURICOCHA [05]</item>
+        <item>SANTILLANA [06]</item>
+        <item>SIVIA [07]</item>
+        <item>LLOCHEGUA [08]</item>
+        <item>CANAYRE [09]</item>
+        <item>UCHURACCAY [10]</item>
+        <item>PUCAPOLCA [11]</item>
+        <item>CHACA [12]</item>
+    </string-array>
+    <string-array name="P_LA_MAR">
+        <item>Seleccione</item>
+        <item>SAN MIGUEL [01]</item>
+        <item>ANCO [02]</item>
+        <item>AYNA [03]</item>
+        <item>CHILCAS [04]</item>
+        <item>CHUNGUI [05]</item>
+        <item>LUIS CARRANZA [06]</item>
+        <item>SANTA ROSA [07]</item>
+        <item>TAMBO [08]</item>
+        <item>SAMUGARI [09]</item>
+        <item>ANCHIHUAY [10]</item>
+        <item>ORONCCOY [11]</item>
+    </string-array>
+    <string-array name="P_LUCANAS">
+        <item>Seleccione</item>
+        <item>PUQUIO [01]</item>
+        <item>AUCARA [02]</item>
+        <item>CABANA [03]</item>
+        <item>CARMEN SALCEDO [04]</item>
+        <item>CHAVIÑA [05]</item>
+        <item>CHIPAO [06]</item>
+        <item>HUAC-HUAS [07]</item>
+        <item>LARAMATE [08]</item>
+        <item>LEONCIO PRADO [09]</item>
+        <item>LLAUTA [10]</item>
+        <item>LUCANAS [11]</item>
+        <item>OCAÑA [12]</item>
+        <item>OTOCA [13]</item>
+        <item>SAISA [14]</item>
+        <item>SAN CRISTOBAL [15]</item>
+        <item>SAN JUAN [16]</item>
+        <item>SAN PEDRO [17]</item>
+        <item>SAN PEDRO DE PALCO [18]</item>
+        <item>SANCOS [19]</item>
+        <item>SANTA ANA DE HUAYCAHUACHO [20]</item>
+        <item>SANTA LUCIA [21]</item>
+    </string-array>
+    <string-array name="P_PARINACOCHAS">
+        <item>Seleccione</item>
+        <item>CORACORA [01]</item>
+        <item>CHUMPI [02]</item>
+        <item>CORONEL CASTAÑEDA [03]</item>
+        <item>PACAPAUSA [04]</item>
+        <item>PULLO [05]</item>
+        <item>PUYUSCA [06]</item>
+        <item>SAN FRANCISCO DE RAVACAYCO [07]</item>
+        <item>UPAHUACHO [08]</item>
+    </string-array>
+    <string-array name="P_PAUCAR_DEL_SARA_SARA">
+        <item>Seleccione</item>
+        <item>PAUSA [01]</item>
+        <item>COLTA [02]</item>
+        <item>CORCULLA [03]</item>
+        <item>LAMPA [04]</item>
+        <item>MARCABAMBA [05]</item>
+        <item>OYOLO [06]</item>
+        <item>PARARCA [07]</item>
+        <item>SAN JAVIER DE ALPABAMBA [08]</item>
+        <item>SAN JOSE DE USHUA [09]</item>
+        <item>SARA SARA [10]</item>
+    </string-array>
+    <string-array name="P_SUCRE">
+        <item>Seleccione</item>
+        <item>QUEROBAMBA [01]</item>
+        <item>BELEN [02]</item>
+        <item>CHALCOS [03]</item>
+        <item>CHILCAYOC [04]</item>
+        <item>HUACAÑA [05]</item>
+        <item>MORCOLLA [06]</item>
+        <item>PAICO [07]</item>
+        <item>SAN PEDRO DE LARCAY [08]</item>
+        <item>SAN SALVADOR DE QUIJE [09]</item>
+        <item>SANTIAGO DE PAUCARAY [10]</item>
+        <item>SORAS [11]</item>
+    </string-array>
+    <string-array name="P_VICTOR_FAJARDO">
+        <item>Seleccione</item>
+        <item>HUANCAPI [01]</item>
+        <item>ALCAMENCA [02]</item>
+        <item>APONGO [03]</item>
+        <item>ASQUIPATA [04]</item>
+        <item>CANARIA [05]</item>
+        <item>CAYARA [06]</item>
+        <item>COLCA [07]</item>
+        <item>HUAMANQUIQUIA [08]</item>
+        <item>HUANCARAYLLA [09]</item>
+        <item>HUAYA [10]</item>
+        <item>SARHUA [11]</item>
+        <item>VILCANCHOS [12]</item>
+    </string-array>
+    <string-array name="P_VILCAS_HUAMAN">
+        <item>Seleccione</item>
+        <item>VILCAS HUAMAN [01]</item>
+        <item>ACCOMARCA [02]</item>
+        <item>CARHUANCA [03]</item>
+        <item>CONCEPCION [04]</item>
+        <item>HUAMBALPA [05]</item>
+        <item>INDEPENDENCIA [06]</item>
+        <item>SAURAMA [07]</item>
+        <item>VISCHONGO [08]</item>
+    </string-array>
+
+
+    <string-array name="P_CAJAMARCA">
+        <item>Seleccione</item>
+        <item>CAJAMARCA [01]</item>
+        <item>ASUNCION [02]</item>
+        <item>CHETILLA [03]</item>
+        <item>COSPAN [04]</item>
+        <item>ENCAÑADA [05]</item>
+        <item>JESUS [06]</item>
+        <item>LLACANORA [07]</item>
+        <item>LOS BAÑOS DEL INCA [08]</item>
+        <item>MAGDALENA [09]</item>
+        <item>MATARA [10]</item>
+        <item>NAMORA [11]</item>
+        <item>SAN JUAN [12]</item>
+    </string-array>
+    <string-array name="P_CAJABAMBA">
+        <item>Seleccione</item>
+        <item>CAJABAMBA [01]</item>
+        <item>CACHACHI [02]</item>
+        <item>CONDEBAMBA [03]</item>
+        <item>SITACOCHA [04]</item>
+    </string-array>
+    <string-array name="P_CELENDIN">
+        <item>Seleccione</item>
+        <item>CELENDIN [01]</item>
+        <item>CHUMUCH [02]</item>
+        <item>CORTEGANA [03]</item>
+        <item>HUASMIN [04]</item>
+        <item>JORGE CHAVEZ [05]</item>
+        <item>JOSE GALVEZ [06]</item>
+        <item>MIGUEL IGLESIAS [07]</item>
+        <item>OXAMARCA [08]</item>
+        <item>SOROCHUCO [09]</item>
+        <item>SUCRE [10]</item>
+        <item>UTCO [11]</item>
+        <item>LA LIBERTAD DE PALLAN [12]</item>
+    </string-array>
+    <string-array name="P_CHOTA">
+        <item>Seleccione</item>
+        <item>CHOTA [01]</item>
+        <item>ANGUIA [02]</item>
+        <item>CHADIN [03]</item>
+        <item>CHIGUIRIP [04]</item>
+        <item>CHIMBAN [05]</item>
+        <item>CHOROPAMPA [06]</item>
+        <item>COCHABAMBA [07]</item>
+        <item>CONCHAN [08]</item>
+        <item>HUAMBOS [09]</item>
+        <item>LAJAS [10]</item>
+        <item>LLAMA [11]</item>
+        <item>MIRACOSTA [12]</item>
+        <item>PACCHA [13]</item>
+        <item>PION [14]</item>
+        <item>QUEROCOTO [15]</item>
+        <item>SAN JUAN DE LICUPIS [16]</item>
+        <item>TACABAMBA [17]</item>
+        <item>TOCMOCHE [18]</item>
+        <item>CHALAMARCA [19]</item>
+    </string-array>
+    <string-array name="P_CONTUMAZA">
+        <item>Seleccione</item>
+        <item>CONTUMAZA [01]</item>
+        <item>CHILETE [02]</item>
+        <item>CUPISNIQUE [03]</item>
+        <item>GUZMANGO [04]</item>
+        <item>SAN BENITO [05]</item>
+        <item>SANTA CRUZ DE TOLED [06]</item>
+        <item>TANTARICA [07]</item>
+        <item>YONAN [08]</item>
+    </string-array>
+    <string-array name="P_CUTERVO">
+        <item>Seleccione</item>
+        <item>CUTERVO [01]</item>
+        <item>CALLAYUC [02]</item>
+        <item>CHOROS [03]</item>
+        <item>CUJILLO [04]</item>
+        <item>LA RAMADA [05]</item>
+        <item>PIMPINGOS [06]</item>
+        <item>QUEROCOTILLO [07]</item>
+        <item>SAN ANDRES DE CUTERVO [08]</item>
+        <item>SAN JUAN DE CUTERVO [09]</item>
+        <item>SAN LUIS DE LUCMA [10]</item>
+        <item>SANTA CRUZ [11]</item>
+        <item>SANTO DOMINGO DE LA CAPILLA [12]</item>
+        <item>SANTO TOMAS [13]</item>
+        <item>SOCOTA [14]</item>
+        <item>TORIBIO CASANOVA [15]</item>
+    </string-array>
+    <string-array name="P_HUALGAYOC">
+        <item>Seleccione</item>
+        <item>BAMBAMARCA [01]</item>
+        <item>CHUGUR [02]</item>
+        <item>HUALGAYOC [03]</item>
+    </string-array>
+    <string-array name="P_JAEN">
+        <item>Seleccione</item>
+        <item>JAEN [01]</item>
+        <item>BELLAVISTA [02]</item>
+        <item>CHONTALI [03]</item>
+        <item>COLASAY [04]</item>
+        <item>HUABAL [05]</item>
+        <item>LAS PIRIAS [06]</item>
+        <item>POMAHUACA [07]</item>
+        <item>PUCARA [08]</item>
+        <item>SALLIQUE [09]</item>
+        <item>SAN FELIPE [10]</item>
+        <item>SAN JOSE DEL ALTO [11]</item>
+        <item>SANTA ROSA [12]</item>
+    </string-array>
+    <string-array name="P_SAN_IGNACIO">
+        <item>Seleccione</item>
+        <item>SAN IGNACIO [01]</item>
+        <item>CHIRINOS [02]</item>
+        <item>HUARANGO [03]</item>
+        <item>LA COIPA [04]</item>
+        <item>NAMBALLE [05]</item>
+        <item>SAN JOSE DE LOURDES [06]</item>
+        <item>TABACONAS [07]</item>
+    </string-array>
+    <string-array name="P_SAN_MARCOS">
+        <item>Seleccione</item>
+        <item>PEDRO GALVEZ [01]</item>
+        <item>CHANCAY [02]</item>
+        <item>EDUARDO VILLANUEVA [03]</item>
+        <item>GREGORIO PITA [04]</item>
+        <item>ICHOCAN [05]</item>
+        <item>JOSE MANUEL QUIROZ [06]</item>
+        <item>JOSE SABOGAL [07]</item>
+    </string-array>
+    <string-array name="P_SAN_MIGUEL">
+        <item>Seleccione</item>
+        <item>SAN MIGUEL [01]</item>
+        <item>BOLIVAR [02]</item>
+        <item>CALQUIS [03]</item>
+        <item>CATILLUC [04]</item>
+        <item>EL PRADO [05]</item>
+        <item>LA FLORIDA [06]</item>
+        <item>LLAPA [07]</item>
+        <item>NANCHOC [08]</item>
+        <item>NIEPOS [09]</item>
+        <item>SAN GREGORIO [10]</item>
+        <item>SAN SILVESTRE DE COCHAN [11]</item>
+        <item>TONGOD [12]</item>
+        <item>UNION AGUA BLANCA [13]</item>
+    </string-array>
+    <string-array name="P_SAN_PABLO">
+        <item>Seleccione</item>
+        <item>SAN PABLO [01]</item>
+        <item>SAN BERNARDINO [02]</item>
+        <item>SAN LUIS [03]</item>
+        <item>TUMBADEN [04]</item>
+    </string-array>
+    <string-array name="P_SANTA_CRUZ">
+        <item>Seleccione</item>
+        <item>SANTA CRUZ [01]</item>
+        <item>ANDABAMBA [02]</item>
+        <item>CATACHE [03]</item>
+        <item>CHANCAYBAÑOS [04]</item>
+        <item>LA ESPERANZA [05]</item>
+        <item>NINABAMBA [06]</item>
+        <item>PULAN [07]</item>
+        <item>SAUCEPAMPA [08]</item>
+        <item>SEXI [09]</item>
+        <item>UTICYACU [10]</item>
+        <item>YAUYUCAN [11]</item>
+    </string-array>
+
+
+    <string-array name="P_CALLAO">
+        <item>Seleccione</item>
+        <item>CALLAO [01]</item>
+        <item>BELLAVISTA [02]</item>
+        <item>CARMEN DE LA LEGUA REYNOSO [03]</item>
+        <item>LA PERLA [04]</item>
+        <item>LA PUNTA [05]</item>
+        <item>VENTANILLA [06]</item>
+        <item>MI PERU [07]</item>
+    </string-array>
+
+
+    <string-array name="P_CUSCO">
+        <item>Seleccione</item>
+        <item>CUSCO [01]</item>
+        <item>CCORCA [02]</item>
+        <item>POROY [03]</item>
+        <item>SAN JERONIMO [04]</item>
+        <item>SAN SEBASTIAN [05]</item>
+        <item>SANTIAGO [06]</item>
+        <item>SAYLLA [07]</item>
+        <item>WANCHAQ [08]</item>
+    </string-array>
+    <string-array name="P_ACOMAYO">
+        <item>Seleccione</item>
+        <item>ACOMAYO [01]</item>
+        <item>ACOPIA [02]</item>
+        <item>ACOS [03]</item>
+        <item>MOSOC LLACTA [04]</item>
+        <item>POMACANCHI [05]</item>
+        <item>RONDOCAN [06]</item>
+        <item>SANGARARA [07]</item>
+    </string-array>
+    <string-array name="P_ANTA">
+        <item>Seleccione</item>
+        <item>ANTA [01]</item>
+        <item>ANCAHUASI [02]</item>
+        <item>CACHIMAYO [03]</item>
+        <item>CHINCHAYPUJIO [04]</item>
+        <item>HUAROCONDO [05]</item>
+        <item>LIMATAMBO [06]</item>
+        <item>MOLLEPATA [07]</item>
+        <item>PUCYURA [08]</item>
+        <item>ZURITE [09]</item>
+    </string-array>
+    <string-array name="P_CALCA">
+        <item>Seleccione</item>
+        <item>CALCA [01]</item>
+        <item>COYA [02]</item>
+        <item>LAMAY [03]</item>
+        <item>LARES [04]</item>
+        <item>PISAC [05]</item>
+        <item>SAN SALVADOR [06]</item>
+        <item>TARAY [07]</item>
+        <item>YANATILE [08]</item>
+    </string-array>
+    <string-array name="P_CANAS">
+        <item>Seleccione</item>
+        <item>YANAOCA [01]</item>
+        <item>CHECCA [02]</item>
+        <item>KUNTURKANKI [03]</item>
+        <item>LANGUI [04]</item>
+        <item>LAYO [05]</item>
+        <item>PAMPAMARCA [06]</item>
+        <item>QUEHUE [07]</item>
+        <item>TUPAC AMARU [08]</item>
+    </string-array>
+    <string-array name="P_CANCHIS">
+        <item>Seleccione</item>
+        <item>SICUANI [01]</item>
+        <item>CHECACUPE [02]</item>
+        <item>COMBAPATA [03]</item>
+        <item>MARANGANI [04]</item>
+        <item>PITUMARCA [05]</item>
+        <item>SAN PABLO [06]</item>
+        <item>SAN PEDRO [07]</item>
+        <item>TINTA [08]</item>
+    </string-array>
+    <string-array name="P_CHUMBIVILCAS">
+        <item>Seleccione</item>
+        <item>SANTO TOMAS [01]</item>
+        <item>CAPACMARCA [02]</item>
+        <item>CHAMACA [03]</item>
+        <item>COLQUEMARCA [04]</item>
+        <item>LIVITACA [05]</item>
+        <item>LLUSCO [06]</item>
+        <item>QUIÑOTA [07]</item>
+        <item>VELILLE [08]</item>
+    </string-array>
+    <string-array name="P_ESPINAR">
+        <item>Seleccione</item>
+        <item>ESPINAR [01]</item>
+        <item>CONDOROMA [02]</item>
+        <item>COPORAQUE [03]</item>
+        <item>OCORURO [04]</item>
+        <item>PALLPATA [05]</item>
+        <item>PICHIGUA [06]</item>
+        <item>SUYCKUTAMBO [07]</item>
+        <item>ALTO PICHIGUA [08]</item>
+    </string-array>
+    <string-array name="P_LA_CONVENCION">
+        <item>Seleccione</item>
+        <item>SANTA ANA [01]</item>
+        <item>ECHARATE [02]</item>
+        <item>HUAYOPATA [03]</item>
+        <item>MARANURA [04]</item>
+        <item>OCOBAMBA [05]</item>
+        <item>QUELLOUNO [06]</item>
+        <item>KIMBIRI [07]</item>
+        <item>SANTA TERESA [08]</item>
+        <item>VILCABAMBA [09]</item>
+        <item>PICHARI [10]</item>
+        <item>INKAWASI [11]</item>
+        <item>VILLA VIRGEN [12]</item>
+        <item>VILLA KINTIARINA [13]</item>
+        <item>MEGANTONI [14]</item>
+    </string-array>
+    <string-array name="P_PARURO">
+        <item>Seleccione</item>
+        <item>PARURO [01]</item>
+        <item>ACCHA [02]</item>
+        <item>CCAPI [03]</item>
+        <item>COLCHA [04]</item>
+        <item>HUANOQUITE [05]</item>
+        <item>OMACHA [06]</item>
+        <item>PACCARITAMBO [07]</item>
+        <item>PILLPINTO [08]</item>
+        <item>YAURISQUE [09]</item>
+    </string-array>
+    <string-array name="P_PAUCARTAMBO">
+        <item>Seleccione</item>
+        <item>PAUCARTAMBO [01]</item>
+        <item>CAICAY [02]</item>
+        <item>CHALLABAMBA [03]</item>
+        <item>COLQUEPATA [04]</item>
+        <item>HUANCARANI [05]</item>
+        <item>KOSÑIPATA [06]</item>
+    </string-array>
+    <string-array name="P_QUISPICANCHI">
+        <item>Seleccione</item>
+        <item>URCOS [01]</item>
+        <item>ANDAHUAYLILLAS [02]</item>
+        <item>CAMANTI [03]</item>
+        <item>CCARHUAYO [04]</item>
+        <item>CCATCA [05]</item>
+        <item>CUSIPATA [06]</item>
+        <item>HUARO [07]</item>
+        <item>LUCRE [08]</item>
+        <item>MARCAPATA [09]</item>
+        <item>OCONGATE [10]</item>
+        <item>OROPESA [11]</item>
+        <item>QUIQUIJANA [12]</item>
+    </string-array>
+    <string-array name="P_URUBAMBA">
+        <item>Seleccione</item>
+        <item>URUBAMBA [01]</item>
+        <item>CHINCHERO [02]</item>
+        <item>HUAYLLABAMBA [03]</item>
+        <item>MACHUPICCHU [04]</item>
+        <item>MARAS [05]</item>
+        <item>OLLANTAYTAMBO [06]</item>
+        <item>YUCAY [07]</item>
+    </string-array>
+
+
+    <string-array name="P_HUANCAVELICA">
+        <item>Seleccione</item>
+        <item>HUANCAVELICA [01]</item>
+        <item>ACOBAMBILLA [02]</item>
+        <item>ACORIA [03]</item>
+        <item>CONAYCA [04]</item>
+        <item>CUENCA [05]</item>
+        <item>HUACHOCOLPA [06]</item>
+        <item>HUAYLLAHUARA [07]</item>
+        <item>IZCUCHACA [08]</item>
+        <item>LARIA [09]</item>
+        <item>MANTA [10]</item>
+        <item>MARISCAL CACERES [11]</item>
+        <item>MOYA [12]</item>
+        <item>NUEVO OCCORO [13]</item>
+        <item>PALCA [14]</item>
+        <item>PILCHACA [15]</item>
+        <item>VILCA [16]</item>
+        <item>YAULI [17]</item>
+        <item>ASCENSION [18]</item>
+        <item>HUANDO [19]</item>
+    </string-array>
+    <string-array name="P_ACOBAMBA">
+        <item>Seleccione</item>
+        <item>ACOBAMBA [01]</item>
+        <item>ANDABAMBA [02]</item>
+        <item>ANTA [03]</item>
+        <item>CAJA [04]</item>
+        <item>MARCAS [05]</item>
+        <item>PAUCARA [06]</item>
+        <item>POMACOCHA [07]</item>
+        <item>ROSARIO [08]</item>
+    </string-array>
+    <string-array name="P_ANGARAES">
+        <item>Seleccione</item>
+        <item>LIRCAY [01]</item>
+        <item>ANCHONGA [02]</item>
+        <item>CALLANMARCA [03]</item>
+        <item>CCOCHACCASA [04]</item>
+        <item>CHINCHO [05]</item>
+        <item>CONGALLA [06]</item>
+        <item>HUANCA-HUANCA [07]</item>
+        <item>HUAYLLAY GRANDE [08]</item>
+        <item>JULCAMARCA [09]</item>
+        <item>SAN ANTONIO DE ANTAPARCO [10]</item>
+        <item>SANTO TOMAS DE PATA [11]</item>
+        <item>SECCLLA [12]</item>
+    </string-array>
+    <string-array name="P_CASTROVIRREYNA">
+        <item>Seleccione</item>
+        <item>CASTROVIRREYNA [01]</item>
+        <item>ARMA [02]</item>
+        <item>AURAHUA [03]</item>
+        <item>CAPILLAS [04]</item>
+        <item>CHUPAMARCA [05]</item>
+        <item>COCAS [06]</item>
+        <item>HUACHOS [07]</item>
+        <item>HUAMATAMBO [08]</item>
+        <item>MOLLEPAMPA [09]</item>
+        <item>SAN JUAN [10]</item>
+        <item>SANTA ANA [11]</item>
+        <item>TANTARA [12]</item>
+        <item>TICRAPO [13]</item>
+    </string-array>
+    <string-array name="P_CHURCAMPA">
+        <item>Seleccione</item>
+        <item>CHURCAMPA [01]</item>
+        <item>ANCO [02]</item>
+        <item>CHINCHIHUASI [03]</item>
+        <item>EL CARMEN [04]</item>
+        <item>LA MERCED [05]</item>
+        <item>LOCROJA [06]</item>
+        <item>PAUCARBAMBA [07]</item>
+        <item>SAN MIGUEL DE MAYOCC [08]</item>
+        <item>SAN PEDRO DE CORIS [09]</item>
+        <item>PACHAMARCA [10]</item>
+        <item>COSME [11]</item>
+    </string-array>
+    <string-array name="P_HUAYTARA">
+        <item>Seleccione</item>
+        <item>HUAYTARA [01]</item>
+        <item>AYAVI [02]</item>
+        <item>CORDOVA [03]</item>
+        <item>HUAYACUNDO ARMA [04]</item>
+        <item>LARAMARCA [05]</item>
+        <item>OCOYO [06]</item>
+        <item>PILPICHACA [07]</item>
+        <item>QUERCO [08]</item>
+        <item>QUITO-ARMA [09]</item>
+        <item>SAN ANTONIO DE CUSICANCHA [10]</item>
+        <item>SAN FRANCISCO DE SANGAYAICO [11]</item>
+        <item>SAN ISIDRO [12]</item>
+        <item>SANTIAGO DE CHOCORVOS [13]</item>
+        <item>SANTIAGO DE QUIRAHUARA [14]</item>
+        <item>SANTO DOMINGO DE CAPILLAS [15]</item>
+        <item>TAMBO [16]</item>
+    </string-array>
+    <string-array name="P_TAYACAJA">
+        <item>Seleccione</item>
+        <item>PAMPAS [01]</item>
+        <item>ACOSTAMBO [02]</item>
+        <item>ACRAQUIA [03]</item>
+        <item>AHUAYCHA [04]</item>
+        <item>COLCABAMBA [05]</item>
+        <item>DANIEL HERNANDEZ [06]</item>
+        <item>HUACHOCOLPA [07]</item>
+        <item>HUARIBAMBA [09]</item>
+        <item>ÑAHUIMPUQUIO [10]</item>
+        <item>PAZOS [11]</item>
+        <item>QUISHUAR [13]</item>
+        <item>SALCABAMBA [14]</item>
+        <item>SALCAHUASI [15]</item>
+        <item>SAN MARCOS DE ROCCHAC [16]</item>
+        <item>SURCUBAMBA [17]</item>
+        <item>TINTAY PUNCU [18]</item>
+        <item>QUICHUAS [19]</item>
+        <item>ANDAYMARCA [20]</item>
+        <item>ROBLE [21]</item>
+        <item>PICHOS [22]</item>
+    </string-array>
+
+
+    <string-array name="P_HUANUCO">
+        <item>Seleccione</item>
+        <item>HUANUCO [01]</item>
+        <item>AMARILIS [02]</item>
+        <item>CHINCHAO [03]</item>
+        <item>CHURUBAMBA [04]</item>
+        <item>MARGOS [05]</item>
+        <item>QUISQUI (KICHKI) [06]</item>
+        <item>SAN FRANCISCO DE CAYRAN [07]</item>
+        <item>SAN PEDRO DE CHAULAN [08]</item>
+        <item>SANTA MARIA DEL VALLE [09]</item>
+        <item>YARUMAYO [10]</item>
+        <item>PILLCO MARCA [11]</item>
+        <item>YACUS [12]</item>
+        <item>SAN PABLO DE PILLAO [13]</item>
+    </string-array>
+    <string-array name="P_AMBO">
+        <item>Seleccione</item>
+        <item>AMBO [01]</item>
+        <item>CAYNA [02]</item>
+        <item>COLPAS [03]</item>
+        <item>CONCHAMARCA [04]</item>
+        <item>HUACAR [05]</item>
+        <item>SAN FRANCISCO [06]</item>
+        <item>SAN RAFAEL [07]</item>
+        <item>TOMAY KICHWA [08]</item>
+    </string-array>
+    <string-array name="P_DOS_DE_MAYO">
+        <item>Seleccione</item>
+        <item>LA UNION [01]</item>
+        <item>CHUQUIS [07]</item>
+        <item>MARIAS [11]</item>
+        <item>PACHAS [13]</item>
+        <item>QUIVILLA [16]</item>
+        <item>RIPAN [17]</item>
+        <item>SHUNQUI [21]</item>
+        <item>SILLAPATA [22]</item>
+        <item>YANAS [23]</item>
+    </string-array>
+    <string-array name="P_HUACAYBAMBA">
+        <item>Seleccione</item>
+        <item>HUACAYBAMBA [01]</item>
+        <item>CANCHABAMBA [02]</item>
+        <item>COCHABAMBA [03]</item>
+        <item>PINRA [04]</item>
+    </string-array>
+    <string-array name="P_HUAMALIES">
+        <item>Seleccione</item>
+        <item>LLATA [01]</item>
+        <item>ARANCAY [02]</item>
+        <item>CHAVIN DE PARIARCA [03]</item>
+        <item>JACAS GRANDE [04]</item>
+        <item>JIRCAN [05]</item>
+        <item>MIRAFLORES [06]</item>
+        <item>MONZON [07]</item>
+        <item>PUNCHAO [08]</item>
+        <item>PUÑOS [09]</item>
+        <item>SINGA [10]</item>
+        <item>TANTAMAYO [11]</item>
+    </string-array>
+    <string-array name="P_LEONCIO_PRADO">
+        <item>Seleccione</item>
+        <item>RUPA-RUPA [01]</item>
+        <item>DANIEL ALOMIA ROBLES [02]</item>
+        <item>HERMILIO VALDIZAN [03]</item>
+        <item>JOSE CRESPO Y CASTILLO [04]</item>
+        <item>LUYANDO [05]</item>
+        <item>MARIANO DAMASO BERAUN [06]</item>
+        <item>PUCAYACU [07]</item>
+        <item>CASTILLO GRANDE [08]</item>
+        <item>PUEBLO NUEVO [09]</item>
+        <item>SANTO DOMINGO DE ANDA [10]</item>
+    </string-array>
+    <string-array name="P_MARAÑON">
+        <item>Seleccione</item>
+        <item>HUACRACHUCO [01]</item>
+        <item>CHOLON [02]</item>
+        <item>SAN BUENAVENTURA [03]</item>
+        <item>LA MORADA [04]</item>
+        <item>SANTA ROSA DE ALTO YANAJANCA [05]</item>
+    </string-array>
+    <string-array name="P_PACHITEA">
+        <item>Seleccione</item>
+        <item>PANAO [01]</item>
+        <item>CHAGLLA [02]</item>
+        <item>MOLINO [03]</item>
+        <item>UMARI [04]</item>
+    </string-array>
+    <string-array name="P_PUERTO_INCA">
+        <item>Seleccione</item>
+        <item>PUERTO INCA [01]</item>
+        <item>CODO DEL POZUZO [02]</item>
+        <item>HONORIA [03]</item>
+        <item>TOURNAVISTA [04]</item>
+        <item>YUYAPICHIS [05]</item>
+    </string-array>
+    <string-array name="P_LAURICOCHA">
+        <item>Seleccione</item>
+        <item>JESUS [01]</item>
+        <item>BAÑOS [02]</item>
+        <item>JIVIA [03]</item>
+        <item>QUEROPALCA [04]</item>
+        <item>RONDOS [05]</item>
+        <item>SAN FRANCISCO DE ASIS [06]</item>
+        <item>SAN MIGUEL DE CAURI [07]</item>
+    </string-array>
+    <string-array name="P_YAROWILCA">
+        <item>Seleccione</item>
+        <item>CHAVINILLO [01]</item>
+        <item>CAHUAC [02]</item>
+        <item>CHACABAMBA [03]</item>
+        <item>APARICIO POMARES [04]</item>
+        <item>JACAS CHICO [05]</item>
+        <item>OBAS [06]</item>
+        <item>PAMPAMARCA [07]</item>
+        <item>CHORAS [08]</item>
+    </string-array>
+
+
+    <string-array name="P_ICA">
+        <item>Seleccione</item>
+        <item>ICA [01]</item>
+        <item>LA TINGUIÑA [02]</item>
+        <item>LOS AQUIJES [03]</item>
+        <item>OCUCAJE [04]</item>
+        <item>PACHACUTEC [05]</item>
+        <item>PARCONA [06]</item>
+        <item>PUEBLO NUEVO [07]</item>
+        <item>SALAS [08]</item>
+        <item>SAN JOSE DE LOS MOLINOS [09]</item>
+        <item>SAN JUAN BAUTISTA [10]</item>
+        <item>SANTIAGO [11]</item>
+        <item>SUBTANJALLA [12]</item>
+        <item>TATE [13]</item>
+        <item>YAUCA DEL ROSARIO [14]</item>
+    </string-array>
+    <string-array name="P_CHINCHA">
+        <item>Seleccione</item>
+        <item>CHINCHA ALTA [01]</item>
+        <item>ALTO LARAN [02]</item>
+        <item>CHAVIN [03]</item>
+        <item>CHINCHA BAJA [04]</item>
+        <item>EL CARMEN [05]</item>
+        <item>GROCIO PRADO [06]</item>
+        <item>PUEBLO NUEVO [07]</item>
+        <item>SAN JUAN DE YANAC [08]</item>
+        <item>SAN PEDRO DE HUACARPANA [09]</item>
+        <item>SUNAMPE [10]</item>
+        <item>TAMBO DE MORA [11]</item>
+    </string-array>
+    <string-array name="P_NAZCA">
+        <item>Seleccione</item>
+        <item>NAZCA [01]</item>
+        <item>CHANGUILLO [02]</item>
+        <item>EL INGENIO [03]</item>
+        <item>MARCONA [04]</item>
+        <item>VISTA ALEGRE [05]</item>
+    </string-array>
+    <string-array name="P_PALPA">
+        <item>Seleccione</item>
+        <item>PALPA [01]</item>
+        <item>LLIPATA [02]</item>
+        <item>RIO GRANDE [03]</item>
+        <item>SANTA CRUZ [04]</item>
+        <item>TIBILLO [05]</item>
+    </string-array>
+    <string-array name="P_PISCO">
+        <item>Seleccione</item>
+        <item>PISCO [01]</item>
+        <item>HUANCANO [02]</item>
+        <item>HUMAY [03]</item>
+        <item>INDEPENDENCIA [04]</item>
+        <item>PARACAS [05]</item>
+        <item>SAN ANDRES [06]</item>
+        <item>SAN CLEMENTE [07]</item>
+        <item>TUPAC AMARU INCA [08]</item>
+    </string-array>
+
+
+    <string-array name="P_HUANCAYO">
+        <item>Seleccione</item>
+        <item>HUANCAYO [01]</item>
+        <item>CARHUACALLANGA [04]</item>
+        <item>CHACAPAMPA [05]</item>
+        <item>CHICCHE [06]</item>
+        <item>CHILCA [07]</item>
+        <item>CHONGOS ALTO [08]</item>
+        <item>CHUPURO [11]</item>
+        <item>COLCA [12]</item>
+        <item>CULLHUAS [13]</item>
+        <item>EL TAMBO [14]</item>
+        <item>HUACRAPUQUIO [16]</item>
+        <item>HUALHUAS [17]</item>
+        <item>HUANCAN [19]</item>
+        <item>HUASICANCHA [20]</item>
+        <item>HUAYUCACHI [21]</item>
+        <item>INGENIO [22]</item>
+        <item>PARIAHUANCA [24]</item>
+        <item>PILCOMAYO [25]</item>
+        <item>PUCARA [26]</item>
+        <item>QUICHUAY [27]</item>
+        <item>QUILCAS [28]</item>
+        <item>SAN AGUSTIN [29]</item>
+        <item>SAN JERONIMO DE TUNAN [30]</item>
+        <item>SANTO DOMINGO DE ACOBAMBA [35]</item>
+        <item>SAÑO [32]</item>
+        <item>SAPALLANGA [33]</item>
+        <item>SICAYA [34]</item>
+        <item>VIQUES [36]</item>
+    </string-array>
+    <string-array name="P_CONCEPCION">
+        <item>Seleccione</item>
+        <item>CONCEPCION [01]</item>
+        <item>ACO [02]</item>
+        <item>ANDAMARCA [03]</item>
+        <item>CHAMBARA [04]</item>
+        <item>COCHAS [05]</item>
+        <item>COMAS [06]</item>
+        <item>HEROINAS TOLEDO [07]</item>
+        <item>MANZANARES [08]</item>
+        <item>MARISCAL CASTILLA [09]</item>
+        <item>MATAHUASI [10]</item>
+        <item>MITO [11]</item>
+        <item>NUEVE DE JULIO [12]</item>
+        <item>ORCOTUNA [13]</item>
+        <item>SAN JOSE DE QUERO [14]</item>
+        <item>SANTA ROSA DE OCOPA [15]</item>
+    </string-array>
+    <string-array name="P_CHANCHAMAYO">
+        <item>Seleccione</item>
+        <item>CHANCHAMAYO [01]</item>
+        <item>PERENE [02]</item>
+        <item>PICHANAQUI [03]</item>
+        <item>SAN LUIS DE SHUARO [04]</item>
+        <item>SAN RAMON [05]</item>
+        <item>VITOC [06]</item>
+    </string-array>
+    <string-array name="P_JAUJA">
+        <item>Seleccione</item>
+        <item>JAUJA [01]</item>
+        <item>ACOLLA [02]</item>
+        <item>APATA [03]</item>
+        <item>ATAURA [04]</item>
+        <item>CANCHAYLLO [05]</item>
+        <item>CURICACA [06]</item>
+        <item>EL MANTARO [07]</item>
+        <item>HUAMALI [08]</item>
+        <item>HUARIPAMPA [09]</item>
+        <item>HUERTAS [10]</item>
+        <item>JANJAILLO [11]</item>
+        <item>JULCAN [12]</item>
+        <item>LEONOR ORDOÑEZ [13]</item>
+        <item>LLOCLLAPAMPA [14]</item>
+        <item>MARCO [15]</item>
+        <item>MASMA [16]</item>
+        <item>MASMA CHICCHE [17]</item>
+        <item>MOLINOS [18]</item>
+        <item>MONOBAMBA [19]</item>
+        <item>MUQUI [20]</item>
+        <item>MUQUIYAUYO [21]</item>
+        <item>PACA [22]</item>
+        <item>PACCHA [23]</item>
+        <item>PANCAN [24]</item>
+        <item>PARCO [25]</item>
+        <item>POMACANCHA [26]</item>
+        <item>RICRAN [27]</item>
+        <item>SAN LORENZO [28]</item>
+        <item>SAN PEDRO DE CHUNAN [29]</item>
+        <item>SAUSA [30]</item>
+        <item>SINCOS [31]</item>
+        <item>TUNAN MARCA [32]</item>
+        <item>YAULI [33]</item>
+        <item>YAUYOS [34]</item>
+    </string-array>
+    <string-array name="P_JUNIN">
+        <item>Seleccione</item>
+        <item>JUNIN [01]</item>
+        <item>CARHUAMAYO [02]</item>
+        <item>ONDORES [03]</item>
+        <item>ULCUMAYO [04]</item>
+    </string-array>
+    <string-array name="P_SATIPO">
+        <item>Seleccione</item>
+        <item>SATIPO [01]</item>
+        <item>COVIRIALI [02]</item>
+        <item>LLAYLLA [03]</item>
+        <item>PAMPA HERMOSA [05]</item>
+        <item>RIO NEGRO [07]</item>
+        <item>RIO TAMBO [08]</item>
+        <item>MAZAMARI - PANGOA [09]</item>
+        <item>MAZAMARI-PANGOA [99]</item>
+    </string-array>
+    <string-array name="P_TARMA">
+        <item>Seleccione</item>
+        <item>TARMA [01]</item>
+        <item>ACOBAMBA [02]</item>
+        <item>HUARICOLCA [03]</item>
+        <item>HUASAHUASI [04]</item>
+        <item>LA UNION [05]</item>
+        <item>PALCA [06]</item>
+        <item>PALCAMAYO [07]</item>
+        <item>SAN PEDRO DE CAJAS [08]</item>
+        <item>TAPO [09]</item>
+    </string-array>
+    <string-array name="P_YAULI">
+        <item>Seleccione</item>
+        <item>LA OROYA [01]</item>
+        <item>CHACAPALPA [02]</item>
+        <item>HUAY-HUAY [03]</item>
+        <item>MARCAPOMACOCHA [04]</item>
+        <item>MOROCOCHA [05]</item>
+        <item>PACCHA [06]</item>
+        <item>SANTA BARBARA DE CARHUACAYAN [07]</item>
+        <item>SANTA ROSA DE SACCO [08]</item>
+        <item>SUITUCANCHA [09]</item>
+        <item>YAULI [10]</item>
+    </string-array>
+    <string-array name="P_CHUPACA">
+        <item>Seleccione</item>
+        <item>CHUPACA [01]</item>
+        <item>AHUAC [02]</item>
+        <item>CHONGOS BAJO [03]</item>
+        <item>HUACHAC [04]</item>
+        <item>HUAMANCACA CHICO [05]</item>
+        <item>SAN JUAN DE ISCOS [06]</item>
+        <item>SAN JUAN DE JARPA [07]</item>
+        <item>TRES DE DICIEMBRE [08]</item>
+        <item>YANACANCHA [09]</item>
+    </string-array>
+
+
+    <string-array name="P_TRUJILLO">
+        <item>Seleccione</item>
+        <item>TRUJILLO [01]</item>
+        <item>EL PORVENIR [02]</item>
+        <item>FLORENCIA DE MORA [03]</item>
+        <item>HUANCHACO [04]</item>
+        <item>LA ESPERANZA [05]</item>
+        <item>LAREDO [06]</item>
+        <item>MOCHE [07]</item>
+        <item>POROTO [08]</item>
+        <item>SALAVERRY [09]</item>
+        <item>SIMBAL [10]</item>
+        <item>VICTOR LARCO HERRERA [11]</item>
+    </string-array>
+    <string-array name="P_ASCOPE">
+        <item>Seleccione</item>
+        <item>ASCOPE [01]</item>
+        <item>CHICAMA [02]</item>
+        <item>CHOCOPE [03]</item>
+        <item>MAGDALENA DE CAO [04]</item>
+        <item>PAIJAN [05]</item>
+        <item>RAZURI [06]</item>
+        <item>SANTIAGO DE CAO [07]</item>
+        <item>CASA GRANDE [08]</item>
+    </string-array>
+    <string-array name="P_BOLIVAR">
+        <item>Seleccione</item>
+        <item>BOLIVAR [01]</item>
+        <item>BAMBAMARCA [02]</item>
+        <item>CONDORMARCA [03]</item>
+        <item>LONGOTEA [04]</item>
+        <item>UCHUMARCA [05]</item>
+        <item>UCUNCHA [06]</item>
+    </string-array>
+    <string-array name="P_CHEPEN">
+        <item>Seleccione</item>
+        <item>CHEPEN [01]</item>
+        <item>PACANGA [02]</item>
+        <item>PUEBLO NUEVO [03]</item>
+    </string-array>
+    <string-array name="P_JULCAN">
+        <item>Seleccione</item>
+        <item>JULCAN [01]</item>
+        <item>CALAMARCA [02]</item>
+        <item>CARABAMBA [03]</item>
+        <item>HUASO [04]</item>
+    </string-array>
+    <string-array name="P_OTUZCO">
+        <item>Seleccione</item>
+        <item>OTUZCO [01]</item>
+        <item>AGALLPAMPA [02]</item>
+        <item>CHARAT [04]</item>
+        <item>HUARANCHAL [05]</item>
+        <item>LA CUESTA [06]</item>
+        <item>MACHE [08]</item>
+        <item>PARANDAY [10]</item>
+        <item>SALPO [11]</item>
+        <item>SINSICAP [13]</item>
+        <item>USQUIL [14]</item>
+    </string-array>
+    <string-array name="P_PACASMAYO">
+        <item>Seleccione</item>
+        <item>SAN PEDRO DE LLOC [01]</item>
+        <item>GUADALUPE [02]</item>
+        <item>JEQUETEPEQUE [03]</item>
+        <item>PACASMAYO [04]</item>
+        <item>SAN JOSE [05]</item>
+    </string-array>
+    <string-array name="P_PATAZ">
+        <item>Seleccione</item>
+        <item>TAYABAMBA [01]</item>
+        <item>BULDIBUYO [02]</item>
+        <item>CHILLIA [03]</item>
+        <item>HUANCASPATA [04]</item>
+        <item>HUAYLILLAS [05]</item>
+        <item>HUAYO [06]</item>
+        <item>ONGON [07]</item>
+        <item>PARCOY [08]</item>
+        <item>PATAZ [09]</item>
+        <item>PIAS [10]</item>
+        <item>SANTIAGO DE CHALLAS [11]</item>
+        <item>TAURIJA [12]</item>
+        <item>URPAY [13]</item>
+    </string-array>
+    <string-array name="P_SANCHEZ_CARRION">
+        <item>Seleccione</item>
+        <item>HUAMACHUCO [01]</item>
+        <item>CHUGAY [02]</item>
+        <item>COCHORCO [03]</item>
+        <item>CURGOS [04]</item>
+        <item>MARCABAL [05]</item>
+        <item>SANAGORAN [06]</item>
+        <item>SARIN [07]</item>
+        <item>SARTIMBAMBA [08]</item>
+    </string-array>
+    <string-array name="P_SANTIAGO_DE_CHUCO">
+        <item>Seleccione</item>
+        <item>SANTIAGO DE CHUCO [01]</item>
+        <item>ANGASMARCA [02]</item>
+        <item>CACHICADAN [03]</item>
+        <item>MOLLEBAMBA [04]</item>
+        <item>MOLLEPATA [05]</item>
+        <item>QUIRUVILCA [06]</item>
+        <item>SANTA CRUZ DE CHUCA [07]</item>
+        <item>SITABAMBA [08]</item>
+    </string-array>
+    <string-array name="P_GRAN_CHIMU">
+        <item>Seleccione</item>
+        <item>CASCAS [01]</item>
+        <item>LUCMA [02]</item>
+        <item>MARMOT [03]</item>
+        <item>SAYAPULLO [04]</item>
+    </string-array>
+    <string-array name="P_VIRU">
+        <item>Seleccione</item>
+        <item>VIRU [01]</item>
+        <item>CHAO [02]</item>
+        <item>GUADALUPITO [03]</item>
+    </string-array>
+
+    <string-array name="P_CHICLAYO">
+        <item>Seleccione</item>
+        <item>CHICLAYO [01]</item>
+        <item>CHONGOYAPE [02]</item>
+        <item>ETEN [03]</item>
+        <item>ETEN PUERTO [04]</item>
+        <item>JOSE LEONARDO ORTIZ [05]</item>
+        <item>LA VICTORIA [06]</item>
+        <item>LAGUNAS [07]</item>
+        <item>MONSEFU [08]</item>
+        <item>NUEVA ARICA [09]</item>
+        <item>OYOTUN [10]</item>
+        <item>PICSI [11]</item>
+        <item>PIMENTEL [12]</item>
+        <item>REQUE [13]</item>
+        <item>SANTA ROSA [14]</item>
+        <item>SAÑA [15]</item>
+        <item>CAYALTI [16]</item>
+        <item>PATAPO [17]</item>
+        <item>POMALCA [18]</item>
+        <item>PUCALA [19]</item>
+        <item>TUMAN [20]</item>
+    </string-array>
+    <string-array name="P_FERREÑAFE">
+        <item>Seleccione</item>
+        <item>FERREÑAFE [01]</item>
+        <item>CAÑARIS [02]</item>
+        <item>INCAHUASI [03]</item>
+        <item>MANUEL ANTONIO MESONES MURO [04]</item>
+        <item>PITIPO [05]</item>
+        <item>PUEBLO NUEVO [06]</item>
+    </string-array>
+    <string-array name="P_LAMBAYEQUE">
+        <item>Seleccione</item>
+        <item>LAMBAYEQUE [01]</item>
+        <item>CHOCHOPE [02]</item>
+        <item>ILLIMO [03]</item>
+        <item>JAYANCA [04]</item>
+        <item>MOCHUMI [05]</item>
+        <item>MORROPE [06]</item>
+        <item>MOTUPE [07]</item>
+        <item>OLMOS [08]</item>
+        <item>PACORA [09]</item>
+        <item>SALAS [10]</item>
+        <item>SAN JOSE [11]</item>
+        <item>TUCUME [12]</item>
+    </string-array>
+
+
+    <string-array name="P_LIMA">
+        <item>Seleccione</item>
+        <item>LIMA [01]</item>
+        <item>ANCON [02]</item>
+        <item>ATE [03]</item>
+        <item>BARRANCO [04]</item>
+        <item>BREÑA [05]</item>
+        <item>CARABAYLLO [06]</item>
+        <item>CHACLACAYO [07]</item>
+        <item>CHORRILLOS [08]</item>
+        <item>CIENEGUILLA [09]</item>
+        <item>COMAS [10]</item>
+        <item>EL AGUSTINO [11]</item>
+        <item>INDEPENDENCIA [12]</item>
+        <item>JESUS MARIA [13]</item>
+        <item>LA MOLINA [14]</item>
+        <item>LA VICTORIA [15]</item>
+        <item>LINCE [16]</item>
+        <item>LOS OLIVOS [17]</item>
+        <item>LURIGANCHO [18]</item>
+        <item>LURIN [19]</item>
+        <item>MAGDALENA DEL MAR [20]</item>
+        <item>PUEBLO LIBRE [21]</item>
+        <item>MIRAFLORES [22]</item>
+        <item>PACHACAMAC [23]</item>
+        <item>PUCUSANA [24]</item>
+        <item>PUENTE PIEDRA [25]</item>
+        <item>PUNTA HERMOSA [26]</item>
+        <item>PUNTA NEGRA [27]</item>
+        <item>RIMAC [28]</item>
+        <item>SAN BARTOLO [29]</item>
+        <item>SAN BORJA [30]</item>
+        <item>SAN ISIDRO [31]</item>
+        <item>SAN JUAN DE LURIGANCHO [32]</item>
+        <item>SAN JUAN DE MIRAFLORES [33]</item>
+        <item>SAN LUIS [34]</item>
+        <item>SAN MARTIN DE PORRES [35]</item>
+        <item>SAN MIGUEL [36]</item>
+        <item>SANTA ANITA [37]</item>
+        <item>SANTA MARIA DEL MAR [38]</item>
+        <item>SANTA ROSA [39]</item>
+        <item>SANTIAGO DE SURCO [40]</item>
+        <item>SURQUILLO [41]</item>
+        <item>VILLA EL SALVADOR [42]</item>
+        <item>VILLA MARIA DEL TRIUNFO [43]</item>
+    </string-array>
+    <string-array name="P_BARRANCA">
+        <item>Seleccione</item>
+        <item>BARRANCA [01]</item>
+        <item>PARAMONGA [02]</item>
+        <item>PATIVILCA [03]</item>
+        <item>SUPE [04]</item>
+        <item>SUPE PUERTO [05]</item>
+    </string-array>
+    <string-array name="P_CAJATAMBO">
+        <item>Seleccione</item>
+        <item>CAJATAMBO [01]</item>
+        <item>COPA [02]</item>
+        <item>GORGOR [03]</item>
+        <item>HUANCAPON [04]</item>
+        <item>MANAS [05]</item>
+    </string-array>
+    <string-array name="P_CANTA">
+        <item>Seleccione</item>
+        <item>CANTA [01]</item>
+        <item>ARAHUAY [02]</item>
+        <item>HUAMANTANGA [03]</item>
+        <item>HUAROS [04]</item>
+        <item>LACHAQUI [05]</item>
+        <item>SAN BUENAVENTURA [06]</item>
+        <item>SANTA ROSA DE QUIVES [07]</item>
+    </string-array>
+    <string-array name="P_CAÑETE">
+        <item>Seleccione</item>
+        <item>SAN VICENTE DE CAÑETE [01]</item>
+        <item>ASIA [02]</item>
+        <item>CALANGO [03]</item>
+        <item>CERRO AZUL [04]</item>
+        <item>CHILCA [05]</item>
+        <item>COAYLLO [06]</item>
+        <item>IMPERIAL [07]</item>
+        <item>LUNAHUANA [08]</item>
+        <item>MALA [09]</item>
+        <item>NUEVO IMPERIAL [10]</item>
+        <item>PACARAN [11]</item>
+        <item>QUILMANA [12]</item>
+        <item>SAN ANTONIO [13]</item>
+        <item>SAN LUIS [14]</item>
+        <item>SANTA CRUZ DE FLORES [15]</item>
+        <item>ZUÑIGA [16]</item>
+    </string-array>
+    <string-array name="P_HUARAL">
+        <item>Seleccione</item>
+        <item>HUARAL [01]</item>
+        <item>ATAVILLOS ALTO [02]</item>
+        <item>ATAVILLOS BAJO [03]</item>
+        <item>AUCALLAMA [04]</item>
+        <item>CHANCAY [05]</item>
+        <item>IHUARI [06]</item>
+        <item>LAMPIAN [07]</item>
+        <item>PACARAOS [08]</item>
+        <item>SAN MIGUEL DE ACOS [09]</item>
+        <item>SANTA CRUZ DE ANDAMARCA [10]</item>
+        <item>SUMBILCA [11]</item>
+        <item>VEINTISIETE DE NOVIEMBRE [12]</item>
+    </string-array>
+    <string-array name="P_HUAROCHIRI">
+        <item>Seleccione</item>
+        <item>MATUCANA [01]</item>
+        <item>ANTIOQUIA [02]</item>
+        <item>CALLAHUANCA [03]</item>
+        <item>CARAMPOMA [04]</item>
+        <item>CHICLA [05]</item>
+        <item>CUENCA [06]</item>
+        <item>HUACHUPAMPA [07]</item>
+        <item>HUANZA [08]</item>
+        <item>HUAROCHIRI [09]</item>
+        <item>LAHUAYTAMBO [10]</item>
+        <item>LANGA [11]</item>
+        <item>LARAOS [12]</item>
+        <item>MARIATANA [13]</item>
+        <item>RICARDO PALMA [14]</item>
+        <item>SAN ANDRES DE TUPICOCHA [15]</item>
+        <item>SAN ANTONIO [16]</item>
+        <item>SAN BARTOLOME [17]</item>
+        <item>SAN DAMIAN [18]</item>
+        <item>SAN JUAN DE IRIS [19]</item>
+        <item>SAN JUAN DE TANTARANCHE [20]</item>
+        <item>SAN LORENZO DE QUINTI [21]</item>
+        <item>SAN MATEO [22]</item>
+        <item>SAN MATEO DE OTAO [23]</item>
+        <item>SAN PEDRO DE CASTA [24]</item>
+        <item>SAN PEDRO DE HUANCAYRE [25]</item>
+        <item>SANGALLAYA [26]</item>
+        <item>SANTA CRUZ DE COCACHACRA [27]</item>
+        <item>SANTA EULALIA [28]</item>
+        <item>SANTIAGO DE ANCHUCAYA [29]</item>
+        <item>SANTIAGO DE TUNA [30]</item>
+        <item>SANTO DOMINGO DE LOS OLLEROS [31]</item>
+        <item>SURCO [32]</item>
+    </string-array>
+    <string-array name="P_HUAURA">
+        <item>Seleccione</item>
+        <item>HUACHO [01]</item>
+        <item>AMBAR [02]</item>
+        <item>CALETA DE CARQUIN [03]</item>
+        <item>CHECRAS [04]</item>
+        <item>HUALMAY [05]</item>
+        <item>HUAURA [06]</item>
+        <item>LEONCIO PRADO [07]</item>
+        <item>PACCHO [08]</item>
+        <item>SANTA LEONOR [09]</item>
+        <item>SANTA MARIA [10]</item>
+        <item>SAYAN [11]</item>
+        <item>VEGUETA [12]</item>
+    </string-array>
+    <string-array name="P_OYON">
+        <item>Seleccione</item>
+        <item>OYON [01]</item>
+        <item>ANDAJES [02]</item>
+        <item>CAUJUL [03]</item>
+        <item>COCHAMARCA [04]</item>
+        <item>NAVAN [05]</item>
+        <item>PACHANGARA [06]</item>
+    </string-array>
+    <string-array name="P_YAUYOS">
+        <item>Seleccione</item>
+        <item>YAUYOS [01]</item>
+        <item>ALIS [02]</item>
+        <item>ALLAUCA [03]</item>
+        <item>AYAVIRI [04]</item>
+        <item>AZANGARO [05]</item>
+        <item>CACRA [06]</item>
+        <item>CARANIA [07]</item>
+        <item>CATAHUASI [08]</item>
+        <item>CHOCOS [09]</item>
+        <item>COCHAS [10]</item>
+        <item>COLONIA [11]</item>
+        <item>HONGOS [12]</item>
+        <item>HUAMPARA [13]</item>
+        <item>HUANCAYA [14]</item>
+        <item>HUANGASCAR [15]</item>
+        <item>HUANTAN [16]</item>
+        <item>HUAÑEC [17]</item>
+        <item>LARAOS [18]</item>
+        <item>LINCHA [19]</item>
+        <item>MADEAN [20]</item>
+        <item>MIRAFLORES [21]</item>
+        <item>OMAS [22]</item>
+        <item>PUTINZA [23]</item>
+        <item>QUINCHES [24]</item>
+        <item>QUINOCAY [25]</item>
+        <item>SAN JOAQUIN [26]</item>
+        <item>SAN PEDRO DE PILAS [27]</item>
+        <item>TANTA [28]</item>
+        <item>TAURIPAMPA [29]</item>
+        <item>TOMAS [30]</item>
+        <item>TUPE [31]</item>
+        <item>VIÑAC [32]</item>
+        <item>VITIS [33]</item>
+    </string-array>
+
+
+    <string-array name="P_MAYNAS">
+        <item>Seleccione</item>
+        <item>IQUITOS [01]</item>
+        <item>ALTO NANAY [02]</item>
+        <item>FERNANDO LORES [03]</item>
+        <item>INDIANA [04]</item>
+        <item>LAS AMAZONAS [05]</item>
+        <item>MAZAN [06]</item>
+        <item>NAPO [07]</item>
+        <item>PUNCHANA [08]</item>
+        <item>PUTUMAYO [09]</item>
+        <item>TORRES CAUSANA [10]</item>
+        <item>BELEN [12]</item>
+        <item>SAN JUAN BAUTISTA [13]</item>
+        <item>TENIENTE MANUEL CLAVERO [14]</item>
+    </string-array>
+    <string-array name="P_ALTO_AMAZONAS">
+        <item>Seleccione</item>
+        <item>YURIMAGUAS [01]</item>
+        <item>BALSAPUERTO [02]</item>
+        <item>JEBEROS [05]</item>
+        <item>LAGUNAS [06]</item>
+        <item>SANTA CRUZ [10]</item>
+        <item>TENIENTE CESAR LOPEZ ROJAS [11]</item>
+    </string-array>
+    <string-array name="P_LORETO">
+        <item>Seleccione</item>
+        <item>NAUTA [01]</item>
+        <item>PARINARI [02]</item>
+        <item>TIGRE [03]</item>
+        <item>TROMPETEROS [04]</item>
+        <item>URARINAS [05]</item>
+    </string-array>
+    <string-array name="P_MARISCAL_RAMON_CASTILLA">
+        <item>Seleccione</item>
+        <item>RAMON CASTILLA [01]</item>
+        <item>PEBAS [02]</item>
+        <item>YAVARI [03]</item>
+        <item>SAN PABLO [04]</item>
+    </string-array>
+    <string-array name="P_REQUENA">
+        <item>Seleccione</item>
+        <item>REQUENA [01]</item>
+        <item>ALTO TAPICHE [02]</item>
+        <item>CAPELO [03]</item>
+        <item>EMILIO SAN MARTIN [04]</item>
+        <item>MAQUIA [05]</item>
+        <item>PUINAHUA [06]</item>
+        <item>SAQUENA [07]</item>
+        <item>SOPLIN [08]</item>
+        <item>TAPICHE [09]</item>
+        <item>JENARO HERRERA [10]</item>
+        <item>YAQUERANA [11]</item>
+    </string-array>
+    <string-array name="P_UCAYALI">
+        <item>Seleccione</item>
+        <item>CONTAMANA [01]</item>
+        <item>INAHUAYA [02]</item>
+        <item>PADRE MARQUEZ [03]</item>
+        <item>PAMPA HERMOSA [04]</item>
+        <item>SARAYACU [05]</item>
+        <item>VARGAS GUERRA [06]</item>
+    </string-array>
+    <string-array name="P_DATEM_DEL_MARAÑON">
+        <item>Seleccione</item>
+        <item>BARRANCA [01]</item>
+        <item>CAHUAPANAS [02]</item>
+        <item>MANSERICHE [03]</item>
+        <item>MORONA [04]</item>
+        <item>PASTAZA [05]</item>
+        <item>ANDOAS [06]</item>
+    </string-array>
+    <string-array name="P_PUTUMAYO">
+        <item>Seleccione</item>
+        <item>PUTUMAYO [01]</item>
+        <item>ROSA PANDURO [02]</item>
+        <item>TENIENTE MANUEL CLAVERO [03]</item>
+        <item>YAGUAS [04]</item>
+    </string-array>
+
+
+    <string-array name="P_TAMBOPATA">
+        <item>Seleccione</item>
+        <item>TAMBOPATA [01]</item>
+        <item>INAMBARI [02]</item>
+        <item>LAS PIEDRAS [03]</item>
+        <item>LABERINTO [04]</item>
+    </string-array>
+    <string-array name="P_MANU">
+        <item>Seleccione</item>
+        <item>MANU [01]</item>
+        <item>FITZCARRALD [02]</item>
+        <item>MADRE DE DIOS [03]</item>
+        <item>HUEPETUHE [04]</item>
+    </string-array>
+    <string-array name="P_TAHUAMANU">
+        <item>Seleccione</item>
+        <item>IÑAPARI [01]</item>
+        <item>IBERIA [02]</item>
+        <item>TAHUAMANU [03]</item>
+    </string-array>
+
+
+    <string-array name="P_MARISCAL_NIETO">
+        <item>Seleccione</item>
+        <item>MOQUEGUA [01]</item>
+        <item>CARUMAS [02]</item>
+        <item>CUCHUMBAYA [03]</item>
+        <item>SAMEGUA [04]</item>
+        <item>SAN CRISTOBAL [05]</item>
+        <item>TORATA [06]</item>
+    </string-array>
+    <string-array name="P_GENERAL_SANCHEZ_CERRO">
+        <item>Seleccione</item>
+        <item>OMATE [01]</item>
+        <item>CHOJATA [02]</item>
+        <item>COALAQUE [03]</item>
+        <item>ICHUÑA [04]</item>
+        <item>LA CAPILLA [05]</item>
+        <item>LLOQUE [06]</item>
+        <item>MATALAQUE [07]</item>
+        <item>PUQUINA [08]</item>
+        <item>QUINISTAQUILLAS [09]</item>
+        <item>UBINAS [10]</item>
+        <item>YUNGA [11]</item>
+    </string-array>
+    <string-array name="P_ILO">
+        <item>Seleccione</item>
+        <item>ILO [01]</item>
+        <item>EL ALGARROBAL [02]</item>
+        <item>PACOCHA [03]</item>
+    </string-array>
+
+
+    <string-array name="P_PASCO">
+        <item>Seleccione</item>
+        <item>CHAUPIMARCA [01]</item>
+        <item>HUACHON [02]</item>
+        <item>HUARIACA [03]</item>
+        <item>HUAYLLAY [04]</item>
+        <item>NINACACA [05]</item>
+        <item>PALLANCHACRA [06]</item>
+        <item>PAUCARTAMBO [07]</item>
+        <item>SAN FRANCISCO DE ASIS DE YARUSYACAN [08]</item>
+        <item>SIMON BOLIVAR [09]</item>
+        <item>TICLACAYAN [10]</item>
+        <item>TINYAHUARCO [11]</item>
+        <item>VICCO [12]</item>
+        <item>YANACANCHA [13]</item>
+    </string-array>
+    <string-array name="P_DANIEL_ALCIDES_CARRION">
+        <item>Seleccione</item>
+        <item>YANAHUANCA [01]</item>
+        <item>CHACAYAN [02]</item>
+        <item>GOYLLARISQUIZGA [03]</item>
+        <item>PAUCAR [04]</item>
+        <item>SAN PEDRO DE PILLAO [05]</item>
+        <item>SANTA ANA DE TUSI [06]</item>
+        <item>TAPUC [07]</item>
+        <item>VILCABAMBA [08]</item>
+    </string-array>
+    <string-array name="P_OXAPAMPA">
+        <item>Seleccione</item>
+        <item>OXAPAMPA [01]</item>
+        <item>CHONTABAMBA [02]</item>
+        <item>HUANCABAMBA [03]</item>
+        <item>PALCAZU [04]</item>
+        <item>POZUZO [05]</item>
+        <item>PUERTO BERMUDEZ [06]</item>
+        <item>VILLA RICA [07]</item>
+        <item>CONSTITUCIËN [08]</item>
+    </string-array>
+
+
+    <string-array name="P_PIURA">
+        <item>Seleccione</item>
+        <item>PIURA [01]</item>
+        <item>CASTILLA [04]</item>
+        <item>CATACAOS [05]</item>
+        <item>CURA MORI [07]</item>
+        <item>EL TALLAN [08]</item>
+        <item>LA ARENA [09]</item>
+        <item>LA UNION [10]</item>
+        <item>LAS LOMAS [11]</item>
+        <item>TAMBO GRANDE [14]</item>
+        <item>VEINTISEIS DE OCTUBRE [15]</item>
+    </string-array>
+    <string-array name="P_AYABACA">
+        <item>Seleccione</item>
+        <item>AYABACA [01]</item>
+        <item>FRIAS [02]</item>
+        <item>JILILI [03]</item>
+        <item>LAGUNAS [04]</item>
+        <item>MONTERO [05]</item>
+        <item>PACAIPAMPA [06]</item>
+        <item>PAIMAS [07]</item>
+        <item>SAPILLICA [08]</item>
+        <item>SICCHEZ [09]</item>
+        <item>SUYO [10]</item>
+    </string-array>
+    <string-array name="P_HUANCABAMBA">
+        <item>Seleccione</item>
+        <item>HUANCABAMBA [01]</item>
+        <item>CANCHAQUE [02]</item>
+        <item>EL CARMEN DE LA FRONTERA [03]</item>
+        <item>HUARMACA [04]</item>
+        <item>LALAQUIZ [05]</item>
+        <item>SAN MIGUEL DE EL FAIQUE [06]</item>
+        <item>SONDOR [07]</item>
+        <item>SONDORILLO [08]</item>
+    </string-array>
+    <string-array name="P_MORROPON">
+        <item>Seleccione</item>
+        <item>CHULUCANAS [01]</item>
+        <item>BUENOS AIRES [02]</item>
+        <item>CHALACO [03]</item>
+        <item>LA MATANZA [04]</item>
+        <item>MORROPON [05]</item>
+        <item>SALITRAL [06]</item>
+        <item>SAN JUAN DE BIGOTE [07]</item>
+        <item>SANTA CATALINA DE MOSSA [08]</item>
+        <item>SANTO DOMINGO [09]</item>
+        <item>YAMANGO [10]</item>
+    </string-array>
+    <string-array name="P_PAITA">
+        <item>Seleccione</item>
+        <item>PAITA [01]</item>
+        <item>AMOTAPE [02]</item>
+        <item>ARENAL [03]</item>
+        <item>COLAN [04]</item>
+        <item>LA HUACA [05]</item>
+        <item>TAMARINDO [06]</item>
+        <item>VICHAYAL [07]</item>
+    </string-array>
+    <string-array name="P_SULLANA">
+        <item>Seleccione</item>
+        <item>SULLANA [01]</item>
+        <item>BELLAVISTA [02]</item>
+        <item>IGNACIO ESCUDERO [03]</item>
+        <item>LANCONES [04]</item>
+        <item>MARCAVELICA [05]</item>
+        <item>MIGUEL CHECA [06]</item>
+        <item>QUERECOTILLO [07]</item>
+        <item>SALITRAL [08]</item>
+    </string-array>
+    <string-array name="P_TALARA">
+        <item>Seleccione</item>
+        <item>PARIÑAS [01]</item>
+        <item>EL ALTO [02]</item>
+        <item>LA BREA [03]</item>
+        <item>LOBITOS [04]</item>
+        <item>LOS ORGANOS [05]</item>
+        <item>MANCORA [06]</item>
+    </string-array>
+    <string-array name="P_SECHURA">
+        <item>Seleccione</item>
+        <item>SECHURA [01]</item>
+        <item>BELLAVISTA DE LA UNION [02]</item>
+        <item>BERNAL [03]</item>
+        <item>CRISTO NOS VALGA [04]</item>
+        <item>VICE [05]</item>
+        <item>RINCONADA LLICUAR [06]</item>
+    </string-array>
+
+
+    <string-array name="P_PUNO">
+        <item>Seleccione</item>
+        <item>PUNO [01]</item>
+        <item>ACORA [02]</item>
+        <item>AMANTANI [03]</item>
+        <item>ATUNCOLLA [04]</item>
+        <item>CAPACHICA [05]</item>
+        <item>CHUCUITO [06]</item>
+        <item>COATA [07]</item>
+        <item>HUATA [08]</item>
+        <item>MAÑAZO [09]</item>
+        <item>PAUCARCOLLA [10]</item>
+        <item>PICHACANI [11]</item>
+        <item>PLATERIA [12]</item>
+        <item>SAN ANTONIO [13]</item>
+        <item>TIQUILLACA [14]</item>
+        <item>VILQUE [15]</item>
+    </string-array>
+    <string-array name="P_AZANGARO">
+        <item>Seleccione</item>
+        <item>AZANGARO [01]</item>
+        <item>ACHAYA [02]</item>
+        <item>ARAPA [03]</item>
+        <item>ASILLO [04]</item>
+        <item>CAMINACA [05]</item>
+        <item>CHUPA [06]</item>
+        <item>JOSE DOMINGO CHOQUEHUANCA [07]</item>
+        <item>MUÑANI [08]</item>
+        <item>POTONI [09]</item>
+        <item>SAMAN [10]</item>
+        <item>SAN ANTON [11]</item>
+        <item>SAN JOSE [12]</item>
+        <item>SAN JUAN DE SALINAS [13]</item>
+        <item>SANTIAGO DE PUPUJA [14]</item>
+        <item>TIRAPATA [15]</item>
+    </string-array>
+    <string-array name="P_CARABAYA">
+        <item>Seleccione</item>
+        <item>MACUSANI [01]</item>
+        <item>AJOYANI [02]</item>
+        <item>AYAPATA [03]</item>
+        <item>COASA [04]</item>
+        <item>CORANI [05]</item>
+        <item>CRUCERO [06]</item>
+        <item>ITUATA [07]</item>
+        <item>OLLACHEA [08]</item>
+        <item>SAN GABAN [09]</item>
+        <item>USICAYOS [10]</item>
+    </string-array>
+    <string-array name="P_CHUCUITO">
+        <item>Seleccione</item>
+        <item>JULI [01]</item>
+        <item>DESAGUADERO [02]</item>
+        <item>HUACULLANI [03]</item>
+        <item>KELLUYO [04]</item>
+        <item>PISACOMA [05]</item>
+        <item>POMATA [06]</item>
+        <item>ZEPITA [07]</item>
+    </string-array>
+    <string-array name="P_EL_COLLAO">
+        <item>Seleccione</item>
+        <item>ILAVE [01]</item>
+        <item>CAPAZO [02]</item>
+        <item>PILCUYO [03]</item>
+        <item>SANTA ROSA [04]</item>
+        <item>CONDURIRI [05]</item>
+    </string-array>
+    <string-array name="P_HUANCANE">
+        <item>Seleccione</item>
+        <item>HUANCANE [01]</item>
+        <item>COJATA [02]</item>
+        <item>HUATASANI [03]</item>
+        <item>INCHUPALLA [04]</item>
+        <item>PUSI [05]</item>
+        <item>ROSASPATA [06]</item>
+        <item>TARACO [07]</item>
+        <item>VILQUE CHICO [08]</item>
+    </string-array>
+    <string-array name="P_LAMPA">
+        <item>Seleccione</item>
+        <item>LAMPA [01]</item>
+        <item>CABANILLA [02]</item>
+        <item>CALAPUJA [03]</item>
+        <item>NICASIO [04]</item>
+        <item>OCUVIRI [05]</item>
+        <item>PALCA [06]</item>
+        <item>PARATIA [07]</item>
+        <item>PUCARA [08]</item>
+        <item>SANTA LUCIA [09]</item>
+        <item>VILAVILA [10]</item>
+    </string-array>
+    <string-array name="P_MELGAR">
+        <item>Seleccione</item>
+        <item>AYAVIRI [01]</item>
+        <item>ANTAUTA [02]</item>
+        <item>CUPI [03]</item>
+        <item>LLALLI [04]</item>
+        <item>MACARI [05]</item>
+        <item>NUÑOA [06]</item>
+        <item>ORURILLO [07]</item>
+        <item>SANTA ROSA [08]</item>
+        <item>UMACHIRI [09]</item>
+    </string-array>
+    <string-array name="P_MOHO">
+        <item>Seleccione</item>
+        <item>MOHO [01]</item>
+        <item>CONIMA [02]</item>
+        <item>HUAYRAPATA [03]</item>
+        <item>TILALI [04]</item>
+    </string-array>
+    <string-array name="P_SAN_ANTONIO_DE_PUTINA">
+        <item>Seleccione</item>
+        <item>PUTINA [01]</item>
+        <item>ANANEA [02]</item>
+        <item>PEDRO VILCA APAZA [03]</item>
+        <item>QUILCAPUNCU [04]</item>
+        <item>SINA [05]</item>
+    </string-array>
+    <string-array name="P_SAN_ROMAN">
+        <item>Seleccione</item>
+        <item>JULIACA [01]</item>
+        <item>CABANA [02]</item>
+        <item>CABANILLAS [03]</item>
+        <item>CARACOTO [04]</item>
+        <item>SAN MIGUEL [05]</item>
+    </string-array>
+    <string-array name="P_SANDIA">
+        <item>Seleccione</item>
+        <item>SANDIA [01]</item>
+        <item>CUYOCUYO [02]</item>
+        <item>LIMBANI [03]</item>
+        <item>PATAMBUCO [04]</item>
+        <item>PHARA [05]</item>
+        <item>QUIACA [06]</item>
+        <item>SAN JUAN DEL ORO [07]</item>
+        <item>YANAHUAYA [08]</item>
+        <item>ALTO INAMBARI [09]</item>
+        <item>SAN PEDRO DE PUTINA PUNCO [10]</item>
+    </string-array>
+    <string-array name="P_YUNGUYO">
+        <item>Seleccione</item>
+        <item>YUNGUYO [01]</item>
+        <item>ANAPIA [02]</item>
+        <item>COPANI [03]</item>
+        <item>CUTURAPI [04]</item>
+        <item>OLLARAYA [05]</item>
+        <item>TINICACHI [06]</item>
+        <item>UNICACHI [07]</item>
+    </string-array>
+
+
+    <string-array name="P_MOYOBAMBA">
+        <item>Seleccione</item>
+        <item>MOYOBAMBA [01]</item>
+        <item>CALZADA [02]</item>
+        <item>HABANA [03]</item>
+        <item>JEPELACIO [04]</item>
+        <item>SORITOR [05]</item>
+        <item>YANTALO [06]</item>
+    </string-array>
+    <string-array name="P_BELLAVISTA">
+        <item>Seleccione</item>
+        <item>BELLAVISTA [01]</item>
+        <item>ALTO BIAVO [02]</item>
+        <item>BAJO BIAVO [03]</item>
+        <item>HUALLAGA [04]</item>
+        <item>SAN PABLO [05]</item>
+        <item>SAN RAFAEL [06]</item>
+    </string-array>
+    <string-array name="P_EL_DORADO">
+        <item>Seleccione</item>
+        <item>SAN JOSE DE SISA [01]</item>
+        <item>AGUA BLANCA [02]</item>
+        <item>SAN MARTIN [03]</item>
+        <item>SANTA ROSA [04]</item>
+        <item>SHATOJA [05]</item>
+    </string-array>
+    <string-array name="P_HUALLAGA">
+        <item>Seleccione</item>
+        <item>SAPOSOA [01]</item>
+        <item>ALTO SAPOSOA [02]</item>
+        <item>EL ESLABON [03]</item>
+        <item>PISCOYACU [04]</item>
+        <item>SACANCHE [05]</item>
+        <item>TINGO DE SAPOSOA [06]</item>
+    </string-array>
+    <string-array name="P_LAMAS">
+        <item>Seleccione</item>
+        <item>LAMAS [01]</item>
+        <item>ALONSO DE ALVARADO [02]</item>
+        <item>BARRANQUITA [03]</item>
+        <item>CAYNARACHI [04]</item>
+        <item>CUÑUMBUQUI [05]</item>
+        <item>PINTO RECODO [06]</item>
+        <item>RUMISAPA [07]</item>
+        <item>SAN ROQUE DE CUMBAZA [08]</item>
+        <item>SHANAO [09]</item>
+        <item>TABALOSOS [10]</item>
+        <item>ZAPATERO [11]</item>
+    </string-array>
+    <string-array name="P_MARISCAL_CACERES">
+        <item>Seleccione</item>
+        <item>JUANJUI [01]</item>
+        <item>CAMPANILLA [02]</item>
+        <item>HUICUNGO [03]</item>
+        <item>PACHIZA [04]</item>
+        <item>PAJARILLO [05]</item>
+    </string-array>
+    <string-array name="P_PICOTA">
+        <item>Seleccione</item>
+        <item>PICOTA [01]</item>
+        <item>BUENOS AIRES [02]</item>
+        <item>CASPISAPA [03]</item>
+        <item>PILLUANA [04]</item>
+        <item>PUCACACA [05]</item>
+        <item>SAN CRISTOBAL [06]</item>
+        <item>SAN HILARION [07]</item>
+        <item>SHAMBOYACU [08]</item>
+        <item>TINGO DE PONASA [09]</item>
+        <item>TRES UNIDOS [10]</item>
+    </string-array>
+    <string-array name="P_RIOJA">
+        <item>Seleccione</item>
+        <item>RIOJA [01]</item>
+        <item>AWAJUN [02]</item>
+        <item>ELIAS SOPLIN VARGAS [03]</item>
+        <item>NUEVA CAJAMARCA [04]</item>
+        <item>PARDO MIGUEL [05]</item>
+        <item>POSIC [06]</item>
+        <item>SAN FERNANDO [07]</item>
+        <item>YORONGOS [08]</item>
+        <item>YURACYACU [09]</item>
+    </string-array>
+    <string-array name="P_SAN_MARTIN">
+        <item>Seleccione</item>
+        <item>TARAPOTO [01]</item>
+        <item>ALBERTO LEVEAU [02]</item>
+        <item>CACATACHI [03]</item>
+        <item>CHAZUTA [04]</item>
+        <item>CHIPURANA [05]</item>
+        <item>EL PORVENIR [06]</item>
+        <item>HUIMBAYOC [07]</item>
+        <item>JUAN GUERRA [08]</item>
+        <item>LA BANDA DE SHILCAYO [09]</item>
+        <item>MORALES [10]</item>
+        <item>PAPAPLAYA [11]</item>
+        <item>SAN ANTONIO [12]</item>
+        <item>SAUCE [13]</item>
+        <item>SHAPAJA [14]</item>
+    </string-array>
+    <string-array name="P_TOCACHE">
+        <item>Seleccione</item>
+        <item>TOCACHE [01]</item>
+        <item>NUEVO PROGRESO [02]</item>
+        <item>POLVORA [03]</item>
+        <item>SHUNTE [04]</item>
+        <item>UCHIZA [05]</item>
+    </string-array>
+
+
+    <string-array name="P_TACNA">
+        <item>Seleccione</item>
+        <item>TACNA [01]</item>
+        <item>ALTO DE LA ALIANZA [02]</item>
+        <item>CALANA [03]</item>
+        <item>CIUDAD NUEVA [04]</item>
+        <item>INCLAN [05]</item>
+        <item>PACHIA [06]</item>
+        <item>PALCA [07]</item>
+        <item>POCOLLAY [08]</item>
+        <item>SAMA [09]</item>
+        <item>CORONEL GREGORIO ALBARRACIN LANCHIPA [10]</item>
+        <item>LA YARADA LOS PALOS [11]</item>
+    </string-array>
+    <string-array name="P_CANDARAVE">
+        <item>Seleccione</item>
+        <item>CANDARAVE [01]</item>
+        <item>CAIRANI [02]</item>
+        <item>CAMILACA [03]</item>
+        <item>CURIBAYA [04]</item>
+        <item>HUANUARA [05]</item>
+        <item>QUILAHUANI [06]</item>
+    </string-array>
+    <string-array name="P_JORGE_BASADRE">
+        <item>Seleccione</item>
+        <item>LOCUMBA [01]</item>
+        <item>ILABAYA [02]</item>
+        <item>ITE [03]</item>
+    </string-array>
+    <string-array name="P_TARATA">
+        <item>Seleccione</item>
+        <item>TARATA [01]</item>
+        <item>HEROES ALBARRACIN [02]</item>
+        <item>ESTIQUE [03]</item>
+        <item>ESTIQUE-PAMPA [04]</item>
+        <item>SITAJARA [05]</item>
+        <item>SUSAPAYA [06]</item>
+        <item>TARUCACHI [07]</item>
+        <item>TICACO [08]</item>
+    </string-array>
+
+
+    <string-array name="P_TUMBES">
+        <item>Seleccione</item>
+        <item>TUMBES [01]</item>
+        <item>CORRALES [02]</item>
+        <item>LA CRUZ [03]</item>
+        <item>PAMPAS DE HOSPITAL [04]</item>
+        <item>SAN JACINTO [05]</item>
+        <item>SAN JUAN DE LA VIRGEN [06]</item>
+    </string-array>
+    <string-array name="P_CONTRALMIRANTE_VILLAR">
+        <item>Seleccione</item>
+        <item>ZORRITOS [01]</item>
+        <item>CASITAS [02]</item>
+        <item>CANOAS DE PUNTA SAL [03]</item>
+    </string-array>
+    <string-array name="P_ZARUMILLA">
+        <item>Seleccione</item>
+        <item>ZARUMILLA [01]</item>
+        <item>AGUAS VERDES [02]</item>
+        <item>MATAPALO [03]</item>
+        <item>PAPAYAL [04]</item>
+    </string-array>
+
+
+    <string-array name="P_CORONEL_PORTILLO">
+        <item>Seleccione</item>
+        <item>CALLERIA [01]</item>
+        <item>CAMPOVERDE [02]</item>
+        <item>IPARIA [03]</item>
+        <item>MASISEA [04]</item>
+        <item>YARINACOCHA [05]</item>
+        <item>NUEVA REQUENA [06]</item>
+        <item>MANANTAY [07]</item>
+    </string-array>
+    <string-array name="P_ATALAYA">
+        <item>Seleccione</item>
+        <item>RAYMONDI [01]</item>
+        <item>SEPAHUA [02]</item>
+        <item>TAHUANIA [03]</item>
+        <item>YURUA [04]</item>
+    </string-array>
+    <string-array name="P_PADRE_ABAD">
+        <item>Seleccione</item>
+        <item>PADRE ABAD [01]</item>
+        <item>IRAZOLA [02]</item>
+        <item>CURIMANA [03]</item>
+        <item>NESHUYA [04]</item>
+        <item>ALEXANDER VON HUMBOLDT [05]</item>
+    </string-array>
+    <string-array name="P_PURUS">
+        <item>Seleccione</item>
+        <item>PURUS [01]</item>
+    </string-array>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

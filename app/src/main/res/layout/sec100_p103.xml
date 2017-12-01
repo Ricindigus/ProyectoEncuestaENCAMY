@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/ec100_p103_txt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:text="@string/sec100_p103"/>
+        <RadioGroup
+            android:id="@+id/sec100_p103_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            >
+            <RadioButton
+                android:id="@+id/sec100_p103_rb1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sec100_p103_sp1"
+                />
+            <RadioButton
+                android:id="@+id/sec100_p103_rb2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sec100_p103_sp2"
+
+                />
+            <RadioButton
+                android:id="@+id/sec100_p103_rb3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sec100_p103_sp3"
+
+                />
+            <RadioButton
+                android:id="@+id/sec100_p103_rb4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sec100_p103_sp4"
+                />
+            <RadioButton
+                android:id="@+id/sec100_p103_rb5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sec100_p103_sp5"
+                />
+            <RadioButton
+                android:id="@+id/sec100_p103_rb6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sec100_p103_sp6"
+                />
+            <EditText
+                android:id="@+id/edtEspecifique_p103"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Especifique"
+                android:visibility="gone"/>
+        </RadioGroup>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

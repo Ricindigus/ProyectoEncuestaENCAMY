@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:id="@+id/p404_card"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    tools:context=".activities.EncuestaActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/radio_group_pregunta"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:text="@string/sec400_p404"/>
+        <RadioGroup
+            android:id="@+id/sec400_p404_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            >
+            <RadioButton
+                android:id="@+id/sec400_p404_rb1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sec400_p404_sp1"
+                />
+            <RadioButton
+                android:id="@+id/sec400_p404_rb2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sec400_p404_sp2"
+                />
+
+        </RadioGroup>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

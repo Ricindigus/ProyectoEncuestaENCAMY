@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/atras"
+        android:title="atras"
+        android:icon="@drawable/left_arrow"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:showAsAction="ifRoom"/>
+    <item android:id="@+id/adelante"
+        android:icon="@drawable/right_arrow"
+        android:title="siguiente"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:showAsAction="ifRoom"/>
+</menu>

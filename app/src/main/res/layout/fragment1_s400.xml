@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrador.encal.Fragments.Seccion400Fragment1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/txtCabecera"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/titulo_seccion100"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/icons"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:padding="10dp"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp">
+            <include layout="@layout/sec400_p401"></include>
+            <include layout="@layout/sec400_p402"></include>
+            <include layout="@layout/sec400_p403"></include>
+            <include layout="@layout/sec400_p404"></include>
+            <include layout="@layout/sec400_p405"></include>
+            <include layout="@layout/sec400_p406"></include>
+            <include layout="@layout/sec400_p407"></include>
+            <include layout="@layout/sec400_p408"></include>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
