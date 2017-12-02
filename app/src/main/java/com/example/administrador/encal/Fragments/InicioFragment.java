@@ -166,16 +166,13 @@ public class InicioFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    inicio_sp1.setSelection(0);
                     //inicio_lyt1.setBackgroundResource(R.drawable.fondo_spinner_disabled);
                     inicio_edt7.setText("");
                     inicio_edt7.setBackgroundResource(R.drawable.fondo_edit_text_disabled);
-                    inicio_sp1.setEnabled(false);
                     inicio_edt7.setEnabled(false);
                 }else{
                     //inicio_lyt1.setBackgroundResource(R.drawable.fondo_spinner);
                     inicio_edt7.setBackgroundResource(R.drawable.fondo_edit_text);
-                    inicio_sp1.setEnabled(true);
                     inicio_edt7.setEnabled(true);
                 }
             }
@@ -217,116 +214,6 @@ public class InicioFragment extends Fragment {
 
     }
 
-//    public boolean validar(){
-//        boolean valido = true;
-//        String mensaje = "";
-//        llenarMapaVariables();
-//        boolean vNUM_RUC=false; boolean vRAZON_SOCIAL=false; boolean vNOM_COMER_COOP=false, vCOD_FIJO = true;
-//        boolean vANIO_FUNDACION=false;boolean vPAG_WEB=false; boolean vCORREO=false, vTelefonoMovil = true, condTelFijo1=true,condTelFijo2=true;
-//        boolean vTEL_MOVIL=false; boolean vANIO_OPERACION=false; boolean vNOM_INFORMANTE=false;
-//        boolean vSEXO_INFORMANTE=false; boolean vEDAD_INFORMANTE=false; boolean vACAD_INFORMANTE=false; boolean vCARGO_INFORMANTE=false; boolean vCARGO_INFORMANTE_ESP=false; boolean vTEL_FIJO=false;
-//
-//        if(NUM_RUC.trim().length() != 0)vNUM_RUC=true;
-//        else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR RUC";
-//        if(RAZON_SOCIAL.trim().length() != 0)vRAZON_SOCIAL=true;
-//        else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR LA RAZON SOCIAL";
-//        if(NOM_COMER_COOP.trim().length() != 0)vNOM_COMER_COOP=true;
-//        else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR NOMBRE COMERCIAL";
-//        if(ANIO_FUNDACION.trim().length() != 0){
-//            if(Integer.parseInt(ANIO_FUNDACION)>=1900 && Integer.parseInt(ANIO_FUNDACION)<=2017) vANIO_FUNDACION=true;
-//            else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR UN AÑO VALIDO";
-//        }
-//        else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR AÑO DE FUNDACION";
-//        if(PAG_WEB_NO==1) vPAG_WEB=true;
-//        if(PAG_WEB_NO==0) {
-//            if(PAG_WEB.trim().length() != 0) vPAG_WEB = true;
-//            else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR DIRECCION DE PAGINA WEB O INDICAR QUE NO TIENE";
-//        }
-//        if(CORREO_NO==1) vCORREO=true;
-//        if(CORREO_NO==0) {
-//            if(CORREO.trim().length() != 0)vCORREO=true;
-//            else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR CORREO ELECTRONICO O INDICAR QUE NO TIENE";
-//        }
-//        if(TEL_FIJO_NO==1){ vTEL_FIJO=true;}
-//        if(TEL_FIJO_NO==0) {
-//            if(TEL_FIJO.trim().length() != 0) vTEL_FIJO=true;
-//            else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR TELEFONO FIJO O INDICAR QUE NO TIENE";
-//        }
-//        if(TEL_MOVIL_NO==1) vTEL_MOVIL=true;
-//        if(TEL_MOVIL_NO==0) {
-//            if(TEL_MOVIL.trim().length() == 9)vTEL_MOVIL=true;
-//            else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR TELEFONO MOVIL O INDICAR QUE NO TIENE";
-//        }
-//        if(TEL_FIJO_NO == 1 && TEL_MOVIL_NO == 1){
-//            vTelefonoMovil = false;
-//            if(mensaje.equals(""))mensaje = "TELEFONO: DEBE REGISTRAR TELEFONO FIJO O DE CELULAR";
-//        }
-//
-//        if(TEL_FIJO_NO == 0 && COD_FIJO == 0){
-//            vCOD_FIJO = false;
-//            if(mensaje.equals(""))mensaje = "TELEFONO: DEBE REGISTRAR TELEFONO FIJO O DE CELULAR";
-//        }
-//
-//        if(TEL_FIJO_NO == 0 && COD_FIJO == 7 && TEL_FIJO.trim().length() < 7){
-//            condTelFijo1 = false;
-//            if(mensaje.equals(""))mensaje = "TELEFONO: DEBE REGISTRAR NUMERO DE TELEFONO FIJO VALIDO";
-//        }
-//        if(TEL_FIJO_NO == 0 && COD_FIJO != 7 && TEL_FIJO.trim().length() < 6){
-//            condTelFijo2 = false;
-//            if(mensaje.equals(""))mensaje = "TELEFONO: DEBE REGISTRAR NUMERO DE TELEFONO FIJO VALIDO";
-//        }
-//
-//
-//        if(ANIO_OPERACION.trim().length() != 0){
-//            if(Integer.parseInt(ANIO_OPERACION)>=1900 && Integer.parseInt(ANIO_OPERACION)<=2017){
-//                if(vANIO_FUNDACION){
-//                    if(Integer.parseInt(ANIO_FUNDACION) > Integer.parseInt(ANIO_OPERACION)){
-//                        if(mensaje.equals(""))mensaje = "EL AÑO DE FUNDACION NO DEBE SER MAYOR AL AÑO DE OPERACION";
-//                    }else vANIO_OPERACION=true;
-//                }else vANIO_OPERACION=true;
-//            }
-//            else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR UN AÑO VALIDO";
-//        }else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR AÑO DE OPERACION";
-//        if(NOM_INFORMANTE.trim().length() != 0)vNOM_INFORMANTE=true;
-//        else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR NOMBRE DEL INFORMANTE";
-//        if(EDAD_INFORMANTE.trim().length() != 0)vEDAD_INFORMANTE=true;
-//        else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR LA EDAD DEL INFORMANTE";
-//        if(SEXO_INFORMANTE!=0)vSEXO_INFORMANTE=true;
-//        else if(mensaje.equals(""))mensaje = "DEBE INDICAR SEXO DEL INFORMANTE";
-//        if(ACAD_INFORMANTE!=0)vACAD_INFORMANTE=true;
-//        else if(mensaje.equals(""))mensaje = "DEBE INDICAR NIVEL DE ESTUDIOS";
-//        if(CARGO_INFORMANTE!=0)vCARGO_INFORMANTE=true;
-//        else if(mensaje.equals(""))mensaje = "DEBE INDICAR CARGO DEL INFORMANTE";
-//        if(CARGO_INFORMANTE== 4) {
-//            if(CARGO_INFORMANTE_ESP.trim().length() >= 3){
-//                vCARGO_INFORMANTE_ESP=true;
-//            }else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR INFORMACION VALIDA EN ESPECIFIQUE";
-//        }else vCARGO_INFORMANTE_ESP=true;
-//
-//        valido= vNUM_RUC &&  vRAZON_SOCIAL &&  vANIO_FUNDACION && vPAG_WEB &&
-//                vCORREO && vTEL_MOVIL &&  vANIO_OPERACION &&  vNOM_INFORMANTE&&
-//                vSEXO_INFORMANTE &&  vEDAD_INFORMANTE &&  vACAD_INFORMANTE &&
-//                vCARGO_INFORMANTE &&  vCARGO_INFORMANTE_ESP &&  vTEL_FIJO && vCOD_FIJO &&
-//                condTelFijo1 && condTelFijo2 && vTelefonoMovil;
-//        if(!valido){
-//            mostrarMensaje(mensaje);
-//            Log.d("vNUM_RUC" , vNUM_RUC+"");
-//            Log.d("vRAZON_SOCIAL",vRAZON_SOCIAL+"");
-//            Log.d("vANIO_FUNDACION",vANIO_FUNDACION+"");
-//            Log.d("vPAG_WEB",vPAG_WEB+"");
-//            Log.d("vCORREO",vCORREO+"");
-//            Log.d("vTEL_MOVIL",vTEL_MOVIL+"");
-//            Log.d("vANIO_OPERACION",vANIO_OPERACION+"");
-//            Log.d("vNOM_INFORMANTE",vNOM_INFORMANTE+"");
-//            Log.d("vSEXO_INFORMANTE",vSEXO_INFORMANTE+"");
-//            Log.d("vEDAD_INFORMANTE",vEDAD_INFORMANTE+"");
-//            Log.d("vACAD_INFORMANTE",vACAD_INFORMANTE+"");
-//            Log.d("vCARGO_INFORMANTE",vCARGO_INFORMANTE+"");
-//            Log.d("vCARGO_INFORMANTE_ESP",vCARGO_INFORMANTE_ESP+"");
-//            Log.d("vTEL_FIJO",vTEL_FIJO+"");
-//        }
-//        return valido;
-//    }
 
     public void mostrarMensaje(String m){
         final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -340,151 +227,240 @@ public class InicioFragment extends Fragment {
         alertDialog.show();
     }
     public void cargarDatos(){
-//        data = new Data(context);
-//        data.open();
-//        identificacion = data.getIdentificacion(idEmpresa);
-//        if(identificacion.getID().equals("")){
-//            Marco marco = data.getMarco(idEmpresa);
-//            identificacion.setNUM_RUC(marco.getRUC());
-//            identificacion.setRAZON_SOCIAL(marco.getRAZON_SOCIAL());
-//            identificacion.setNOM_COMER_MYPE(marco.getNOMBRE_COMERCIAL());
-//        }
-//        data.close();
-//        inicio_edt1.setText(identificacion.getNUM_RUC());
-//        inicio_edt2.setText(identificacion.getRAZON_SOCIAL());
-//        inicio_edt3.setText(identificacion.getNOM_COMER_MYPE());
-//        inicio_edt4.setText(identificacion.getANO_INI());
-//
-//        int ckPagWeb = 0;
-//        if(!identificacion.getPAGWEB_NO().equals("")) ckPagWeb = Integer.parseInt(identificacion.getPAGWEB_NO());
-//        int ckCorreo = 0;
-//        if(!identificacion.getCORREO_NO().equals("")) ckCorreo = Integer.parseInt(identificacion.getCORREO_NO());
-//        int ckTelFijo = 0;
-//        if(!identificacion.getTELFIJO_NO().equals("")) ckTelFijo = Integer.parseInt(identificacion.getTELFIJO_NO());
-//        int ckTelMovil = 0;
-//        if(!identificacion.getTELMOVIL_NO().equals("")) ckTelMovil = Integer.parseInt(identificacion.getTELMOVIL_NO());
-//
-//        if(ckPagWeb == 1){
-//            inicio_ck1.setChecked(true);
-//            inicio_edt5.setBackgroundResource(R.drawable.fondo_edit_text_disabled);
-//            inicio_edt5.setEnabled(false);
-//        }
-//        if(ckPagWeb == 0){
-//            inicio_ck1.setChecked(false);
-//            inicio_edt5.setText(identificacion.getPAGWEB());
-//        }
-//        if(ckCorreo == 1){
-//            inicio_ck2.setChecked(true);
-//            inicio_edt6.setBackgroundResource(R.drawable.fondo_edit_text_disabled);
-//            inicio_edt6.setEnabled(false);
-//        }
-//        if(ckCorreo == 0){
-//            inicio_ck2.setChecked(false);
-//            inicio_edt6.setText(identificacion.getCORREO());
-//        }
-//        if(ckTelFijo == 1){
-//            inicio_ck3.setChecked(true);
-//            //inicio_lyt1.setBackgroundResource(R.drawable.fondo_spinner_disabled);
-//            inicio_sp1.setEnabled(false);
-//            inicio_edt7.setBackgroundResource(R.drawable.fondo_edit_text_disabled);
-//            inicio_edt7.setEnabled(false);
-//        }
-//        if(ckTelFijo == 0){
-//            inicio_ck3.setChecked(false);
-//            inicio_edt7.setText(identificacion.getTELFIJO());
-//        }
-//        if(ckTelMovil == 1){
-//            inicio_ck4.setChecked(true);
-//            inicio_edt8.setBackgroundResource(R.drawable.fondo_edit_text_disabled);
-//            inicio_edt8.setEnabled(false);
-//        }
-//        if(ckTelMovil == 0){
-//            inicio_ck4.setChecked(false);
-//            inicio_edt8.setText(identificacion.getTELMOVIL());
-//        }
-//        inicio_edt9.setText(identificacion.getCOND_APEL_NOM());
-//        if(!identificacion.getCOND_SEXO().equals("")) inicio_sp1.setSelection(Integer.parseInt(identificacion.getCOND_SEXO()));
-//        inicio_edt11.setText(identificacion.getCOND_EDAD());
-//        if(!identificacion.getCOND_NEST().equals(""))inicio_sp2.setSelection(Integer.parseInt(identificacion.getCOND_NEST()));
-//        if(!identificacion.getINFOR_CARGO().equals(""))inicio_sp3.setSelection(Integer.parseInt(identificacion.getINFOR_CARGO()));
-//        edtEspecifique.setText(identificacion.getINFOR_CARGO_O());
-//        inicio_edt14.setText(identificacion.getINFOR_APEL_NOM());
-//        if(!identificacion.getCONOCE_INACAL().equals("") && !identificacion.getCONOCE_INACAL().equals("-1")){
-//            ((RadioButton)inicio_rg.getChildAt(Integer.parseInt(identificacion.getCONOCE_INACAL()))).setChecked(true);
-//        }
+        data = new Data(context);
+        data.open();
+        identificacion = data.getIdentificacion(idEmpresa);
+        if(identificacion.getID().equals("")){
+            Marco marco = data.getMarco(idEmpresa);
+            identificacion.setNUM_RUC(marco.getRUC());
+            identificacion.setRAZON_SOCIAL(marco.getRAZON_SOCIAL());
+            identificacion.setNOM_COMER_MYPE(marco.getNOMBRE_COMERCIAL());
+        }
+        data.close();
+        inicio_edt1.setText(identificacion.getNUM_RUC());
+        inicio_edt2.setText(identificacion.getRAZON_SOCIAL());
+        inicio_edt3.setText(identificacion.getNOM_COMER_MYPE());
+        inicio_edt4.setText(identificacion.getANO_INI());
+
+        int ckPagWeb = 0;
+        if(!identificacion.getPAGWEB_NO().equals("")) ckPagWeb = Integer.parseInt(identificacion.getPAGWEB_NO());
+        int ckCorreo = 0;
+        if(!identificacion.getCORREO_NO().equals("")) ckCorreo = Integer.parseInt(identificacion.getCORREO_NO());
+        int ckTelFijo = 0;
+        if(!identificacion.getTELFIJO_NO().equals("")) ckTelFijo = Integer.parseInt(identificacion.getTELFIJO_NO());
+        int ckTelMovil = 0;
+        if(!identificacion.getTELMOVIL_NO().equals("")) ckTelMovil = Integer.parseInt(identificacion.getTELMOVIL_NO());
+
+        if(ckPagWeb == 1){
+            inicio_ck1.setChecked(true);
+            inicio_edt5.setBackgroundResource(R.drawable.fondo_edit_text_disabled);
+            inicio_edt5.setEnabled(false);
+        }
+        if(ckPagWeb == 0){
+            inicio_ck1.setChecked(false);
+            inicio_edt5.setText(identificacion.getPAGWEB());
+        }
+        if(ckCorreo == 1){
+            inicio_ck2.setChecked(true);
+            inicio_edt6.setBackgroundResource(R.drawable.fondo_edit_text_disabled);
+            inicio_edt6.setEnabled(false);
+        }
+        if(ckCorreo == 0){
+            inicio_ck2.setChecked(false);
+            inicio_edt6.setText(identificacion.getCORREO());
+        }
+        if(ckTelFijo == 1){
+            inicio_ck3.setChecked(true);
+            //inicio_lyt1.setBackgroundResource(R.drawable.fondo_spinner_disabled);
+            inicio_edt7.setBackgroundResource(R.drawable.fondo_edit_text_disabled);
+            inicio_edt7.setEnabled(false);
+        }
+        if(ckTelFijo == 0){
+            inicio_ck3.setChecked(false);
+            inicio_edt7.setText(identificacion.getTELFIJO());
+        }
+        if(ckTelMovil == 1){
+            inicio_ck4.setChecked(true);
+            inicio_edt8.setBackgroundResource(R.drawable.fondo_edit_text_disabled);
+            inicio_edt8.setEnabled(false);
+        }
+        if(ckTelMovil == 0){
+            inicio_ck4.setChecked(false);
+            inicio_edt8.setText(identificacion.getTELMOVIL());
+        }
+        inicio_edt9.setText(identificacion.getCOND_APEL_NOM());
+        if(!identificacion.getCOND_SEXO().equals("")) inicio_sp1.setSelection(Integer.parseInt(identificacion.getCOND_SEXO()));
+        inicio_edt11.setText(identificacion.getCOND_EDAD());
+        if(!identificacion.getCOND_NEST().equals(""))inicio_sp2.setSelection(Integer.parseInt(identificacion.getCOND_NEST()));
+        if(!identificacion.getINFOR_CARGO().equals(""))inicio_sp3.setSelection(Integer.parseInt(identificacion.getINFOR_CARGO()));
+        edtEspecifique.setText(identificacion.getINFOR_CARGO_O());
+        inicio_edt14.setText(identificacion.getINFOR_APEL_NOM());
+        if(!identificacion.getCONOCE_INACAL().equals("") && !identificacion.getCONOCE_INACAL().equals("-1")){
+            ((RadioButton)inicio_rg.getChildAt(Integer.parseInt(identificacion.getCONOCE_INACAL()))).setChecked(true);
+        }
     }
 
     public void guardarDatos(){
-//        llenarMapaVariables();
-//        data = new Data(context);
-//        data.open();
-//        if(data.existeIdentificacion(idEmpresa)){
-//            ContentValues contentValues = new ContentValues(21);
-//            contentValues.put(SQLConstantes.IDENTIFICACION_RUC,inicio_edt1.getText().toString());
-//            contentValues.put(SQLConstantes.IDENTIFICACION_RAZON,inicio_edt2.getText().toString());
-//            contentValues.put(SQLConstantes.IDENTIFICACION_NOMBRE,inicio_edt3.getText().toString());
-//            contentValues.put(SQLConstantes.IDENTIFICACION_ANIO_FUNCIONAMIENTO,inicio_edt4.getText().toString());
-//            if(inicio_ck1.isChecked())contentValues.put(SQLConstantes.IDENTIFICACION_WEBNO,"1");
-//            if(!inicio_ck1.isChecked())contentValues.put(SQLConstantes.IDENTIFICACION_WEBNO,"0");
-//            contentValues.put(SQLConstantes.IDENTIFICACION_WEB,inicio_edt5.getText().toString());
-//            if(inicio_ck2.isChecked())contentValues.put(SQLConstantes.IDENTIFICACION_CORREONO,"1");
-//            if(!inicio_ck2.isChecked())contentValues.put(SQLConstantes.IDENTIFICACION_CORREONO,"0");
-//            contentValues.put(SQLConstantes.IDENTIFICACION_CORREO,inicio_edt6.getText().toString());
-//            if(inicio_ck3.isChecked())contentValues.put(SQLConstantes.IDENTIFICACION_FIJONO,"1");
-//            if(!inicio_ck3.isChecked())contentValues.put(SQLConstantes.IDENTIFICACION_FIJONO,"0");
-//            contentValues.put(SQLConstantes.IDENTIFICACION_FIJO,inicio_edt7.getText().toString());
-//            if(inicio_ck4.isChecked())contentValues.put(SQLConstantes.IDENTIFICACION_MOVILNO,"1");
-//            if(!inicio_ck4.isChecked())contentValues.put(SQLConstantes.IDENTIFICACION_MOVILNO,"0");
-//            contentValues.put(SQLConstantes.IDENTIFICACION_MOVIL,inicio_edt8.getText().toString());
-//            contentValues.put(SQLConstantes.IDENTIFICACION_CONDUCTOR_NOMBRE,inicio_edt9.getText().toString());
-//            contentValues.put(SQLConstantes.IDENTIFICACION_CONDUCTOR_SEXO,String.valueOf(inicio_sp1.getSelectedItemPosition()));
-//            contentValues.put(SQLConstantes.IDENTIFICACION_CONDUCTOR_EDAD,inicio_edt11.getText().toString());
-//            contentValues.put(SQLConstantes.IDENTIFICACION_CONDUCTOR_ESTUDIOS,String.valueOf(inicio_sp2.getSelectedItemPosition()));
-//            contentValues.put(SQLConstantes.IDENTIFICACION_CONDUCTOR_CARGO,String.valueOf(inicio_sp3.getSelectedItemPosition()));
-//            contentValues.put(SQLConstantes.IDENTIFICACION_CONDUCTOR_CARGO_ESP,edtEspecifique.getText().toString());
-//            contentValues.put(SQLConstantes.IDENTIFICACION_CONDUCTOR_APEYNOM,inicio_edt14.getText().toString());
-//            contentValues.put(SQLConstantes.IDENTIFICACION_CONDUCTOR_CONOCE_INACAL,CONOCE_INACAL+"");
-//            data.actualizarIdentificacion(idEmpresa,contentValues);
-//        }else{
-//            identificacion = new IdentificacionPojo();
-//            identificacion.setID(idEmpresa);
-//            identificacion.setNUM_RUC(inicio_edt1.getText().toString());
-//            identificacion.setRAZON_SOCIAL(inicio_edt2.getText().toString());
-//            identificacion.setNOM_COMER_MYPE(inicio_edt3.getText().toString());
-//            identificacion.setANO_INI(inicio_edt4.getText().toString());
-//            if(inicio_ck1.isChecked())identificacion.setPAGWEB_NO("1");
-//            if(!inicio_ck1.isChecked())identificacion.setPAGWEB_NO("0");
-//            identificacion.setPAGWEB(inicio_edt5.getText().toString());
-//            if(inicio_ck2.isChecked())identificacion.setCORREO_NO("1");
-//            if(!inicio_ck2.isChecked())identificacion.setCORREO_NO("0");
-//            identificacion.setCORREO(inicio_edt6.getText().toString());
-//            if(inicio_ck3.isChecked())identificacion.setTELFIJO_NO("1");
-//            if(!inicio_ck3.isChecked())identificacion.setTELFIJO_NO("0");
-//            identificacion.setTELFIJO(inicio_edt7.getText().toString());
-//            if(inicio_ck4.isChecked())identificacion.setTELMOVIL_NO("1");
-//            if(!inicio_ck4.isChecked())identificacion.setTELMOVIL_NO("0");
-//            identificacion.setTELMOVIL(inicio_edt8.getText().toString());
-//            identificacion.setCOND_APEL_NOM(inicio_edt9.getText().toString());
-//            identificacion.setCOND_SEXO(String.valueOf(inicio_sp1.getSelectedItemPosition()));
-//            identificacion.setCOND_EDAD(inicio_edt11.getText().toString());
-//            identificacion.setCOND_NEST(String.valueOf(inicio_sp2.getSelectedItemPosition()));
-//            identificacion.setINFOR_CARGO(String.valueOf(inicio_sp3.getSelectedItemPosition()));
-//            identificacion.setINFOR_CARGO_O(edtEspecifique.getText().toString());
-//            identificacion.setINFOR_APEL_NOM(inicio_edt14.getText().toString());
-//            identificacion.setCONOCE_INACAL(CONOCE_INACAL+"");
-//            data.insertarIdentificacion(identificacion);
-//        }
-//        data.close();
+        llenarMapaVariables();
+        data = new Data(context);
+        data.open();
+        if(data.existeIdentificacion(idEmpresa)){
+            ContentValues contentValues = new ContentValues(21);
+            contentValues.put(SQLConstantes.IDENTIFICACION_RUC,inicio_edt1.getText().toString());
+            contentValues.put(SQLConstantes.IDENTIFICACION_RAZON,inicio_edt2.getText().toString());
+            contentValues.put(SQLConstantes.IDENTIFICACION_NOMBRE,inicio_edt3.getText().toString());
+            contentValues.put(SQLConstantes.IDENTIFICACION_ANIO_FUNCIONAMIENTO,inicio_edt4.getText().toString());
+            if(inicio_ck1.isChecked())contentValues.put(SQLConstantes.IDENTIFICACION_WEBNO,"1");
+            if(!inicio_ck1.isChecked())contentValues.put(SQLConstantes.IDENTIFICACION_WEBNO,"0");
+            contentValues.put(SQLConstantes.IDENTIFICACION_WEB,inicio_edt5.getText().toString());
+            if(inicio_ck2.isChecked())contentValues.put(SQLConstantes.IDENTIFICACION_CORREONO,"1");
+            if(!inicio_ck2.isChecked())contentValues.put(SQLConstantes.IDENTIFICACION_CORREONO,"0");
+            contentValues.put(SQLConstantes.IDENTIFICACION_CORREO,inicio_edt6.getText().toString());
+            if(inicio_ck3.isChecked())contentValues.put(SQLConstantes.IDENTIFICACION_FIJONO,"1");
+            if(!inicio_ck3.isChecked())contentValues.put(SQLConstantes.IDENTIFICACION_FIJONO,"0");
+            contentValues.put(SQLConstantes.IDENTIFICACION_FIJO,inicio_edt7.getText().toString());
+            if(inicio_ck4.isChecked())contentValues.put(SQLConstantes.IDENTIFICACION_MOVILNO,"1");
+            if(!inicio_ck4.isChecked())contentValues.put(SQLConstantes.IDENTIFICACION_MOVILNO,"0");
+            contentValues.put(SQLConstantes.IDENTIFICACION_MOVIL,inicio_edt8.getText().toString());
+            contentValues.put(SQLConstantes.IDENTIFICACION_CONDUCTOR_NOMBRE,inicio_edt9.getText().toString());
+            contentValues.put(SQLConstantes.IDENTIFICACION_CONDUCTOR_SEXO,String.valueOf(inicio_sp1.getSelectedItemPosition()));
+            contentValues.put(SQLConstantes.IDENTIFICACION_CONDUCTOR_EDAD,inicio_edt11.getText().toString());
+            contentValues.put(SQLConstantes.IDENTIFICACION_CONDUCTOR_ESTUDIOS,String.valueOf(inicio_sp2.getSelectedItemPosition()));
+            contentValues.put(SQLConstantes.IDENTIFICACION_CONDUCTOR_CARGO,String.valueOf(inicio_sp3.getSelectedItemPosition()));
+            contentValues.put(SQLConstantes.IDENTIFICACION_CONDUCTOR_CARGO_ESP,edtEspecifique.getText().toString());
+            contentValues.put(SQLConstantes.IDENTIFICACION_CONDUCTOR_APEYNOM,inicio_edt14.getText().toString());
+            contentValues.put(SQLConstantes.IDENTIFICACION_CONDUCTOR_CONOCE_INACAL,CONOCE_INACAL+"");
+            data.actualizarIdentificacion(idEmpresa,contentValues);
+        }else{
+            identificacion = new IdentificacionPojo();
+            identificacion.setID(idEmpresa);
+            identificacion.setNUM_RUC(inicio_edt1.getText().toString());
+            identificacion.setRAZON_SOCIAL(inicio_edt2.getText().toString());
+            identificacion.setNOM_COMER_MYPE(inicio_edt3.getText().toString());
+            identificacion.setANO_INI(inicio_edt4.getText().toString());
+            if(inicio_ck1.isChecked())identificacion.setPAGWEB_NO("1");
+            if(!inicio_ck1.isChecked())identificacion.setPAGWEB_NO("0");
+            identificacion.setPAGWEB(inicio_edt5.getText().toString());
+            if(inicio_ck2.isChecked())identificacion.setCORREO_NO("1");
+            if(!inicio_ck2.isChecked())identificacion.setCORREO_NO("0");
+            identificacion.setCORREO(inicio_edt6.getText().toString());
+            if(inicio_ck3.isChecked())identificacion.setTELFIJO_NO("1");
+            if(!inicio_ck3.isChecked())identificacion.setTELFIJO_NO("0");
+            identificacion.setTELFIJO(inicio_edt7.getText().toString());
+            if(inicio_ck4.isChecked())identificacion.setTELMOVIL_NO("1");
+            if(!inicio_ck4.isChecked())identificacion.setTELMOVIL_NO("0");
+            identificacion.setTELMOVIL(inicio_edt8.getText().toString());
+            identificacion.setCOND_APEL_NOM(inicio_edt9.getText().toString());
+            identificacion.setCOND_SEXO(String.valueOf(inicio_sp1.getSelectedItemPosition()));
+            identificacion.setCOND_EDAD(inicio_edt11.getText().toString());
+            identificacion.setCOND_NEST(String.valueOf(inicio_sp2.getSelectedItemPosition()));
+            identificacion.setINFOR_CARGO(String.valueOf(inicio_sp3.getSelectedItemPosition()));
+            identificacion.setINFOR_CARGO_O(edtEspecifique.getText().toString());
+            identificacion.setINFOR_APEL_NOM(inicio_edt14.getText().toString());
+            identificacion.setCONOCE_INACAL(CONOCE_INACAL+"");
+            data.insertarIdentificacion(identificacion);
+        }
+        data.close();
     }
     public boolean validar(){
-        //revisarcampos
         boolean valido = true;
+        String mensaje = "";
         llenarMapaVariables();
+        boolean vCONOCE=false;boolean vNUM_RUC=false; boolean vRAZON_SOCIAL=false; boolean vNOM_COMER_MYPE=false;
+        boolean vANIO_FUNDACION=false;boolean vPAG_WEB=false; boolean vCORREO=false, vTelefonoMovil = true, condTelFijo1=true,condTelFijo2=true;
+        boolean vTEL_MOVIL=false; boolean vANIO_OPERACION=false; boolean vNOM_INFORMANTE=false;
+        boolean vSEXO_INFORMANTE=false; boolean vEDAD_INFORMANTE=false; boolean vACAD_INFORMANTE=false; boolean vCARGO_INFORMANTE=false; boolean vCARGO_INFORMANTE_ESP=false;
+        boolean vTEL_FIJO=false; boolean vINFORMANTE_NOM=false;
+
+        if(NUM_RUC.trim().length() != 0)vNUM_RUC=true;
+        else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR RUC";
+        if(RAZON_SOCIAL.trim().length() != 0)vRAZON_SOCIAL=true;
+        else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR LA RAZON SOCIAL";
+        if(NOM_COMER_MYPE.trim().length() != 0)vNOM_COMER_MYPE=true;
+        else if(mensaje.equals(""))mensaje = "DEBE EXISTIR NOMBRE COMERCIAL DE LA MYPE";
+        if(ANO_INI.trim().length() != 0){
+            if(Integer.parseInt(ANO_INI)>=1900 && Integer.parseInt(ANO_INI)<=2017) vANIO_FUNDACION=true;
+            else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR UN AÑO VALIDO";
+        }
+        else if(mensaje.equals(""))mensaje = "AÑO DE INICIO DE FUNCIONAMIENTO DEBE ESTAR ENTRE LOS AÃ‘OS 1900 A 2016";
+        if(PAGWEB_NO==1) vPAG_WEB=true;
+        if(PAGWEB_NO==0) {
+            if(PAGWEB.trim().length() != 0) {
+                if (PAGWEB.indexOf(".")!=-1){
+                    vPAG_WEB = true;
+                }else if(mensaje.equals(""))mensaje = "DEBE INCLUIR EL (.PUNTO)";
+            }
+            else if(mensaje.equals(""))mensaje = "DEBE EXISTIR INFORMACUION EN PAGINA WEB";
+        }
+        if(CORREO_NO==1) vCORREO=true;
+        if(CORREO_NO==0) {
+            if(CORREO.trim().length() != 0){
+                if (CORREO.indexOf("@")!=-1){
+                    vCORREO=true;
+                }else if(mensaje.equals(""))mensaje = "DEBE INCLUIR EL @";
+            }
+            else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR CORREO ELECTRONICO O INDICAR QUE NO TIENE";
+        }
+        if(TELFIJO_NO==1){ vTEL_FIJO=true;}
+        if(TELFIJO_NO==0) {
+            if(TELFIJO.trim().length() != 0) vTEL_FIJO=true;
+            else if(mensaje.equals(""))mensaje = "DEBE EXISTIR INFORMACION EN TELEFONO FIJO";
+        }
+        if(TELMOVIL_NO==1) vTEL_MOVIL=true;
+        if(TELMOVIL_NO==0) {
+            if(TELMOVIL.trim().length() == 9)vTEL_MOVIL=true;
+            else if(mensaje.equals(""))mensaje = "DEBE EXISTIR INFORMACION EN TELEFONO MOVIL";
+        }
+        if(TELFIJO_NO == 1 && TELMOVIL_NO == 1){
+            vTelefonoMovil = false;
+            if(mensaje.equals(""))mensaje = "TELEFONO: DEBE REGISTRAR TELEFONO FIJO O DE CELULAR";
+        }
+        if(COND_APEL_NOM.trim().length() != 0)vNOM_INFORMANTE=true;
+        else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR NOMBRE DEL INFORMANTE";
+        if(COND_EDAD.trim().length() != 0)vEDAD_INFORMANTE=true;
+        else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR LA EDAD DEL INFORMANTE";
+        if(COND_SEXO!=0)vSEXO_INFORMANTE=true;
+        else if(mensaje.equals(""))mensaje = "DEBE INDICAR SEXO DEL INFORMANTE";
+        if(COND_NEST!=0)vACAD_INFORMANTE=true;
+        else if(mensaje.equals(""))mensaje = "DEBE INDICAR NIVEL DE ESTUDIOS";
+        if(INFOR_CARGO!=0)vCARGO_INFORMANTE=true;
+        else if(mensaje.equals(""))mensaje = "DEBE INDICAR CARGO DEL INFORMANTE";
+        if(INFOR_CARGO== 4) {
+            if(INFOR_CARGO_O.trim().length() >= 3){
+                vCARGO_INFORMANTE_ESP=true;
+            }else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR INFORMACION VALIDA EN ESPECIFIQUE";
+        }else vCARGO_INFORMANTE_ESP=true;
+        if(INFOR_APEL_NOM.trim().length() >= 3){
+            vINFORMANTE_NOM=true;
+        }else if(mensaje.equals(""))mensaje = "DEBE INGRESAR NOMBRE DEL INFORMANTE";
+        if(CONOCE_INACAL != -1){
+            vCONOCE=true;
+        }else if(mensaje.equals(""))mensaje = "DEBE MARCAR SI/NO CONOCE INACAL E";
 
 
+        valido= vNUM_RUC &&  vRAZON_SOCIAL &&  vANIO_FUNDACION && vPAG_WEB &&vNOM_COMER_MYPE&&
+                vCORREO && vTEL_MOVIL &&vNOM_INFORMANTE&& vSEXO_INFORMANTE &&  vEDAD_INFORMANTE &&  vACAD_INFORMANTE &&
+                vCARGO_INFORMANTE &&  vCARGO_INFORMANTE_ESP &&  vTEL_FIJO && vTelefonoMovil &&vINFORMANTE_NOM && vCONOCE;
+        if(!valido){
+            mostrarMensaje(mensaje);
+            Log.d("vNUM_RUC" , vNUM_RUC+"");
+            Log.d("vRAZON_SOCIAL",vRAZON_SOCIAL+"");
+            Log.d("vANIO_FUNDACION",vANIO_FUNDACION+"");
+            Log.d("vPAG_WEB",vPAG_WEB+"");
+            Log.d("vCORREO",vCORREO+"");
+            Log.d("vTEL_MOVIL",vTEL_MOVIL+"");
+            Log.d("vANIO_OPERACION",vANIO_OPERACION+"");
+            Log.d("vNOM_INFORMANTE",vNOM_INFORMANTE+"");
+            Log.d("vSEXO_INFORMANTE",vSEXO_INFORMANTE+"");
+            Log.d("vEDAD_INFORMANTE",vEDAD_INFORMANTE+"");
+            Log.d("vACAD_INFORMANTE",vACAD_INFORMANTE+"");
+            Log.d("vCARGO_INFORMANTE",vCARGO_INFORMANTE+"");
+            Log.d("vCARGO_INFORMANTE_ESP",vCARGO_INFORMANTE_ESP+"");
+            Log.d("vTEL_FIJO",vTEL_FIJO+"");
+        }
         return valido;
-
     }
+
 
     public void ocultarTeclado(View view){
         InputMethodManager mgr = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);

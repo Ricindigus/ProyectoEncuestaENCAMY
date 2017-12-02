@@ -161,63 +161,63 @@ public class Seccion100Fragment2 extends Fragment {
     }
 
     public void cargarDatos(){
-//        data = new Data(context);
-//        data.open();
-//        //verifico si ya existe un objeto con datos llenados previamente
-//        if(data.existeModulo1(idempresa)){
-//            //si existe traigo el objeto
-//            sec100PojoF1 = data.getModulo1(idempresa);
-//            //saco los datos del objeto para llenarlos en los elementos del fragment
-//            //datos cabecera
-//            //106
-//            p106_edt1.setText(sec100PojoF1.getP_106_1());
-//            p106_edt2.setText(sec100PojoF1.getP_106_2());
-//            p106_edt3.setText(sec100PojoF1.getP_106_3());
-//            p106_edt4.setText(sec100PojoF1.getP_106_4());
-//            p106_txt.setText(sec100PojoF1.getP_106_5());
-//            //107
-//            if(sec100PojoF1.getP_107_1().equals("1")) p107_ck1.setChecked(true);
-//            if(sec100PojoF1.getP_107_1().equals("0")) p107_ck1.setChecked(false);
-//            if(sec100PojoF1.getP_107_2().equals("1")) p107_ck2.setChecked(true);
-//            if(sec100PojoF1.getP_107_2().equals("0")) p107_ck2.setChecked(false);
-//            if(sec100PojoF1.getP_107_3().equals("1")) p107_ck3.setChecked(true);
-//            if(sec100PojoF1.getP_107_3().equals("0")) p107_ck3.setChecked(false);
-//            //108
-//            if(!sec100PojoF1.getP_108().equals("") && !sec100PojoF1.getP_108().equals("-1")){
-//                ((RadioButton)p108_rg1.getChildAt(Integer.parseInt(sec100PojoF1.getP_108()))).setChecked(true);
-//            }
-//            //109
-//            if(sec100PojoF1.getP_109_1().equals("1")) p109_ck1.setChecked(true);
-//            if(sec100PojoF1.getP_109_1().equals("0")) p109_ck1.setChecked(false);
-//            if(sec100PojoF1.getP_109_2().equals("1")) p109_ck2.setChecked(true);
-//            if(sec100PojoF1.getP_109_2().equals("0")) p109_ck2.setChecked(false);
-//            if(sec100PojoF1.getP_109_3().equals("1")) p109_ck3.setChecked(true);
-//            if(sec100PojoF1.getP_109_3().equals("0")) p109_ck3.setChecked(false);
-//            if(sec100PojoF1.getP_109_4().equals("1")) p109_ck4.setChecked(true);
-//            if(sec100PojoF1.getP_109_4().equals("0")) p109_ck4.setChecked(false);
-//            if(sec100PojoF1.getP_109_5().equals("1")) p109_ck5.setChecked(true);
-//            if(sec100PojoF1.getP_109_5().equals("0")) p109_ck5.setChecked(false);
-//            if(sec100PojoF1.getP_109_6().equals("1")) p109_ck6.setChecked(true);
-//            if(sec100PojoF1.getP_109_6().equals("0")) p109_ck6.setChecked(false);
-//            p109_edt.setText(sec100PojoF1.getP_109_6_O());
-//            //110
-//            if(sec100PojoF1.getP_110_1().equals("1")) p110_ck1.setChecked(true);
-//            if(sec100PojoF1.getP_110_1().equals("0")) p110_ck1.setChecked(false);
-//            if(sec100PojoF1.getP_110_2().equals("1")) p110_ck2.setChecked(true);
-//            if(sec100PojoF1.getP_110_2().equals("0")) p110_ck2.setChecked(false);
-//            if(sec100PojoF1.getP_110_3().equals("1")) p110_ck3.setChecked(true);
-//            if(sec100PojoF1.getP_110_3().equals("0")) p110_ck3.setChecked(false);
-//            if(sec100PojoF1.getP_110_4().equals("1")) p110_ck4.setChecked(true);
-//            if(sec100PojoF1.getP_110_4().equals("0")) p110_ck4.setChecked(false);
-//            if(sec100PojoF1.getP_110_5().equals("1")) p110_ck5.setChecked(true);
-//            if(sec100PojoF1.getP_110_5().equals("0")) p110_ck5.setChecked(false);
-//            if(sec100PojoF1.getP_110_6().equals("1")) p110_ck6.setChecked(true);
-//            if(sec100PojoF1.getP_110_6().equals("0")) p110_ck6.setChecked(false);
-//            if(sec100PojoF1.getP_110_7().equals("1")) p110_ck7.setChecked(true);
-//            if(sec100PojoF1.getP_110_7().equals("0")) p110_ck7.setChecked(false);
-//            p110_edt.setText(sec100PojoF1.getP_110_7_O());
-//        }
-//        data.close();
+        data = new Data(context);
+        data.open();
+        //verifico si ya existe un objeto con datos llenados previamente
+        if(data.existeModulo1(idempresa)){
+            //si existe traigo el objeto
+            sec100PojoF1 = data.getModulo1(idempresa);
+            //saco los datos del objeto para llenarlos en los elementos del fragment
+            //datos cabecera
+            //106
+            p106_edt1.setText(sec100PojoF1.getP_106_1());
+            p106_edt2.setText(sec100PojoF1.getP_106_2());
+            p106_edt3.setText(sec100PojoF1.getP_106_3());
+            p106_edt4.setText(sec100PojoF1.getP_106_4());
+            p106_txt.setText(sec100PojoF1.getP_106_5());
+            //107
+            if(sec100PojoF1.getP_107_1().equals("1")) p107_ck1.setChecked(true);
+            if(sec100PojoF1.getP_107_1().equals("0")) p107_ck1.setChecked(false);
+            if(sec100PojoF1.getP_107_2().equals("1")) p107_ck2.setChecked(true);
+            if(sec100PojoF1.getP_107_2().equals("0")) p107_ck2.setChecked(false);
+            if(sec100PojoF1.getP_107_3().equals("1")) p107_ck3.setChecked(true);
+            if(sec100PojoF1.getP_107_3().equals("0")) p107_ck3.setChecked(false);
+            //108
+            if(!sec100PojoF1.getP_108().equals("") && !sec100PojoF1.getP_108().equals("-1")){
+                ((RadioButton)p108_rg1.getChildAt(Integer.parseInt(sec100PojoF1.getP_108()))).setChecked(true);
+            }
+            //109
+            if(sec100PojoF1.getP_109_1().equals("1")) p109_ck1.setChecked(true);
+            if(sec100PojoF1.getP_109_1().equals("0")) p109_ck1.setChecked(false);
+            if(sec100PojoF1.getP_109_2().equals("1")) p109_ck2.setChecked(true);
+            if(sec100PojoF1.getP_109_2().equals("0")) p109_ck2.setChecked(false);
+            if(sec100PojoF1.getP_109_3().equals("1")) p109_ck3.setChecked(true);
+            if(sec100PojoF1.getP_109_3().equals("0")) p109_ck3.setChecked(false);
+            if(sec100PojoF1.getP_109_4().equals("1")) p109_ck4.setChecked(true);
+            if(sec100PojoF1.getP_109_4().equals("0")) p109_ck4.setChecked(false);
+            if(sec100PojoF1.getP_109_5().equals("1")) p109_ck5.setChecked(true);
+            if(sec100PojoF1.getP_109_5().equals("0")) p109_ck5.setChecked(false);
+            if(sec100PojoF1.getP_109_6().equals("1")) p109_ck6.setChecked(true);
+            if(sec100PojoF1.getP_109_6().equals("0")) p109_ck6.setChecked(false);
+            p109_edt.setText(sec100PojoF1.getP_109_6_O());
+            //110
+            if(sec100PojoF1.getP_110_1().equals("1")) p110_ck1.setChecked(true);
+            if(sec100PojoF1.getP_110_1().equals("0")) p110_ck1.setChecked(false);
+            if(sec100PojoF1.getP_110_2().equals("1")) p110_ck2.setChecked(true);
+            if(sec100PojoF1.getP_110_2().equals("0")) p110_ck2.setChecked(false);
+            if(sec100PojoF1.getP_110_3().equals("1")) p110_ck3.setChecked(true);
+            if(sec100PojoF1.getP_110_3().equals("0")) p110_ck3.setChecked(false);
+            if(sec100PojoF1.getP_110_4().equals("1")) p110_ck4.setChecked(true);
+            if(sec100PojoF1.getP_110_4().equals("0")) p110_ck4.setChecked(false);
+            if(sec100PojoF1.getP_110_5().equals("1")) p110_ck5.setChecked(true);
+            if(sec100PojoF1.getP_110_5().equals("0")) p110_ck5.setChecked(false);
+            if(sec100PojoF1.getP_110_6().equals("1")) p110_ck6.setChecked(true);
+            if(sec100PojoF1.getP_110_6().equals("0")) p110_ck6.setChecked(false);
+            if(sec100PojoF1.getP_110_7().equals("1")) p110_ck7.setChecked(true);
+            if(sec100PojoF1.getP_110_7().equals("0")) p110_ck7.setChecked(false);
+            p110_edt.setText(sec100PojoF1.getP_110_7_O());
+        }
+        data.close();
     }
     public void llenarMapaVariables(){
         //106
@@ -284,68 +284,68 @@ public class Seccion100Fragment2 extends Fragment {
     }
 
     public void guardarDatos(){
-//        llenarMapaVariables();
-//        data = new Data(context);
-//        data.open();
-//        if(data.existeModulo1(idempresa)){
-//            ContentValues contentValues = new ContentValues(58);
-//            contentValues.put(SQLConstantes.SECCION100_P_106_1,P_106_1);
-//            contentValues.put(SQLConstantes.SECCION100_P_106_2,P_106_2);
-//            contentValues.put(SQLConstantes.SECCION100_P_106_3,P_106_3);
-//            contentValues.put(SQLConstantes.SECCION100_P_106_4,P_106_4);
-//            contentValues.put(SQLConstantes.SECCION100_P_106_5,P_106_5);
-//            contentValues.put(SQLConstantes.SECCION100_P_107_1,P_107_1+"");
-//            contentValues.put(SQLConstantes.SECCION100_P_107_2,P_107_2+"");
-//            contentValues.put(SQLConstantes.SECCION100_P_107_3,P_107_3+"");
-//            contentValues.put(SQLConstantes.SECCION100_P_108,P_108+"");
-//            contentValues.put(SQLConstantes.SECCION100_P_109_1,P_109_1+"");
-//            contentValues.put(SQLConstantes.SECCION100_P_109_2,P_109_2+"");
-//            contentValues.put(SQLConstantes.SECCION100_P_109_3,P_109_3+"");
-//            contentValues.put(SQLConstantes.SECCION100_P_109_4,P_109_4+"");
-//            contentValues.put(SQLConstantes.SECCION100_P_109_5,P_109_5+"");
-//            contentValues.put(SQLConstantes.SECCION100_P_109_6,P_109_6+"");
-//            contentValues.put(SQLConstantes.SECCION100_P_109_6_O,P_109_6_O);
-//            contentValues.put(SQLConstantes.SECCION100_P_110_1,P_110_1+"");
-//            contentValues.put(SQLConstantes.SECCION100_P_110_2,P_110_2+"");
-//            contentValues.put(SQLConstantes.SECCION100_P_110_3,P_110_3+"");
-//            contentValues.put(SQLConstantes.SECCION100_P_110_4,P_110_4+"");
-//            contentValues.put(SQLConstantes.SECCION100_P_110_5,P_110_5+"");
-//            contentValues.put(SQLConstantes.SECCION100_P_110_6,P_110_6+"");
-//            contentValues.put(SQLConstantes.SECCION100_P_110_7,P_110_7+"");
-//            contentValues.put(SQLConstantes.SECCION100_P_110_7_O,P_110_7_O);
-//            data.actualizarModulo1(idempresa,contentValues);
-//        }else{
-//            //si no existe el elemento, lo construye para insertarlo
-//            sec100PojoF1 = new Sec100PojoF1();
-//            //llena el objeto a insertar
-//            sec100PojoF1.setID(idempresa);
-//            sec100PojoF1.setP_106_1(P_106_1);
-//            sec100PojoF1.setP_106_2(P_106_2);
-//            sec100PojoF1.setP_106_3(P_106_3);
-//            sec100PojoF1.setP_106_4(P_106_4);
-//            sec100PojoF1.setP_106_5(P_106_5);
-//            sec100PojoF1.setP_107_1(P_107_1+"");
-//            sec100PojoF1.setP_107_2(P_107_2+"");
-//            sec100PojoF1.setP_107_3(P_107_3+"");
-//            sec100PojoF1.setP_108(P_108+"");
-//            sec100PojoF1.setP_109_1(P_109_1+"");
-//            sec100PojoF1.setP_109_2(P_109_2+"");
-//            sec100PojoF1.setP_109_3(P_109_3+"");
-//            sec100PojoF1.setP_109_4(P_109_4+"");
-//            sec100PojoF1.setP_109_5(P_109_5+"");
-//            sec100PojoF1.setP_109_6(P_109_6+"");
-//            sec100PojoF1.setP_109_6_O(P_109_6_O);
-//            sec100PojoF1.setP_110_1(P_110_1+"");
-//            sec100PojoF1.setP_110_2(P_110_2+"");
-//            sec100PojoF1.setP_110_3(P_110_3+"");
-//            sec100PojoF1.setP_110_4(P_110_4+"");
-//            sec100PojoF1.setP_110_5(P_110_5+"");
-//            sec100PojoF1.setP_110_6(P_110_6+"");
-//            sec100PojoF1.setP_110_7(P_110_7+"");
-//            sec100PojoF1.setP_110_7_O(P_110_7_O);
-//            data.insertarModulo1(sec100PojoF1);
-//        }
-//        data.close();
+        llenarMapaVariables();
+        data = new Data(context);
+        data.open();
+        if(data.existeModulo1(idempresa)){
+            ContentValues contentValues = new ContentValues(58);
+            contentValues.put(SQLConstantes.SECCION100_P_106_1,P_106_1);
+            contentValues.put(SQLConstantes.SECCION100_P_106_2,P_106_2);
+            contentValues.put(SQLConstantes.SECCION100_P_106_3,P_106_3);
+            contentValues.put(SQLConstantes.SECCION100_P_106_4,P_106_4);
+            contentValues.put(SQLConstantes.SECCION100_P_106_5,P_106_5);
+            contentValues.put(SQLConstantes.SECCION100_P_107_1,P_107_1+"");
+            contentValues.put(SQLConstantes.SECCION100_P_107_2,P_107_2+"");
+            contentValues.put(SQLConstantes.SECCION100_P_107_3,P_107_3+"");
+            contentValues.put(SQLConstantes.SECCION100_P_108,P_108+"");
+            contentValues.put(SQLConstantes.SECCION100_P_109_1,P_109_1+"");
+            contentValues.put(SQLConstantes.SECCION100_P_109_2,P_109_2+"");
+            contentValues.put(SQLConstantes.SECCION100_P_109_3,P_109_3+"");
+            contentValues.put(SQLConstantes.SECCION100_P_109_4,P_109_4+"");
+            contentValues.put(SQLConstantes.SECCION100_P_109_5,P_109_5+"");
+            contentValues.put(SQLConstantes.SECCION100_P_109_6,P_109_6+"");
+            contentValues.put(SQLConstantes.SECCION100_P_109_6_O,P_109_6_O);
+            contentValues.put(SQLConstantes.SECCION100_P_110_1,P_110_1+"");
+            contentValues.put(SQLConstantes.SECCION100_P_110_2,P_110_2+"");
+            contentValues.put(SQLConstantes.SECCION100_P_110_3,P_110_3+"");
+            contentValues.put(SQLConstantes.SECCION100_P_110_4,P_110_4+"");
+            contentValues.put(SQLConstantes.SECCION100_P_110_5,P_110_5+"");
+            contentValues.put(SQLConstantes.SECCION100_P_110_6,P_110_6+"");
+            contentValues.put(SQLConstantes.SECCION100_P_110_7,P_110_7+"");
+            contentValues.put(SQLConstantes.SECCION100_P_110_7_O,P_110_7_O);
+            data.actualizarModulo1(idempresa,contentValues);
+        }else{
+            //si no existe el elemento, lo construye para insertarlo
+            sec100PojoF1 = new Sec100PojoF1();
+            //llena el objeto a insertar
+            sec100PojoF1.setID(idempresa);
+            sec100PojoF1.setP_106_1(P_106_1);
+            sec100PojoF1.setP_106_2(P_106_2);
+            sec100PojoF1.setP_106_3(P_106_3);
+            sec100PojoF1.setP_106_4(P_106_4);
+            sec100PojoF1.setP_106_5(P_106_5);
+            sec100PojoF1.setP_107_1(P_107_1+"");
+            sec100PojoF1.setP_107_2(P_107_2+"");
+            sec100PojoF1.setP_107_3(P_107_3+"");
+            sec100PojoF1.setP_108(P_108+"");
+            sec100PojoF1.setP_109_1(P_109_1+"");
+            sec100PojoF1.setP_109_2(P_109_2+"");
+            sec100PojoF1.setP_109_3(P_109_3+"");
+            sec100PojoF1.setP_109_4(P_109_4+"");
+            sec100PojoF1.setP_109_5(P_109_5+"");
+            sec100PojoF1.setP_109_6(P_109_6+"");
+            sec100PojoF1.setP_109_6_O(P_109_6_O);
+            sec100PojoF1.setP_110_1(P_110_1+"");
+            sec100PojoF1.setP_110_2(P_110_2+"");
+            sec100PojoF1.setP_110_3(P_110_3+"");
+            sec100PojoF1.setP_110_4(P_110_4+"");
+            sec100PojoF1.setP_110_5(P_110_5+"");
+            sec100PojoF1.setP_110_6(P_110_6+"");
+            sec100PojoF1.setP_110_7(P_110_7+"");
+            sec100PojoF1.setP_110_7_O(P_110_7_O);
+            data.insertarModulo1(sec100PojoF1);
+        }
+        data.close();
     }
     public boolean validar(){
         //revisarcampos

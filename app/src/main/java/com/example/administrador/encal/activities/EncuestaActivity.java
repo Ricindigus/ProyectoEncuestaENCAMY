@@ -67,7 +67,7 @@ public class EncuestaActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId() ){
             case R.id.adelante:
-                if(cont<8){
+                if(cont<9){
                     if(validarFragment(cont)){
                         guardarFragment(cont);
                         cont++;

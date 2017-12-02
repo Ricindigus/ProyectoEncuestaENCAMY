@@ -139,33 +139,33 @@ public class Seccion400Fragment2 extends Fragment {
     }
 
     public void cargarDatos(){
-//        data = new Data(context);
-//        data.open();
-//        //verifico si ya existe un objeto con datos llenados previamente
-//        if(data.existeModulo4(idempresa)){
-//            //si existe traigo el objeto
-//            sec400PojoF1 = data.getModulo4(idempresa);
-//            //saco los datos del objeto para llenarlos en los elementos del fragment
-//            //409
-//            if(sec400PojoF1.getP_409_1().equals("1")) p409_ck1.setChecked(true);
-//            if(sec400PojoF1.getP_409_1().equals("0")) p409_ck1.setChecked(false);
-//            if(sec400PojoF1.getP_409_2().equals("1")) p409_ck2.setChecked(true);
-//            if(sec400PojoF1.getP_409_2().equals("0")) p409_ck2.setChecked(false);
-//            if(sec400PojoF1.getP_409_3().equals("1")) p409_ck3.setChecked(true);
-//            if(sec400PojoF1.getP_409_3().equals("0")) p409_ck3.setChecked(false);
-//            if(sec400PojoF1.getP_409_4().equals("1")) p409_ck4.setChecked(true);
-//            if(sec400PojoF1.getP_409_4().equals("0")) p409_ck4.setChecked(false);
-//            if(sec400PojoF1.getP_409_5().equals("1")) p409_ck5.setChecked(true);
-//            if(sec400PojoF1.getP_409_5().equals("0")) p409_ck5.setChecked(false);
-//            p409_edt.setText(sec400PojoF1.getP_409_5_O());
-//            //410
-//            if(!sec400PojoF1.getP_410().equals("") && !sec400PojoF1.getP_410().equals("-1")){
-//                ((RadioButton)p410_rg.getChildAt(Integer.parseInt(sec400PojoF1.getP_410()))).setChecked(true);
-//            }
-//            p410_edt.setText(sec400PojoF1.getP_410_O());
-//
-//        }
-//        data.close();
+        data = new Data(context);
+        data.open();
+        //verifico si ya existe un objeto con datos llenados previamente
+        if(data.existeModulo4(idempresa)){
+            //si existe traigo el objeto
+            sec400PojoF1 = data.getModulo4(idempresa);
+            //saco los datos del objeto para llenarlos en los elementos del fragment
+            //409
+            if(sec400PojoF1.getP_409_1().equals("1")) p409_ck1.setChecked(true);
+            if(sec400PojoF1.getP_409_1().equals("0")) p409_ck1.setChecked(false);
+            if(sec400PojoF1.getP_409_2().equals("1")) p409_ck2.setChecked(true);
+            if(sec400PojoF1.getP_409_2().equals("0")) p409_ck2.setChecked(false);
+            if(sec400PojoF1.getP_409_3().equals("1")) p409_ck3.setChecked(true);
+            if(sec400PojoF1.getP_409_3().equals("0")) p409_ck3.setChecked(false);
+            if(sec400PojoF1.getP_409_4().equals("1")) p409_ck4.setChecked(true);
+            if(sec400PojoF1.getP_409_4().equals("0")) p409_ck4.setChecked(false);
+            if(sec400PojoF1.getP_409_5().equals("1")) p409_ck5.setChecked(true);
+            if(sec400PojoF1.getP_409_5().equals("0")) p409_ck5.setChecked(false);
+            p409_edt.setText(sec400PojoF1.getP_409_5_O());
+            //410
+            if(!sec400PojoF1.getP_410().equals("") && !sec400PojoF1.getP_410().equals("-1")){
+                ((RadioButton)p410_rg.getChildAt(Integer.parseInt(sec400PojoF1.getP_410()))).setChecked(true);
+            }
+            p410_edt.setText(sec400PojoF1.getP_410_O());
+
+        }
+        data.close();
     }
     public void llenarMapaVariables(){
         //409
@@ -191,36 +191,36 @@ public class Seccion400Fragment2 extends Fragment {
     }
 
     public void guardarDatos(){
-//        llenarMapaVariables();
-//        data = new Data(context);
-//        data.open();
-//        if(data.existeModulo4(idempresa)){
-//            ContentValues contentValues = new ContentValues(38);
-//            contentValues.put(SQLConstantes.SECCION400_P_409_1,P_409_1+"");
-//            contentValues.put(SQLConstantes.SECCION400_P_409_2,P_409_2+"");
-//            contentValues.put(SQLConstantes.SECCION400_P_409_3,P_409_3+"");
-//            contentValues.put(SQLConstantes.SECCION400_P_409_4,P_409_4+"");
-//            contentValues.put(SQLConstantes.SECCION400_P_409_5,P_409_5+"");
-//            contentValues.put(SQLConstantes.SECCION400_P_409_5_O,P_409_5_O);
-//            contentValues.put(SQLConstantes.SECCION400_P_410,P_410+"");
-//            contentValues.put(SQLConstantes.SECCION400_P_410_O,P_410_O);
-//            data.actualizarModulo4(idempresa,contentValues);
-//        }else{
-//            //si no existe el elemento, lo construye para insertarlo
-//            sec400PojoF1 = new Sec400PojoF1();
-//            //llena el objeto a insertar
-//            sec400PojoF1.setID(idempresa);
-//            sec400PojoF1.setP_409_1(P_409_1+"");
-//            sec400PojoF1.setP_409_2(P_409_2+"");
-//            sec400PojoF1.setP_409_3(P_409_3+"");
-//            sec400PojoF1.setP_409_4(P_409_4+"");
-//            sec400PojoF1.setP_409_5(P_409_5+"");
-//            sec400PojoF1.setP_409_5_O(P_409_5_O);
-//            sec400PojoF1.setP_410(P_410+"");
-//            sec400PojoF1.setP_410_O(P_410_O);
-//            data.insertarModulo4(sec400PojoF1);
-//        }
-//        data.close();
+        llenarMapaVariables();
+        data = new Data(context);
+        data.open();
+        if(data.existeModulo4(idempresa)){
+            ContentValues contentValues = new ContentValues(38);
+            contentValues.put(SQLConstantes.SECCION400_P_409_1,P_409_1+"");
+            contentValues.put(SQLConstantes.SECCION400_P_409_2,P_409_2+"");
+            contentValues.put(SQLConstantes.SECCION400_P_409_3,P_409_3+"");
+            contentValues.put(SQLConstantes.SECCION400_P_409_4,P_409_4+"");
+            contentValues.put(SQLConstantes.SECCION400_P_409_5,P_409_5+"");
+            contentValues.put(SQLConstantes.SECCION400_P_409_5_O,P_409_5_O);
+            contentValues.put(SQLConstantes.SECCION400_P_410,P_410+"");
+            contentValues.put(SQLConstantes.SECCION400_P_410_O,P_410_O);
+            data.actualizarModulo4(idempresa,contentValues);
+        }else{
+            //si no existe el elemento, lo construye para insertarlo
+            sec400PojoF1 = new Sec400PojoF1();
+            //llena el objeto a insertar
+            sec400PojoF1.setID(idempresa);
+            sec400PojoF1.setP_409_1(P_409_1+"");
+            sec400PojoF1.setP_409_2(P_409_2+"");
+            sec400PojoF1.setP_409_3(P_409_3+"");
+            sec400PojoF1.setP_409_4(P_409_4+"");
+            sec400PojoF1.setP_409_5(P_409_5+"");
+            sec400PojoF1.setP_409_5_O(P_409_5_O);
+            sec400PojoF1.setP_410(P_410+"");
+            sec400PojoF1.setP_410_O(P_410_O);
+            data.insertarModulo4(sec400PojoF1);
+        }
+        data.close();
     }
 
     public boolean validar() {

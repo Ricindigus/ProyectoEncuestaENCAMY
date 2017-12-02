@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ENCAL</string>
+    <string name="app_name">ENCAMY</string>
 
     <string name="texto_usuario">USUARIO</string>
     <string name="texto_password">CONTRASEÑA</string>

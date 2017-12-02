@@ -205,137 +205,137 @@ public class Seccion100Fragment1 extends Fragment {
     ///////////////GUARDADO///////////////////////
 
     public void cargarDatos(){
-//        data = new Data(context);
-//        data.open();
-//        //verifico si ya existe un objeto con datos llenados previamente
-//        if(data.existeModulo1(idempresa)){
-//            //si existe traigo el objeto
-//            sec100 = data.getModulo1(idempresa);
-//            //saco los datos del objeto para llenarlos en los elementos del fragment
-//            //PREGUNTA 101
-//            p101_txt1.setText(sec100.getP_101());
-//            p101_edt1.setText(sec100.getP_101_1());
-//            p101_act1.setText(sec100.getP_101_1_O());
-//
-//            p102_txt1.setText(sec100.getP_102_1());
-//            p102_txt2.setText(sec100.getP_102_2());
-//            p102_txt3.setText(sec100.getP_102_3());
-//            p102_txt4.setText(sec100.getP_102_4());
-//
-//            p102_act1.setText(sec100.getP_102A());
-//            p102_act2.setText(sec100.getP_102B());
-//            p102_act3.setText(sec100.getP_102C());
-//            p102_act4.setText(sec100.getP_102D());
-//
-//            //PREGUNTA 103
-//            if(!sec100.getP_103().equals("") && !sec100.getP_103().equals("-1")){
-//                ((RadioButton)p103_rg1.getChildAt(Integer.parseInt(sec100.getP_103()))).setChecked(true);
-//            }
-//            p103_edt1.setText(sec100.getP_103_O());
-//            //PREGUNTA 104
-//            if(!sec100.getP_104().equals("") && !sec100.getP_104().equals("-1")){
-//                ((RadioButton)p104_rg1.getChildAt(Integer.parseInt(sec100.getP_104()))).setChecked(true);
-//            }
-//            //PREGUNTA 105
-//            p105_edt1.setText(sec100.getP_105());
-//
-//        }
-//        data.close();
+        data = new Data(context);
+        data.open();
+        //verifico si ya existe un objeto con datos llenados previamente
+        if(data.existeModulo1(idempresa)){
+            //si existe traigo el objeto
+            sec100 = data.getModulo1(idempresa);
+            //saco los datos del objeto para llenarlos en los elementos del fragment
+            //PREGUNTA 101
+            p101_txt1.setText(sec100.getP_101());
+            p101_edt1.setText(sec100.getP_101_1());
+            p101_act1.setText(sec100.getP_101_1_O());
+
+            p102_txt1.setText(sec100.getP_102_1());
+            p102_txt2.setText(sec100.getP_102_2());
+            p102_txt3.setText(sec100.getP_102_3());
+            p102_txt4.setText(sec100.getP_102_4());
+
+            p102_act1.setText(sec100.getP_102A());
+            p102_act2.setText(sec100.getP_102B());
+            p102_act3.setText(sec100.getP_102C());
+            p102_act4.setText(sec100.getP_102D());
+
+            //PREGUNTA 103
+            if(!sec100.getP_103().equals("") && !sec100.getP_103().equals("-1")){
+                ((RadioButton)p103_rg1.getChildAt(Integer.parseInt(sec100.getP_103()))).setChecked(true);
+            }
+            p103_edt1.setText(sec100.getP_103_O());
+            //PREGUNTA 104
+            if(!sec100.getP_104().equals("") && !sec100.getP_104().equals("-1")){
+                ((RadioButton)p104_rg1.getChildAt(Integer.parseInt(sec100.getP_104()))).setChecked(true);
+            }
+            //PREGUNTA 105
+            p105_edt1.setText(sec100.getP_105());
+
+        }
+        data.close();
     }
     public void llenarMapaVariables(){
 
-//        //PREGUNTA 101
-//        P101_1 = p101_txt1.getText().toString();
-//        P101_2 = p101_edt1.getText().toString();
-//        P101_3 = p101_act1.getText().toString();
-//        //P101_3 = "";
-//
-//
-//        //PREGUNTA 102-1
-//        //if(p102_ck1.isChecked())P102_1_1 = 1;
-//        // else P102_1_1 = 0;
-//        P102_1_2 = p102_txt1.getText().toString();
-////        P102_1_3 = p102_act1.getText().toString();
-//        P102_1_3 = "";
-//
-//        //PREGUNTA 102_2
-//        // if(p102_ck2.isChecked())P102_2_1 = 1;
-//        // else P102_2_1 = 0;
-//        P102_2_2 = p102_txt1.getText().toString();
-//        P102_2_3 = p102_act1.getText().toString();
-//        P102_2_3 = "";
-//
-//        //PREGUNTA 102_3
-//        //if(p102_ck3.isChecked())P102_3_1 = 1;
-//        //else P102_3_1 = 0;
-//        P102_3_2 = p102_txt1.getText().toString();
-////        P102_3_3 = p102_act1.getText().toString();
-//        P102_3_3 = "";
-//
-//        //PREGUNTA 102_4
-//        //if(p102_ck4.isChecked())P102_4_1 = 1;
-//        //else P102_4_1 = 0;
-//        P102_4_2 = p102_txt1.getText().toString();
-////        P102_4_3 = p102_act1.getText().toString();
-//        P102_4_3 = "";
-//
-//
-//
-//        //PREGUNTA 103
-//        int childPosP103 = p103_rg1.indexOfChild(p103_rg1.findViewById(p103_rg1.getCheckedRadioButtonId()));
-//        P103 = childPosP103;
-//        P103_0 = p103_edt1.getText().toString();
-//        //PREGUNTA 104
-//        int childPosP104 = p104_rg1.indexOfChild(p104_rg1.findViewById(p104_rg1.getCheckedRadioButtonId()));
-//        P104 = childPosP104;
-//        //PREGUNTA 105
-//        P105 = p105_edt1.getText().toString();
+        //PREGUNTA 101
+        P101_1 = p101_txt1.getText().toString();
+        P101_2 = p101_edt1.getText().toString();
+        P101_3 = p101_act1.getText().toString();
+        //P101_3 = "";
+
+
+        //PREGUNTA 102-1
+        //if(p102_ck1.isChecked())P102_1_1 = 1;
+        // else P102_1_1 = 0;
+        P102_1_2 = p102_txt1.getText().toString();
+//        P102_1_3 = p102_act1.getText().toString();
+        P102_1_3 = "";
+
+        //PREGUNTA 102_2
+        // if(p102_ck2.isChecked())P102_2_1 = 1;
+        // else P102_2_1 = 0;
+        P102_2_2 = p102_txt1.getText().toString();
+        P102_2_3 = p102_act1.getText().toString();
+        P102_2_3 = "";
+
+        //PREGUNTA 102_3
+        //if(p102_ck3.isChecked())P102_3_1 = 1;
+        //else P102_3_1 = 0;
+        P102_3_2 = p102_txt1.getText().toString();
+//        P102_3_3 = p102_act1.getText().toString();
+        P102_3_3 = "";
+
+        //PREGUNTA 102_4
+        //if(p102_ck4.isChecked())P102_4_1 = 1;
+        //else P102_4_1 = 0;
+        P102_4_2 = p102_txt1.getText().toString();
+//        P102_4_3 = p102_act1.getText().toString();
+        P102_4_3 = "";
+
+
+
+        //PREGUNTA 103
+        int childPosP103 = p103_rg1.indexOfChild(p103_rg1.findViewById(p103_rg1.getCheckedRadioButtonId()));
+        P103 = childPosP103;
+        P103_0 = p103_edt1.getText().toString();
+        //PREGUNTA 104
+        int childPosP104 = p104_rg1.indexOfChild(p104_rg1.findViewById(p104_rg1.getCheckedRadioButtonId()));
+        P104 = childPosP104;
+        //PREGUNTA 105
+        P105 = p105_edt1.getText().toString();
     }
     public void guardarDatos(){
-//        llenarMapaVariables();
-//        data = new Data(context);
-//        data.open();
-//        if(data.existeModulo1(idempresa)){
-//            ContentValues contentValues = new ContentValues(58);
-//            contentValues.put(SQLConstantes.SECCION100_P_101,P101_1);
-//            contentValues.put(SQLConstantes.SECCION100_P_101_1,P101_2);
-//            contentValues.put(SQLConstantes.SECCION100_P_101_1_O,P101_3);
-//            contentValues.put(SQLConstantes.SECCION100_P_102_1,P102_1_2);
-//            contentValues.put(SQLConstantes.SECCION100_P_102_2,P102_2_2);
-//            contentValues.put(SQLConstantes.SECCION100_P_102_3,P102_3_2);
-//            contentValues.put(SQLConstantes.SECCION100_P_102_4,P102_4_2);
-//            contentValues.put(SQLConstantes.SECCION100_P_102A,P102_1_3);
-//            contentValues.put(SQLConstantes.SECCION100_P_102B,P102_2_3);
-//            contentValues.put(SQLConstantes.SECCION100_P_102C,P102_3_3);
-//            contentValues.put(SQLConstantes.SECCION100_P_102D,P102_4_3);
-//            contentValues.put(SQLConstantes.SECCION100_P_103,P103+"");
-//            contentValues.put(SQLConstantes.SECCION100_P_103_O,P103_0);
-//            contentValues.put(SQLConstantes.SECCION100_P_104,P104+"");
-//            contentValues.put(SQLConstantes.SECCION100_P_105,P105);
-//            data.actualizarModulo1(idempresa,contentValues);
-//        }else{
-//            //si no existe el elemento, lo construye para insertarlo
-//            sec100 = new Sec100PojoF1();
-//            //llena el objeto a insertar
-//            sec100.setID(idempresa);
-//            sec100.setP_101(P101_1);
-//            sec100.setP_101_1(P101_2);
-//            sec100.setP_101_1_O(P101_3);
-//            sec100.setP_102_1(P102_1_2);
-//            sec100.setP_102_2(P102_2_2);
-//            sec100.setP_102_3(P102_3_2);
-//            sec100.setP_102_4(P102_4_2);
-//            sec100.setP_102A(P102_1_3);
-//            sec100.setP_102B(P102_2_3);
-//            sec100.setP_102C(P102_3_3);
-//            sec100.setP_102D(P102_4_3);
-//            sec100.setP_103(P103+"");
-//            sec100.setP_103_O(P103_0);
-//            sec100.setP_104(P104+"");
-//            sec100.setP_105(P105);
-//            data.insertarModulo1(sec100);
-//        }
-//        data.close();
+        llenarMapaVariables();
+        data = new Data(context);
+        data.open();
+        if(data.existeModulo1(idempresa)){
+            ContentValues contentValues = new ContentValues(58);
+            contentValues.put(SQLConstantes.SECCION100_P_101,P101_1);
+            contentValues.put(SQLConstantes.SECCION100_P_101_1,P101_2);
+            contentValues.put(SQLConstantes.SECCION100_P_101_1_O,P101_3);
+            contentValues.put(SQLConstantes.SECCION100_P_102_1,P102_1_2);
+            contentValues.put(SQLConstantes.SECCION100_P_102_2,P102_2_2);
+            contentValues.put(SQLConstantes.SECCION100_P_102_3,P102_3_2);
+            contentValues.put(SQLConstantes.SECCION100_P_102_4,P102_4_2);
+            contentValues.put(SQLConstantes.SECCION100_P_102A,P102_1_3);
+            contentValues.put(SQLConstantes.SECCION100_P_102B,P102_2_3);
+            contentValues.put(SQLConstantes.SECCION100_P_102C,P102_3_3);
+            contentValues.put(SQLConstantes.SECCION100_P_102D,P102_4_3);
+            contentValues.put(SQLConstantes.SECCION100_P_103,P103+"");
+            contentValues.put(SQLConstantes.SECCION100_P_103_O,P103_0);
+            contentValues.put(SQLConstantes.SECCION100_P_104,P104+"");
+            contentValues.put(SQLConstantes.SECCION100_P_105,P105);
+            data.actualizarModulo1(idempresa,contentValues);
+        }else{
+            //si no existe el elemento, lo construye para insertarlo
+            sec100 = new Sec100PojoF1();
+            //llena el objeto a insertar
+            sec100.setID(idempresa);
+            sec100.setP_101(P101_1);
+            sec100.setP_101_1(P101_2);
+            sec100.setP_101_1_O(P101_3);
+            sec100.setP_102_1(P102_1_2);
+            sec100.setP_102_2(P102_2_2);
+            sec100.setP_102_3(P102_3_2);
+            sec100.setP_102_4(P102_4_2);
+            sec100.setP_102A(P102_1_3);
+            sec100.setP_102B(P102_2_3);
+            sec100.setP_102C(P102_3_3);
+            sec100.setP_102D(P102_4_3);
+            sec100.setP_103(P103+"");
+            sec100.setP_103_O(P103_0);
+            sec100.setP_104(P104+"");
+            sec100.setP_105(P105);
+            data.insertarModulo1(sec100);
+        }
+        data.close();
     }
     public boolean validar(){
         //revisarcampos

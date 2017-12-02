@@ -12,7 +12,7 @@
             android:id="@+id/txtCabecera"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/titulo_seccion100"
+            android:text="@string/titulo_seccion400"
             android:background="@color/colorPrimary"
             android:textColor="@color/icons"
             android:gravity="center"
