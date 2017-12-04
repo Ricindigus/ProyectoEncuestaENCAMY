@@ -262,10 +262,9 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckM1"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:layout_marginLeft="44dp"/>
+                                android:gravity="center"/>
 
                         </LinearLayout>
 
@@ -284,10 +283,9 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckM2"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:layout_marginLeft="44dp"/>
+                                android:gravity="center"/>
 
                         </LinearLayout>
 
@@ -305,10 +303,9 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckM3"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:layout_marginLeft="44dp"/>
+                                android:gravity="center"/>
 
                         </LinearLayout>
                         <View
@@ -325,10 +322,9 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckM4"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:layout_marginLeft="44dp"/>
+                                android:gravity="center"/>
 
                         </LinearLayout>
 
@@ -351,11 +347,10 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckM5"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:enabled="false"
-                                android:layout_marginLeft="44dp"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
 
@@ -373,11 +368,10 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckM6"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:enabled="false"
-                                android:layout_marginLeft="44dp"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
                         <View
@@ -394,11 +388,10 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckM7"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:enabled="false"
-                                android:layout_marginLeft="44dp"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
                         <View
@@ -415,11 +408,10 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckM8"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:enabled="false"
-                                android:layout_marginLeft="44dp"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
 
@@ -590,10 +582,9 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckL1"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:layout_marginLeft="44dp"/>
+                                android:gravity="center"/>
 
                         </LinearLayout>
 
@@ -611,10 +602,9 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckL2"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:layout_marginLeft="44dp"/>
+                                android:gravity="center"/>
 
                         </LinearLayout>
                         <View
@@ -631,10 +621,9 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckL3"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:layout_marginLeft="44dp"/>
+                                android:gravity="center"/>
 
                         </LinearLayout>
                         <View
@@ -651,10 +640,9 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckL4"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:layout_marginLeft="44dp"/>
+                                android:gravity="center"/>
 
                         </LinearLayout>
 
@@ -677,11 +665,10 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckL5"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:enabled="false"
-                                android:layout_marginLeft="44dp"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
 
@@ -699,11 +686,10 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckL6"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:enabled="false"
-                                android:layout_marginLeft="44dp"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
                         <View
@@ -720,11 +706,10 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckL7"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:enabled="false"
-                                android:layout_marginLeft="44dp"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
                         <View
@@ -741,11 +726,10 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckL8"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:enabled="false"
-                                android:layout_marginLeft="44dp"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
 
@@ -930,10 +914,9 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckP1"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:layout_marginLeft="44dp"/>
+                                android:gravity="center"/>
 
                         </LinearLayout>
 
@@ -951,10 +934,9 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckP2"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:layout_marginLeft="44dp"/>
+                                android:gravity="center"/>
 
                         </LinearLayout>
 
@@ -972,10 +954,9 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckP3"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:layout_marginLeft="44dp"/>
+                                android:gravity="center"/>
 
                         </LinearLayout>
                         <View
@@ -992,10 +973,9 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckP4"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:layout_marginLeft="44dp"/>
+                                android:gravity="center"/>
 
                         </LinearLayout>
                         <View
@@ -1012,10 +992,9 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckP5"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:layout_marginLeft="44dp"/>
+                                android:gravity="center"/>
 
                         </LinearLayout>
                     </LinearLayout>
@@ -1037,11 +1016,10 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckP6"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:enabled="false"
-                                android:layout_marginLeft="44dp"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
 
@@ -1059,11 +1037,10 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckP7"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:enabled="false"
-                                android:layout_marginLeft="44dp"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
 
@@ -1081,11 +1058,10 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckP8"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:enabled="false"
-                                android:layout_marginLeft="44dp"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
                         <View
@@ -1102,11 +1078,10 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckP9"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:enabled="false"
-                                android:layout_marginLeft="44dp"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
                         <View
@@ -1123,11 +1098,10 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckP10"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:enabled="false"
-                                android:layout_marginLeft="44dp"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
 
@@ -1314,10 +1288,9 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckT1"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:layout_marginLeft="44dp"/>
+                                android:gravity="center"/>
 
                         </LinearLayout>
 
@@ -1335,10 +1308,9 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckT2"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:layout_marginLeft="44dp"/>
+                                android:gravity="center"/>
 
                         </LinearLayout>
 
@@ -1356,10 +1328,9 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckT3"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:layout_marginLeft="44dp"/>
+                                android:gravity="center"/>
 
                         </LinearLayout>
 
@@ -1377,10 +1348,9 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckT4"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:layout_marginLeft="44dp"/>
+                                android:gravity="center"/>
 
                         </LinearLayout>
 
@@ -1404,11 +1374,10 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckT5"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:enabled="false"
-                                android:layout_marginLeft="44dp"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
 
@@ -1427,11 +1396,10 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckT6"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:enabled="false"
-                                android:layout_marginLeft="44dp"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
 
@@ -1449,11 +1417,10 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckT7"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:enabled="false"
-                                android:layout_marginLeft="44dp"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
 
@@ -1471,11 +1438,10 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckT8"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:enabled="false"
-                                android:layout_marginLeft="44dp"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
 
@@ -1634,10 +1600,9 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckV1"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:layout_marginLeft="44dp"/>
+                                android:gravity="center"/>
 
                         </LinearLayout>
 
@@ -1655,10 +1620,9 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckV2"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:layout_marginLeft="44dp"/>
+                                android:gravity="center"/>
 
                         </LinearLayout>
                         <View
@@ -1675,10 +1639,9 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckV3"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:layout_marginLeft="44dp"/>
+                                android:gravity="center"/>
 
                         </LinearLayout>
                     </LinearLayout>
@@ -1701,11 +1664,10 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckV4"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:enabled="false"
-                                android:layout_marginLeft="44dp"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
                         <View
@@ -1722,11 +1684,10 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckV5"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:enabled="false"
-                                android:layout_marginLeft="44dp"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
                         <View
@@ -1743,11 +1704,10 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckV6"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:enabled="false"
-                                android:layout_marginLeft="44dp"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
                     </LinearLayout>
@@ -1815,12 +1775,13 @@
                     android:layout_height="40dp"
                     android:gravity="center"
                     android:orientation="horizontal">
-                    <EditText
+                    <TextView
                         android:id="@+id/sec300_p302_edt"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="2"
-                        android:hint="Otro"
+                        android:text="Otro"
+                        android:gravity="center"
                         android:textAlignment="center" />
                     <View
                         android:layout_width="2dp"
@@ -1862,10 +1823,9 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckO1"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:layout_marginLeft="44dp"/>
+                                android:gravity="center"/>
 
                         </LinearLayout>
 
@@ -1889,11 +1849,10 @@
                             >
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckO2"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:enabled="false"
-                                android:layout_marginLeft="44dp"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
 

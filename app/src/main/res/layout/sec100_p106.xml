@@ -53,6 +53,12 @@
                     android:textAlignment="center"
                     android:textStyle="bold"
                     android:padding="5dp"/>
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="#607d8b"
+                    >
+                </View>
 
             </LinearLayout>
             <View
@@ -85,7 +91,15 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    android:background="@drawable/fondo_login"
+                    android:inputType="number"/>
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="#607d8b"
+                    >
+                </View>
 
             </LinearLayout>
             <View
@@ -118,14 +132,22 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    android:background="@drawable/fondo_login"
+                    android:inputType="number"
+                    />
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="#607d8b"
+                    >
+                </View>
             </LinearLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:background="#607d8b"
-                >
-            </View>
+                android:background="#607d8b"></View>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -150,7 +172,15 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    android:background="@drawable/fondo_login"
+                    android:inputType="number"/>
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="#607d8b"
+                    >
+                </View>
             </LinearLayout>
             <View
                 android:layout_width="match_parent"
@@ -182,7 +212,15 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    android:background="@drawable/fondo_login"
+                    android:inputType="number"/>
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="#607d8b"
+                    >
+                </View>
             </LinearLayout>
             <View
                 android:layout_width="match_parent"
@@ -216,6 +254,12 @@
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
                     android:padding="5dp"/>
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="#607d8b"
+                    >
+                </View>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

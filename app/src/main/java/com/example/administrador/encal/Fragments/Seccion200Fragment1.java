@@ -3,9 +3,11 @@ package com.example.administrador.encal.Fragments;
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,6 +52,7 @@ public class Seccion200Fragment1 extends Fragment {
     private EditText p205_edt;
     private CardView p205_card;
 
+    private IdentificacionPojo identificacion;
 
     private String idempresa;
     private Sec200PojoF1 sec200PojoF1;
@@ -69,8 +72,9 @@ public class Seccion200Fragment1 extends Fragment {
     public Seccion200Fragment1(String idempresa, Context context) {
         this.idempresa = idempresa;
         this.context = context;
-        //data = new Data(context);
-        //data.open();
+        data = new Data(context);
+        data.open();
+        identificacion = data.getIdentificacion(idempresa);
     }
 
     @Override
@@ -136,6 +140,26 @@ public class Seccion200Fragment1 extends Fragment {
         });
 
         //----pregunta 205
+        p205_ck5.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b){
+                    p205_ck1.setEnabled(false);
+                    p205_ck2.setEnabled(false);
+                    p205_ck3.setEnabled(false);
+                    p205_ck4.setEnabled(false);
+                    p205_ck6.setEnabled(false);
+                }
+                else {
+                    p205_ck1.setEnabled(true);
+                    p205_ck2.setEnabled(true);
+                    p205_ck3.setEnabled(true);
+                    p205_ck4.setEnabled(true);
+                    p205_ck6.setEnabled(true);
+                }
+            }
+        });
+
         p205_ck6.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -207,14 +231,14 @@ public class Seccion200Fragment1 extends Fragment {
 
         int childPosP2 = p203_rg.indexOfChild(p203_rg.findViewById(p203_rg.getCheckedRadioButtonId()));
         P_203 = childPosP2;
-        if(!p203_edt.getText().toString().equals("")){
+
             P_203_O =  p203_edt.getText().toString();
 
-        }
-        if(!p204_edt.getText().toString().equals("")){
+
+
             P_204 =  p204_edt.getText().toString();
 
-        }
+
         if(p205_ck1.isChecked())P_205_1 = 1;
         else P_205_1 = 0;
         if(p205_ck2.isChecked())P_205_2 = 1;
@@ -227,10 +251,9 @@ public class Seccion200Fragment1 extends Fragment {
         else P_205_5 = 0;
         if(p205_ck6.isChecked())P_205_6 = 1;
         else P_205_6 = 0;
-        if(!p205_edt.getText().toString().equals("")){
             P_205_6_O =  p205_edt.getText().toString();
 
-        }
+
 
 
     }
@@ -280,13 +303,102 @@ public class Seccion200Fragment1 extends Fragment {
         }
         data.close();
     }
-    public boolean validar(){
-        //revisarcampos
-        boolean valido = true;
-        //llenarMapaVariables();
 
+    public boolean validar(){
+        boolean valido = true;
+        String mensaje = "";
+        llenarMapaVariables();
+
+        boolean v1=true;boolean v2=true;boolean v3=true;boolean v4=true;boolean vt=true;
+
+        //201
+        if(P_201_1 != 1 && P_201_2 != 1 && P_201_3 != 1 && P_201_4 != 1 ) {
+            valido = false;
+            if(mensaje.equals(""))mensaje = "PREGUNTA 201: DEBE SELECCIONAR AL MENOS UNA OPCION";
+        }
+        //202
+        if (P_202!=-1){
+            if (P_202==0){
+                if(p203_card.getVisibility()==View.VISIBLE){
+                    if(P_203 != -1){
+                        if (P_203==3){
+                            if (P_203_O.trim().length() < 2) {
+                                valido = false;
+                                if (mensaje.equals("")) mensaje = "PREGUNTA 203: DEBE REGISTRAR INFORMACION";
+                            }
+                        }
+
+                    }else if (mensaje.equals("")) mensaje = "PREGUNTA 203: DEBE SELECCIONAR AL MENOS UNA OPCION";
+                }
+
+                if(p204_card.getVisibility()==View.VISIBLE){
+                    if (P_204.trim().length() < 2) {
+                        valido = false;
+                        if (mensaje.equals("")) mensaje = "PREGUNTA 204: DEBE REGISTRAR INFORMACION";
+                    }
+                    data = new Data(context);
+                    data.open();
+                    int ainicio = Integer.parseInt(data.getIdentificacion(idempresa).getANO_INI());
+                    data.close();
+                    int verificacion =  ainicio;
+                    if(!P_204.equals("") && verificacion!=0){
+                        if(Integer.parseInt(P_204) < verificacion || Integer.parseInt(P_204)>2017){
+                            valido = false;
+                            if(mensaje.equals(""))mensaje = "PREGUNTA 204: Año de inicio de utilización del estándar de calidad no debe ser menor al año de inicio de funcionamiento ni mayor a 2017";
+                        }
+                    }
+                }
+                if (p205_card.getVisibility()==View.VISIBLE){
+                    if(P_205_1 != 1 && P_205_2 != 1 && P_205_3 != 1 && P_205_4 != 1 && P_205_5 != 1 && P_205_6 != 1){
+                        valido = false;
+                        if (mensaje.equals("")) mensaje = "PREGUNTA 205: DEBE SELECCIONAR AL MENOS UNA OPCION";
+                    }
+                    if (P_205_6==1){
+                        if (P_205_6_O.trim().length() < 2) {
+                            valido = false;
+                            if (mensaje.equals("")) mensaje = "PREGUNTA 205: DEBE REGISTRAR INFORMACION";
+                        }
+
+                    }
+                }
+            }
+        }else {
+            valido = false;
+            if(mensaje.equals(""))mensaje = "pregunta 202: DEBE selecionar alguna opcion ";
+        }
+
+
+
+        if(!valido){
+            mostrarMensaje(mensaje);
+//            Log.d("vNUM_RUC" , vNUM_RUC+"");
+//            Log.d("vRAZON_SOCIAL",vRAZON_SOCIAL+"");
+//            Log.d("vANIO_FUNDACION",vANIO_FUNDACION+"");
+//            Log.d("vPAG_WEB",vPAG_WEB+"");
+//            Log.d("vCORREO",vCORREO+"");
+//            Log.d("vTEL_MOVIL",vTEL_MOVIL+"");
+//            Log.d("vANIO_OPERACION",vANIO_OPERACION+"");
+//            Log.d("vNOM_INFORMANTE",vNOM_INFORMANTE+"");
+//            Log.d("vSEXO_INFORMANTE",vSEXO_INFORMANTE+"");
+//            Log.d("vEDAD_INFORMANTE",vEDAD_INFORMANTE+"");
+//            Log.d("vACAD_INFORMANTE",vACAD_INFORMANTE+"");
+//            Log.d("vCARGO_INFORMANTE",vCARGO_INFORMANTE+"");
+//            Log.d("vCARGO_INFORMANTE_ESP",vCARGO_INFORMANTE_ESP+"");
+//            Log.d("vTEL_FIJO",vTEL_FIJO+"");
+        }
 
         return valido;
-
     }
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
 }

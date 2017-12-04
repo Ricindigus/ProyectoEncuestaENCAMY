@@ -23,11 +23,6 @@
             android:orientation="horizontal"
             android:paddingLeft="5dp"
             android:layout_marginBottom="16dp">
-            <CheckBox
-                android:id="@+id/sec100_p102_ck1"
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent" />
             <TextView
                 android:id="@+id/sec100_p102_txt1"
                 android:background="@drawable/marco_tabla"
@@ -43,7 +38,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Actividad Secundaria"
-                android:enabled="false"/>
+                android:background="@drawable/fondo_edit_text"
+                android:inputType="text"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,11 +47,6 @@
             android:orientation="horizontal"
             android:paddingLeft="5dp"
             android:layout_marginBottom="16dp">
-            <CheckBox
-                android:id="@+id/sec100_p102_ck2"
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent" />
             <TextView
                 android:id="@+id/sec100_p102_txt2"
                 android:background="@drawable/marco_tabla"
@@ -70,7 +61,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Actividad Secundaria"
-                android:enabled="false"/>
+                android:background="@drawable/fondo_edit_text"
+                android:inputType="text"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -79,11 +71,7 @@
             android:paddingLeft="5dp"
             android:layout_marginBottom="16dp"
             >
-            <CheckBox
-                android:id="@+id/sec100_p102_ck3"
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent" />
+
             <TextView
                 android:id="@+id/sec100_p102_txt3"
                 android:background="@drawable/marco_tabla"
@@ -98,18 +86,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Actividad Secundaria"
-                android:enabled="false"/>
+                android:background="@drawable/fondo_edit_text"
+                android:inputType="text"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingLeft="5dp">
-            <CheckBox
-                android:id="@+id/sec100_p102_ck4"
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent" />
             <TextView
                 android:id="@+id/sec100_p102_txt4"
                 android:background="@drawable/marco_tabla"
@@ -124,7 +108,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Actividad Secundaria"
-                android:enabled="false"/>
+                android:background="@drawable/fondo_edit_text"
+                android:inputType="text"/>
         </LinearLayout>
 
     </LinearLayout>

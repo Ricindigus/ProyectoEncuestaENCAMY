@@ -1,6 +1,8 @@
 package com.example.administrador.encal.Fragments;
 
 
+import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -17,6 +19,9 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.example.administrador.encal.Modelo.Data;
+import com.example.administrador.encal.Modelo.SQLConstantes;
+import com.example.administrador.encal.Pojos.Sec300PojoF1;
 import com.example.administrador.encal.R;
 
 /**
@@ -34,51 +39,51 @@ public class Seccion300Fragment1 extends Fragment {
     private EditText p302_temotro;
     private EditText p302_volotro;
     private EditText p302_ototro;
-  /*
-    private RadioGroup p302_rgM1;
-    private RadioGroup p302_rgM2;
-    private RadioGroup p302_rgM3;
-    private RadioGroup p302_rgM4;
-    private RadioGroup p302_rgM5;
-    private RadioGroup p302_rgM6;
-    private RadioGroup p302_rgM7;
-    private RadioGroup p302_rgM8;
-    private RadioGroup p302_rgL1;
-    private RadioGroup p302_rgL2;
-    private RadioGroup p302_rgL3;
-    private RadioGroup p302_rgL4;
-    private RadioGroup p302_rgL5;
-    private RadioGroup p302_rgL6;
-    private RadioGroup p302_rgL7;
-    private RadioGroup p302_rgL8;
-    private RadioGroup p302_rgP1;
-    private RadioGroup p302_rgP2;
-    private RadioGroup p302_rgP3;
-    private RadioGroup p302_rgP4;
-    private RadioGroup p302_rgP5;
-    private RadioGroup p302_rgP6;
-    private RadioGroup p302_rgP7;
-    private RadioGroup p302_rgP8;
-    private RadioGroup p302_rgP9;
-    private RadioGroup p302_rgP10;
-    private RadioGroup p302_rgT1;
-    private RadioGroup p302_rgT2;
-    private RadioGroup p302_rgT3;
-    private RadioGroup p302_rgT4;
-    private RadioGroup p302_rgT5;
-    private RadioGroup p302_rgT6;
-    private RadioGroup p302_rgT7;
-    private RadioGroup p302_rgT8;
-    private RadioGroup p302_rgV1;
-    private RadioGroup p302_rgV2;
-    private RadioGroup p302_rgV3;
-    private RadioGroup p302_rgV4;
-    private RadioGroup p302_rgV5;
-    private RadioGroup p302_rgV6;
-    private RadioGroup p302_rgO1;
-    private RadioGroup p302_rgO2;
+    /*
+      private RadioGroup p302_rgM1;
+      private RadioGroup p302_rgM2;
+      private RadioGroup p302_rgM3;
+      private RadioGroup p302_rgM4;
+      private RadioGroup p302_rgM5;
+      private RadioGroup p302_rgM6;
+      private RadioGroup p302_rgM7;
+      private RadioGroup p302_rgM8;
+      private RadioGroup p302_rgL1;
+      private RadioGroup p302_rgL2;
+      private RadioGroup p302_rgL3;
+      private RadioGroup p302_rgL4;
+      private RadioGroup p302_rgL5;
+      private RadioGroup p302_rgL6;
+      private RadioGroup p302_rgL7;
+      private RadioGroup p302_rgL8;
+      private RadioGroup p302_rgP1;
+      private RadioGroup p302_rgP2;
+      private RadioGroup p302_rgP3;
+      private RadioGroup p302_rgP4;
+      private RadioGroup p302_rgP5;
+      private RadioGroup p302_rgP6;
+      private RadioGroup p302_rgP7;
+      private RadioGroup p302_rgP8;
+      private RadioGroup p302_rgP9;
+      private RadioGroup p302_rgP10;
+      private RadioGroup p302_rgT1;
+      private RadioGroup p302_rgT2;
+      private RadioGroup p302_rgT3;
+      private RadioGroup p302_rgT4;
+      private RadioGroup p302_rgT5;
+      private RadioGroup p302_rgT6;
+      private RadioGroup p302_rgT7;
+      private RadioGroup p302_rgT8;
+      private RadioGroup p302_rgV1;
+      private RadioGroup p302_rgV2;
+      private RadioGroup p302_rgV3;
+      private RadioGroup p302_rgV4;
+      private RadioGroup p302_rgV5;
+      private RadioGroup p302_rgV6;
+      private RadioGroup p302_rgO1;
+      private RadioGroup p302_rgO2;
 
-    */
+      */
     private CheckBox p302_ckM1;
     private CheckBox p302_ckM2;
     private CheckBox p302_ckM3;
@@ -169,15 +174,103 @@ public class Seccion300Fragment1 extends Fragment {
 
     private TextInputEditText p305_edt;
     private CardView p305_card;
+    private Sec300PojoF1 sec300;
 
 
     private String idEmpresa;
     private Context context;
+    private Data data;
+
+    int P_301;
+    int P_302;
+    int P_302A_M_1;
+    int P_302A_M_2;
+    int P_302A_M_3;
+    int P_302A_M_4;
+    String P_302A_M_4_O;
+    int P_302A_L_1;
+    int P_302A_L_2;
+    int P_302A_L_3;
+    int P_302A_L_4;
+    String P_302A_L_4_O;
+    int P_302A_P_1;
+    int P_302A_P_2;
+    int P_302A_P_3;
+    int P_302A_P_4;
+    int P_302A_P_5;
+    String P_302A_P_5_O;
+    int P_302A_T_1;
+    int P_302A_T_2;
+    int P_302A_T_3;
+    int P_302A_T_4;
+    String P_302A_T_4_O;
+    int P_302A_V_1;
+    int P_302A_V_2;
+    int P_302A_V_3;
+    String P_302A_V_3_O;
+    int P_302A_O_1;
+    String P_302A_O_1_O;
+
+    int P_302B_M_1;
+    int P_302B_M_2;
+    int P_302B_M_3;
+    int P_302B_M_4;
+    int P_302B_L_1;
+    int P_302B_L_2;
+    int P_302B_L_3;
+    int P_302B_L_4;
+    int P_302B_P_1;
+    int P_302B_P_2;
+    int P_302B_P_3;
+    int P_302B_P_4;
+    int P_302B_P_5;
+    int P_302B_T_1;
+    int P_302B_T_2;
+    int P_302B_T_3;
+    int P_302B_T_4;
+    int P_302B_V_1;
+    int P_302B_V_2;
+    int P_302B_V_3;
+    int P_302B_O_1;
+
+    String P_302C_M_1;
+    String P_302C_M_2;
+    String P_302C_M_3;
+    String P_302C_M_4;
+    String P_302C_L_1;
+    String P_302C_L_2;
+    String P_302C_L_3;
+    String P_302C_L_4;
+    String P_302C_P_1;
+    String P_302C_P_2;
+    String P_302C_P_3;
+    String P_302C_P_4;
+    String P_302C_P_5;
+    String P_302C_T_1;
+    String P_302C_T_2;
+    String P_302C_T_3;
+    String P_302C_T_4;
+    String P_302C_V_1;
+    String P_302C_V_2;
+    String P_302C_V_3;
+    String P_302C_O_1;
+
+    int P_303_1;
+    int P_303_2;
+    int P_303_3;
+    int P_303_4;
+    int P_303_5;
+
+    int P_304;
+
+    String P_305;
+
 
     public Seccion300Fragment1() {
         // Required empty public constructor
     }
 
+    @SuppressLint("ValidFragment")
     public Seccion300Fragment1(String idEmpresa, Context context) {
         this.idEmpresa = idEmpresa;
         this.context = context;
@@ -303,13 +396,13 @@ public class Seccion300Fragment1 extends Fragment {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
                     case R.id.sec300_p302_rbSi:   p302_lyt.setVisibility(View.VISIBLE);
-                                                 p303_card.setVisibility(View.VISIBLE);
-                                                 p304_card.setVisibility(View.VISIBLE);
-                                                 p305_card.setVisibility(View.VISIBLE);break;
+                        p303_card.setVisibility(View.VISIBLE);
+                        p304_card.setVisibility(View.VISIBLE);
+                        p305_card.setVisibility(View.VISIBLE);break;
                     case R.id.sec300_p302_rbNo:   p302_lyt.setVisibility(View.GONE);
-                                                 p303_card.setVisibility(View.GONE);
-                                                 p304_card.setVisibility(View.GONE);
-                                                 p305_card.setVisibility(View.GONE); break;
+                        p303_card.setVisibility(View.GONE);
+                        p304_card.setVisibility(View.GONE);
+                        p305_card.setVisibility(View.GONE); break;
                 }
 
             }
@@ -372,14 +465,538 @@ public class Seccion300Fragment1 extends Fragment {
                 }
             });
         }
-
-
-
+        cargarDatos();
 
     }
 
-    public void cargardatos(){}
-    public void guardarDatos(){}
+    public void cargarDatos(){
+        data = new Data(context);
+        data.open();
+        //verifico si ya existe un objeto con datos llenados previamente
+        if(data.existeModulo3(idEmpresa)){
+            //si existe traigo el objeto
+            sec300 = data.getModulo3(idEmpresa);
+            //saco los datos del objeto para llenarlos en los elementos del fragment
+            //PREGUNTA 301
+            if(!sec300.getP_301().equals("") && !sec300.getP_301().equals("-1")){
+                ((RadioButton)p301_rg.getChildAt(Integer.parseInt(sec300.getP_301()))).setChecked(true);
+            }
+            //PREGUNTA 302
+            if(!sec300.getP_302().equals("") && !sec300.getP_302().equals("-1")){
+                ((RadioButton)p302_rg.getChildAt(Integer.parseInt(sec300.getP_302()))).setChecked(true);
+            }
+            //PREGUNTA 302_1
+            p302_masaotro.setText(sec300.getP_302A_M_4_O());
+            if(sec300.getP_302A_M_1().equals("1")) p302_ckM1.setChecked(true);
+            if(sec300.getP_302A_M_1().equals("0")) p302_ckM1.setChecked(false);
+            if(sec300.getP_302A_M_2().equals("1")) p302_ckM2.setChecked(true);
+            if(sec300.getP_302A_M_2().equals("0")) p302_ckM2.setChecked(false);
+            if(sec300.getP_302A_M_3().equals("1")) p302_ckM3.setChecked(true);
+            if(sec300.getP_302A_M_3().equals("0")) p302_ckM3.setChecked(false);
+            if(sec300.getP_302A_M_4().equals("1")) p302_ckM4.setChecked(true);
+            if(sec300.getP_302A_M_4().equals("0")) p302_ckM4.setChecked(false);
+
+            if(sec300.getP_302B_M_1().equals("1")) p302_ckM5.setChecked(true);
+            if(sec300.getP_302B_M_1().equals("0")) p302_ckM5.setChecked(false);
+            if(sec300.getP_302B_M_2().equals("1")) p302_ckM6.setChecked(true);
+            if(sec300.getP_302B_M_2().equals("0")) p302_ckM6.setChecked(false);
+            if(sec300.getP_302B_M_3().equals("1")) p302_ckM7.setChecked(true);
+            if(sec300.getP_302B_M_3().equals("0")) p302_ckM7.setChecked(false);
+            if(sec300.getP_302B_M_4().equals("1")) p302_ckM8.setChecked(true);
+            if(sec300.getP_302B_M_4().equals("0")) p302_ckM8.setChecked(false);
+
+            p302_mCant1.setText(sec300.getP_302C_M_1());
+            p302_mCant2.setText(sec300.getP_302C_M_2());
+            p302_mCant3.setText(sec300.getP_302C_M_3());
+            p302_mCant4.setText(sec300.getP_302C_M_4());
+
+            //PREGUNTA 302_2
+            p302_longotro.setText(sec300.getP_302A_L_4_O());
+            if(sec300.getP_302A_L_1().equals("1")) p302_ckL1.setChecked(true);
+            if(sec300.getP_302A_L_1().equals("0")) p302_ckL1.setChecked(false);
+            if(sec300.getP_302A_L_2().equals("1")) p302_ckL2.setChecked(true);
+            if(sec300.getP_302A_L_2().equals("0")) p302_ckL2.setChecked(false);
+            if(sec300.getP_302A_L_3().equals("1")) p302_ckL3.setChecked(true);
+            if(sec300.getP_302A_L_3().equals("0")) p302_ckL3.setChecked(false);
+            if(sec300.getP_302A_L_4().equals("1")) p302_ckL4.setChecked(true);
+            if(sec300.getP_302A_L_4().equals("0")) p302_ckL4.setChecked(false);
+
+            if(sec300.getP_302B_L_1().equals("1")) p302_ckL5.setChecked(true);
+            if(sec300.getP_302B_L_1().equals("0")) p302_ckL5.setChecked(false);
+            if(sec300.getP_302B_L_2().equals("1")) p302_ckL6.setChecked(true);
+            if(sec300.getP_302B_L_2().equals("0")) p302_ckL6.setChecked(false);
+            if(sec300.getP_302B_L_3().equals("1")) p302_ckL7.setChecked(true);
+            if(sec300.getP_302B_L_3().equals("0")) p302_ckL7.setChecked(false);
+            if(sec300.getP_302B_L_4().equals("1")) p302_ckL8.setChecked(true);
+            if(sec300.getP_302B_L_4().equals("0")) p302_ckL8.setChecked(false);
+
+            p302_lCant1.setText(sec300.getP_302C_L_1());
+            p302_lCant2.setText(sec300.getP_302C_L_2());
+            p302_lCant3.setText(sec300.getP_302C_L_3());
+            p302_lCant4.setText(sec300.getP_302C_L_4());
+
+            //PREGUNTA 302_3
+            p302_presotro.setText(sec300.getP_302A_P_5_O());
+            if(sec300.getP_302A_P_1().equals("1")) p302_ckP1.setChecked(true);
+            if(sec300.getP_302A_P_1().equals("0")) p302_ckP1.setChecked(false);
+            if(sec300.getP_302A_P_2().equals("1")) p302_ckP2.setChecked(true);
+            if(sec300.getP_302A_P_2().equals("0")) p302_ckP2.setChecked(false);
+            if(sec300.getP_302A_P_3().equals("1")) p302_ckP3.setChecked(true);
+            if(sec300.getP_302A_P_3().equals("0")) p302_ckP3.setChecked(false);
+            if(sec300.getP_302A_P_4().equals("1")) p302_ckP4.setChecked(true);
+            if(sec300.getP_302A_P_4().equals("0")) p302_ckP4.setChecked(false);
+            if(sec300.getP_302A_P_5().equals("1")) p302_ckP5.setChecked(true);
+            if(sec300.getP_302A_P_5().equals("0")) p302_ckP5.setChecked(false);
+
+            if(sec300.getP_302B_P_1().equals("1")) p302_ckP6.setChecked(true);
+            if(sec300.getP_302B_P_1().equals("0")) p302_ckP6.setChecked(false);
+            if(sec300.getP_302B_P_2().equals("1")) p302_ckP7.setChecked(true);
+            if(sec300.getP_302B_P_2().equals("0")) p302_ckP7.setChecked(false);
+            if(sec300.getP_302B_P_3().equals("1")) p302_ckP8.setChecked(true);
+            if(sec300.getP_302B_P_3().equals("0")) p302_ckP8.setChecked(false);
+            if(sec300.getP_302B_P_4().equals("1")) p302_ckP9.setChecked(true);
+            if(sec300.getP_302B_P_4().equals("0")) p302_ckP9.setChecked(false);
+            if(sec300.getP_302B_P_5().equals("1")) p302_ckP10.setChecked(true);
+            if(sec300.getP_302B_P_5().equals("0")) p302_ckP10.setChecked(false);
+
+            p302_pCant1.setText(sec300.getP_302C_P_1());
+            p302_pCant2.setText(sec300.getP_302C_P_2());
+            p302_pCant3.setText(sec300.getP_302C_P_3());
+            p302_pCant4.setText(sec300.getP_302C_P_4());
+            p302_pCant5.setText(sec300.getP_302C_P_5());
+
+            //PREGUNTA 302_4
+            p302_temotro.setText(sec300.getP_302A_T_4_O());
+            if(sec300.getP_302A_T_1().equals("1")) p302_ckT1.setChecked(true);
+            if(sec300.getP_302A_T_1().equals("0")) p302_ckT1.setChecked(false);
+            if(sec300.getP_302A_T_2().equals("1")) p302_ckT2.setChecked(true);
+            if(sec300.getP_302A_T_2().equals("0")) p302_ckT2.setChecked(false);
+            if(sec300.getP_302A_T_3().equals("1")) p302_ckT3.setChecked(true);
+            if(sec300.getP_302A_T_3().equals("0")) p302_ckT3.setChecked(false);
+            if(sec300.getP_302A_T_4().equals("1")) p302_ckT4.setChecked(true);
+            if(sec300.getP_302A_T_4().equals("0")) p302_ckT4.setChecked(false);
+
+            if(sec300.getP_302B_T_1().equals("1")) p302_ckT5.setChecked(true);
+            if(sec300.getP_302B_T_1().equals("0")) p302_ckT5.setChecked(false);
+            if(sec300.getP_302B_T_2().equals("1")) p302_ckT6.setChecked(true);
+            if(sec300.getP_302B_T_2().equals("0")) p302_ckT6.setChecked(false);
+            if(sec300.getP_302B_T_3().equals("1")) p302_ckT7.setChecked(true);
+            if(sec300.getP_302B_T_3().equals("0")) p302_ckT7.setChecked(false);
+            if(sec300.getP_302B_T_4().equals("1")) p302_ckT8.setChecked(true);
+            if(sec300.getP_302B_T_4().equals("0")) p302_ckT8.setChecked(false);
+
+            p302_tCant1.setText(sec300.getP_302C_T_1());
+            p302_tCant2.setText(sec300.getP_302C_T_2());
+            p302_tCant3.setText(sec300.getP_302C_T_3());
+            p302_tCant4.setText(sec300.getP_302C_T_4());
+
+            //PREGUNTA 302_5
+            p302_volotro.setText(sec300.getP_302A_V_3_O());
+            if(sec300.getP_302A_V_1().equals("1")) p302_ckV1.setChecked(true);
+            if(sec300.getP_302A_V_1().equals("0")) p302_ckV1.setChecked(false);
+            if(sec300.getP_302A_V_2().equals("1")) p302_ckV2.setChecked(true);
+            if(sec300.getP_302A_V_2().equals("0")) p302_ckV2.setChecked(false);
+            if(sec300.getP_302A_V_3().equals("1")) p302_ckV3.setChecked(true);
+            if(sec300.getP_302A_V_3().equals("0")) p302_ckV3.setChecked(false);
+
+            if(sec300.getP_302B_V_1().equals("1")) p302_ckV4.setChecked(true);
+            if(sec300.getP_302B_V_1().equals("0")) p302_ckV4.setChecked(false);
+            if(sec300.getP_302B_V_2().equals("1")) p302_ckV5.setChecked(true);
+            if(sec300.getP_302B_V_2().equals("0")) p302_ckV5.setChecked(false);
+            if(sec300.getP_302B_V_3().equals("1")) p302_ckV6.setChecked(true);
+            if(sec300.getP_302B_V_3().equals("0")) p302_ckV6.setChecked(false);
+
+            p302_vCant1.setText(sec300.getP_302C_V_1());
+            p302_vCant2.setText(sec300.getP_302C_V_2());
+            p302_vCant3.setText(sec300.getP_302C_V_3());
+
+            //PREGUNTA 302_6
+            p302_ototro.setText(sec300.getP_302A_O_1_O());
+            if(sec300.getP_302A_O_1().equals("1")) p302_ckO1.setChecked(true);
+            if(sec300.getP_302A_O_1().equals("0")) p302_ckO1.setChecked(false);
+
+            if(sec300.getP_302B_O_1().equals("1")) p302_ckO2.setChecked(true);
+            if(sec300.getP_302B_O_1().equals("0")) p302_ckO2.setChecked(false);
+
+            p302_oCant1.setText(sec300.getP_302C_O_1());
+
+            //PREGUNTA 303
+            if(sec300.getP_303_1().equals("1")) p303_ck1.setChecked(true);
+            if(sec300.getP_303_1().equals("0")) p303_ck1.setChecked(false);
+            if(sec300.getP_303_2().equals("1")) p303_ck2.setChecked(true);
+            if(sec300.getP_303_2().equals("0")) p303_ck2.setChecked(false);
+            if(sec300.getP_303_3().equals("1")) p303_ck3.setChecked(true);
+            if(sec300.getP_303_3().equals("0")) p303_ck3.setChecked(false);
+            if(sec300.getP_303_4().equals("1")) p303_ck4.setChecked(true);
+            if(sec300.getP_303_4().equals("0")) p303_ck4.setChecked(false);
+            if(sec300.getP_303_5().equals("1")) p303_ck5.setChecked(true);
+            if(sec300.getP_303_5().equals("0")) p303_ck5.setChecked(false);
+
+            //PREGUNTA 304
+            if(!sec300.getP_304().equals("") && !sec300.getP_304().equals("-1")){
+                ((RadioButton)p304_rg.getChildAt(Integer.parseInt(sec300.getP_304()))).setChecked(true);
+            }
+            //PREGUNTA 305
+            p305_edt.setText(sec300.getP_305());
+
+            //PREGUNTA ONS
+
+
+
+        }
+        data.close();
+    }
+    public void llenarMapaVariables(){
+
+        //PREGUNTA 301
+        int childPosP301 = p301_rg.indexOfChild(p301_rg.findViewById(p301_rg.getCheckedRadioButtonId()));
+        P_301= childPosP301;
+        //PREGUNTA 302
+        int childPosP302 = p302_rg.indexOfChild(p302_rg.findViewById(p302_rg.getCheckedRadioButtonId()));
+        P_302 = childPosP302;
+
+        //PREGUNTA 302-1
+        P_302A_M_4_O = p302_masaotro.getText().toString();
+
+        if(p302_ckM1.isChecked())P_302A_M_1 = 1;
+        else P_302A_M_1 = 0;
+        if(p302_ckM2.isChecked())P_302A_M_2 = 1;
+        else P_302A_M_2 = 0;
+        if(p302_ckM3.isChecked())P_302A_M_3 = 1;
+        else P_302A_M_3 = 0;
+        if(p302_ckM4.isChecked())P_302A_M_4 = 1;
+        else P_302A_M_4 = 0;
+
+        if(p302_ckM5.isChecked())P_302B_M_1 = 1;
+        else P_302B_M_1 = 0;
+        if(p302_ckM6.isChecked())P_302B_M_2 = 1;
+        else P_302B_M_2 = 0;
+        if(p302_ckM7.isChecked())P_302B_M_3 = 1;
+        else P_302B_M_3 = 0;
+        if(p302_ckM8.isChecked())P_302B_M_4 = 1;
+        else P_302B_M_4 = 0;
+
+
+        P_302C_M_1 = p302_mCant1.getText().toString();
+        P_302C_M_2 = p302_mCant2.getText().toString();
+        P_302C_M_3 = p302_mCant3.getText().toString();
+        P_302C_M_4 = p302_mCant4.getText().toString();
+
+        //PREGUNTA 302-2
+
+        P_302A_L_4_O = p302_longotro.getText().toString();
+
+        if(p302_ckL1.isChecked())P_302A_L_1 = 1;
+        else P_302A_L_1 = 0;
+        if(p302_ckL2.isChecked())P_302A_L_2 = 1;
+        else P_302A_L_2 = 0;
+        if(p302_ckL3.isChecked())P_302A_L_3 = 1;
+        else P_302A_L_3 = 0;
+        if(p302_ckL4.isChecked())P_302A_L_4 = 1;
+        else P_302A_L_4 = 0;
+
+        if(p302_ckL5.isChecked())P_302B_L_1 = 1;
+        else P_302B_L_1 = 0;
+        if(p302_ckL6.isChecked())P_302B_L_2 = 1;
+        else P_302B_L_2 = 0;
+        if(p302_ckL7.isChecked())P_302B_L_3 = 1;
+        else P_302B_L_3 = 0;
+        if(p302_ckL8.isChecked())P_302B_L_4 = 1;
+        else P_302B_L_4 = 0;
+
+
+        P_302C_L_1 = p302_lCant1.getText().toString();
+        P_302C_L_2 = p302_lCant2.getText().toString();
+        P_302C_L_3 = p302_lCant3.getText().toString();
+        P_302C_L_4 = p302_lCant4.getText().toString();
+
+        //PREGUNTA 302-3
+        P_302A_P_5_O = p302_presotro.getText().toString();
+
+        if(p302_ckP1.isChecked())P_302A_P_1 = 1;
+        else P_302A_P_1 = 0;
+        if(p302_ckP2.isChecked())P_302A_P_2 = 1;
+        else P_302A_P_2 = 0;
+        if(p302_ckP3.isChecked())P_302A_P_3 = 1;
+        else P_302A_P_3 = 0;
+        if(p302_ckP4.isChecked())P_302A_P_4 = 1;
+        else P_302A_P_4 = 0;
+        if(p302_ckP5.isChecked())P_302A_P_5 = 1;
+        else P_302A_P_5 = 0;
+
+        if(p302_ckP6.isChecked())P_302B_P_1 = 1;
+        else P_302B_P_1 = 0;
+        if(p302_ckP7.isChecked())P_302B_P_2 = 1;
+        else P_302B_P_2 = 0;
+        if(p302_ckP8.isChecked())P_302B_P_3 = 1;
+        else P_302B_P_3 = 0;
+        if(p302_ckP9.isChecked())P_302B_P_4 = 1;
+        else P_302B_P_4 = 0;
+        if(p302_ckP10.isChecked())P_302B_P_5 = 1;
+        else P_302B_P_5 = 0;
+
+
+        P_302C_P_1 = p302_pCant1.getText().toString();
+        P_302C_P_2 = p302_pCant2.getText().toString();
+        P_302C_P_3 = p302_pCant3.getText().toString();
+        P_302C_P_4 = p302_pCant4.getText().toString();
+        P_302C_P_5 = p302_pCant5.getText().toString();
+
+        //PREGUNTA 302-4
+        P_302A_T_4_O = p302_temotro.getText().toString();
+
+        if(p302_ckT1.isChecked())P_302A_T_1 = 1;
+        else P_302A_T_1 = 0;
+        if(p302_ckT2.isChecked())P_302A_T_2 = 1;
+        else P_302A_T_2 = 0;
+        if(p302_ckT3.isChecked())P_302A_T_3 = 1;
+        else P_302A_T_3 = 0;
+        if(p302_ckT4.isChecked())P_302A_T_4 = 1;
+        else P_302A_T_4 = 0;
+
+        if(p302_ckT5.isChecked())P_302B_T_1 = 1;
+        else P_302B_T_1 = 0;
+        if(p302_ckT6.isChecked())P_302B_T_2 = 1;
+        else P_302B_T_2 = 0;
+        if(p302_ckT7.isChecked())P_302B_T_3 = 1;
+        else P_302B_T_3 = 0;
+        if(p302_ckT8.isChecked())P_302B_T_4 = 1;
+        else P_302B_T_4 = 0;
+
+
+        P_302C_T_1 = p302_tCant1.getText().toString();
+        P_302C_T_2 = p302_tCant2.getText().toString();
+        P_302C_T_3 = p302_tCant3.getText().toString();
+        P_302C_T_4 = p302_tCant4.getText().toString();
+
+        //PREGUNTA 302-5
+        P_302A_V_3_O = p302_volotro.getText().toString();
+
+        if(p302_ckV1.isChecked())P_302A_V_1 = 1;
+        else P_302A_V_1 = 0;
+        if(p302_ckV2.isChecked())P_302A_V_2 = 1;
+        else P_302A_V_2 = 0;
+        if(p302_ckV3.isChecked())P_302A_V_3 = 1;
+        else P_302A_V_3 = 0;
+
+        if(p302_ckV4.isChecked())P_302B_V_1 = 1;
+        else P_302B_V_1 = 0;
+        if(p302_ckV5.isChecked())P_302B_V_2 = 1;
+        else P_302B_V_2 = 0;
+        if(p302_ckV6.isChecked())P_302B_V_3 = 1;
+        else P_302B_V_3 = 0;
+
+
+        P_302C_V_1 = p302_vCant1.getText().toString();
+        P_302C_V_2 = p302_vCant2.getText().toString();
+        P_302C_V_3 = p302_vCant3.getText().toString();
+
+        //PREGUNTA 302-5
+        P_302A_O_1_O = p302_ototro.getText().toString();
+
+        if(p302_ckO1.isChecked())P_302A_O_1 = 1;
+        else P_302A_O_1 = 0;
+
+        if(p302_ckO2.isChecked())P_302B_O_1 = 1;
+        else P_302B_O_1 = 0;
+        P_302C_O_1 = p302_oCant1.getText().toString();
+
+        //PREGUNTA 303
+        if(p303_ck1.isChecked())P_303_1 = 1;
+        else P_303_1 = 0;
+        if(p303_ck2.isChecked())P_303_2 = 1;
+        else P_303_2 = 0;
+        if(p303_ck3.isChecked())P_303_3 = 1;
+        else P_303_3 = 0;
+        if(p303_ck4.isChecked())P_303_4 = 1;
+        else P_303_4 = 0;
+        if(p303_ck5.isChecked())P_303_5 = 1;
+        else P_303_5 = 0;
+
+        //PREGUNTA 304
+        int childPosP304 = p304_rg.indexOfChild(p304_rg.findViewById(p304_rg.getCheckedRadioButtonId()));
+        P_304= childPosP304;
+
+        //PREGUNTA 305
+        P_305 = p305_edt.getText().toString();
+
+
+    }
+    public void guardarDatos(){
+        llenarMapaVariables();
+        data = new Data(context);
+        data.open();
+        if(data.existeModulo3(idEmpresa)){
+            ContentValues contentValues = new ContentValues(77);
+
+            contentValues.put(SQLConstantes.SECCION300_P_301,P_301+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302,P_302+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302A_M_1,P_302A_M_1+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302A_M_2,P_302A_M_2+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302A_M_3,P_302A_M_3+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302A_M_4,P_302A_M_4+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302A_M_4_O,P_302A_M_4_O);
+            contentValues.put(SQLConstantes.SECCION300_P_302A_L_1,P_302A_L_1+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302A_L_2,P_302A_L_2+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302A_L_3,P_302A_L_3+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302A_L_4,P_302A_L_4+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302A_L_4_O,P_302A_L_4_O);
+            contentValues.put(SQLConstantes.SECCION300_P_302A_P_1,P_302A_P_1+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302A_P_2,P_302A_P_2+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302A_P_3,P_302A_P_3+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302A_P_4,P_302A_P_4+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302A_P_5,P_302A_P_5+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302A_P_5_O,P_302A_P_5_O);
+            contentValues.put(SQLConstantes.SECCION300_P_302A_T_1,P_302A_T_1+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302A_T_2,P_302A_T_2+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302A_T_3,P_302A_T_3+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302A_T_4,P_302A_T_4+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302A_T_4_O,P_302A_T_4_O);
+            contentValues.put(SQLConstantes.SECCION300_P_302A_V_1,P_302A_V_1+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302A_V_2,P_302A_V_2+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302A_V_3,P_302A_V_3+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302A_V_3_O,P_302A_V_3_O);
+            contentValues.put(SQLConstantes.SECCION300_P_302A_O_1,P_302A_O_1+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302A_O_1_O,P_302A_O_1_O);
+            contentValues.put(SQLConstantes.SECCION300_P_302B_M_1,P_302B_M_1+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302B_M_2,P_302B_M_2+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302B_M_3,P_302B_M_3+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302B_M_4,P_302B_M_4+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302B_L_1,P_302B_L_1+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302B_L_2,P_302B_L_2+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302B_L_3,P_302B_L_3+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302B_L_4,P_302B_L_4+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302B_P_1,P_302B_P_1+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302B_P_2,P_302B_P_2+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302B_P_3,P_302B_P_3+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302B_P_4,P_302B_P_4+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302B_P_5,P_302B_P_5+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302B_T_1,P_302B_T_1+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302B_T_2,P_302B_T_2+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302B_T_3,P_302B_T_3+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302B_T_4,P_302B_T_4+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302B_V_1,P_302B_V_1+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302B_V_2,P_302B_V_2+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302B_V_3,P_302B_V_3+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302B_O_1,P_302B_O_1+"");
+            contentValues.put(SQLConstantes.SECCION300_P_302C_M_1,P_302C_M_1);
+            contentValues.put(SQLConstantes.SECCION300_P_302C_M_2,P_302C_M_2);
+            contentValues.put(SQLConstantes.SECCION300_P_302C_M_3,P_302C_M_3);
+            contentValues.put(SQLConstantes.SECCION300_P_302C_M_4,P_302C_M_4);
+            contentValues.put(SQLConstantes.SECCION300_P_302C_L_1,P_302C_L_1);
+            contentValues.put(SQLConstantes.SECCION300_P_302C_L_2,P_302C_L_2);
+            contentValues.put(SQLConstantes.SECCION300_P_302C_L_3,P_302C_L_3);
+            contentValues.put(SQLConstantes.SECCION300_P_302C_L_4,P_302C_L_4);
+            contentValues.put(SQLConstantes.SECCION300_P_302C_P_1,P_302C_P_1);
+            contentValues.put(SQLConstantes.SECCION300_P_302C_P_2,P_302C_P_2);
+            contentValues.put(SQLConstantes.SECCION300_P_302C_P_3,P_302C_P_3);
+            contentValues.put(SQLConstantes.SECCION300_P_302C_P_4,P_302C_P_4);
+            contentValues.put(SQLConstantes.SECCION300_P_302C_P_5,P_302C_P_5);
+            contentValues.put(SQLConstantes.SECCION300_P_302C_T_1,P_302C_T_1);
+            contentValues.put(SQLConstantes.SECCION300_P_302C_T_2,P_302C_T_2);
+            contentValues.put(SQLConstantes.SECCION300_P_302C_T_3,P_302C_T_3);
+            contentValues.put(SQLConstantes.SECCION300_P_302C_T_4,P_302C_T_4);
+            contentValues.put(SQLConstantes.SECCION300_P_302C_V_1,P_302C_V_1);
+            contentValues.put(SQLConstantes.SECCION300_P_302C_V_2,P_302C_V_2);
+            contentValues.put(SQLConstantes.SECCION300_P_302C_V_3,P_302C_V_3);
+            contentValues.put(SQLConstantes.SECCION300_P_302C_O_1,P_302C_O_1);
+            contentValues.put(SQLConstantes.SECCION300_P_303_1,P_303_1+"");
+            contentValues.put(SQLConstantes.SECCION300_P_303_2,P_303_2+"");
+            contentValues.put(SQLConstantes.SECCION300_P_303_3,P_303_3+"");
+            contentValues.put(SQLConstantes.SECCION300_P_303_4,P_303_4+"");
+            contentValues.put(SQLConstantes.SECCION300_P_303_5,P_303_5+"");
+            contentValues.put(SQLConstantes.SECCION300_P_304,P_304+"");
+            contentValues.put(SQLConstantes.SECCION300_P_305,P_305);
+            //contentValues.put(SQLConstantes.SECCION300_OBS,OBS);
+            data.actualizarModulo3(idEmpresa,contentValues);
+        }else{
+            //si no existe el elemento, lo construye para insertarlo
+            sec300 = new Sec300PojoF1();
+            //llena el objeto a insertar
+            sec300.setID(idEmpresa);
+            sec300.setP_301(P_301+"");
+            sec300.setP_302(P_302+"");
+            sec300.setP_302A_M_1(P_302A_M_1+"");
+            sec300.setP_302A_M_2(P_302A_M_2+"");
+            sec300.setP_302A_M_3(P_302A_M_3+"");
+            sec300.setP_302A_M_4(P_302A_M_4+"");
+            sec300.setP_302A_M_4_O(P_302A_M_4_O);
+            sec300.setP_302A_L_1(P_302A_L_1+"");
+            sec300.setP_302A_L_2(P_302A_L_2+"");
+            sec300.setP_302A_L_3(P_302A_L_3+"");
+            sec300.setP_302A_L_4(P_302A_L_4+"");
+            sec300.setP_302A_L_4_O(P_302A_L_4_O);
+            sec300.setP_302A_P_1(P_302A_P_1+"");
+            sec300.setP_302A_P_2(P_302A_P_2+"");
+            sec300.setP_302A_P_3(P_302A_P_3+"");
+            sec300.setP_302A_P_4(P_302A_P_4+"");
+            sec300.setP_302A_P_5(P_302A_P_5+"");
+            sec300.setP_302A_P_5_O(P_302A_P_5_O);
+            sec300.setP_302A_T_1(P_302A_T_1+"");
+            sec300.setP_302A_T_2(P_302A_T_2+"");
+            sec300.setP_302A_T_3(P_302A_T_3+"");
+            sec300.setP_302A_T_4(P_302A_T_4+"");
+            sec300.setP_302A_T_4_O(P_302A_T_4_O);
+            sec300.setP_302A_V_1(P_302A_V_1+"");
+            sec300.setP_302A_V_2(P_302A_V_2+"");
+            sec300.setP_302A_V_3(P_302A_V_3+"");
+            sec300.setP_302A_V_3_O(P_302A_V_3_O);
+            sec300.setP_302A_O_1(P_302A_O_1+"");
+            sec300.setP_302A_O_1_O(P_302A_O_1_O);
+            sec300.setP_302B_M_1(P_302B_M_1+"");
+            sec300.setP_302B_M_2(P_302B_M_2+"");
+            sec300.setP_302B_M_3(P_302B_M_3+"");
+            sec300.setP_302B_M_4(P_302B_M_4+"");
+            sec300.setP_302B_L_1(P_302B_L_1+"");
+            sec300.setP_302B_L_2(P_302B_L_2+"");
+            sec300.setP_302B_L_3(P_302B_L_3+"");
+            sec300.setP_302B_L_4(P_302B_L_4+"");
+            sec300.setP_302B_P_1(P_302B_P_1+"");
+            sec300.setP_302B_P_2(P_302B_P_2+"");
+            sec300.setP_302B_P_3(P_302B_P_3+"");
+            sec300.setP_302B_P_4(P_302B_P_4+"");
+            sec300.setP_302B_P_5(P_302B_P_5+"");
+            sec300.setP_302B_T_1(P_302B_T_1+"");
+            sec300.setP_302B_T_2(P_302B_T_2+"");
+            sec300.setP_302B_T_3(P_302B_T_3+"");
+            sec300.setP_302B_T_4(P_302B_T_4+"");
+            sec300.setP_302B_V_1(P_302B_V_1+"");
+            sec300.setP_302B_V_2(P_302B_V_2+"");
+            sec300.setP_302B_V_3(P_302B_V_3+"");
+            sec300.setP_302B_O_1(P_302B_O_1+"");
+            sec300.setP_302C_M_1(P_302C_M_1);
+            sec300.setP_302C_M_2(P_302C_M_2);
+            sec300.setP_302C_M_3(P_302C_M_3);
+            sec300.setP_302C_M_4(P_302C_M_4);
+            sec300.setP_302C_L_1(P_302C_L_1);
+            sec300.setP_302C_L_2(P_302C_L_2);
+            sec300.setP_302C_L_3(P_302C_L_3);
+            sec300.setP_302C_L_4(P_302C_L_4);
+            sec300.setP_302C_P_1(P_302C_P_1);
+            sec300.setP_302C_P_2(P_302C_P_2);
+            sec300.setP_302C_P_3(P_302C_P_3);
+            sec300.setP_302C_P_4(P_302C_P_4);
+            sec300.setP_302C_P_5(P_302C_P_5);
+            sec300.setP_302C_T_1(P_302C_T_1);
+            sec300.setP_302C_T_2(P_302C_T_2);
+            sec300.setP_302C_T_3(P_302C_T_3);
+            sec300.setP_302C_T_4(P_302C_T_4);
+            sec300.setP_302C_V_1(P_302C_V_1);
+            sec300.setP_302C_V_2(P_302C_V_2);
+            sec300.setP_302C_V_3(P_302C_V_3);
+            sec300.setP_302C_O_1(P_302C_O_1);
+            sec300.setP_303_1(P_303_1+"");
+            sec300.setP_303_2(P_303_2+"");
+            sec300.setP_303_3(P_303_3+"");
+            sec300.setP_303_4(P_303_4+"");
+            sec300.setP_303_5(P_303_5+"");
+            sec300.setP_304(P_304+"");
+            sec300.setP_305(P_305);
+            data.insertarModulo3(sec300);
+        }
+        data.close();
+    }
+
     public boolean validar(){
         //revisarcampos
         boolean valido = true;

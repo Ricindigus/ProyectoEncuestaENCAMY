@@ -4,12 +4,18 @@ package com.example.administrador.encal.Fragments;
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -19,6 +25,7 @@ import android.widget.TextView;
 
 import com.example.administrador.encal.Modelo.Data;
 import com.example.administrador.encal.Modelo.SQLConstantes;
+import com.example.administrador.encal.NumericKeyBoardTransformationMethod;
 import com.example.administrador.encal.Pojos.Sec100PojoF1;
 import com.example.administrador.encal.Pojos.Sec200PojoF1;
 import com.example.administrador.encal.R;
@@ -56,6 +63,8 @@ public class Seccion100Fragment2 extends Fragment {
     private CheckBox p110_ck7;
     private EditText p110_edt;
 
+    private int sec100_p105;
+
     private String idempresa;
     private Sec100PojoF1 sec100PojoF1;
     private Context context;
@@ -75,8 +84,11 @@ public class Seccion100Fragment2 extends Fragment {
     public Seccion100Fragment2(String idempresa, Context context) {
         this.idempresa = idempresa;
         this.context = context;
-        //data = new Data(context);
-        //data.open();
+        Data data = new Data(context);
+        data.open();
+        if (!data.getModulo1(idempresa).getP_105().equals("")){
+            sec100_p105 = Integer.parseInt(data.getModulo1(idempresa).getP_105());
+        }
     }
 
 
@@ -121,6 +133,50 @@ public class Seccion100Fragment2 extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        //---pregunta106
+//        EditText[] editTexts1 = {p106_edt1,p106_edt2,p106_edt3,p106_edt4};
+//        for (int i = 0; i <editTexts1.length ; i++) {
+//            final EditText editText = editTexts1[i];
+//            editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+//                @Override
+//                public void onFocusChange(View view, boolean conFocus) {
+//                    if(view.isEnabled()){
+//                        if(conFocus) {
+//                            editText.setBackgroundResource(R.drawable.fondo_edit_text);
+//                        }
+//                        else editText.setBackgroundResource(R.drawable.fondo_edit_text);
+//                    }else{
+//                        ocultarTeclado(editText);
+//                    }
+//                }
+//            });
+//            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+//            editText.addTextChangedListener(new TextWatcher() {
+//                @Override
+//                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//                    if(!charSequence.toString().equals("")){
+//                        p106_txt.setText((Integer.parseInt(p106_txt.getText().toString()) - Integer.parseInt(charSequence.toString()))+"");
+//                    }
+//                }
+//
+//                @Override
+//                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//                }
+//
+//                @Override
+//                public void afterTextChanged(Editable editable) {
+//                    int despues = 0;
+//                    if(!editable.toString().equals("")) despues = Integer.parseInt(editable.toString());
+//                    if(!(Integer.parseInt(p106_txt.getText().toString())== 0)){
+//                        p106_txt.setText((Integer.parseInt(p106_txt.getText().toString()) + despues) +"");
+//                    }else{
+//                        p106_txt.setText(despues+"");
+//                    }
+//                }
+//            });
+//
+//        }
+
 
 
         //---pregunta108
@@ -158,6 +214,10 @@ public class Seccion100Fragment2 extends Fragment {
         });
         cargarDatos();
 
+    }
+    public void ocultarTeclado(View view){
+        InputMethodManager mgr = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        mgr.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
     public void cargarDatos(){
@@ -221,21 +281,21 @@ public class Seccion100Fragment2 extends Fragment {
     }
     public void llenarMapaVariables(){
         //106
-        if(!p106_edt1.getText().toString().equals("")){
+
             P_106_1 =  p106_edt1.getText().toString();
-        }
-        if(!p106_edt2.getText().toString().equals("")){
+
+
             P_106_2 =  p106_edt2.getText().toString();
-        }
-        if(!p106_edt3.getText().toString().equals("")){
+
+
             P_106_3 =  p106_edt3.getText().toString();
-        }
-        if(!p106_edt4.getText().toString().equals("")){
+
+
             P_106_4 =  p106_edt4.getText().toString();
-        }
-        if(!p106_txt.getText().toString().equals("")){
+
+
             P_106_5 =  p106_txt.getText().toString();
-        }
+
         //107
         if(p107_ck1.isChecked())P_107_1 = 1;
         else P_107_1 = 0;
@@ -259,9 +319,9 @@ public class Seccion100Fragment2 extends Fragment {
         else P_109_5 = 0;
         if(p109_ck6.isChecked())P_109_6 = 1;
         else P_109_6 = 0;
-        if(!p109_edt.getText().toString().equals("")){
+
             P_109_6_O =  p109_edt.getText().toString();
-        }
+
         //110
         if(p110_ck1.isChecked())P_110_1 = 1;
         else P_110_1 = 0;
@@ -277,9 +337,9 @@ public class Seccion100Fragment2 extends Fragment {
         else P_110_6 = 0;
         if(p110_ck7.isChecked())P_110_7 = 1;
         else P_110_7 = 0;
-        if(!p110_edt.getText().toString().equals("")){
+
             P_110_7_O =  p110_edt.getText().toString();
-        }
+
 
     }
 
@@ -347,13 +407,116 @@ public class Seccion100Fragment2 extends Fragment {
         }
         data.close();
     }
-    public boolean validar(){
-        //revisarcampos
-        boolean valido = true;
-        //llenarMapaVariables();
 
+    public boolean validar(){
+        boolean valido = true;
+        String mensaje = "";
+        llenarMapaVariables();
+
+        boolean v1=true;boolean v2=true;boolean v3=true;boolean v4=true;boolean vt=true;
+
+        //106
+
+
+            if (P_106_1.trim().length() == 0) {
+                v1 = false;
+                if(mensaje.equals(""))mensaje = "DEBE INDICAR EL NUMERO DE TRABAJADORES SEGUN NIVEL DE EDUCACION";
+            }
+
+
+            if (P_106_2.trim().length() == 0) {
+                v2 = false;
+                if(mensaje.equals(""))mensaje = "DEBE INDICAR EL NUMERO DE TRABAJADORES SEGUN NIVEL DE EDUCACION";
+            }
+
+
+            if (P_106_3.trim().length() == 0) {
+                v3 = false;
+                if(mensaje.equals(""))mensaje = "DEBE INDICAR EL NUMERO DE TRABAJADORES SEGUN NIVEL DE EDUCACION";
+            }
+
+            if (P_106_4.trim().length() == 0) {
+                v4 = false;
+                if(mensaje.equals(""))mensaje = "DEBE INDICAR EL NUMERO DE TRABAJADORES SEGUN NIVEL DE EDUCACION";
+            }
+
+
+
+        data = new Data(context);
+        data.open();
+        int ptrabajadores = Integer.parseInt(data.getModulo1(idempresa).getP_105());
+        data.close();
+        int verificacion =  ptrabajadores;
+        if(P_106_1.equals("")) P_106_1 = "0";
+        if(P_106_2.equals("")) P_106_2 = "0";
+        if(P_106_3.equals("")) P_106_3 = "0";
+        if(P_106_4.equals("")) P_106_4 = "0";
+
+        if(!P_106_5.equals("") && verificacion!=0){
+            if(Integer.parseInt(P_106_5) != verificacion){
+                vt = false;
+                if(mensaje.equals(""))mensaje = "PREGUNTA 5: LA SUMATORIA POR TIPO DE PERIODO DE CONTRATO DEBE SER IGUAL AL NUMERO DE TRABAJDORES";
+            }
+        }
+        valido = v1 &&v2&&v3&&v4&& vt;
+        //107
+        if(P_107_1 != 1 && P_107_2 != 1 && P_107_3 != 1 ) {
+            valido = false;
+            if(mensaje.equals(""))mensaje = "PREGUNTA 107: DEBE SELECCIONAR AL MENOS UNA OPCION";
+        }
+        //109
+        if(P_109_1 != 1 && P_109_2 != 1 && P_109_3 != 1 && P_109_4 != 1 && P_109_5 != 1 && P_109_6 != 1 ) {
+            valido = false;
+            if(mensaje.equals(""))mensaje = "PREGUNTA 109: DEBE SELECCIONAR AL MENOS UNA OPCION";
+        }
+        if(P_109_6 == 1) {
+            if(P_109_6_O.trim().length() < 2){
+                valido = false;
+                if(mensaje.equals(""))mensaje = "DEBE REGISTRAR INFORMACION";
+            }
+        }
+        //110
+        if(P_110_1 != 1 && P_110_2 != 1 && P_110_3 != 1 && P_110_4 != 1 && P_110_5 != 1 && P_110_6 != 1 && P_110_7 != 1) {
+            valido = false;
+            if(mensaje.equals(""))mensaje = "PREGUNTA 110: DEBE SELECCIONAR AL MENOS UNA OPCION";
+        }
+        if(P_110_7 == 1) {
+            if(P_110_7_O.trim().length() < 2){
+                valido = false;
+                if(mensaje.equals(""))mensaje = "DEBE REGISTRAR INFORMACION";
+            }
+        }
+        //valido = v1&&v2&&v3&&v4&&vt;
+        if(!valido){
+            mostrarMensaje(mensaje);
+//            Log.d("vNUM_RUC" , vNUM_RUC+"");
+//            Log.d("vRAZON_SOCIAL",vRAZON_SOCIAL+"");
+//            Log.d("vANIO_FUNDACION",vANIO_FUNDACION+"");
+//            Log.d("vPAG_WEB",vPAG_WEB+"");
+//            Log.d("vCORREO",vCORREO+"");
+//            Log.d("vTEL_MOVIL",vTEL_MOVIL+"");
+//            Log.d("vANIO_OPERACION",vANIO_OPERACION+"");
+//            Log.d("vNOM_INFORMANTE",vNOM_INFORMANTE+"");
+//            Log.d("vSEXO_INFORMANTE",vSEXO_INFORMANTE+"");
+//            Log.d("vEDAD_INFORMANTE",vEDAD_INFORMANTE+"");
+//            Log.d("vACAD_INFORMANTE",vACAD_INFORMANTE+"");
+//            Log.d("vCARGO_INFORMANTE",vCARGO_INFORMANTE+"");
+//            Log.d("vCARGO_INFORMANTE_ESP",vCARGO_INFORMANTE_ESP+"");
+//            Log.d("vTEL_FIJO",vTEL_FIJO+"");
+        }
 
         return valido;
-
     }
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
 }

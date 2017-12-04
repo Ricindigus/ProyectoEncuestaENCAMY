@@ -56,9 +56,11 @@
             <EditText
                 android:id="@+id/txtEspecifique_p409"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="Especifique"
-                android:visibility="gone"/>
+                android:layout_height="30dp"
+                android:hint=" Especifique"
+                android:visibility="gone"
+                android:background="@drawable/fondo_edit_text"
+                android:inputType="text"/>
         </LinearLayout>
 
     </LinearLayout>
