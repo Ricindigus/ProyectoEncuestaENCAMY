@@ -7,7 +7,7 @@ package com.example.administrador.encal.Modelo;
 public class SQLConstantes {
 
     //DB
-    public static final String DB = "bdencal.db";
+    public static final String DB = "bdencamy.db";
 
     //TABLAS
     public static final String tableUsuarios = "usuarios";
@@ -16,6 +16,7 @@ public class SQLConstantes {
     public static final String tableCaratulas = "caratulas";
     public static final String tableDatosEntrevista = "datosEntrevista";
     public static final String tableVisitas = "visitas";
+    public static final String tableResultados = "resultados";
     public static final String tableIdentificaciones = "identificaciones";
     public static final String tableFragments = "fragments";
     public static final String tableModulo1 = "modulos1";
@@ -93,15 +94,14 @@ public class SQLConstantes {
     public static final String CARATULA_REFERENCIA = "REF_DIREC";
 
     //COLUMNAS_VISITA
-    public static final String VISITA_ID = "ID_EMPRESA";
+    public static final String VISITA_ID = "ID";
+    public static final String VISITA_ID_EMPRESA = "ID_EMPRESA";
     public static final String VISITA_N = "V_NRO";
     public static final String VISITA_DIA = "V_DIA";
     public static final String VISITA_MES = "V_MES";
     public static final String VISITA_ANIO = "V_ANIO";
-    //public static final String VISITA_HORAI = "V_HORA_I";
-    //public static final String VISITA_MINUTOI = "V_MINUTO_I";
-    //public static final String VISITA_HORAF = "V_HORA_F";
-    //public static final String VISITA_MINUTOF = "V_MINUTO_F";
+    public static final String VISITA_HORA = "V_HORA";
+    public static final String VISITA_MINUTO = "V_MINUTO";
     public static final String VISITA_RESULTADO = "V_RESULTADO";
     public static final String VISITA_RESULTADO_ESP = "V_RESULTADO_O";
     public static final String VISITA_PROX_DIA = "V_PROX_VIS_DIA";
@@ -109,12 +109,16 @@ public class SQLConstantes {
     public static final String VISITA_PROX_ANIO = "V_PROX_VIS_ANIO";
     public static final String VISITA_PROX_HORA = "V_PROX_VIS_HORA";
     public static final String VISITA_PROX_MINUTO = "V_PROX_VIS_MINUTO";
-    public static final String ENCUESTA_DIA = "RESFIN_DIA";
-    public static final String ENCUESTA_MES = "RESFIN_MES";
-    public static final String ENCUESTA_ANIO= "RESFIN_ANIO";
-    public static final String ENCUESTA_RESULTADO = "RESFIN";
-    public static final String ENCUESTA_RESULTADO_ESP = "RESFIN_O";
 
+    //COLUMNAS RESULTADO
+    public static final String RESULTADO_ID = "RESFIN_ID";
+    public static final String RESULTADO_DIA = "RESFIN_DIA";
+    public static final String RESULTADO_MES = "RESFIN_MES";
+    public static final String RESULTADO_ANIO= "RESFIN_ANIO";
+    public static final String RESULTADO_HORA= "RESFIN_HORA";
+    public static final String RESULTADO_MIN= "RESFIN_MIN";
+    public static final String RESULTADO_RESULTADO = "RESFIN";
+    public static final String RESULTADO_RESULTADO_ESP = "RESFIN_O";
 
     //COLUMNAS_IDENTIFICACION
     public static final String IDENTIFICACION_ID = "ID";
@@ -419,25 +423,36 @@ public class SQLConstantes {
                     CARATULA_REFERENCIA + " TEXT" +");"
             ;
 
+
     public static final String SQL_CREATE_TABLA_VISITAS =
             "CREATE TABLE " + tableVisitas + "(" +
                     VISITA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    VISITA_ID_EMPRESA + " TEXT," +
                     VISITA_N + " TEXT," +
                     VISITA_DIA + " TEXT," +
                     VISITA_MES + " TEXT," +
                     VISITA_ANIO + " TEXT," +
+                    VISITA_HORA + " TEXT," +
+                    VISITA_MINUTO + " TEXT," +
                     VISITA_RESULTADO + " TEXT," +
                     VISITA_RESULTADO_ESP + " TEXT," +
                     VISITA_PROX_DIA + " TEXT," +
                     VISITA_PROX_MES + " TEXT," +
                     VISITA_PROX_ANIO + " TEXT," +
                     VISITA_PROX_HORA + " TEXT," +
-                    VISITA_PROX_MINUTO + " TEXT," +
-                    ENCUESTA_DIA + " TEXT," +
-                    ENCUESTA_MES + " TEXT," +
-                    ENCUESTA_ANIO + " TEXT," +
-                    ENCUESTA_RESULTADO + " TEXT," +
-                    ENCUESTA_RESULTADO_ESP + " TEXT" + ");"
+                    VISITA_PROX_MINUTO + " TEXT" + ");"
+            ;
+
+    public static final String SQL_CREATE_TABLA_RESULTADOS =
+            "CREATE TABLE " + tableResultados + "(" +
+                    RESULTADO_ID + " TEXT PRIMARY KEY," +
+                    RESULTADO_DIA + " TEXT," +
+                    RESULTADO_MES + " TEXT," +
+                    RESULTADO_ANIO + " TEXT," +
+                    RESULTADO_HORA + " TEXT," +
+                    RESULTADO_MIN + " TEXT," +
+                    RESULTADO_RESULTADO + " TEXT," +
+                    RESULTADO_RESULTADO_ESP + " TEXT" + ");"
             ;
 
     public static final String SQL_CREATE_TABLA_IDENTIFICACIONES =
@@ -701,6 +716,7 @@ public class SQLConstantes {
 
     //WHERE
     public static final String WHERE_CLAUSE_ID_EMPRESA = "ID=?";
+    public static final String WHERE_CLAUSE_ID_RESULTADO = "RESFIN_ID=?";
     public static final String WHERE_CLAUSE_ID_USUARIO = "ID=?";
     public static final String WHERE_CLAUSE_ID_UBIGEO = "ID_UBI=?";
     public static final String WHERE_CLAUSE_ID_VISITA = "ID=?";
@@ -711,6 +727,7 @@ public class SQLConstantes {
     public static final String WHERE_CLAUSE_ID_EMPRESA_MOD5_DIN = "IDEMPRESA=?";
     public static final String WHERE_CLAUSE_ID_EMPRESA_VISITA = "ID_EMPRESA=?";
 
+
     //DELETE
     public static final String SQL_DELETE_USUARIOS = "DROP TABLE " + tableUsuarios;
     public static final String SQL_DELETE_MARCO = "DROP TABLE " + tableMarco;
@@ -718,6 +735,7 @@ public class SQLConstantes {
     public static final String SQL_DELETE_DATOS_ENTREVISTA = "DROP TABLE " + tableDatosEntrevista;
     public static final String SQL_DELETE_CARATULAS = "DROP TABLE " + tableCaratulas;
     public static final String SQL_DELETE_VISITAS = "DROP TABLE " + tableVisitas;
+    public static final String SQL_DELETE_RESULTADOS = "DROP TABLE " + tableResultados;
     public static final String SQL_DELETE_IDENTIFICACIONES = "DROP TABLE " + tableIdentificaciones;
     public static final String SQL_DELETE_SECCION100 = "DROP TABLE " + tableModulo1;
     public static final String SQL_DELETE_SECCION200 = "DROP TABLE " + tableModulo2;
@@ -778,9 +796,20 @@ public class SQLConstantes {
 
     //TRAER COLUMNAS VISITAS
     public static final String[] ALL_COLUMNS_VISITAS = {
-            VISITA_ID, VISITA_N, VISITA_DIA, VISITA_MES, VISITA_ANIO, VISITA_RESULTADO, VISITA_RESULTADO_ESP,  VISITA_PROX_DIA,
-            VISITA_PROX_MES, VISITA_PROX_ANIO, VISITA_PROX_HORA,VISITA_PROX_MINUTO, ENCUESTA_DIA, ENCUESTA_MES, ENCUESTA_ANIO,
-            ENCUESTA_RESULTADO,ENCUESTA_RESULTADO_ESP
+            VISITA_ID, VISITA_ID_EMPRESA, VISITA_N, VISITA_DIA, VISITA_MES, VISITA_ANIO, VISITA_HORA, VISITA_MINUTO, VISITA_RESULTADO, VISITA_RESULTADO_ESP,  VISITA_PROX_DIA,
+            VISITA_PROX_MES, VISITA_PROX_ANIO, VISITA_PROX_HORA,VISITA_PROX_MINUTO
+    };
+
+    //TRAER COLUMNAS RESULTADOS
+    public static final String[] ALL_COLUMNS_RESULTADOS = {
+            RESULTADO_ID ,
+            RESULTADO_DIA,
+            RESULTADO_MES,
+            RESULTADO_ANIO,
+            RESULTADO_HORA,
+            RESULTADO_MIN,
+            RESULTADO_RESULTADO,
+            RESULTADO_RESULTADO_ESP
     };
 
     //TRAER COLUMNAS IDENTIFICACIONES

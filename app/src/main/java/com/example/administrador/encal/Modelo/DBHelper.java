@@ -21,6 +21,7 @@ public class DBHelper extends SQLiteOpenHelper{
         sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_UBIGEOS);
         sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_CARATULAS);
         sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_VISITAS);
+        sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_RESULTADOS);
         sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_IDENTIFICACIONES);
         sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_FRAGMENTS);
         sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_SECCION100);
@@ -37,6 +38,7 @@ public class DBHelper extends SQLiteOpenHelper{
         sqLiteDatabase.execSQL(SQLConstantes.SQL_DELETE_CARATULAS);
         sqLiteDatabase.execSQL(SQLConstantes.SQL_DELETE_DATOS_ENTREVISTA);
         sqLiteDatabase.execSQL(SQLConstantes.SQL_DELETE_VISITAS);
+        sqLiteDatabase.execSQL(SQLConstantes.SQL_DELETE_RESULTADOS);
         sqLiteDatabase.execSQL(SQLConstantes.SQL_DELETE_IDENTIFICACIONES);
         sqLiteDatabase.execSQL(SQLConstantes.SQL_CREATE_TABLA_FRAGMENTS);
         sqLiteDatabase.execSQL(SQLConstantes.SQL_DELETE_SECCION100);

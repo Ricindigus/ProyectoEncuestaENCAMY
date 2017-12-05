@@ -12,12 +12,14 @@ import com.example.administrador.encal.Pojos.BDFragment;
 import com.example.administrador.encal.Pojos.CaratulaPojo;
 import com.example.administrador.encal.Pojos.IdentificacionPojo;
 import com.example.administrador.encal.Pojos.Marco;
+import com.example.administrador.encal.Pojos.ResultadoEncuesta;
 import com.example.administrador.encal.Pojos.Sec100PojoF1;
 import com.example.administrador.encal.Pojos.Sec200PojoF1;
 import com.example.administrador.encal.Pojos.Sec300PojoF1;
 import com.example.administrador.encal.Pojos.Sec400PojoF1;
 import com.example.administrador.encal.Pojos.Ubigeo;
 import com.example.administrador.encal.Pojos.Usuario;
+import com.example.administrador.encal.Pojos.Visita;
 
 import java.util.ArrayList;
 
@@ -56,6 +58,9 @@ public class Data {
     public long getNumeroItemsVisita(){
         return DatabaseUtils.queryNumEntries(sqLiteDatabase,SQLConstantes.tableVisitas);
     }
+    public long getNumeroItemsResultado(){
+        return DatabaseUtils.queryNumEntries(sqLiteDatabase,SQLConstantes.tableResultados);
+    }
     public long getNumeroItemsCaratula(){
         return DatabaseUtils.queryNumEntries(sqLiteDatabase,SQLConstantes.tableCaratulas);
     }
@@ -77,6 +82,136 @@ public class Data {
     public long getNumeroItemsModulo4(){
         return DatabaseUtils.queryNumEntries(sqLiteDatabase,SQLConstantes.tableModulo4);
     }
+
+    //-----------------------------------------VISITAS--------------------------------------------------------------
+    public void insertarVisita(Visita visita){
+        ContentValues contentValues = visita.toValues();
+        sqLiteDatabase.insert(SQLConstantes.tableVisitas,null,contentValues);
+    }
+
+    public void insertarVisitas(ArrayList<Visita> visitas){
+        for (Visita visita : visitas) {
+            try {
+                insertarVisita(visita);
+            }catch (SQLiteException e){
+                e.printStackTrace();
+            }
+        }
+    }
+    public boolean existeVisita(int idVisita){
+        boolean encontrado = false;
+        String[] whereArgs = new String[]{String.valueOf(idVisita)};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tableVisitas,
+                    SQLConstantes.ALL_COLUMNS_VISITAS,SQLConstantes.WHERE_CLAUSE_ID_VISITA,whereArgs,null,null,null);
+            if(cursor.getCount() == 1) encontrado = true;
+        }finally {
+            if(cursor != null)cursor.close();
+        }
+        return encontrado;
+    }
+
+    public boolean existenVisitas(String idEmpresa){
+        boolean encontrado = false;
+        String[] whereArgs = new String[]{idEmpresa};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tableVisitas, SQLConstantes.ALL_COLUMNS_VISITAS,
+                    SQLConstantes.WHERE_CLAUSE_ID_EMPRESA_VISITA,whereArgs,null,null,null);
+            if(cursor.getCount() > 0) encontrado = true;
+        }finally {
+            if(cursor != null){
+                cursor.close();
+            }
+        }
+        return encontrado;
+    }
+
+    public void actualizarVisita(int idVisita, ContentValues contentValues){
+        String[] whereArgs = new String[]{String.valueOf(idVisita)};
+        sqLiteDatabase.update(SQLConstantes.tableVisitas,contentValues,SQLConstantes.WHERE_CLAUSE_ID_VISITA,whereArgs);
+    }
+    public void deleteAllVisitas(String idEmpresa){
+        String[] whereArgs = new String[]{idEmpresa};
+        sqLiteDatabase.delete(SQLConstantes.tableVisitas,SQLConstantes.WHERE_CLAUSE_ID_EMPRESA_VISITA,whereArgs);
+    }
+    public ArrayList<Visita> getVisitas(String idEmpresa){
+        ArrayList<Visita> visitas = new ArrayList<Visita>();
+        String[] whereArgs = new String[]{idEmpresa};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tableVisitas,
+                    SQLConstantes.ALL_COLUMNS_VISITAS,SQLConstantes.WHERE_CLAUSE_ID_EMPRESA_VISITA,whereArgs,null,null,null);
+            while(cursor.moveToNext()){
+                Visita visita = new Visita();
+                visita.setID(cursor.getInt(cursor.getColumnIndex(SQLConstantes.VISITA_ID)));
+                visita.setID_EMPRESA(cursor.getString(cursor.getColumnIndex(SQLConstantes.VISITA_ID_EMPRESA)));
+                visita.setV_NRO(cursor.getString(cursor.getColumnIndex(SQLConstantes.VISITA_N)));
+                visita.setV_DIA(cursor.getString(cursor.getColumnIndex(SQLConstantes.VISITA_DIA)));
+                visita.setV_MES(cursor.getString(cursor.getColumnIndex(SQLConstantes.VISITA_MES)));
+                visita.setV_ANIO(cursor.getString(cursor.getColumnIndex(SQLConstantes.VISITA_ANIO)));
+                visita.setV_HORA(cursor.getString(cursor.getColumnIndex(SQLConstantes.VISITA_HORA)));
+                visita.setV_MINUTO(cursor.getString(cursor.getColumnIndex(SQLConstantes.VISITA_MINUTO)));
+                visita.setV_RESULTADO(cursor.getString(cursor.getColumnIndex(SQLConstantes.VISITA_RESULTADO)));
+                visita.setV_RESULTADO_O(cursor.getString(cursor.getColumnIndex(SQLConstantes.VISITA_RESULTADO_ESP)));
+                visita.setV_PROX_VIS_DIA(cursor.getString(cursor.getColumnIndex(SQLConstantes.VISITA_PROX_DIA)));
+                visita.setV_PROX_VIS_MES(cursor.getString(cursor.getColumnIndex(SQLConstantes.VISITA_PROX_MES)));
+                visita.setV_PROX_VIS_ANIO(cursor.getString(cursor.getColumnIndex(SQLConstantes.VISITA_PROX_ANIO)));
+                visita.setV_PROX_VIS_HORA(cursor.getString(cursor.getColumnIndex(SQLConstantes.VISITA_PROX_HORA)));
+                visita.setV_PROX_VIS_MINUTO(cursor.getString(cursor.getColumnIndex(SQLConstantes.VISITA_PROX_MINUTO)));
+                visitas.add(visita);
+            }
+        }finally {
+            if(cursor != null) cursor.close();
+        }
+        return visitas;
+    }
+    //-----------------------------------------FIN_VISITAS----------------------------------------------------------
+
+    //-----------------------------------------RESULTADO_FINAL--------------------------------------------------
+
+    public ResultadoEncuesta getResultados(String idEmpresa){
+        ResultadoEncuesta resultadoEncuesta = new ResultadoEncuesta();
+        String[] whereArgs = new String[]{idEmpresa};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tableResultados,
+                    SQLConstantes.ALL_COLUMNS_RESULTADOS,SQLConstantes.WHERE_CLAUSE_ID_RESULTADO,whereArgs,null,null,null);
+            if(cursor.getCount() == 1){
+                cursor.moveToFirst();
+                resultadoEncuesta.setRESFIN_ID(cursor.getString(cursor.getColumnIndex(SQLConstantes.RESULTADO_ID)));
+                resultadoEncuesta.setRESFIN_DIA(cursor.getString(cursor.getColumnIndex(SQLConstantes.RESULTADO_DIA)));
+                resultadoEncuesta.setRESFIN_MES(cursor.getString(cursor.getColumnIndex(SQLConstantes.RESULTADO_MES)));
+                resultadoEncuesta.setRESFIN_ANIO(cursor.getString(cursor.getColumnIndex(SQLConstantes.RESULTADO_ANIO)));
+                resultadoEncuesta.setRESFIN_HORA(cursor.getString(cursor.getColumnIndex(SQLConstantes.RESULTADO_HORA)));
+                resultadoEncuesta.setRESFIN_MIN(cursor.getString(cursor.getColumnIndex(SQLConstantes.RESULTADO_MIN)));
+                resultadoEncuesta.setRESFIN(cursor.getString(cursor.getColumnIndex(SQLConstantes.RESULTADO_RESULTADO)));
+                resultadoEncuesta.setRESFIN_O(cursor.getString(cursor.getColumnIndex(SQLConstantes.RESULTADO_RESULTADO_ESP)));
+            }
+        }finally{
+            if(cursor != null) cursor.close();
+        }
+        return resultadoEncuesta;
+    }
+
+    public void insertarResultado(ResultadoEncuesta resultadoEncuesta){
+        ContentValues contentValues = resultadoEncuesta.toValues();
+        sqLiteDatabase.insert(SQLConstantes.tableResultados,null,contentValues);
+    }
+    public void InsertarResultados(ArrayList<ResultadoEncuesta> resultadoEncuestas){
+        long items = getNumeroItemsMarco();
+        if(items == 0){
+            for (ResultadoEncuesta resultadoEncuesta : resultadoEncuestas) {
+                try {
+                    insertarResultado(resultadoEncuesta);
+                }catch (SQLiteException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+    //----------------------------------------FIN_RESULTADO_FINAL---------------------------------------------
 
     //------------------------------------------MARCO---------------------------------------------------------------------
     public Marco getMarco(String idEmpresa){
