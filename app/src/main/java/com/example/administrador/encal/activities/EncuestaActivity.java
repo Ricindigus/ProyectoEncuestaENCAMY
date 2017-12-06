@@ -16,6 +16,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 
 import com.example.administrador.encal.Fragments.CaratulaFragment;
 import com.example.administrador.encal.Fragments.Seccion100Fragment1;
@@ -103,13 +105,32 @@ public class EncuestaActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId() ){
-            case R.id.registrar_observacion:
-                return true;
-            case R.id.volver_marco:
-                return true;
-            default:return super.onOptionsItemSelected(item);
+        final int id = item.getItemId();
+        if (id == R.id.volver_marco || id == R.id.action_marco_simple) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("¿Está seguro que desea volver al marco y salir de la encuesta?")
+                    .setTitle("Aviso")
+                    .setCancelable(false)
+                    .setNegativeButton("No",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            })
+                    .setPositiveButton("Sí",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    finish();
+                                }
+                            });
+            AlertDialog alert = builder.create();
+            alert.show();
+            return true;
         }
+        if( id == R.id.registrar_observacion){
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void setFragment(int poscicion, int direccion){

@@ -709,22 +709,16 @@ public class VisitaFragment extends Fragment {
         }
         data.close();
     }
-//    public void guardarDatos(){
-//        data = new Data(context);
-//        data.open();
-//        for (Visita visita: visitas) {
-//            if(visita.getID() == -1){
-//                data.insertarVisita(visita);
-//            }else{
-//                data.actualizarVisita(visita.getID(),visita.toValues());
-//            }
-//        }
-//        data.close();
-//    }
     public boolean validar(){
-        //revisarcampos
         boolean valido = true;
-        //llenarMapaVariables();
+        String mensaje = "";
+        if(!visitas.get(visitas.size()-1).getV_RESULTADO().equals("")){
+            valido =  false;
+            mensaje = "DEBE INICIAR UNA VISITA ANTES DE CONTINUAR";
+        }
+        if(!valido){
+            mostrarMensaje(mensaje);
+        }
         return valido;
     }
 
@@ -735,6 +729,16 @@ public class VisitaFragment extends Fragment {
         InputMethodManager mgr = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
         mgr.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
-
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
 
 }
