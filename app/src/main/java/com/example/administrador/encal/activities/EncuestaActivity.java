@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 
 import com.example.administrador.encal.Fragments.CaratulaFragment;
 import com.example.administrador.encal.Fragments.Seccion100Fragment1;
@@ -35,6 +36,8 @@ public class EncuestaActivity extends AppCompatActivity {
     private String idEmpresa = "";
     private Data data;
     private String observaciones = "";
+    private Button btnAnterior;
+    private Button btnSiguiente;
     private int cont;
 
 
@@ -55,18 +58,15 @@ public class EncuestaActivity extends AppCompatActivity {
         cont = 0;
         fragmentActual = new Fragment();
         setFragment(0,1);
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_control,menu);
-        return true;
-    }
+        //BOTONES
+        btnAnterior = (Button) findViewById(R.id.btn_anterior);
+        btnSiguiente = (Button) findViewById(R.id.btn_siguiente);
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId() ){
-            case R.id.adelante:
+        btnSiguiente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ocultarTeclado(btnSiguiente);
                 if(cont<9){
                     if(validarFragment(cont)){
                         guardarFragment(cont);
@@ -80,14 +80,33 @@ public class EncuestaActivity extends AppCompatActivity {
                         setFragment(cont, 1);
                     }
                 }
-                return true;
-            case R.id.atras:
-                if(cont>0){
-                    if(validarFragment(cont)){
-                        cont--;
-                        setFragment(cont,-1);
-                    }
+            }
+        });
+
+        btnAnterior.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ocultarTeclado(btnAnterior);
+                if(cont - 1 >= 0){
+                    cont--;
+                    setFragment(cont,-1);
                 }
+            }
+        });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_encuesta,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId() ){
+            case R.id.registrar_observacion:
+                return true;
+            case R.id.volver_marco:
                 return true;
             default:return super.onOptionsItemSelected(item);
         }
@@ -198,7 +217,7 @@ public class EncuestaActivity extends AppCompatActivity {
         switch (tipo){
             case 0:
                 VisitaFragment visitaFragment = (VisitaFragment) fragmentActual;
-                visitaFragment.guardarDatos();break;
+                break;
             case 1:
                 CaratulaFragment caratulaFragment = (CaratulaFragment) fragmentActual;
                 caratulaFragment.guardarDatos();break;

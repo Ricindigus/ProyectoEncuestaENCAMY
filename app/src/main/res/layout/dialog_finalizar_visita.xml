@@ -12,6 +12,7 @@
         android:layout_margin="10dp"
         android:padding="10dp"
         android:background="@drawable/borde_layout_preguntas">
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"

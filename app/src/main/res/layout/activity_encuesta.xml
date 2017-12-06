@@ -15,14 +15,50 @@
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-
-    <LinearLayout
-        android:id="@+id/layout_fragment"
-        android:orientation="vertical"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="1dp">
-    </LinearLayout>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/layout_fragment"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="1dp">
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/relative_aux"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_alignParentTop="true">
+            <Button
+                android:id="@+id/btn_anterior"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:text="ANT"
+                android:textColor="@android:color/white" />
+            <LinearLayout
+                android:id="@+id/layoutDots"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"></LinearLayout>
+            <Button
+                android:id="@+id/btn_siguiente"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:text="SIG"
+                android:gravity="center"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </FrameLayout>
+
 
 </LinearLayout>

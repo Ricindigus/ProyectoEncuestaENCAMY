@@ -28,6 +28,7 @@ public class Visita {
     private  String V_PROX_VIS_MINUTO;
 
     public Visita() {
+        ID =  -1;
         ID_EMPRESA = "";
         V_NRO = "";
         V_DIA = "";
@@ -166,7 +167,7 @@ public class Visita {
 
     public ContentValues toValues(){
         ContentValues contentValues = new ContentValues(14);
-        contentValues.put(SQLConstantes.VISITA_ID,ID_EMPRESA);
+        contentValues.put(SQLConstantes.VISITA_ID_EMPRESA,ID_EMPRESA);
         contentValues.put(SQLConstantes.VISITA_N,V_NRO);
         contentValues.put(SQLConstantes.VISITA_DIA,V_DIA);
         contentValues.put(SQLConstantes.VISITA_MES,V_MES);

@@ -132,9 +132,9 @@ public class Data {
         String[] whereArgs = new String[]{String.valueOf(idVisita)};
         sqLiteDatabase.update(SQLConstantes.tableVisitas,contentValues,SQLConstantes.WHERE_CLAUSE_ID_VISITA,whereArgs);
     }
-    public void deleteAllVisitas(String idEmpresa){
-        String[] whereArgs = new String[]{idEmpresa};
-        sqLiteDatabase.delete(SQLConstantes.tableVisitas,SQLConstantes.WHERE_CLAUSE_ID_EMPRESA_VISITA,whereArgs);
+    public void deleteVisita(int idVisita){
+        String[] whereArgs = new String[]{String.valueOf(idVisita)};
+        sqLiteDatabase.delete(SQLConstantes.tableVisitas,SQLConstantes.WHERE_CLAUSE_ID_VISITA,whereArgs);
     }
     public ArrayList<Visita> getVisitas(String idEmpresa){
         ArrayList<Visita> visitas = new ArrayList<Visita>();
@@ -210,6 +210,10 @@ public class Data {
                 }
             }
         }
+    }
+    public void actualizarResultado(String idEmpresa, ContentValues contentValues){
+        String[] whereArgs = new String[]{idEmpresa};
+        sqLiteDatabase.update(SQLConstantes.tableResultados,contentValues,SQLConstantes.WHERE_CLAUSE_ID_EMPRESA_VISITA,whereArgs);
     }
     //----------------------------------------FIN_RESULTADO_FINAL---------------------------------------------
 
