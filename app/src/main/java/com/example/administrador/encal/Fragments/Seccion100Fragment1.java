@@ -4,22 +4,33 @@ package com.example.administrador.encal.Fragments;
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
+import android.text.Editable;
+import android.text.InputFilter;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.administrador.encal.Modelo.Data;
 import com.example.administrador.encal.Modelo.SQLConstantes;
+import com.example.administrador.encal.Pojos.IdentificacionPojo;
 import com.example.administrador.encal.Pojos.Sec100PojoF1;
 import com.example.administrador.encal.R;
 
@@ -30,11 +41,9 @@ public class Seccion100Fragment1 extends Fragment {
     private TextView p101_txt1;
     private AutoCompleteTextView p101_act1;
     private EditText p101_edt1;
+    private LinearLayout lytP101;
 
-    private CheckBox p102_ck1;
-    private CheckBox p102_ck2;
-    private CheckBox p102_ck3;
-    private CheckBox p102_ck4;
+
     private TextView p102_txt1;
     private TextView p102_txt2;
     private TextView p102_txt3;
@@ -43,6 +52,12 @@ public class Seccion100Fragment1 extends Fragment {
     private AutoCompleteTextView p102_act2;
     private AutoCompleteTextView p102_act3;
     private AutoCompleteTextView p102_act4;
+    private LinearLayout lytP102_1;
+    private LinearLayout lytP102_2;
+    private LinearLayout lytP102_3;
+    private LinearLayout lytP102_4;
+
+
 
     private RadioGroup p103_rg1;
     private RadioButton p103_rb1;
@@ -59,18 +74,17 @@ public class Seccion100Fragment1 extends Fragment {
 
     private  EditText p105_edt1;
 
+    private IdentificacionPojo identificacion;
+
     private String idempresa;
     private Sec100PojoF1 sec100;
     private Context context;
     private Data data;
 
-    String P101_1;String P101_2;String P101_3;
-    int P102_1_1;String P102_1_2;String P102_1_3;
-    int P102_2_1;String P102_2_2;String P102_2_3;
-    int P102_3_1;String P102_3_2;String P102_3_3;
-    int P102_4_1;String P102_4_2;String P102_4_3;
-    int P103;String P103_0;
-    int P104;String P105;
+    String P_101;String P_101_1;String P_101_1_O;String P_102A;String P_102_1;
+    String P_102B;String P_102_2;String P_102C;String P_102_3;String P_102D;String P_102_4;
+    int P_103;String P_103_O;
+    int P_104;String P_105;
 
 
     public Seccion100Fragment1() {
@@ -81,6 +95,9 @@ public class Seccion100Fragment1 extends Fragment {
     public Seccion100Fragment1(String idempresa, Context context) {
         this.idempresa = idempresa;
         this.context = context;
+        data = new Data(context);
+        data.open();
+        identificacion = data.getIdentificacion(idempresa);
     }
 
 
@@ -92,11 +109,8 @@ public class Seccion100Fragment1 extends Fragment {
         p101_txt1 = (TextView) view.findViewById(R.id.sec100_p101_txt1);
         p101_act1 = (AutoCompleteTextView) view.findViewById(R.id.sec100_p101_atc1);
         p101_edt1 = (EditText) view.findViewById(R.id.sec100_p101_edt1);
+        lytP101 = (LinearLayout) view.findViewById(R.id.lytp101);
 
-//        p102_ck1 = (CheckBox) view.findViewById(R.id.sec100_p102_ck1);
-//        p102_ck2 = (CheckBox) view.findViewById(R.id.sec100_p102_ck2);
-//        p102_ck3 = (CheckBox) view.findViewById(R.id.sec100_p102_ck3);
-//        p102_ck4 = (CheckBox) view.findViewById(R.id.sec100_p102_ck4);
         p102_txt1 = (TextView) view.findViewById(R.id.sec100_p102_txt1);
         p102_txt2 = (TextView) view.findViewById(R.id.sec100_p102_txt2);
         p102_txt3 = (TextView) view.findViewById(R.id.sec100_p102_txt3);
@@ -105,6 +119,10 @@ public class Seccion100Fragment1 extends Fragment {
         p102_act2 = (AutoCompleteTextView) view.findViewById(R.id.sec100_p102_act2);
         p102_act3 = (AutoCompleteTextView) view.findViewById(R.id.sec100_p102_act3);
         p102_act4 = (AutoCompleteTextView) view.findViewById(R.id.sec100_p102_act4);
+        lytP102_1 = (LinearLayout) view.findViewById(R.id.lytp102_1);
+        lytP102_2 = (LinearLayout) view.findViewById(R.id.lytp102_2);
+        lytP102_3 = (LinearLayout) view.findViewById(R.id.lytp102_3);
+        lytP102_4 = (LinearLayout) view.findViewById(R.id.lytp102_4);
 
         p103_rg1 = (RadioGroup) view.findViewById(R.id.sec100_p103_rg);
         p103_edt1 = (EditText) view.findViewById(R.id.edtEspecifique_p103);
@@ -123,48 +141,67 @@ public class Seccion100Fragment1 extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
+        //-----pregunta1
+        String[] paises = getResources().getStringArray(R.array.ciuu);
+        ArrayAdapter adapter = new ArrayAdapter(getActivity().getApplicationContext(),R.layout.lista_item,R.id.item,paises);
+        p101_act1.setAdapter(adapter);
+        p102_act1.setAdapter(adapter);
+        p102_act2.setAdapter(adapter);
+        p102_act3.setAdapter(adapter);
+        p102_act4.setAdapter(adapter);
+
+        p101_act1.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        p102_act1.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        p102_act2.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        p102_act3.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+        p102_act4.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
+
+        AutoCompleteTextView[] autoCompleteTextViews = {p101_act1,p102_act1,p102_act2,p102_act3,p102_act4};
+        TextView[] textViews = {p101_txt1,p102_txt1,p102_txt2,p102_txt3,p102_txt4};
+        LinearLayout[] linearLayouts = {lytP101,lytP102_1,lytP102_2,lytP102_3,lytP102_4};
+
+        for (int i = 0; i <autoCompleteTextViews.length ; i++) {
+            final AutoCompleteTextView autoCompleteTextView = autoCompleteTextViews[i];
+            final TextView textView = textViews[i];
+            final LinearLayout linearLayout = linearLayouts[i];
+
+            autoCompleteTextView.setOnKeyListener(new View.OnKeyListener() {
+                @Override
+                public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                    if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                            (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                        ocultarTeclado(autoCompleteTextView);
+                        linearLayout.requestFocus();
+                        return true;
+                    }
+                    return false;
+                }
+            });
+            autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    textView.setText(extraerCodigo(autoCompleteTextView.getText().toString()));
+                    ocultarTeclado(autoCompleteTextView);
+//                    if(textView.getText().equals("9999")){
+//                        p101_edt1.setVisibility(View.VISIBLE);
+//                    }else{
+//                        p101_edt1.setVisibility(View.GONE);
+//                    }
+                    linearLayout.requestFocus();
+                }
+            });
+        }
+
+        watcherCIUU(p101_txt1,p101_act1);
+        watcherCIUU(p102_txt1,p102_act1);
+        watcherCIUU(p102_txt2,p102_act2);
+        watcherCIUU(p102_txt3,p102_act3);
+        watcherCIUU(p102_txt4,p102_act4);
+
+
         //-----Pregunta2
 
-//        p102_ck1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-//                if (b){
-//                    p102_act1.setEnabled(true);
-//                }
-//                else p102_act1.setEnabled(false);
-//            }
-//        });
 //
-//        p102_ck2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-//                if (b){
-//                    p102_act2.setEnabled(true);
-//                }
-//                else p102_act2.setEnabled(false);
-//            }
-//        });
-//        p102_ck3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-//                if (b){
-//                    p102_act3.setEnabled(true);
-//                }
-//                else p102_act3.setEnabled(false);
-//            }
-//        });
-//
-//        p102_ck4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-//                if (b){
-//                    p102_act4.setEnabled(true);
-//                }
-//                else p102_act4.setEnabled(false);
-//            }
-//        });
-
-
         //----pregunta3
         p103_rg1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -201,6 +238,40 @@ public class Seccion100Fragment1 extends Fragment {
 
 
     }
+    public void ocultarTeclado(View view){
+        InputMethodManager mgr = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        mgr.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+    public String extraerCodigo(String ocupacion){
+        int indiceI = ocupacion.indexOf("[");
+        int indiceF = ocupacion.indexOf("]");
+        ocupacion = ocupacion.substring(indiceI + 1, indiceF);
+
+        return ocupacion;
+    }
+
+    public void watcherCIUU(final TextView textView, final AutoCompleteTextView autoCompleteTextView){
+        autoCompleteTextView.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.toString().equals("")){
+                    textView.setText("");
+                }
+
+            }
+        });
+
+    }
 
     ///////////////GUARDADO///////////////////////
 
@@ -213,9 +284,9 @@ public class Seccion100Fragment1 extends Fragment {
             sec100 = data.getModulo1(idempresa);
             //saco los datos del objeto para llenarlos en los elementos del fragment
             //PREGUNTA 101
-            p101_txt1.setText(sec100.getP_101());
-            p101_edt1.setText(sec100.getP_101_1());
-            p101_act1.setText(sec100.getP_101_1_O());
+            p101_act1.setText(sec100.getP_101());
+            p101_txt1.setText(sec100.getP_101_1());
+            p101_edt1.setText(sec100.getP_101_1_O());
 
             p102_txt1.setText(sec100.getP_102_1());
             p102_txt2.setText(sec100.getP_102_2());
@@ -245,51 +316,37 @@ public class Seccion100Fragment1 extends Fragment {
     public void llenarMapaVariables(){
 
         //PREGUNTA 101
-        P101_1 = p101_txt1.getText().toString();
-        P101_2 = p101_edt1.getText().toString();
-        P101_3 = p101_act1.getText().toString();
+        P_101 = p101_act1.getText().toString();
+        P_101_1 = p101_txt1.getText().toString();
+        P_101_1_O = p101_edt1.getText().toString();
         //P101_3 = "";
 
 
         //PREGUNTA 102-1
-        //if(p102_ck1.isChecked())P102_1_1 = 1;
-        // else P102_1_1 = 0;
-        P102_1_2 = p102_txt1.getText().toString();
-//        P102_1_3 = p102_act1.getText().toString();
-        P102_1_3 = "";
+        P_102A = p102_act1.getText().toString();
+        P_102_1 = p102_txt1.getText().toString();
 
         //PREGUNTA 102_2
-        // if(p102_ck2.isChecked())P102_2_1 = 1;
-        // else P102_2_1 = 0;
-        P102_2_2 = p102_txt1.getText().toString();
-        P102_2_3 = p102_act1.getText().toString();
-        P102_2_3 = "";
+        P_102B = p102_act2.getText().toString();
+        P_102_2 = p102_txt2.getText().toString();
 
         //PREGUNTA 102_3
-        //if(p102_ck3.isChecked())P102_3_1 = 1;
-        //else P102_3_1 = 0;
-        P102_3_2 = p102_txt1.getText().toString();
-//        P102_3_3 = p102_act1.getText().toString();
-        P102_3_3 = "";
+        P_102C = p102_act3.getText().toString();
+        P_102_3 = p102_txt3.getText().toString();
 
         //PREGUNTA 102_4
-        //if(p102_ck4.isChecked())P102_4_1 = 1;
-        //else P102_4_1 = 0;
-        P102_4_2 = p102_txt1.getText().toString();
-//        P102_4_3 = p102_act1.getText().toString();
-        P102_4_3 = "";
-
-
+        P_102D = p102_act4.getText().toString();
+        P_102_4 = p102_txt4.getText().toString();
 
         //PREGUNTA 103
         int childPosP103 = p103_rg1.indexOfChild(p103_rg1.findViewById(p103_rg1.getCheckedRadioButtonId()));
-        P103 = childPosP103;
-        P103_0 = p103_edt1.getText().toString();
+        P_103 = childPosP103;
+        P_103_O = p103_edt1.getText().toString();
         //PREGUNTA 104
         int childPosP104 = p104_rg1.indexOfChild(p104_rg1.findViewById(p104_rg1.getCheckedRadioButtonId()));
-        P104 = childPosP104;
+        P_104 = childPosP104;
         //PREGUNTA 105
-        P105 = p105_edt1.getText().toString();
+        P_105 = p105_edt1.getText().toString();
     }
     public void guardarDatos(){
         llenarMapaVariables();
@@ -297,58 +354,132 @@ public class Seccion100Fragment1 extends Fragment {
         data.open();
         if(data.existeModulo1(idempresa)){
             ContentValues contentValues = new ContentValues(58);
-            contentValues.put(SQLConstantes.SECCION100_P_101,P101_1);
-            contentValues.put(SQLConstantes.SECCION100_P_101_1,P101_2);
-            contentValues.put(SQLConstantes.SECCION100_P_101_1_O,P101_3);
-            contentValues.put(SQLConstantes.SECCION100_P_102_1,P102_1_2);
-            contentValues.put(SQLConstantes.SECCION100_P_102_2,P102_2_2);
-            contentValues.put(SQLConstantes.SECCION100_P_102_3,P102_3_2);
-            contentValues.put(SQLConstantes.SECCION100_P_102_4,P102_4_2);
-            contentValues.put(SQLConstantes.SECCION100_P_102A,P102_1_3);
-            contentValues.put(SQLConstantes.SECCION100_P_102B,P102_2_3);
-            contentValues.put(SQLConstantes.SECCION100_P_102C,P102_3_3);
-            contentValues.put(SQLConstantes.SECCION100_P_102D,P102_4_3);
-            contentValues.put(SQLConstantes.SECCION100_P_103,P103+"");
-            contentValues.put(SQLConstantes.SECCION100_P_103_O,P103_0);
-            contentValues.put(SQLConstantes.SECCION100_P_104,P104+"");
-            contentValues.put(SQLConstantes.SECCION100_P_105,P105);
+            contentValues.put(SQLConstantes.SECCION100_P_101,P_101);
+            contentValues.put(SQLConstantes.SECCION100_P_101_1,P_101_1);
+            contentValues.put(SQLConstantes.SECCION100_P_101_1_O,P_101_1_O);
+            contentValues.put(SQLConstantes.SECCION100_P_102A,P_102A);
+            contentValues.put(SQLConstantes.SECCION100_P_102_1,P_102_1);
+            contentValues.put(SQLConstantes.SECCION100_P_102B,P_102B);
+            contentValues.put(SQLConstantes.SECCION100_P_102_2,P_102_2);
+            contentValues.put(SQLConstantes.SECCION100_P_102C,P_102C);
+            contentValues.put(SQLConstantes.SECCION100_P_102_3,P_102_3);
+            contentValues.put(SQLConstantes.SECCION100_P_102D,P_102D);
+            contentValues.put(SQLConstantes.SECCION100_P_102_4,P_102_4);
+            contentValues.put(SQLConstantes.SECCION100_P_103,P_103+"");
+            contentValues.put(SQLConstantes.SECCION100_P_103_O,P_103_O);
+            contentValues.put(SQLConstantes.SECCION100_P_104,P_104+"");
+            contentValues.put(SQLConstantes.SECCION100_P_105,P_105);
             data.actualizarModulo1(idempresa,contentValues);
         }else{
             //si no existe el elemento, lo construye para insertarlo
             sec100 = new Sec100PojoF1();
             //llena el objeto a insertar
             sec100.setID(idempresa);
-            sec100.setP_101(P101_1);
-            sec100.setP_101_1(P101_2);
-            sec100.setP_101_1_O(P101_3);
-            sec100.setP_102_1(P102_1_2);
-            sec100.setP_102_2(P102_2_2);
-            sec100.setP_102_3(P102_3_2);
-            sec100.setP_102_4(P102_4_2);
-            sec100.setP_102A(P102_1_3);
-            sec100.setP_102B(P102_2_3);
-            sec100.setP_102C(P102_3_3);
-            sec100.setP_102D(P102_4_3);
-            sec100.setP_103(P103+"");
-            sec100.setP_103_O(P103_0);
-            sec100.setP_104(P104+"");
-            sec100.setP_105(P105);
+            sec100.setP_101(P_101);
+            sec100.setP_101_1(P_101_1);
+            sec100.setP_101_1_O(P_101_1_O);
+            sec100.setP_102_1(P_102A);
+            sec100.setP_102_2(P_102_1);
+            sec100.setP_102_3(P_102B);
+            sec100.setP_102_4(P_102_2);
+            sec100.setP_102A(P_102C);
+            sec100.setP_102B(P_102_3);
+            sec100.setP_102C(P_102D);
+            sec100.setP_102D(P_102_4);
+            sec100.setP_103(P_103+"");
+            sec100.setP_103_O(P_103_O);
+            sec100.setP_104(P_104+"");
+            sec100.setP_105(P_105);
             data.insertarModulo1(sec100);
         }
         data.close();
     }
     public boolean validar(){
-        //revisarcampos
         boolean valido = true;
+        String mensaje = "";
         llenarMapaVariables();
 
+        //101
+        if (P_101_1.equals("9999")) {
+            if(P_101_1_O.trim().length() < 2){
+                valido = false;
+                if(mensaje.equals(""))mensaje = "DEBE ESPECIFICAR DICHA ACTIVIDAD MANUFACTURADA";
+            }
+        }
+//falta
+//        if (P_101_1.equals("0000")&& RESFIN!=7) {
+//            if(mensaje.equals(""))mensaje = "DEBE INDICAR COMO RESULTADO FINAL ACTIVIDAD NO INVESTIGADA";
+//        }
+        //103
+        data = new Data(context);
+        data.open();
+        String ruc = data.getIdentificacion(idempresa).getNUM_RUC();
+        data.close();
+        String verificacion =  ruc.substring(0,2);
+        if(P_103!=-1 && !verificacion.equals("")){
+            if(P_103==0 && verificacion.equals("20")){
+                valido = false;
+                if(mensaje.equals(""))mensaje = "PREGUNTA 103: Número de RUC no guarda relación con la constitución legal de la empresa";
+            }
+            if(P_103>0 && P_103<7 && verificacion.equals("10")){
+                valido = false;
+                if(mensaje.equals(""))mensaje = "PREGUNTA 103: Número de RUC no guarda relación con la constitución legal de la empresa";
+            }
+            if (P_103==5){
+                if(P_103_O.trim().length() < 2){
+                    valido = false;
+                    if(mensaje.equals(""))mensaje = "PREGUNTA 103: DEBE EXISTIR INFORMACION";
+                }
+            }
+        }
 
+        //104
+        if(P_104== -1 ) {
+            valido = false;
+            if(mensaje.equals(""))mensaje = "PREGUNTA 104: DEBE SELECCIONAR AL MENOS UNA OPCION";
+        }
+
+        //105
+        if(P_105.trim().length() < 1){
+            valido = false;
+            if(mensaje.equals(""))mensaje = "PREGUNTA 105: DEBE EXISTIR INFORMACION";
+        }
+        if(P_105.equals("0")){
+            valido = false;
+            if(mensaje.equals(""))mensaje = "PREGUNTA 105: EL NUMERO DE TRABAJADORES NO PUEDE SER CERO, DEBE EXISTIR POR LO MENOS UN TRABAJADOR";
+        }
+        //valido = v1&&v2&&v3&&v4&&vt;
+        if(!valido){
+            mostrarMensaje(mensaje);
+//            Log.d("vNUM_RUC" , vNUM_RUC+"");
+//            Log.d("vRAZON_SOCIAL",vRAZON_SOCIAL+"");
+//            Log.d("vANIO_FUNDACION",vANIO_FUNDACION+"");
+//            Log.d("vPAG_WEB",vPAG_WEB+"");
+//            Log.d("vCORREO",vCORREO+"");
+//            Log.d("vTEL_MOVIL",vTEL_MOVIL+"");
+//            Log.d("vANIO_OPERACION",vANIO_OPERACION+"");
+//            Log.d("vNOM_INFORMANTE",vNOM_INFORMANTE+"");
+//            Log.d("vSEXO_INFORMANTE",vSEXO_INFORMANTE+"");
+//            Log.d("vEDAD_INFORMANTE",vEDAD_INFORMANTE+"");
+//            Log.d("vACAD_INFORMANTE",vACAD_INFORMANTE+"");
+//            Log.d("vCARGO_INFORMANTE",vCARGO_INFORMANTE+"");
+//            Log.d("vCARGO_INFORMANTE_ESP",vCARGO_INFORMANTE_ESP+"");
+//            Log.d("vTEL_FIJO",vTEL_FIJO+"");
+        }
         return valido;
-
     }
 
-
-
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
 
 
 }

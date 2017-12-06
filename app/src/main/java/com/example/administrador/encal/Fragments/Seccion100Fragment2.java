@@ -134,48 +134,48 @@ public class Seccion100Fragment2 extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //---pregunta106
-//        EditText[] editTexts1 = {p106_edt1,p106_edt2,p106_edt3,p106_edt4};
-//        for (int i = 0; i <editTexts1.length ; i++) {
-//            final EditText editText = editTexts1[i];
-//            editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-//                @Override
-//                public void onFocusChange(View view, boolean conFocus) {
-//                    if(view.isEnabled()){
-//                        if(conFocus) {
-//                            editText.setBackgroundResource(R.drawable.fondo_edit_text);
-//                        }
-//                        else editText.setBackgroundResource(R.drawable.fondo_edit_text);
-//                    }else{
-//                        ocultarTeclado(editText);
-//                    }
-//                }
-//            });
-//            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
-//            editText.addTextChangedListener(new TextWatcher() {
-//                @Override
-//                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//                    if(!charSequence.toString().equals("")){
-//                        p106_txt.setText((Integer.parseInt(p106_txt.getText().toString()) - Integer.parseInt(charSequence.toString()))+"");
-//                    }
-//                }
-//
-//                @Override
-//                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//                }
-//
-//                @Override
-//                public void afterTextChanged(Editable editable) {
-//                    int despues = 0;
-//                    if(!editable.toString().equals("")) despues = Integer.parseInt(editable.toString());
-//                    if(!(Integer.parseInt(p106_txt.getText().toString())== 0)){
-//                        p106_txt.setText((Integer.parseInt(p106_txt.getText().toString()) + despues) +"");
-//                    }else{
-//                        p106_txt.setText(despues+"");
-//                    }
-//                }
-//            });
-//
-//        }
+        EditText[] editTexts1 = {p106_edt1,p106_edt2,p106_edt3,p106_edt4};
+        for (int i = 0; i <editTexts1.length ; i++) {
+            final EditText editText = editTexts1[i];
+            editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View view, boolean conFocus) {
+                    if(view.isEnabled()){
+                        if(conFocus) {
+                            editText.setBackgroundResource(R.drawable.fondo_edit_text);
+                        }
+                        else editText.setBackgroundResource(R.drawable.fondo_edit_text);
+                    }else{
+                        ocultarTeclado(editText);
+                    }
+                }
+            });
+            editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
+            editText.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                    if(!charSequence.toString().equals("")){
+                        p106_txt.setText((Integer.parseInt(p106_txt.getText().toString()) - Integer.parseInt(charSequence.toString()))+"");
+                    }
+                }
+
+                @Override
+                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                }
+
+                @Override
+                public void afterTextChanged(Editable editable) {
+                    int despues = 0;
+                    if(!editable.toString().equals("")) despues = Integer.parseInt(editable.toString());
+                    if(!(Integer.parseInt(p106_txt.getText().toString())== 0)){
+                        p106_txt.setText((Integer.parseInt(p106_txt.getText().toString()) + despues) +"");
+                    }else{
+                        p106_txt.setText(despues+"");
+                    }
+                }
+            });
+
+        }
 
 
 
@@ -234,7 +234,6 @@ public class Seccion100Fragment2 extends Fragment {
             p106_edt2.setText(sec100PojoF1.getP_106_2());
             p106_edt3.setText(sec100PojoF1.getP_106_3());
             p106_edt4.setText(sec100PojoF1.getP_106_4());
-            p106_txt.setText(sec100PojoF1.getP_106_5());
             //107
             if(sec100PojoF1.getP_107_1().equals("1")) p107_ck1.setChecked(true);
             if(sec100PojoF1.getP_107_1().equals("0")) p107_ck1.setChecked(false);
