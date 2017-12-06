@@ -18,6 +18,7 @@
             android:textStyle="bold"
             android:layout_marginBottom="16dp"/>
         <LinearLayout
+            android:id="@+id/lytp102_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -26,15 +27,17 @@
             <TextView
                 android:id="@+id/sec100_p102_txt1"
                 android:background="@drawable/marco_tabla"
-                android:layout_weight="5"
+                android:layout_weight="1"
                 android:layout_width="0dp"
+                android:textSize="18dp"
+                android:gravity="center"
                 android:layout_height="match_parent"
                 android:layout_marginRight="10dp"
                 />
             <AutoCompleteTextView
                 android:id="@+id/sec100_p102_act1"
                 android:padding="6dp"
-                android:layout_weight="18"
+                android:layout_weight="5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Actividad Secundaria"
@@ -42,6 +45,7 @@
                 android:inputType="text"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/lytp102_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -50,14 +54,16 @@
             <TextView
                 android:id="@+id/sec100_p102_txt2"
                 android:background="@drawable/marco_tabla"
-                android:layout_weight="5"
+                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:textSize="18dp"
+                android:gravity="center"
                 android:layout_marginRight="10dp"/>
             <AutoCompleteTextView
                 android:id="@+id/sec100_p102_act2"
                 android:padding="6dp"
-                android:layout_weight="18"
+                android:layout_weight="5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Actividad Secundaria"
@@ -65,6 +71,7 @@
                 android:inputType="text"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/lytp102_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -75,14 +82,16 @@
             <TextView
                 android:id="@+id/sec100_p102_txt3"
                 android:background="@drawable/marco_tabla"
-                android:layout_weight="5"
+                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:textSize="18dp"
+                android:gravity="center"
                 android:layout_marginRight="10dp"/>
             <AutoCompleteTextView
                 android:id="@+id/sec100_p102_act3"
                 android:padding="6dp"
-                android:layout_weight="18"
+                android:layout_weight="5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Actividad Secundaria"
@@ -90,6 +99,7 @@
                 android:inputType="text"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/lytp102_4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -97,14 +107,16 @@
             <TextView
                 android:id="@+id/sec100_p102_txt4"
                 android:background="@drawable/marco_tabla"
-                android:layout_weight="5"
+                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:textSize="18dp"
+                android:gravity="center"
                 android:layout_marginRight="10dp"/>
             <AutoCompleteTextView
                 android:id="@+id/sec100_p102_act4"
                 android:padding="6dp"
-                android:layout_weight="18"
+                android:layout_weight="5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Actividad Secundaria"
