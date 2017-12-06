@@ -668,11 +668,90 @@ public class CaratulaFragment extends Fragment {
     }
     public boolean validar(){
         //revisarcampos
-        boolean valido = true;
+        boolean valido = false;
+        String mensaje = "";
+        boolean vNOMBREDD= false, vNOMBREPV= false, vNOMBREDI= false, vGPSLATITUD= true, vGPSLONGITUD= true;
+        // vMZA= true, vLOTE= true, vKM= true,vZON_NUM= false, vMZ_ID= false, vFRENTE= false, vCCST= false, vCCAT= false, vNROPTA= false, vBLOCK= true, vINT= true;
+        boolean  vTIPVIA= true, vTIPVIAESP= true, vNOMVIA=false;
+        boolean  vPISO= false,vREF_DIREC= false;
         llenarMapaVariables();
+        if(!String.valueOf(spDepartamento.getSelectedItemPosition()).equals("0")) vNOMBREDD=true;
+        else if(mensaje.equals(""))mensaje = "DEPARTAMENTO: DEBE INDICAR EL DEPARTAMENTO";
+        if(!String.valueOf(spProvincia.getSelectedItemPosition()).equals("0")) vNOMBREPV=true;
+        else if(mensaje.equals(""))mensaje = "PROVINCIA: DEBE INDICAR LA PROVINCIA";
+        if(!String.valueOf(spDistrito.getSelectedItemPosition()).equals("0")) vNOMBREDI=true;
+        else if(mensaje.equals(""))mensaje = "DISTRITO: DEBE INDICAR EL DISTRITO";
+        if(GPSLATITUD.equals("")) {
+            vGPSLATITUD = false;vGPSLONGITUD = false;
+            if (mensaje.equals("")) mensaje = "GPS: DEBE REGISTRARSE LAS COORDENADAS CON EL GPS";
+        }
+        if(GPSLATITUD.equals("Buscando, puede tardar 1 min...")){
+            vGPSLATITUD = false;vGPSLONGITUD = false;
+            if(mensaje.equals(""))mensaje = "GPS: DEBE ESPERAR A QUE TERMINE DE BUSCARSE LAS COORDENADAS DEL GPS " +
+                    "O CANCELAR PARA GUARDAR VALORES POR DEFECTO";
+        }
+//        if(!CCST.equals("")) vCCST=true;
+//        else if(mensaje.equals(""))mensaje = "SECTOR DE TRABAJO: DEBE INDICAR EL SECTOR DE TRABAJO";
+//        if(!CCAT.equals("")) vCCAT=true;
+//        else if(mensaje.equals(""))mensaje = "AREA DE TRABAJO: DEBE INDICAR EL AREA DE TRABAJO";
+//        if(!ZON_NUM.equals("")) vZON_NUM=true;
+//        else if(mensaje.equals(""))mensaje = "ZONA: DEBE INDICAR LA ZONA";
+//        if(!MZ_ID.equals("")) vMZ_ID=true;
+//        else if(mensaje.equals(""))mensaje = "MANZANA: DEBE INDICAR LA MANZANA";
+//        if(!FRENTE.equals("")) vFRENTE=true;
+//        else if(mensaje.equals(""))mensaje = "FRENTE: DEBE INDICAR EL FRENTE";
+        if(TIPVIA==0){
+            vTIPVIA=false;
+            if(mensaje.equals(""))mensaje = "TIPO DE VIA: DEBE INDICAR EL TIPO DE VIA";
+        }
+        if (TIPVIA==7){
+            if (TIPVIA_ESPEC.trim().length() < 2) {
+                vTIPVIAESP = false;
+                if (mensaje.equals("")) mensaje = "TIPODE VIA ESPECIFIQUE: DEBE REGISTRAR INFORMACION";
+            }
+        }
+//        if(TIPVIA == 5 && KM.equals("")){
+//            vKM = false;
+//            if(mensaje.equals(""))mensaje = "KILOMETRO: DEBE REGISTRAR KILOMETRO YA QUE EL TIPO DE VIA ES CARRETERA";
+//        }
+//        if(!BLOCK.equals("") && INTERIOR.equals("")){
+//            vINT=false;
+//            if(mensaje.equals(""))mensaje = "INTERIOR: SI REGISTRA BLOCK DEBE REGISTRAR INTERIOR";
+//        }
+//        if((MZA.equals("") && !LOTE.equals("")) || (!MZA.equals("") && LOTE.equals(""))){
+//            vMZA=false; vLOTE = false;
+//            if(mensaje.equals(""))mensaje = "SI REGISTRA MANZANA  DEBE REGISTRAR LOTE Y VICEVERSA";
+//        }
+        if(!TIPVIA_D.equals("")) vNOMVIA=true;
+        else if(mensaje.equals(""))mensaje = "NOMBRE DE VIA: DEBE REGISTRAR INFORMACION";
+//        if(!NROPTA.equals("")) vNROPTA=true;
+//        else if(mensaje.equals(""))mensaje = "NUMERO DE PUERTA: DEBE REGISTRAR EL NUMERO DE PUERTA";
+        if(!PISO.equals("")) vPISO=true;
+        else if(mensaje.equals(""))mensaje = "PISO: DEBE REGISTRAR INFORMACION";
+        if(!REF_DIREC.equals("")){
+            if (!REF_DIREC.substring(0).equals("1")&& !REF_DIREC.substring(0).equals("2")&& !REF_DIREC.substring(0).equals("3")&& !REF_DIREC.substring(0).equals("4")&& !REF_DIREC.substring(0).equals("5")&& !REF_DIREC.substring(0).equals("6")&& !REF_DIREC.substring(0).equals("7")&& !REF_DIREC.substring(0).equals("8")&& !REF_DIREC.substring(0).equals("9")&& !REF_DIREC.substring(0).equals("0")){
+                vREF_DIREC=true;
+            }else if(mensaje.equals(""))mensaje = "REFERENCIA: Debe existir información como referencia de la dirección";
 
+        }else if(mensaje.equals(""))mensaje = "REFERENCIA: Debe existir información como referencia de la dirección";
+
+        valido = vNOMBREDD && vNOMBREPV && vNOMBREDI && vGPSLATITUD && vGPSLONGITUD  && vTIPVIA && vTIPVIAESP && vNOMVIA && vPISO && vREF_DIREC;
+        if(!valido) mostrarMensaje(mensaje);
 
         return valido;
-
     }
+
+
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
 }

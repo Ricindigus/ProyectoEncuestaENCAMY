@@ -144,11 +144,11 @@ public class Seccion200Fragment1 extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b){
-                    p205_ck1.setEnabled(false);
-                    p205_ck2.setEnabled(false);
-                    p205_ck3.setEnabled(false);
-                    p205_ck4.setEnabled(false);
-                    p205_ck6.setEnabled(false);
+                    p205_ck1.setEnabled(false); p205_ck1.setChecked(false);
+                    p205_ck2.setEnabled(false); p205_ck2.setChecked(false);
+                    p205_ck3.setEnabled(false); p205_ck3.setChecked(false);
+                    p205_ck4.setEnabled(false); p205_ck4.setChecked(false);
+                    p205_ck6.setEnabled(false); p205_ck6.setChecked(false);
                 }
                 else {
                     p205_ck1.setEnabled(true);
@@ -344,7 +344,7 @@ public class Seccion200Fragment1 extends Fragment {
                     if(!P_204.equals("") && verificacion!=0){
                         if(Integer.parseInt(P_204) < verificacion || Integer.parseInt(P_204)>2017){
                             valido = false;
-                            if(mensaje.equals(""))mensaje = "PREGUNTA 204: Año de inicio de utilización del estándar de calidad no debe ser menor al año de inicio de funcionamiento ni mayor a 2017";
+                            if(mensaje.equals(""))mensaje = "PREGUNTA 204: Año de implementación de la norma técnica o estándar de calidad más importante no debe ser menor al año de inicio de funcionamiento ni mayor a 2017";
                         }
                     }
                 }

@@ -158,18 +158,28 @@ public class Seccion400Fragment1 extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //----pregunta 401
-        final CheckBox[] checkBox = {p401_ck1,p401_ck2,p401_ck3};
+        final CheckBox[] checkBox = {p401_ck1,p401_ck2,p401_ck3,p401_ck4,p401_ck5};
 
         for(int i=0;i<checkBox.length;i++){
             checkBox[i].setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                     if(b){
-                        p402_card.setVisibility(View.GONE);
+                        if (!checkBox[3].isChecked() && !checkBox[4].isChecked()){
+                            p402_card.setVisibility(View.GONE);
+                        }
+                        if (checkBox[3].isChecked() || checkBox[4].isChecked()){
+                            p402_card.setVisibility(View.VISIBLE);
+                        }
+
+
                     }else{
                         if (checkBox[0].isChecked()||checkBox[1].isChecked()||checkBox[2].isChecked()){
                             p402_card.setVisibility(View.GONE);
                         }else {
+                            p402_card.setVisibility(View.VISIBLE);
+                        }
+                        if (checkBox[3].isChecked() || checkBox[4].isChecked()){
                             p402_card.setVisibility(View.VISIBLE);
                         }
 
@@ -185,9 +195,9 @@ public class Seccion400Fragment1 extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked){
-                    p404_card.setVisibility(View.GONE);
-                    p405_card.setVisibility(View.GONE);
-                    p406_card.setVisibility(View.GONE);
+                    p404_card.setVisibility(View.GONE);  p403_ck1.setEnabled(false); p403_ck1.setChecked(false);
+                    p405_card.setVisibility(View.GONE);  p403_ck2.setEnabled(false); p403_ck2.setChecked(false);
+                    p406_card.setVisibility(View.GONE);  p403_ck3.setEnabled(false); p403_ck3.setChecked(false);
                     p407_card.setVisibility(View.GONE);
                 }else{
                     p404_card.setVisibility(View.VISIBLE);
@@ -464,10 +474,10 @@ public class Seccion400Fragment1 extends Fragment {
             valido = false;
             if(mensaje.equals(""))mensaje = "PREGUNTA 401: Usted indica que no se verifica porque ya está establecido";
         }
-        if( P_401_3 == 1 && (P_401_4 == 1 || P_401_5 == 1)) {
-            valido = false;
-            if(mensaje.equals(""))mensaje = "PREGUNTA 401: Debe especificar si la empresa o laboratorio está acreditada o no acreditada";
-        }
+//        if( P_401_3 == 1 && (P_401_4 == 1 || P_401_5 == 1)) {
+//            valido = false;
+//            if(mensaje.equals(""))mensaje = "PREGUNTA 401: Debe especificar si la empresa o laboratorio está acreditada o no acreditada";
+//        }
         if(P_401_1 == 0 && P_401_2 == 0 && P_401_3==0 ) {
             if(p402_card.getVisibility()==View.VISIBLE){
                 if(P_402 == -1){
@@ -475,6 +485,11 @@ public class Seccion400Fragment1 extends Fragment {
                     if (mensaje.equals("")) mensaje = "PREGUNTA 402: DEBE SELECCIONAR AL MENOS UNA OPCION";
                 }
             }
+        }
+        //402
+        if(P_401_4 == 1 &&P_402==1) {
+            valido = false;
+            if(mensaje.equals(""))mensaje = "PREGUNTA 401: Usted indicó que verifica la calidad mediante un laboratorio de ensayo acreditado en el Perú";
         }
 
         //403
@@ -492,6 +507,19 @@ public class Seccion400Fragment1 extends Fragment {
                 if (P_405==-1){
                     valido = false;
                     if(mensaje.equals(""))mensaje = "PREGUNTA 405: DEBE SELECCIONAR AL MENOS UNA OPCION";
+                }
+                if(p405_card.getVisibility()==View.VISIBLE){
+                    data = new Data(context);
+                    data.open();
+                    int cinacal = Integer.parseInt(data.getIdentificacion(idempresa).getCONOCE_INACAL());
+                    data.close();
+                    int verificacion =  cinacal;
+                    if(verificacion!=-1){
+                        if((P_405==0 || P_405==1) &&verificacion==1){
+                            valido = false;
+                            if(mensaje.equals(""))mensaje = "PREGUNTA 405: : Usted indicó que no conoce ni ha oído hablar de INACAL";
+                        }
+                    }
                 }
                 //406
                 if(p406_card.getVisibility()==View.VISIBLE){

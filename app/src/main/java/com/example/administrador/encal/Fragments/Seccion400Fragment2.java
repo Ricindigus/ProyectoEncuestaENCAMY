@@ -4,9 +4,11 @@ package com.example.administrador.encal.Fragments;
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +21,9 @@ import android.widget.RadioGroup;
 
 import com.example.administrador.encal.Modelo.Data;
 import com.example.administrador.encal.Modelo.SQLConstantes;
+import com.example.administrador.encal.Pojos.IdentificacionPojo;
 import com.example.administrador.encal.Pojos.Sec200PojoF1;
+import com.example.administrador.encal.Pojos.Sec300PojoF1;
 import com.example.administrador.encal.Pojos.Sec400PojoF1;
 import com.example.administrador.encal.R;
 
@@ -39,6 +43,9 @@ public class Seccion400Fragment2 extends Fragment {
     private EditText p410_edt;
     private CardView p410_card;
 
+    private IdentificacionPojo identificacion;
+    private Sec300PojoF1 sec300PojoF1;
+
     private String idempresa;
     private Sec400PojoF1 sec400PojoF1;
     private Context context;
@@ -57,8 +64,10 @@ public class Seccion400Fragment2 extends Fragment {
     public Seccion400Fragment2(String idempresa, Context context) {
         this.idempresa = idempresa;
         this.context = context;
-        //data = new Data(context);
-        //data.open();
+        data = new Data(context);
+        data.open();
+        identificacion = data.getIdentificacion(idempresa);
+        sec300PojoF1 = data.getModulo3(idempresa);
     }
 
 
@@ -95,10 +104,10 @@ public class Seccion400Fragment2 extends Fragment {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b){
                     p410_card.setVisibility(View.GONE);
-                    p409_ck2.setEnabled(false);
-                    p409_ck3.setEnabled(false);
-                    p409_ck4.setEnabled(false);
-                    p409_ck5.setEnabled(false);
+                    p409_ck2.setEnabled(false); p409_ck2.setChecked(false);
+                    p409_ck3.setEnabled(false); p409_ck3.setChecked(false);
+                    p409_ck4.setEnabled(false); p409_ck4.setChecked(false);
+                    p409_ck5.setEnabled(false); p409_ck5.setChecked(false);
                 }else{
                     p410_card.setVisibility(View.VISIBLE);
                     p409_ck2.setEnabled(true);
@@ -177,17 +186,17 @@ public class Seccion400Fragment2 extends Fragment {
         else P_409_3 = 0;
         if(p409_ck4.isChecked())P_409_4 = 1;
         else P_409_4 = 0;
-        if(p409_ck4.isChecked())P_409_5 = 1;
+        if(p409_ck5.isChecked())P_409_5 = 1;
         else P_409_5 = 0;
-        if(!p409_edt.getText().toString().equals("")){
+
             P_409_5_O=  p409_edt.getText().toString();
-        }
+
         //402
         int childPosP1 = p410_rg.indexOfChild(p410_rg.findViewById(p410_rg.getCheckedRadioButtonId()));
         P_410 = childPosP1;
-        if(!p410_edt.getText().toString().equals("")){
+
             P_410_O =  p410_edt.getText().toString();
-        }
+
     }
 
     public void guardarDatos(){
@@ -223,13 +232,94 @@ public class Seccion400Fragment2 extends Fragment {
         data.close();
     }
 
-    public boolean validar() {
-        //revisarcampos
+    public boolean validar(){
         boolean valido = true;
-        //llenarMapaVariables();
+        String mensaje = "";
+        llenarMapaVariables();
 
+        boolean v1=true;boolean v2=true;boolean v3=true;boolean v4=true;boolean vt=true;
+
+        //409
+        if(P_409_1 != 1 && P_409_2 != 1 && P_409_3 != 1 && P_409_4 != 1 && P_409_5 != 1) {
+            valido = false;
+            if(mensaje.equals(""))mensaje = "PREGUNTA 409: DEBE SELECCIONAR AL MENOS UNA OPCION";
+        }
+        if(P_409_1 == 1 ){
+            valido=true;
+        }else{
+            if (P_409_4==1){
+                data = new Data(context);
+                data.open();
+                int uinstrumento = Integer.parseInt(data.getModulo3(idempresa).getP_302());
+                data.close();
+                int verificacion =  uinstrumento;
+                if(verificacion!=-1){
+                    if(P_409_4==1&&verificacion==1){
+                        valido = false;
+                        if(mensaje.equals(""))mensaje = "PREGUNTA 409: : Usted indicó que no utiliza instrumentos de medición";
+                    }
+                }
+            }
+            if (P_409_5==1){
+                if (P_409_5_O.trim().length() < 2) {
+                    valido = false;
+                    if (mensaje.equals("")) mensaje = "PREGUNTA 409: DEBE REGISTRAR INFORMACION";
+                }
+            }
+
+            if(p410_card.getVisibility()==View.VISIBLE){
+                if(P_410==-1){
+                    valido = false;
+                    if(mensaje.equals(""))mensaje = "PREGUNTA 410: DEBE SELECCIONAR AL MENOS UNA OPCION";
+                }
+                data = new Data(context);
+                data.open();
+                int cinacal1 = Integer.parseInt(data.getIdentificacion(idempresa).getCONOCE_INACAL());
+                data.close();
+                int verificacion1 =  cinacal1;
+                if(verificacion1!=-1){
+                    if(P_410==0 &&verificacion1==1){
+                        valido = false;
+                        if(mensaje.equals(""))mensaje = "PREGUNTA 410: : Usted indicó que no conoce ni ha oído hablar de INACAL";
+                    }
+                }
+                if (P_410==3){
+                    if (P_410_O.trim().length() < 2) {
+                        valido = false;
+                        if (mensaje.equals("")) mensaje = "PREGUNTA 410: DEBE REGISTRAR INFORMACION";
+                    }
+                }
+            }
+        }
+        if(!valido){
+            mostrarMensaje(mensaje);
+//            Log.d("vNUM_RUC" , vNUM_RUC+"");
+//            Log.d("vRAZON_SOCIAL",vRAZON_SOCIAL+"");
+//            Log.d("vANIO_FUNDACION",vANIO_FUNDACION+"");
+//            Log.d("vPAG_WEB",vPAG_WEB+"");
+//            Log.d("vCORREO",vCORREO+"");
+//            Log.d("vTEL_MOVIL",vTEL_MOVIL+"");
+//            Log.d("vANIO_OPERACION",vANIO_OPERACION+"");
+//            Log.d("vNOM_INFORMANTE",vNOM_INFORMANTE+"");
+//            Log.d("vSEXO_INFORMANTE",vSEXO_INFORMANTE+"");
+//            Log.d("vEDAD_INFORMANTE",vEDAD_INFORMANTE+"");
+//            Log.d("vACAD_INFORMANTE",vACAD_INFORMANTE+"");
+//            Log.d("vCARGO_INFORMANTE",vCARGO_INFORMANTE+"");
+//            Log.d("vCARGO_INFORMANTE_ESP",vCARGO_INFORMANTE_ESP+"");
+//            Log.d("vTEL_FIJO",vTEL_FIJO+"");
+        }
 
         return valido;
-
+    }
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }

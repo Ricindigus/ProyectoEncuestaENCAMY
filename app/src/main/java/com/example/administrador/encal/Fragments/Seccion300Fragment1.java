@@ -4,10 +4,12 @@ package com.example.administrador.encal.Fragments;
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +23,7 @@ import android.widget.RadioGroup;
 
 import com.example.administrador.encal.Modelo.Data;
 import com.example.administrador.encal.Modelo.SQLConstantes;
+import com.example.administrador.encal.Pojos.IdentificacionPojo;
 import com.example.administrador.encal.Pojos.Sec300PojoF1;
 import com.example.administrador.encal.R;
 
@@ -39,51 +42,7 @@ public class Seccion300Fragment1 extends Fragment {
     private EditText p302_temotro;
     private EditText p302_volotro;
     private EditText p302_ototro;
-    /*
-      private RadioGroup p302_rgM1;
-      private RadioGroup p302_rgM2;
-      private RadioGroup p302_rgM3;
-      private RadioGroup p302_rgM4;
-      private RadioGroup p302_rgM5;
-      private RadioGroup p302_rgM6;
-      private RadioGroup p302_rgM7;
-      private RadioGroup p302_rgM8;
-      private RadioGroup p302_rgL1;
-      private RadioGroup p302_rgL2;
-      private RadioGroup p302_rgL3;
-      private RadioGroup p302_rgL4;
-      private RadioGroup p302_rgL5;
-      private RadioGroup p302_rgL6;
-      private RadioGroup p302_rgL7;
-      private RadioGroup p302_rgL8;
-      private RadioGroup p302_rgP1;
-      private RadioGroup p302_rgP2;
-      private RadioGroup p302_rgP3;
-      private RadioGroup p302_rgP4;
-      private RadioGroup p302_rgP5;
-      private RadioGroup p302_rgP6;
-      private RadioGroup p302_rgP7;
-      private RadioGroup p302_rgP8;
-      private RadioGroup p302_rgP9;
-      private RadioGroup p302_rgP10;
-      private RadioGroup p302_rgT1;
-      private RadioGroup p302_rgT2;
-      private RadioGroup p302_rgT3;
-      private RadioGroup p302_rgT4;
-      private RadioGroup p302_rgT5;
-      private RadioGroup p302_rgT6;
-      private RadioGroup p302_rgT7;
-      private RadioGroup p302_rgT8;
-      private RadioGroup p302_rgV1;
-      private RadioGroup p302_rgV2;
-      private RadioGroup p302_rgV3;
-      private RadioGroup p302_rgV4;
-      private RadioGroup p302_rgV5;
-      private RadioGroup p302_rgV6;
-      private RadioGroup p302_rgO1;
-      private RadioGroup p302_rgO2;
 
-      */
     private CheckBox p302_ckM1;
     private CheckBox p302_ckM2;
     private CheckBox p302_ckM3;
@@ -150,18 +109,6 @@ public class Seccion300Fragment1 extends Fragment {
     private EditText p302_vCant3;
     private EditText p302_oCant1;
 
-    private RadioButton p302_rbM9;
-    private RadioButton p302_rbM10;
-    private RadioButton p302_rbM11;
-    private RadioButton p302_rbM12;
-    private RadioButton p302_rbM13;
-    private RadioButton p302_rbM14;
-    private RadioButton p302_rbM15;
-    private RadioButton p302_rbM16;
-
-
-
-
     private CheckBox p303_ck1;
     private CheckBox p303_ck2;
     private CheckBox p303_ck3;
@@ -176,6 +123,7 @@ public class Seccion300Fragment1 extends Fragment {
     private CardView p305_card;
     private Sec300PojoF1 sec300;
 
+    private IdentificacionPojo identificacion;
 
     private String idEmpresa;
     private Context context;
@@ -274,6 +222,9 @@ public class Seccion300Fragment1 extends Fragment {
     public Seccion300Fragment1(String idEmpresa, Context context) {
         this.idEmpresa = idEmpresa;
         this.context = context;
+        data = new Data(context);
+        data.open();
+        identificacion = data.getIdentificacion(idEmpresa);
     }
 
     @Override
@@ -446,14 +397,20 @@ public class Seccion300Fragment1 extends Fragment {
 
 
         //----pregunta 303
-        final CheckBox[] checkBox = {p303_ck1,p303_ck2,p303_ck3,p303_ck4};
+        final CheckBox[] checkBox = {p303_ck1,p303_ck2,p303_ck3,p303_ck4,p303_ck5};
 
         for(int i=0;i<checkBox.length;i++){
             checkBox[i].setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                     if(b){
-                        p304_card.setVisibility(View.GONE);
+
+                        if (!checkBox[4].isChecked()) {
+                            p304_card.setVisibility(View.GONE);
+                        }
+                        if (checkBox[4].isChecked()){
+                            p304_card.setVisibility(View.VISIBLE);
+                        }
                     }else{
                         if (checkBox[0].isChecked()||checkBox[1].isChecked()||checkBox[2].isChecked()||checkBox[3].isChecked()){
                             p304_card.setVisibility(View.GONE);
@@ -712,7 +669,6 @@ public class Seccion300Fragment1 extends Fragment {
 
         //PREGUNTA 302-3
         P_302A_P_5_O = p302_presotro.getText().toString();
-
         if(p302_ckP1.isChecked())P_302A_P_1 = 1;
         else P_302A_P_1 = 0;
         if(p302_ckP2.isChecked())P_302A_P_2 = 1;
@@ -828,7 +784,6 @@ public class Seccion300Fragment1 extends Fragment {
         data.open();
         if(data.existeModulo3(idEmpresa)){
             ContentValues contentValues = new ContentValues(77);
-
             contentValues.put(SQLConstantes.SECCION300_P_301,P_301+"");
             contentValues.put(SQLConstantes.SECCION300_P_302,P_302+"");
             contentValues.put(SQLConstantes.SECCION300_P_302A_M_1,P_302A_M_1+"");
@@ -998,12 +953,135 @@ public class Seccion300Fragment1 extends Fragment {
     }
 
     public boolean validar(){
-        //revisarcampos
         boolean valido = true;
-        //llenarMapaVariables();
+        String mensaje = "";
+        llenarMapaVariables();
 
+        //301
+        if(P_301==-1) {
+            valido = false;
+            if(mensaje.equals(""))mensaje = "PREGUNTA 301: DEBE SELECCIONAR AL MENOS UNA OPCION";
+        }
+        //302
+        if(P_302==-1) {
+            valido = false;
+            if(mensaje.equals(""))mensaje = "PREGUNTA 302: DEBE SELECCIONAR AL MENOS UNA OPCION";
+        }else{
+            if(P_302 == 1 ){
+                valido=true;
+            }else{
+                if (P_302A_M_1!=1&&P_302A_M_2!=1&&P_302A_M_3!=1&&P_302A_M_4!=1&&
+                    P_302A_L_1!=1&&P_302A_L_2!=1&&P_302A_L_3!=1&&P_302A_L_4!=1&&
+                    P_302A_P_1!=1&&P_302A_P_2!=1&&P_302A_P_3!=1&&P_302A_P_4!=1&&P_302A_P_5!=1&&
+                    P_302A_T_1!=1&&P_302A_T_2!=1&&P_302A_T_3!=1&&P_302A_T_4!=1&&
+                    P_302A_V_1!=1&&P_302A_V_2!=1&&P_302A_V_3!=1&&P_302A_O_1!=1){
+                    valido = false;
+                    if(mensaje.equals(""))mensaje = "PREGUNTA 302A: DEBE SELECCIONAR AL MENOS UN INSTRUMENTO DE MEDICION QUE UTILIZA";
+                }
+                if ((P_302A_M_4==1 && P_302A_M_4_O.equals("")) || (P_302A_L_4==1 && P_302A_L_4_O.equals(""))
+                    || (P_302A_P_5==1 && P_302A_P_5_O.equals(""))|| (P_302A_T_4==1 && P_302A_T_4_O.equals(""))
+                    || (P_302A_V_3==1 && P_302A_V_3_O.equals(""))|| (P_302A_O_1==1 && P_302A_O_1_O.equals(""))){
+                    valido = false;
+                    if(mensaje.equals(""))mensaje = "PREGUNTA 302A: DEBE ESPECIFICAR EL INSTRUMENTO DE MEDICION Q UTILIZA";
+                }
+                if ((P_302A_M_1==1 && P_302B_M_1==1 && P_302C_M_1.equals(""))||(P_302A_M_2==1 && P_302B_M_2==1 && P_302C_M_2.equals(""))||
+                    (P_302A_M_3==1 && P_302B_M_3==1 && P_302C_M_3.equals(""))||(P_302A_M_4==1 && P_302B_M_4==1 && P_302C_M_4.equals(""))||
+                    (P_302A_L_1==1 && P_302B_L_1==1 && P_302C_L_1.equals(""))||(P_302A_L_2==1 && P_302B_L_2==1 && P_302C_L_2.equals(""))||
+                    (P_302A_L_3==1 && P_302B_L_3==1 && P_302C_L_3.equals(""))||(P_302A_L_4==1 && P_302B_L_4==1 && P_302C_L_4.equals(""))||
+                    (P_302A_P_1==1 && P_302B_P_1==1 && P_302C_P_1.equals(""))||(P_302A_P_2==1 && P_302B_P_2==1 && P_302C_P_2.equals(""))||(P_302A_P_3==1 && P_302B_P_3==1 && P_302C_P_3.equals(""))||
+                    (P_302A_P_4==1 && P_302B_P_4==1 && P_302C_P_4.equals(""))||(P_302A_P_5==1 && P_302B_P_5==1 && P_302C_P_5.equals(""))||
+                    (P_302A_T_1==1 && P_302B_T_1==1 && P_302C_T_1.equals(""))||(P_302A_T_2==1 && P_302B_T_2==1 && P_302C_T_2.equals(""))||
+                    (P_302A_T_3==1 && P_302B_T_3==1 && P_302C_T_3.equals(""))||(P_302A_T_4==1 && P_302B_T_4==1 && P_302C_T_4.equals(""))||
+                    (P_302A_V_1==1 && P_302B_V_1==1 && P_302C_V_1.equals(""))||(P_302A_V_2==1 && P_302B_V_2==1 && P_302C_V_2.equals(""))||
+                    (P_302A_V_3==1 && P_302B_V_3==1 && P_302C_V_3.equals(""))||(P_302A_O_1==1 && P_302B_O_1==1 && P_302C_O_1.equals(""))){
+                    valido = false;
+                    if(mensaje.equals(""))mensaje = "PREGUNTA 302C: DEBE EXISTIR INFORMACION";
+                }
+                if ((P_302A_M_1==1 && P_302B_M_1==1 && !P_302C_M_1.equals("")&&Integer.parseInt(P_302C_M_1)<1)||(P_302A_M_2==1 && P_302B_M_2==1 && !P_302C_M_2.equals("")&&Integer.parseInt(P_302C_M_2)<1)||
+                        (P_302A_M_3==1 && P_302B_M_3==1 && !P_302C_M_3.equals("")&&Integer.parseInt(P_302C_M_3)<1)||(P_302A_M_4==1 && P_302B_M_4==1 && !P_302C_M_4.equals("")&&Integer.parseInt(P_302C_M_4)<1)||
+                        (P_302A_L_1==1 && P_302B_L_1==1 && !P_302C_L_1.equals("")&&Integer.parseInt(P_302C_L_1)<1)||(P_302A_L_2==1 && P_302B_L_2==1 && !P_302C_L_2.equals("")&&Integer.parseInt(P_302C_L_2)<1)||
+                        (P_302A_L_3==1 && P_302B_L_3==1 && !P_302C_L_3.equals("")&&Integer.parseInt(P_302C_L_3)<1)||(P_302A_L_4==1 && P_302B_L_4==1 && !P_302C_L_4.equals("")&&Integer.parseInt(P_302C_L_4)<1)||
+                        (P_302A_P_1==1 && P_302B_P_1==1 && !P_302C_P_1.equals("")&&Integer.parseInt(P_302C_P_1)<1)||(P_302A_P_2==1 && P_302B_P_2==1 && !P_302C_P_2.equals("")&&Integer.parseInt(P_302C_P_2)<1)||
+                        (P_302A_P_3==1 && P_302B_P_3==1 && !P_302C_P_3.equals("")&&Integer.parseInt(P_302C_P_3)<1)||
+                        (P_302A_P_4==1 && P_302B_P_4==1 && !P_302C_P_4.equals("")&&Integer.parseInt(P_302C_P_4)<1)||(P_302A_P_5==1 && P_302B_P_5==1 && !P_302C_P_5.equals("")&&Integer.parseInt(P_302C_P_5)<1)||
+                        (P_302A_T_1==1 && P_302B_T_1==1 && !P_302C_T_1.equals("")&&Integer.parseInt(P_302C_T_1)<1)||(P_302A_T_2==1 && P_302B_T_2==1 && !P_302C_T_2.equals("")&&Integer.parseInt(P_302C_T_2)<1)||
+                        (P_302A_T_3==1 && P_302B_T_3==1 && !P_302C_T_3.equals("")&&Integer.parseInt(P_302C_T_3)<1)||(P_302A_T_4==1 && P_302B_T_4==1 && !P_302C_T_4.equals("")&&Integer.parseInt(P_302C_T_4)<1)||
+                        (P_302A_V_1==1 && P_302B_V_1==1 && !P_302C_V_1.equals("")&&Integer.parseInt(P_302C_V_1)<1)||(P_302A_V_2==1 && P_302B_V_2==1 && !P_302C_V_2.equals("")&&Integer.parseInt(P_302C_V_2)<1)||
+                        (P_302A_V_3==1 && P_302B_V_3==1 && !P_302C_V_3.equals("")&&Integer.parseInt(P_302C_V_3)<1)||(P_302A_O_1==1 && P_302B_O_1==1 && !P_302C_O_1.equals("")&&Integer.parseInt(P_302C_O_1)<1)){
+                    valido = false;
+                    if(mensaje.equals(""))mensaje = "PREGUNTA 302C: DEBE EXISTIR POR LO MENOS UN INSTRUMENTO CALIBRADO EN EL 2016";
+                }
+                //303
+                if(P_303_1 != 1 && P_303_2 != 1 && P_303_3 != 1 && P_303_4 != 1 && P_303_5 != 1) {
+                    valido = false;
+                    if(mensaje.equals(""))mensaje = "PREGUNTA 303: DEBE SELECCIONAR AL MENOS UNA ALTERNATIVA";
+                }
+                data = new Data(context);
+                data.open();
+                int cinacal = Integer.parseInt(data.getIdentificacion(idEmpresa).getCONOCE_INACAL());
+                data.close();
+                int verificacion =  cinacal;
+                if(verificacion!=-1){
+                    if(P_303_4==1 &&verificacion==1){
+                        valido = false;
+                        if(mensaje.equals(""))mensaje = "PREGUNTA 303: : Usted indicó que no conoce ni ha oído hablar de INACAL";
+                    }
+                }
+                if (P_303_5==1){
+                    if(p304_card.getVisibility()==View.VISIBLE){
+                        data = new Data(context);
+                        data.open();
+                        int cinacal1 = Integer.parseInt(data.getIdentificacion(idEmpresa).getCONOCE_INACAL());
+                        data.close();
+                        int verificacion1 =  cinacal1;
+                        if(verificacion1!=-1){
+                            if((P_304==0 || P_304==1) &&verificacion1==1){
+                                valido = false;
+                                if(mensaje.equals(""))mensaje = "PREGUNTA 304: : Usted indicó que no conoce ni ha oído hablar de INACAL";
+                            }
+                        }
+                    }
+                }
+                if (P_305.equals("")){
+                    valido = false;
+                    if(mensaje.equals(""))mensaje = "PREGUNTA 305: : Debe existir información de gasto incurrido en las calibraciones, y puede ser mayor o igual a cero";
+
+                }
+
+            }
+        }
+
+        if(!valido){
+            mostrarMensaje(mensaje);
+//            Log.d("vNUM_RUC" , vNUM_RUC+"");
+//            Log.d("vRAZON_SOCIAL",vRAZON_SOCIAL+"");
+//            Log.d("vANIO_FUNDACION",vANIO_FUNDACION+"");
+//            Log.d("vPAG_WEB",vPAG_WEB+"");
+//            Log.d("vCORREO",vCORREO+"");
+//            Log.d("vTEL_MOVIL",vTEL_MOVIL+"");
+//            Log.d("vANIO_OPERACION",vANIO_OPERACION+"");
+//            Log.d("vNOM_INFORMANTE",vNOM_INFORMANTE+"");
+//            Log.d("vSEXO_INFORMANTE",vSEXO_INFORMANTE+"");
+//            Log.d("vEDAD_INFORMANTE",vEDAD_INFORMANTE+"");
+//            Log.d("vACAD_INFORMANTE",vACAD_INFORMANTE+"");
+//            Log.d("vCARGO_INFORMANTE",vCARGO_INFORMANTE+"");
+//            Log.d("vCARGO_INFORMANTE_ESP",vCARGO_INFORMANTE_ESP+"");
+//            Log.d("vTEL_FIJO",vTEL_FIJO+"");
+        }
 
         return valido;
-
     }
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+
 }
