@@ -149,6 +149,57 @@ public class InicioFragment extends Fragment {
 
         inicio_edt1.setFilters(new InputFilter[]{new InputFilter.LengthFilter(11)});
 
+        inicio_edt3.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(!charSequence.toString().equals("")){
+                   // inicio_edt9.setText((Integer.parseInt(inicio_edt9.getText().toString()) - Integer.parseInt(charSequence.toString()))+"");
+                    data = new Data(context);
+                    data.open();
+                    identificacion = data.getIdentificacion(idEmpresa);
+                    Marco marco = data.getMarco(idEmpresa);
+                    if(marco.getRUC().substring(0,2).equals("10")){
+                        inicio_edt9.setText(inicio_edt9.getText().toString().replace(inicio_edt9.getText().toString(),charSequence)+"");
+                        if (inicio_sp3.getSelectedItemPosition()==1 ||inicio_sp3.getSelectedItemPosition()==3){
+                            inicio_edt14.setText(inicio_edt9.getText().toString());
+                        }
+                    }
+                    data.close();
+
+                }
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String despues = "";
+                if(!editable.toString().equals("")) despues = editable.toString();
+
+                    data = new Data(context);
+                    data.open();
+                    identificacion = data.getIdentificacion(idEmpresa);
+                    Marco marco = data.getMarco(idEmpresa);
+                    if(marco.getRUC().substring(0,2).equals("10")){
+                        if(!inicio_edt9.getText().toString().equals("")){
+                            inicio_edt9.setText(inicio_edt9.getText().toString().replace(inicio_edt9.getText().toString(),despues)+"");
+                            if (inicio_sp3.getSelectedItemPosition()==1 ||inicio_sp3.getSelectedItemPosition()==3){
+                                inicio_edt14.setText(inicio_edt9.getText().toString());
+                            }
+                        }else{
+                            inicio_edt9.setText(despues+"");
+                            if (inicio_sp3.getSelectedItemPosition()==1 ||inicio_sp3.getSelectedItemPosition()==3){
+                                inicio_edt14.setText(inicio_edt9.getText().toString());
+                            }
+
+                    }
+                }
+                data.close();
+            }
+        });
+
         validarAnio(inicio_edt4,txtError4);
 
 //        okLayout(inicio_edt6,lytP7);
@@ -161,6 +212,8 @@ public class InicioFragment extends Fragment {
         checkNoTiene(inicio_ck1,inicio_edt5);
         checkNoTiene(inicio_ck2,inicio_edt6);
         checkNoTiene(inicio_ck4,inicio_edt8);
+
+
 
         inicio_ck3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -184,11 +237,12 @@ public class InicioFragment extends Fragment {
                 edtEspecifique.setVisibility(View.GONE);
                 edtEspecifique.setEnabled(false);
                 edtEspecifique.setBackgroundResource(R.drawable.fondo_edit_text_disabled);
+                String op =inicio_edt9.getText().toString();
                 switch (pos){
                     case 0:break;
-                    case 1:break;
+                    case 1: inicio_edt14.setText(op);break;
                     case 2:break;
-                    case 3:break;
+                    case 3:inicio_edt14.setText(op);break;
                     case 4:
                         edtEspecifique.setVisibility(View.VISIBLE);
                         edtEspecifique.setEnabled(true);
@@ -288,7 +342,10 @@ public class InicioFragment extends Fragment {
             inicio_ck4.setChecked(false);
             inicio_edt8.setText(identificacion.getTELMOVIL());
         }
-        inicio_edt9.setText(identificacion.getCOND_APEL_NOM());
+        //
+            inicio_edt9.setText(identificacion.getCOND_APEL_NOM());
+        //}
+
         if(!identificacion.getCOND_SEXO().equals("")) inicio_sp1.setSelection(Integer.parseInt(identificacion.getCOND_SEXO()));
         inicio_edt11.setText(identificacion.getCOND_EDAD());
         if(!identificacion.getCOND_NEST().equals(""))inicio_sp2.setSelection(Integer.parseInt(identificacion.getCOND_NEST()));
@@ -374,6 +431,7 @@ public class InicioFragment extends Fragment {
 
         if(NUM_RUC.trim().length() != 0)vNUM_RUC=true;
         else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR RUC";
+
         if(RAZON_SOCIAL.trim().length() != 0)vRAZON_SOCIAL=true;
         else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR LA RAZON SOCIAL";
         if(NOM_COMER_MYPE.trim().length() != 0)vNOM_COMER_MYPE=true;
