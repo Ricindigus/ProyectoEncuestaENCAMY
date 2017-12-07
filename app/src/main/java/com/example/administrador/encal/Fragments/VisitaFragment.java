@@ -718,10 +718,16 @@ public class VisitaFragment extends Fragment {
     public boolean validar(){
         boolean valido = true;
         String mensaje = "";
-        if(!visitas.get(visitas.size()-1).getV_RESULTADO().equals("")){
+        if(visitas.size() > 0){
+            if(!visitas.get(visitas.size()-1).getV_RESULTADO().equals("")){
+                valido =  false;
+                mensaje = "DEBE INICIAR UNA VISITA ANTES DE CONTINUAR";
+            }
+        }else{
             valido =  false;
             mensaje = "DEBE INICIAR UNA VISITA ANTES DE CONTINUAR";
         }
+
         if(!valido){
             mostrarMensaje(mensaje);
         }
