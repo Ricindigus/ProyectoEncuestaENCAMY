@@ -220,7 +220,7 @@ public class Seccion100Fragment1 extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if(s.equals("0000")){
+                if(s.toString().equals("0000")){
                     p102_act1.setText("");
                     p102_act2.setText("");
                     p102_act3.setText("");
@@ -233,10 +233,10 @@ public class Seccion100Fragment1 extends Fragment {
                     lyt104.setVisibility(View.GONE);
                     lyt105.setVisibility(View.GONE);
                 }else{
-                    lyt102.setVisibility(View.GONE);
-                    lyt103.setVisibility(View.GONE);
-                    lyt104.setVisibility(View.GONE);
-                    lyt105.setVisibility(View.GONE);
+                    lyt102.setVisibility(View.VISIBLE);
+                    lyt103.setVisibility(View.VISIBLE);
+                    lyt104.setVisibility(View.VISIBLE);
+                    lyt105.setVisibility(View.VISIBLE);
                 }
             }
         });
