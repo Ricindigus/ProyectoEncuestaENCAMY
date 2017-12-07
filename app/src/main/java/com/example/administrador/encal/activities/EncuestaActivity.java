@@ -103,6 +103,16 @@ public class EncuestaActivity extends AppCompatActivity {
         return true;
     }
 
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        menu.clear();
+        if(cont > 2 && cont!=5
+                && cont!=6
+                && cont!=7
+                && cont!=9
+                ) getMenuInflater().inflate(R.menu.menu_encuesta, menu);
+        else getMenuInflater().inflate(R.menu.menu_simple, menu);
+        return super.onPrepareOptionsMenu(menu);
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         final int id = item.getItemId();
@@ -128,12 +138,53 @@ public class EncuestaActivity extends AppCompatActivity {
             return true;
         }
         if( id == R.id.registrar_observacion){
+            AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+            final View dialogView = this.getLayoutInflater().inflate(R.layout.dialog_observaciones, null);
+            LinearLayout lytObservaciones = dialogView.findViewById(R.id.dialog_lytObservaciones);
+            final EditText edtObservaciones = dialogView.findViewById(R.id.dialog_edtObservaciones);
+            dialog.setView(dialogView);
+            dialog.setTitle("Observaciones");
+            dialog.setPositiveButton("Guardar",null);
+            dialog.setNegativeButton("Cancelar",null);
+            final AlertDialog alertDialog = dialog.create();
+            alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
+                @Override
+                public void onShow(DialogInterface dialogInterface) {
+                    edtObservaciones.setText(observaciones);
+                    Button b = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+                    b.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            // TODO Do something
+                            observaciones = edtObservaciones.getText().toString();
+                            alertDialog.dismiss();
+                        }
+                    });
+                }
+            });
+            alertDialog.show();
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
     public void setFragment(int poscicion, int direccion){
+        observaciones = "";
+        data = new Data(this);
+        data.open();
+        if(cont >= 3 && cont <= 5){
+            observaciones = data.getModulo1(idEmpresa).getOBS();
+        }
+        if(cont == 6){
+            observaciones = data.getModulo2(idEmpresa).getOBS();
+        }
+        if(cont == 7){
+            observaciones = data.getModulo3(idEmpresa).getOBS();
+        }
+        if(cont >= 8 && cont <= 9){
+            observaciones = data.getModulo4(idEmpresa).getOBS();
+        }
+        data.close();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         if(direccion > 0){

@@ -426,7 +426,7 @@ public class SQLConstantes {
 
     public static final String SQL_CREATE_TABLA_VISITAS =
             "CREATE TABLE " + tableVisitas + "(" +
-                    VISITA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    VISITA_ID + " TEXT PRIMARY KEY," +
                     VISITA_ID_EMPRESA + " TEXT," +
                     VISITA_N + " TEXT," +
                     VISITA_DIA + " TEXT," +

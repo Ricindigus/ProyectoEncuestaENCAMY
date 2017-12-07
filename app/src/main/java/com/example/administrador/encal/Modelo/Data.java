@@ -128,11 +128,11 @@ public class Data {
         return encontrado;
     }
 
-    public void actualizarVisita(int idVisita, ContentValues contentValues){
+    public void actualizarVisita(String idVisita, ContentValues contentValues){
         String[] whereArgs = new String[]{String.valueOf(idVisita)};
         sqLiteDatabase.update(SQLConstantes.tableVisitas,contentValues,SQLConstantes.WHERE_CLAUSE_ID_VISITA,whereArgs);
     }
-    public void deleteVisita(int idVisita){
+    public void deleteVisita(String idVisita){
         String[] whereArgs = new String[]{String.valueOf(idVisita)};
         sqLiteDatabase.delete(SQLConstantes.tableVisitas,SQLConstantes.WHERE_CLAUSE_ID_VISITA,whereArgs);
     }
@@ -145,7 +145,7 @@ public class Data {
                     SQLConstantes.ALL_COLUMNS_VISITAS,SQLConstantes.WHERE_CLAUSE_ID_EMPRESA_VISITA,whereArgs,null,null,null);
             while(cursor.moveToNext()){
                 Visita visita = new Visita();
-                visita.setID(cursor.getInt(cursor.getColumnIndex(SQLConstantes.VISITA_ID)));
+                visita.setID(cursor.getString(cursor.getColumnIndex(SQLConstantes.VISITA_ID)));
                 visita.setID_EMPRESA(cursor.getString(cursor.getColumnIndex(SQLConstantes.VISITA_ID_EMPRESA)));
                 visita.setV_NRO(cursor.getString(cursor.getColumnIndex(SQLConstantes.VISITA_N)));
                 visita.setV_DIA(cursor.getString(cursor.getColumnIndex(SQLConstantes.VISITA_DIA)));
@@ -213,7 +213,22 @@ public class Data {
     }
     public void actualizarResultado(String idEmpresa, ContentValues contentValues){
         String[] whereArgs = new String[]{idEmpresa};
-        sqLiteDatabase.update(SQLConstantes.tableResultados,contentValues,SQLConstantes.WHERE_CLAUSE_ID_EMPRESA_VISITA,whereArgs);
+        sqLiteDatabase.update(SQLConstantes.tableResultados,contentValues,SQLConstantes.WHERE_CLAUSE_ID_RESULTADO,whereArgs);
+    }
+    public boolean existenResultados(String idEmpresa){
+        boolean encontrado = false;
+        String[] whereArgs = new String[]{idEmpresa};
+        Cursor cursor = null;
+        try{
+            cursor = sqLiteDatabase.query(SQLConstantes.tableResultados, SQLConstantes.ALL_COLUMNS_RESULTADOS,
+                    SQLConstantes.WHERE_CLAUSE_ID_RESULTADO,whereArgs,null,null,null);
+            if(cursor.getCount() > 0) encontrado = true;
+        }finally {
+            if(cursor != null){
+                cursor.close();
+            }
+        }
+        return encontrado;
     }
     //----------------------------------------FIN_RESULTADO_FINAL---------------------------------------------
 
