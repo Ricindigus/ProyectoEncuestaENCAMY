@@ -11,7 +11,7 @@ import com.example.administrador.encal.Modelo.SQLConstantes;
 public class Visita {
 
     //COLUMNAS_VISITA
-    private  int ID;
+    private  String ID;
     private  String ID_EMPRESA;
     private  String V_NRO;
     private  String V_DIA;
@@ -28,7 +28,7 @@ public class Visita {
     private  String V_PROX_VIS_MINUTO;
 
     public Visita() {
-        ID =  -1;
+        ID =  "";
         ID_EMPRESA = "";
         V_NRO = "";
         V_DIA = "";
@@ -45,11 +45,11 @@ public class Visita {
         V_PROX_VIS_MINUTO = "";
     }
 
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 
@@ -166,7 +166,8 @@ public class Visita {
     }
 
     public ContentValues toValues(){
-        ContentValues contentValues = new ContentValues(14);
+        ContentValues contentValues = new ContentValues(15);
+        contentValues.put(SQLConstantes.VISITA_ID,ID);
         contentValues.put(SQLConstantes.VISITA_ID_EMPRESA,ID_EMPRESA);
         contentValues.put(SQLConstantes.VISITA_N,V_NRO);
         contentValues.put(SQLConstantes.VISITA_DIA,V_DIA);

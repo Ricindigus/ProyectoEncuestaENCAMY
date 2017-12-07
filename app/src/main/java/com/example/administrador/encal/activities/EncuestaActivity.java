@@ -16,6 +16,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 
 import com.example.administrador.encal.Fragments.CaratulaFragment;
 import com.example.administrador.encal.Fragments.Seccion100Fragment1;
@@ -101,18 +103,88 @@ public class EncuestaActivity extends AppCompatActivity {
         return true;
     }
 
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        menu.clear();
+        if(cont > 2 && cont!=5
+                && cont!=6
+                && cont!=7
+                && cont!=9
+                ) getMenuInflater().inflate(R.menu.menu_encuesta, menu);
+        else getMenuInflater().inflate(R.menu.menu_simple, menu);
+        return super.onPrepareOptionsMenu(menu);
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId() ){
-            case R.id.registrar_observacion:
-                return true;
-            case R.id.volver_marco:
-                return true;
-            default:return super.onOptionsItemSelected(item);
+        final int id = item.getItemId();
+        if (id == R.id.volver_marco || id == R.id.action_marco_simple) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("¿Está seguro que desea volver al marco y salir de la encuesta?")
+                    .setTitle("Aviso")
+                    .setCancelable(false)
+                    .setNegativeButton("No",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            })
+                    .setPositiveButton("Sí",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    finish();
+                                }
+                            });
+            AlertDialog alert = builder.create();
+            alert.show();
+            return true;
         }
+        if( id == R.id.registrar_observacion){
+            AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+            final View dialogView = this.getLayoutInflater().inflate(R.layout.dialog_observaciones, null);
+            LinearLayout lytObservaciones = dialogView.findViewById(R.id.dialog_lytObservaciones);
+            final EditText edtObservaciones = dialogView.findViewById(R.id.dialog_edtObservaciones);
+            dialog.setView(dialogView);
+            dialog.setTitle("Observaciones");
+            dialog.setPositiveButton("Guardar",null);
+            dialog.setNegativeButton("Cancelar",null);
+            final AlertDialog alertDialog = dialog.create();
+            alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
+                @Override
+                public void onShow(DialogInterface dialogInterface) {
+                    edtObservaciones.setText(observaciones);
+                    Button b = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+                    b.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            // TODO Do something
+                            observaciones = edtObservaciones.getText().toString();
+                            alertDialog.dismiss();
+                        }
+                    });
+                }
+            });
+            alertDialog.show();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void setFragment(int poscicion, int direccion){
+        observaciones = "";
+        data = new Data(this);
+        data.open();
+        if(cont >= 3 && cont <= 5){
+            observaciones = data.getModulo1(idEmpresa).getOBS();
+        }
+        if(cont == 6){
+            observaciones = data.getModulo2(idEmpresa).getOBS();
+        }
+        if(cont == 7){
+            observaciones = data.getModulo3(idEmpresa).getOBS();
+        }
+        if(cont >= 8 && cont <= 9){
+            observaciones = data.getModulo4(idEmpresa).getOBS();
+        }
+        data.close();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         if(direccion > 0){

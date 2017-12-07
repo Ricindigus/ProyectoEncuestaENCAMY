@@ -273,6 +273,7 @@ public class VisitaFragment extends Fragment {
                         valido = vFechaInicio && vHoraInicio;
                         if(valido){
                             Visita visita = new Visita();
+                            visita.setID(idEmpresa+String.valueOf(visitaAdapter.getItemCount()+1));
                             visita.setID_EMPRESA(idEmpresa);
                             visita.setV_NRO(String.valueOf(visitaAdapter.getItemCount()+1));
                             visita.setV_DIA(diaInicio+"");
@@ -283,8 +284,7 @@ public class VisitaFragment extends Fragment {
                             visitas.add(visita);
                             data = new Data(context);
                             data.open();
-                            if(visita.getID() == -1) data.insertarVisita(visita);
-                            else data.actualizarVisita(visita.getID(),visita.toValues());
+                            data.insertarVisita(visita);
                             data.close();
                             recyclerView.getAdapter().notifyDataSetChanged();
                             alertDialog.dismiss();
@@ -432,14 +432,12 @@ public class VisitaFragment extends Fragment {
                 .setPositiveButton("Sí",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                int idVisita = visitas.get(posicion).getID();
+                                String idVisita = visitas.get(posicion).getID();
                                 visitas.remove(posicion);
-                                if(idVisita != -1) {
-                                    data = new Data(context);
-                                    data.open();
-                                    data.deleteVisita(idVisita);
-                                    data.close();
-                                }
+                                data = new Data(context);
+                                data.open();
+                                data.deleteVisita(idVisita);
+                                data.close();
                                 visitaAdapter.notifyDataSetChanged();
                             }
                         });
@@ -650,7 +648,7 @@ public class VisitaFragment extends Fragment {
 
                         if(valido){
                             //actualizo visita con datos de finalizar
-                            visitas.get(posicion).setV_RESULTADO(spResultado.getSelectedItemPosition()+"");
+                            visitas.get(posicion).setV_RESULTADO(String.valueOf(spResultado.getSelectedItemPosition()));
                             visitas.get(posicion).setV_RESULTADO_O(edtEspecifique.getText().toString());
                             if(ckProxVisita.isChecked()){
                                 visitas.get(posicion).setV_PROX_VIS_DIA(checkDigito(diaProx));
@@ -707,24 +705,26 @@ public class VisitaFragment extends Fragment {
         if(data.existenVisitas(idEmpresa)){
             visitas = data.getVisitas(idEmpresa);
         }
+
+        if(data.existenResultados(idEmpresa)){
+            ResultadoEncuesta resultado = data.getResultados(idEmpresa);
+            txtResultadoFinal.setText(getResources().getStringArray(R.array.array_resultado_visita)[Integer.parseInt(resultado.getRESFIN())]);
+            txtFechaFinal.setText(resultado.getRESFIN_DIA() + "/" + resultado.getRESFIN_MES() + "/" + resultado.getRESFIN_ANIO());
+            txtHorafinal.setText(resultado.getRESFIN_HORA() + ":" + resultado.getRESFIN_MIN());
+        }
+
         data.close();
     }
-//    public void guardarDatos(){
-//        data = new Data(context);
-//        data.open();
-//        for (Visita visita: visitas) {
-//            if(visita.getID() == -1){
-//                data.insertarVisita(visita);
-//            }else{
-//                data.actualizarVisita(visita.getID(),visita.toValues());
-//            }
-//        }
-//        data.close();
-//    }
     public boolean validar(){
-        //revisarcampos
         boolean valido = true;
-        //llenarMapaVariables();
+        String mensaje = "";
+        if(!visitas.get(visitas.size()-1).getV_RESULTADO().equals("")){
+            valido =  false;
+            mensaje = "DEBE INICIAR UNA VISITA ANTES DE CONTINUAR";
+        }
+        if(!valido){
+            mostrarMensaje(mensaje);
+        }
         return valido;
     }
 
@@ -735,6 +735,16 @@ public class VisitaFragment extends Fragment {
         InputMethodManager mgr = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
         mgr.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
-
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
 
 }
