@@ -199,6 +199,38 @@ public class InicioFragment extends Fragment {
                 data.close();
             }
         });
+        inicio_edt9.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(!charSequence.toString().equals("")){
+                        if (inicio_sp3.getSelectedItemPosition()==1 ||inicio_sp3.getSelectedItemPosition()==3){
+                           // inicio_edt14.setText(inicio_edt9.getText().toString());
+                            inicio_edt14.setText(inicio_edt14.getText().toString().replace(inicio_edt14.getText().toString(),charSequence)+"");
+                        }
+                }
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String despues = "";
+                if(!editable.toString().equals("")) despues = editable.toString();
+                    if(!inicio_edt14.getText().toString().equals("")){
+                        if (inicio_sp3.getSelectedItemPosition()==1 ||inicio_sp3.getSelectedItemPosition()==3){
+                            inicio_edt14.setText(inicio_edt14.getText().toString().replace(inicio_edt14.getText().toString(),despues)+"");
+                        }
+                    }else{
+                        if (inicio_sp3.getSelectedItemPosition()==1 ||inicio_sp3.getSelectedItemPosition()==3){
+                            inicio_edt14.setText(despues+"");
+                        }
+
+                    }
+
+            }
+        });
 
         validarAnio(inicio_edt4,txtError4);
 
@@ -474,7 +506,7 @@ public class InicioFragment extends Fragment {
             if(mensaje.equals(""))mensaje = "TELEFONO: DEBE REGISTRAR TELEFONO FIJO O DE CELULAR";
         }
         if(COND_APEL_NOM.trim().length() != 0)vNOM_INFORMANTE=true;
-        else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR NOMBRE DEL INFORMANTE";
+        else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR NOMBRE DEL CONDUCTOR";
         if(COND_EDAD.trim().length() != 0)vEDAD_INFORMANTE=true;
         else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR LA EDAD DEL INFORMANTE";
         if(COND_SEXO!=0)vSEXO_INFORMANTE=true;
