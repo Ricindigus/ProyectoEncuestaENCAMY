@@ -72,8 +72,13 @@ public class EncuestaActivity extends AppCompatActivity {
                 if(cont<9){
                     if(validarFragment(cont)){
                         guardarFragment(cont);
-                        cont++;
-                        setFragment(cont, 1);
+                        boolean continuar = true;
+                        if(cont == 3){
+                            Seccion100Fragment1 seccion100Fragment1 = (Seccion100Fragment1) fragmentActual;
+                            if(seccion100Fragment1.validarFinalizar()) continuar = false;
+                        }
+                        if(continuar){cont++; setFragment(cont, 1);}
+                        else {cont = 0;setFragment(cont,-1);}
                     }
                 }else{
                     if(validarFragment(cont)){

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.CardView;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
@@ -42,6 +43,12 @@ public class Seccion100Fragment1 extends Fragment {
     private AutoCompleteTextView p101_act1;
     private EditText p101_edt1;
     private LinearLayout lytP101;
+    private CardView lyt102;
+    private CardView lyt103;
+    private CardView lyt104;
+    private CardView lyt105;
+
+    boolean finalizarEncuesta = false;
 
 
     private TextView p102_txt1;
@@ -110,6 +117,10 @@ public class Seccion100Fragment1 extends Fragment {
         p101_act1 = (AutoCompleteTextView) view.findViewById(R.id.sec100_p101_atc1);
         p101_edt1 = (EditText) view.findViewById(R.id.sec100_p101_edt1);
         lytP101 = (LinearLayout) view.findViewById(R.id.lytp101);
+        lyt102 = (CardView) view.findViewById(R.id.layout_102);
+        lyt103 = (CardView) view.findViewById(R.id.layout_103);
+        lyt104 = (CardView) view.findViewById(R.id.layout_104);
+        lyt105 = (CardView) view.findViewById(R.id.layout_105);
 
         p102_txt1 = (TextView) view.findViewById(R.id.sec100_p102_txt1);
         p102_txt2 = (TextView) view.findViewById(R.id.sec100_p102_txt2);
@@ -126,9 +137,7 @@ public class Seccion100Fragment1 extends Fragment {
 
         p103_rg1 = (RadioGroup) view.findViewById(R.id.sec100_p103_rg);
         p103_edt1 = (EditText) view.findViewById(R.id.edtEspecifique_p103);
-
         p104_rg1 = (RadioGroup) view.findViewById(R.id.sec100_p104_rg);
-
         p105_edt1 = (EditText) view.findViewById(R.id.sec100_p105_edt1);
 
 
@@ -198,6 +207,39 @@ public class Seccion100Fragment1 extends Fragment {
         watcherCIUU(p102_txt3,p102_act3);
         watcherCIUU(p102_txt4,p102_act4);
 
+        p101_txt1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if(s.equals("0000")){
+                    p102_act1.setText("");
+                    p102_act2.setText("");
+                    p102_act3.setText("");
+                    p102_act4.setText("");
+                    p103_rg1.clearCheck();
+                    p104_rg1.clearCheck();
+                    p105_edt1.setText("");
+                    lyt102.setVisibility(View.GONE);
+                    lyt103.setVisibility(View.GONE);
+                    lyt104.setVisibility(View.GONE);
+                    lyt105.setVisibility(View.GONE);
+                }else{
+                    lyt102.setVisibility(View.GONE);
+                    lyt103.setVisibility(View.GONE);
+                    lyt104.setVisibility(View.GONE);
+                    lyt105.setVisibility(View.GONE);
+                }
+            }
+        });
 
         //-----Pregunta2
 
@@ -448,6 +490,10 @@ public class Seccion100Fragment1 extends Fragment {
             valido = false;
             if(mensaje.equals(""))mensaje = "PREGUNTA 105: EL NUMERO DE TRABAJADORES NO PUEDE SER CERO, DEBE EXISTIR POR LO MENOS UN TRABAJADOR";
         }
+        if(p101_txt1.getText().toString().equals("0000")){
+            valido = true;
+            finalizarEncuesta = true;
+        }
         //valido = v1&&v2&&v3&&v4&&vt;
         if(!valido){
             mostrarMensaje(mensaje);
@@ -481,5 +527,8 @@ public class Seccion100Fragment1 extends Fragment {
         alertDialog.show();
     }
 
+    public boolean validarFinalizar(){
+        return finalizarEncuesta;
+    }
 
 }
