@@ -434,6 +434,7 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:enabled="false"
+                            android:inputType="numberPassword"
                             android:gravity="center"/>
                         <View
                             android:layout_width="match_parent"
@@ -449,6 +450,7 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:enabled="false"
+                            android:inputType="numberPassword"
                             android:gravity="center"/>
                         <View
                             android:layout_width="match_parent"
@@ -464,6 +466,7 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:enabled="false"
+                            android:inputType="numberPassword"
                             android:gravity="center"/>
                         <View
                             android:layout_width="match_parent"
@@ -479,6 +482,7 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:enabled="false"
+                            android:inputType="numberPassword"
                             android:gravity="center"/>
                     </LinearLayout>
                 </LinearLayout>
@@ -752,6 +756,7 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:enabled="false"
+                            android:inputType="numberPassword"
                             android:gravity="center"/>
                         <View
                             android:layout_width="match_parent"
@@ -767,6 +772,7 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:enabled="false"
+                            android:inputType="numberPassword"
                             android:gravity="center"/>
                         <View
                             android:layout_width="match_parent"
@@ -782,6 +788,7 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:enabled="false"
+                            android:inputType="numberPassword"
                             android:gravity="center"/>
                         <View
                             android:layout_width="match_parent"
@@ -797,6 +804,7 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:enabled="false"
+                            android:inputType="numberPassword"
                             android:gravity="center"/>
                     </LinearLayout>
                 </LinearLayout>
@@ -1124,6 +1132,7 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:enabled="false"
+                            android:inputType="numberPassword"
                             android:gravity="center"/>
                         <View
                             android:layout_width="match_parent"
@@ -1139,6 +1148,7 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:enabled="false"
+                            android:inputType="numberPassword"
                             android:gravity="center"/>
                         <View
                             android:layout_width="match_parent"
@@ -1154,6 +1164,7 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:enabled="false"
+                            android:inputType="numberPassword"
                             android:gravity="center"/>
                         <View
                             android:layout_width="match_parent"
@@ -1169,6 +1180,7 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:enabled="false"
+                            android:inputType="numberPassword"
                             android:gravity="center"/>
                         <View
                             android:layout_width="match_parent"
@@ -1184,6 +1196,7 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:enabled="false"
+                            android:inputType="numberPassword"
                             android:gravity="center"/>
                     </LinearLayout>
                 </LinearLayout>
@@ -1465,6 +1478,7 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:enabled="false"
+                            android:inputType="numberPassword"
                             android:gravity="center"/>
                         <View
                             android:layout_width="match_parent"
@@ -1480,6 +1494,7 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:enabled="false"
+                            android:inputType="numberPassword"
                             android:gravity="center"/>
                         <View
                             android:layout_width="match_parent"
@@ -1495,6 +1510,7 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:enabled="false"
+                            android:inputType="numberPassword"
                             android:gravity="center"/>
                         <View
                             android:layout_width="match_parent"
@@ -1510,6 +1526,7 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:enabled="false"
+                            android:inputType="numberPassword"
                             android:gravity="center"/>
                     </LinearLayout>
                 </LinearLayout>
@@ -1730,6 +1747,7 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:enabled="false"
+                            android:inputType="numberPassword"
                             android:gravity="center"/>
                         <View
                             android:layout_width="match_parent"
@@ -1745,6 +1763,7 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:enabled="false"
+                            android:inputType="numberPassword"
                             android:gravity="center"/>
                         <View
                             android:layout_width="match_parent"
@@ -1760,6 +1779,7 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:enabled="false"
+                            android:inputType="numberPassword"
                             android:gravity="center"/>
                     </LinearLayout>
                 </LinearLayout>
@@ -1876,6 +1896,7 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:enabled="false"
+                            android:inputType="numberPassword"
                             android:gravity="center"/>
                     </LinearLayout>
                 </LinearLayout>

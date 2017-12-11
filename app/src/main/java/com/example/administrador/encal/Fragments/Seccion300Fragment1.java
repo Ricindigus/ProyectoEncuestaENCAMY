@@ -23,6 +23,7 @@ import android.widget.RadioGroup;
 
 import com.example.administrador.encal.Modelo.Data;
 import com.example.administrador.encal.Modelo.SQLConstantes;
+import com.example.administrador.encal.NumericKeyBoardTransformationMethod;
 import com.example.administrador.encal.Pojos.IdentificacionPojo;
 import com.example.administrador.encal.Pojos.Sec300PojoF1;
 import com.example.administrador.encal.R;
@@ -117,6 +118,9 @@ public class Seccion300Fragment1 extends Fragment {
     private CardView p303_card;
 
     private RadioGroup p304_rg;
+    private RadioButton p304_rb1;
+    private RadioButton p304_rb2;
+    private RadioButton p304_rb3;
     private CardView p304_card;
 
     private TextInputEditText p305_edt;
@@ -327,6 +331,9 @@ public class Seccion300Fragment1 extends Fragment {
 
         p304_rg = (RadioGroup) view.findViewById(R.id.sec300_p304_rg);
         p304_card = (CardView) view.findViewById(R.id.p304_card);
+        p304_rb1 = (RadioButton) view.findViewById(R.id.sec300_p304_rb1);
+        p304_rb2 = (RadioButton) view.findViewById(R.id.sec300_p304_rb2);
+        p304_rb3 = (RadioButton) view.findViewById(R.id.sec300_p304_rb3);
 
         p305_edt = (TextInputEditText) view.findViewById(R.id.sec300_p305_edt1);
         p305_card = (CardView) view.findViewById(R.id.p305_card);
@@ -341,16 +348,43 @@ public class Seccion300Fragment1 extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         //----pregunta 302
+        final EditText[] editText_edt_col3 = {p302_mCant1,p302_mCant2,p302_mCant3,p302_mCant4,p302_lCant1,p302_lCant2,p302_lCant3,p302_lCant4,
+                p302_pCant1,p302_pCant2,p302_pCant3,p302_pCant4,p302_pCant5,p302_tCant1,p302_tCant2,p302_tCant3,p302_tCant4,p302_vCant1,p302_vCant2,p302_vCant3,p302_oCant1};
+        for (int q=0;q<editText_edt_col3.length;q++){
+            editText_edt_col3[q].setTransformationMethod(new NumericKeyBoardTransformationMethod());
+        }
+
+
+
+
+        final CheckBox[] checkBoxes = {p302_ckM1,p302_ckM2, p302_ckM3,p302_ckM4,p302_ckL1,p302_ckL2, p302_ckL3,p302_ckL4,p302_ckP1,
+                p302_ckP2, p302_ckP3,p302_ckP4,p302_ckP5, p302_ckT1,p302_ckT2,p302_ckT3,p302_ckT4,p302_ckV1,p302_ckV2,p302_ckV3,p302_ckO1,
+                p302_ckM5,p302_ckM6,p302_ckM7,p302_ckM8,p302_ckL5,p302_ckL6, p302_ckL7,p302_ckL8,p302_ckP6,p302_ckP7, p302_ckP8,p302_ckP9,
+                p302_ckP10, p302_ckT5,p302_ckT6,p302_ckT7,p302_ckT8,p302_ckV4,p302_ckV5,p302_ckV6,p302_ckO2,p303_ck1,p303_ck2,p303_ck3,p303_ck4,p303_ck5};
+
+        final EditText[] editText= {p302_masaotro,p302_longotro,p302_presotro,p302_temotro,p302_volotro,p302_ototro,p302_mCant1,p302_mCant2,p302_mCant3,p302_mCant4,p302_lCant1,p302_lCant2,p302_lCant3,p302_lCant4,
+                p302_pCant1,p302_pCant2,p302_pCant3,p302_pCant4,p302_pCant5,p302_tCant1,p302_tCant2,p302_tCant3,p302_tCant4,p302_vCant1,p302_vCant2,p302_vCant3,p302_oCant1,p305_edt};
+
+
 
         p302_rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
-                    case R.id.sec300_p302_rbSi:   p302_lyt.setVisibility(View.VISIBLE);
+                    case R.id.sec300_p302_rbSi:
+                        p302_lyt.setVisibility(View.VISIBLE);
                         p303_card.setVisibility(View.VISIBLE);
                         p304_card.setVisibility(View.VISIBLE);
                         p305_card.setVisibility(View.VISIBLE);break;
-                    case R.id.sec300_p302_rbNo:   p302_lyt.setVisibility(View.GONE);
+                    case R.id.sec300_p302_rbNo:
+                        for (int a=0;a<checkBoxes.length;a++){
+                            checkBoxes[a].setChecked(false);
+                        }
+                        for (int e=0;e<editText.length;e++){
+                            editText[e].setText("");
+                        }
+                        p304_rg.clearCheck();
+                        p302_lyt.setVisibility(View.GONE);
                         p303_card.setVisibility(View.GONE);
                         p304_card.setVisibility(View.GONE);
                         p305_card.setVisibility(View.GONE); break;
@@ -360,9 +394,10 @@ public class Seccion300Fragment1 extends Fragment {
         });
 
 
-        final CheckBox[] checkBox_ck_col1 = {p302_ckM1,p302_ckM2, p302_ckM3,p302_ckM4,p302_ckL1,p302_ckL2, p302_ckL3,p302_ckL4,p302_ckP1,p302_ckP2, p302_ckP3,p302_ckP4,p302_ckP5, p302_ckT1,p302_ckT2,p302_ckT3,p302_ckT4,p302_ckV1,p302_ckV2,p302_ckV3,p302_ckO1};
-        final CheckBox[] checkBox_ck_col2 = {p302_ckM5,p302_ckM6,p302_ckM7,p302_ckM8,p302_ckL5,p302_ckL6, p302_ckL7,p302_ckL8,p302_ckP6,p302_ckP7, p302_ckP8,p302_ckP9,p302_ckP10, p302_ckT5,p302_ckT6,p302_ckT7,p302_ckT8,p302_ckV4,p302_ckV5,p302_ckV6,p302_ckO2};
-        final EditText[] editText_edt_col3 = {p302_mCant1,p302_mCant2,p302_mCant3,p302_mCant4,p302_lCant1,p302_lCant2,p302_lCant3,p302_lCant4,p302_pCant1,p302_pCant2,p302_pCant3,p302_pCant4,p302_pCant5,p302_tCant1,p302_tCant2,p302_tCant3,p302_tCant4,p302_vCant1,p302_vCant2,p302_vCant3,p302_oCant1};
+        final CheckBox[] checkBox_ck_col1 = {p302_ckM1,p302_ckM2, p302_ckM3,p302_ckM4,p302_ckL1,p302_ckL2, p302_ckL3,
+                p302_ckL4,p302_ckP1,p302_ckP2, p302_ckP3,p302_ckP4,p302_ckP5, p302_ckT1,p302_ckT2,p302_ckT3,p302_ckT4,p302_ckV1,p302_ckV2,p302_ckV3,p302_ckO1};
+        final CheckBox[] checkBox_ck_col2 = {p302_ckM5,p302_ckM6,p302_ckM7,p302_ckM8,p302_ckL5,p302_ckL6, p302_ckL7,
+                p302_ckL8,p302_ckP6,p302_ckP7, p302_ckP8,p302_ckP9,p302_ckP10, p302_ckT5,p302_ckT6,p302_ckT7,p302_ckT8,p302_ckV4,p302_ckV5,p302_ckV6,p302_ckO2};
 
         for(int i=0;i<checkBox_ck_col1.length;i++){
             final int m=i;
@@ -747,7 +782,7 @@ public class Seccion300Fragment1 extends Fragment {
         P_302C_V_2 = p302_vCant2.getText().toString();
         P_302C_V_3 = p302_vCant3.getText().toString();
 
-        //PREGUNTA 302-5
+        //PREGUNTA 302-6
         P_302A_O_1_O = p302_ototro.getText().toString();
 
         if(p302_ckO1.isChecked())P_302A_O_1 = 1;
@@ -1028,19 +1063,21 @@ public class Seccion300Fragment1 extends Fragment {
                     }
                 }
                 if (P_303_5==1){
-                    if(p304_card.getVisibility()==View.VISIBLE){
+
                         data = new Data(context);
                         data.open();
                         int cinacal1 = Integer.parseInt(data.getIdentificacion(idEmpresa).getCONOCE_INACAL());
                         data.close();
                         int verificacion1 =  cinacal1;
-                        if(verificacion1!=-1){
+                        if(verificacion1!=-1 && P_304!=-1){
                             if((P_304==0 || P_304==1) &&verificacion1==1){
                                 valido = false;
                                 if(mensaje.equals(""))mensaje = "PREGUNTA 304: : Usted indicó que no conoce ni ha oído hablar de INACAL";
                             }
+                        }else{
+                            if(mensaje.equals(""))mensaje = "PREGUNTA 304: DEBE SELECCIONAR AL MENOS UNA ALTERNATIVA";
                         }
-                    }
+
                 }
                 if (P_305.equals("")){
                     valido = false;
