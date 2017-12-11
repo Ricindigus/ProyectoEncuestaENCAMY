@@ -97,7 +97,7 @@ public class Sec300PojoF1 {
     private String OBS;
 
     public Sec300PojoF1() {
-        this.ID = ID;
+        ID = "";
         P_301 = "";
         P_302 = "";
         P_302A_M_1 = "";

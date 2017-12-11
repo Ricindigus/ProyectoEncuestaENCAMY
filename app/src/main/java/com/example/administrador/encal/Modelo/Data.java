@@ -136,6 +136,10 @@ public class Data {
         String[] whereArgs = new String[]{String.valueOf(idVisita)};
         sqLiteDatabase.delete(SQLConstantes.tableVisitas,SQLConstantes.WHERE_CLAUSE_ID_VISITA,whereArgs);
     }
+    public void deleteAllVisitas(String idEmpresa){
+        String[] whereArgs = new String[]{idEmpresa};
+        sqLiteDatabase.delete(SQLConstantes.tableVisitas,SQLConstantes.WHERE_CLAUSE_ID_EMPRESA_VISITA,whereArgs);
+    }
     public ArrayList<Visita> getVisitas(String idEmpresa){
         ArrayList<Visita> visitas = new ArrayList<Visita>();
         String[] whereArgs = new String[]{idEmpresa};
@@ -229,6 +233,11 @@ public class Data {
             }
         }
         return encontrado;
+    }
+
+    public void deleteResultado(String idEmpresa){
+        String[] whereArgs = new String[]{idEmpresa};
+        sqLiteDatabase.delete(SQLConstantes.tableResultados,SQLConstantes.WHERE_CLAUSE_ID_RESULTADO,whereArgs);
     }
     //----------------------------------------FIN_RESULTADO_FINAL---------------------------------------------
 

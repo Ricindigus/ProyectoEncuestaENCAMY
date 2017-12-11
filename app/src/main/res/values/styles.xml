@@ -22,5 +22,18 @@
         <item name="colorControlNormal">@color/greyBluePrimary</item>
         <item name="colorControlActivated">@color/greyBluePrimaryDark</item>
     </style>
+    <style name="RaisedButtonDark1" parent="Theme.AppCompat.Light">
+        <item name="colorButtonNormal">@color/colorPrimaryDark</item>
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="RaisedButtonDark2" parent="Theme.AppCompat.Light">
+        <item name="colorButtonNormal">@color/colorPrimaryDark</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
 
 </resources>
