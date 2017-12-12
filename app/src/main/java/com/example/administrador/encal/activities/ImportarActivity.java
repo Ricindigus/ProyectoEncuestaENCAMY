@@ -276,7 +276,7 @@ public class ImportarActivity extends AppCompatActivity {
 
     public void agregarVariableResultadoEncuesta(String campo, String valor){
         switch (campo){
-            case "ID":resultadoEncuesta.setRESFIN_ID(valor);break;
+            case "RESFIN_ID":resultadoEncuesta.setRESFIN_ID(valor);break;
             case SQLConstantes.RESULTADO_DIA:resultadoEncuesta.setRESFIN_DIA(valor);break;
             case SQLConstantes.RESULTADO_MES:resultadoEncuesta.setRESFIN_MES(valor);break;
             case SQLConstantes.RESULTADO_ANIO:resultadoEncuesta.setRESFIN_ANIO(valor);break;

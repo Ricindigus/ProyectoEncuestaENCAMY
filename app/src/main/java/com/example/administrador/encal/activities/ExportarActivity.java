@@ -238,7 +238,8 @@ public class ExportarActivity extends AppCompatActivity {
                 serializer.startTag("", "VISITAS");
                 for (Visita visita : visitas) {
                     serializer.startTag("", "VISITA");
-                    escribirCampoXml(serializer, "ID", visita.getID_EMPRESA());
+                    escribirCampoXml(serializer, "ID", visita.getID());
+                    escribirCampoXml(serializer, SQLConstantes.VISITA_ID_EMPRESA, visita.getID_EMPRESA());
                     escribirCampoXml(serializer, SQLConstantes.VISITA_N, visita.getV_NRO());
                     escribirCampoXml(serializer, SQLConstantes.VISITA_DIA, visita.getV_DIA());
                     escribirCampoXml(serializer, SQLConstantes.VISITA_MES, visita.getV_MES());
