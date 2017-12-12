@@ -336,8 +336,11 @@ public class EncuestaActivity extends AppCompatActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         // TODO Auto-generated method stub
         if (keyCode == event.KEYCODE_BACK) {
+            String men = "";
+            if(cont > 0) men = "¿Está seguro que desea guardar la encuesta hasta este punto y finalizarla?";
+            else men = "¿Está seguro que desea volver al marco y salir de la encuesta?";
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("¿Está seguro que desea volver al marco y salir de la encuesta?")
+            builder.setMessage(men)
                     .setTitle("Aviso")
                     .setCancelable(false)
                     .setNegativeButton("No",
@@ -349,12 +352,39 @@ public class EncuestaActivity extends AppCompatActivity {
                     .setPositiveButton("Sí",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
-                                    finish();
+                                        if(cont > 0){
+                                            if(validarFragment(cont)){
+                                                guardarFragment(cont);
+                                                cont=0;
+                                                setFragment(cont, 1);
+                                            }
+                                        }else{
+                                            VisitaFragment visitaFragment = (VisitaFragment) fragmentActual;
+                                            if(visitaFragment.tieneVisitas()){
+                                                if(visitaFragment.finalizacionCorrecta()) finish();
+                                                else{
+                                                    mostrarMensaje("Debe finalizar una visita");
+                                                }
+                                            }else{
+                                                finish();
+                                            }
+                                        }
                                 }
                             });
             AlertDialog alert = builder.create();
             alert.show();
         }
         return super.onKeyDown(keyCode, event);
+    }
+    public void mostrarMensaje(String m){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(m);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }

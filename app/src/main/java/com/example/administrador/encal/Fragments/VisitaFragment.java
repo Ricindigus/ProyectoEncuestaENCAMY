@@ -698,6 +698,16 @@ public class VisitaFragment extends Fragment {
         return correcto;
     }
 
+    public boolean tieneVisitas(){
+        boolean correcto = true;
+        if(visitas.size() == 0) correcto = false;
+        return correcto;
+    }
+    public boolean finalizacionCorrecta(){
+        boolean correcto = true;
+        if(txtResultadoFinal.getText().toString().equals("")) correcto = false;
+        return correcto;
+    }
     public void cargarDatos(){
         visitas = new ArrayList<Visita>();
         data = new Data(context);
