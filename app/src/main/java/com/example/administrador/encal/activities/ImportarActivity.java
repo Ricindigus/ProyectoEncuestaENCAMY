@@ -257,7 +257,8 @@ public class ImportarActivity extends AppCompatActivity {
 
     public void agregarVariableVisita(String campo, String valor){
         switch (campo){
-            case "ID":currentVisita.setID_EMPRESA(valor);break;
+            case "ID":currentVisita.setID(valor);break;
+            case SQLConstantes.VISITA_ID_EMPRESA:currentVisita.setID_EMPRESA(valor);break;
             case SQLConstantes.VISITA_N:currentVisita.setV_NRO(valor);break;
             case SQLConstantes.VISITA_DIA:currentVisita.setV_DIA(valor);break;
             case SQLConstantes.VISITA_MES:currentVisita.setV_MES(valor);break;
