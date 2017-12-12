@@ -166,7 +166,7 @@ public class Seccion400Fragment1 extends Fragment {
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                     if(b){
                         if (!checkBox[3].isChecked() && !checkBox[4].isChecked()){
-                            p402_card.setVisibility(View.GONE);
+                            p402_card.setVisibility(View.GONE); p402_rg.clearCheck();
                         }
                         if (checkBox[3].isChecked() || checkBox[4].isChecked()){
                             p402_card.setVisibility(View.VISIBLE);
@@ -174,8 +174,8 @@ public class Seccion400Fragment1 extends Fragment {
 
 
                     }else{
-                        if (checkBox[0].isChecked()||checkBox[1].isChecked()||checkBox[2].isChecked()){
-                            p402_card.setVisibility(View.GONE);
+                        if (!checkBox[3].isChecked() && !checkBox[4].isChecked()){
+                            p402_card.setVisibility(View.GONE); p402_rg.clearCheck();
                         }else {
                             p402_card.setVisibility(View.VISIBLE);
                         }
@@ -200,9 +200,9 @@ public class Seccion400Fragment1 extends Fragment {
                     p406_card.setVisibility(View.GONE);  p403_ck3.setEnabled(false); p403_ck3.setChecked(false);
                     p407_card.setVisibility(View.GONE);
                 }else{
-                    p404_card.setVisibility(View.VISIBLE);
-                    p405_card.setVisibility(View.VISIBLE);
-                    p406_card.setVisibility(View.VISIBLE);
+                    p404_card.setVisibility(View.VISIBLE);  p403_ck1.setEnabled(true);
+                    p405_card.setVisibility(View.VISIBLE);  p403_ck2.setEnabled(true);
+                    p406_card.setVisibility(View.VISIBLE);  p403_ck3.setEnabled(true);
                     p407_card.setVisibility(View.VISIBLE);
                 }
 
@@ -325,7 +325,7 @@ public class Seccion400Fragment1 extends Fragment {
         else P_401_3 = 0;
         if(p401_ck4.isChecked())P_401_4 = 1;
         else P_401_4 = 0;
-        if(p401_ck4.isChecked())P_401_5 = 1;
+        if(p401_ck5.isChecked())P_401_5 = 1;
         else P_401_5 = 0;
         //402
         int childPosP1 = p402_rg.indexOfChild(p402_rg.findViewById(p402_rg.getCheckedRadioButtonId()));

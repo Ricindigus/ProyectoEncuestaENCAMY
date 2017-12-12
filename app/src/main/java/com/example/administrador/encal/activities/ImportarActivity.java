@@ -311,6 +311,8 @@ public class ImportarActivity extends AppCompatActivity {
             case SQLConstantes.IDENTIFICACION_CONDUCTOR_ESTUDIOS:identificacion.setCOND_NEST(valor);break;
             case SQLConstantes.IDENTIFICACION_CONDUCTOR_CARGO:identificacion.setINFOR_CARGO(valor);break;
             case SQLConstantes.IDENTIFICACION_CONDUCTOR_CARGO_ESP:identificacion.setINFOR_CARGO_O(valor);break;
+            case SQLConstantes.IDENTIFICACION_CONDUCTOR_APEYNOM:identificacion.setINFOR_APEL_NOM(valor);break;
+            case SQLConstantes.IDENTIFICACION_CONDUCTOR_CONOCE_INACAL:identificacion.setCONOCE_INACAL(convertir(valor));break;
         }
     }
     public void agregarVariableModulo1(String campo, String valor){
@@ -328,9 +330,9 @@ public class ImportarActivity extends AppCompatActivity {
             case SQLConstantes.SECCION100_P_102_3:modulo1.setP_102_3(valor);break;
             case SQLConstantes.SECCION100_P_102D:modulo1.setP_102D(valor);break;
             case SQLConstantes.SECCION100_P_102_4:modulo1.setP_102_4(valor);break;
-            case SQLConstantes.SECCION100_P_103:modulo1.setP_103(valor);break;
+            case SQLConstantes.SECCION100_P_103:modulo1.setP_103(convertir(valor));break;
             case SQLConstantes.SECCION100_P_103_O:modulo1.setP_103_O(valor);break;
-            case SQLConstantes.SECCION100_P_104:modulo1.setP_104(valor);break;
+            case SQLConstantes.SECCION100_P_104:modulo1.setP_104(convertir(valor));break;
             case SQLConstantes.SECCION100_P_105:modulo1.setP_105(valor);break;
             case SQLConstantes.SECCION100_P_106_1:modulo1.setP_106_1(valor);break;
             case SQLConstantes.SECCION100_P_106_2:modulo1.setP_106_2(valor);break;
@@ -340,7 +342,7 @@ public class ImportarActivity extends AppCompatActivity {
             case SQLConstantes.SECCION100_P_107_1:modulo1.setP_107_1(valor);break;
             case SQLConstantes.SECCION100_P_107_2:modulo1.setP_107_2(valor);break;
             case SQLConstantes.SECCION100_P_107_3:modulo1.setP_107_3(valor);break;
-            case SQLConstantes.SECCION100_P_108:modulo1.setP_108(valor);break;
+            case SQLConstantes.SECCION100_P_108:modulo1.setP_108(convertir(valor));break;
             case SQLConstantes.SECCION100_P_109_1:modulo1.setP_109_1(valor);break;
             case SQLConstantes.SECCION100_P_109_2:modulo1.setP_109_2(valor);break;
             case SQLConstantes.SECCION100_P_109_3:modulo1.setP_109_3(valor);break;
@@ -356,8 +358,8 @@ public class ImportarActivity extends AppCompatActivity {
             case SQLConstantes.SECCION100_P_110_6:modulo1.setP_110_6(valor);break;
             case SQLConstantes.SECCION100_P_110_7:modulo1.setP_110_7(valor);break;
             case SQLConstantes.SECCION100_P_110_7_O:modulo1.setP_110_7_O(valor);break;
-            case SQLConstantes.SECCION100_P_111:modulo1.setP_111(valor);break;
-            case SQLConstantes.SECCION100_P_112:modulo1.setP_112(valor);break;
+            case SQLConstantes.SECCION100_P_111:modulo1.setP_111(convertir(valor));break;
+            case SQLConstantes.SECCION100_P_112:modulo1.setP_112(convertir(valor));break;
             case SQLConstantes.SECCION100_P_112_O:modulo1.setP_112_O(valor);break;
             case SQLConstantes.SECCION100_P_113_1:modulo1.setP_113_1(valor);break;
             case SQLConstantes.SECCION100_P_113_2:modulo1.setP_113_2(valor);break;
@@ -383,8 +385,8 @@ public class ImportarActivity extends AppCompatActivity {
             case SQLConstantes.SECCION200_P_201_2:modulo2.setP_201_2(valor);break;
             case SQLConstantes.SECCION200_P_201_3:modulo2.setP_201_3(valor);break;
             case SQLConstantes.SECCION200_P_201_4:modulo2.setP_201_4(valor);break;
-            case SQLConstantes.SECCION200_P_202:modulo2.setP_202(valor);break;
-            case SQLConstantes.SECCION200_P_203:modulo2.setP_203(valor);break;
+            case SQLConstantes.SECCION200_P_202:modulo2.setP_202(convertir(valor));break;
+            case SQLConstantes.SECCION200_P_203:modulo2.setP_203(convertir(valor));break;
             case SQLConstantes.SECCION200_P_203_O:modulo2.setP_203_O(valor);break;
             case SQLConstantes.SECCION200_P_204:modulo2.setP_204(valor);break;
             case SQLConstantes.SECCION200_P_205_1:modulo2.setP_205_1(valor);break;
@@ -400,8 +402,8 @@ public class ImportarActivity extends AppCompatActivity {
     public void agregarVariableModulo3(String campo, String valor){
         switch (campo){
             case "ID":modulo3.setID(valor);break;
-            case SQLConstantes.SECCION300_P_301:modulo3.setP_301(valor);break;
-            case SQLConstantes.SECCION300_P_302:modulo3.setP_302(valor);break;
+            case SQLConstantes.SECCION300_P_301:modulo3.setP_301(convertir(valor));break;
+            case SQLConstantes.SECCION300_P_302:modulo3.setP_302(convertir(valor));break;
             case SQLConstantes.SECCION300_P_302A_M_1:modulo3.setP_302A_M_1(valor);break;
             case SQLConstantes.SECCION300_P_302A_M_2:modulo3.setP_302A_M_2(valor);break;
             case SQLConstantes.SECCION300_P_302A_M_3:modulo3.setP_302A_M_3(valor);break;
@@ -476,7 +478,7 @@ public class ImportarActivity extends AppCompatActivity {
             case SQLConstantes.SECCION300_P_303_3:modulo3.setP_303_3(valor);break;
             case SQLConstantes.SECCION300_P_303_4:modulo3.setP_303_4(valor);break;
             case SQLConstantes.SECCION300_P_303_5:modulo3.setP_303_5(valor);break;
-            case SQLConstantes.SECCION300_P_304:modulo3.setP_304(valor);break;
+            case SQLConstantes.SECCION300_P_304:modulo3.setP_304(convertir(valor));break;
             case SQLConstantes.SECCION300_P_305:modulo3.setP_305(valor);break;
             case SQLConstantes.SECCION300_OBS:modulo3.setOBS(valor);break;
         }
@@ -489,13 +491,13 @@ public class ImportarActivity extends AppCompatActivity {
             case SQLConstantes.SECCION400_P_401_3:modulo4.setP_401_3(valor);break;
             case SQLConstantes.SECCION400_P_401_4:modulo4.setP_401_4(valor);break;
             case SQLConstantes.SECCION400_P_401_5:modulo4.setP_401_5(valor);break;
-            case SQLConstantes.SECCION400_P_402:modulo4.setP_402(valor);break;
+            case SQLConstantes.SECCION400_P_402:modulo4.setP_402(convertir(valor));break;
             case SQLConstantes.SECCION400_P_403_1:modulo4.setP_403_1(valor);break;
             case SQLConstantes.SECCION400_P_403_2:modulo4.setP_403_2(valor);break;
             case SQLConstantes.SECCION400_P_403_3:modulo4.setP_403_3(valor);break;
             case SQLConstantes.SECCION400_P_403_4:modulo4.setP_403_4(valor);break;
-            case SQLConstantes.SECCION400_P_404:modulo4.setP_404(valor);break;
-            case SQLConstantes.SECCION400_P_405:modulo4.setP_405(valor);break;
+            case SQLConstantes.SECCION400_P_404:modulo4.setP_404(convertir(valor));break;
+            case SQLConstantes.SECCION400_P_405:modulo4.setP_405(convertir(valor));break;
             case SQLConstantes.SECCION400_P_406:modulo4.setP_406(valor);break;
             case SQLConstantes.SECCION400_P_407_1:modulo4.setP_407_1(valor);break;
             case SQLConstantes.SECCION400_P_407_2:modulo4.setP_407_2(valor);break;
@@ -518,7 +520,7 @@ public class ImportarActivity extends AppCompatActivity {
             case SQLConstantes.SECCION400_P_409_4:modulo4.setP_409_4(valor);break;
             case SQLConstantes.SECCION400_P_409_5:modulo4.setP_409_5(valor);break;
             case SQLConstantes.SECCION400_P_409_5_O:modulo4.setP_409_5_O(valor);break;
-            case SQLConstantes.SECCION400_P_410:modulo4.setP_410(valor);break;
+            case SQLConstantes.SECCION400_P_410:modulo4.setP_410(convertir(valor));break;
             case SQLConstantes.SECCION400_P_410_O:modulo4.setP_410_O(valor);break;
             case SQLConstantes.SECCION400_OBS:modulo4.setOBS(valor);break;
         }
