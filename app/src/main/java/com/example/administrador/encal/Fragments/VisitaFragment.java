@@ -705,7 +705,7 @@ public class VisitaFragment extends Fragment {
     }
     public boolean finalizacionCorrecta(){
         boolean correcto = true;
-        if(txtResultadoFinal.getText().toString().equals("")) correcto = false;
+        if(visitas.get(visitas.size()-1).getV_RESULTADO().equals("")) correcto = false;
         return correcto;
     }
     public void cargarDatos(){
