@@ -293,7 +293,7 @@ public class ExportarActivity extends AppCompatActivity {
                 escribirCampoXml(serializer, SQLConstantes.SECCION100_P_102_3,modulo1.getP_102_3());
                 escribirCampoXml(serializer, SQLConstantes.SECCION100_P_102D,modulo1.getP_102D());
                 escribirCampoXml(serializer, SQLConstantes.SECCION100_P_102_4,modulo1.getP_102_4());
-                escribirCampoXml(serializer, SQLConstantes.SECCION100_P_103,modulo1.getP_103());
+                escribirCampoXml(serializer, SQLConstantes.SECCION100_P_103,convertir(modulo1.getP_103()));
                 escribirCampoXml(serializer, SQLConstantes.SECCION100_P_103_O,modulo1.getP_103_O());
                 escribirCampoXml(serializer, SQLConstantes.SECCION100_P_104,modulo1.getP_104());
                 escribirCampoXml(serializer, SQLConstantes.SECCION100_P_105,modulo1.getP_105());
@@ -553,5 +553,14 @@ public class ExportarActivity extends AppCompatActivity {
             txtMensaje.setVisibility(View.GONE);
             Toast.makeText(ExportarActivity.this, "Exportacion Completa", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public String convertir(String num){
+        String valor = "";
+        if(!num.equals("")){
+            int n = Integer.parseInt(num) + 1;
+            valor = valor + n;
+        }
+        return valor;
     }
 }
