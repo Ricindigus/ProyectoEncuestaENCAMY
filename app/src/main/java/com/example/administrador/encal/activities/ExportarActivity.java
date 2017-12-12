@@ -559,7 +559,7 @@ public class ExportarActivity extends AppCompatActivity {
         String valor = "";
         if(!num.equals("")){
             int n = Integer.parseInt(num) + 1;
-            valor = valor + n;
+            if(n != 0) valor = valor + n;
         }
         return valor;
     }

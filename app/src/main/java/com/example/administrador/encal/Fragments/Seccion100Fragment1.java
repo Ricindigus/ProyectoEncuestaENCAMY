@@ -382,7 +382,6 @@ public class Seccion100Fragment1 extends Fragment {
 
         //PREGUNTA 103
         int childPosP103 = p103_rg1.indexOfChild(p103_rg1.findViewById(p103_rg1.getCheckedRadioButtonId()));
-
         P_103 = childPosP103;
         P_103_O = p103_edt1.getText().toString();
         //PREGUNTA 104

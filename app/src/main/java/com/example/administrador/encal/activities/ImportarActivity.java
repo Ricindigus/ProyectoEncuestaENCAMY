@@ -521,4 +521,14 @@ public class ImportarActivity extends AppCompatActivity {
             case SQLConstantes.SECCION400_OBS:modulo4.setOBS(valor);break;
         }
     }
+
+    public String convertir(String numero){
+        String valor= "";
+        if(!numero.equals("")){
+            int num = Integer.parseInt(numero);
+            num--;
+            valor = valor + num;
+        }
+        return valor;
+    }
 }
