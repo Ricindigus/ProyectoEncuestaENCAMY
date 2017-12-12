@@ -271,6 +271,7 @@ public class ImportarActivity extends AppCompatActivity {
             case SQLConstantes.VISITA_PROX_ANIO:currentVisita.setV_PROX_VIS_ANIO(valor);break;
             case SQLConstantes.VISITA_PROX_HORA:currentVisita.setV_PROX_VIS_HORA(valor);break;
             case SQLConstantes.VISITA_PROX_MINUTO:currentVisita.setV_PROX_VIS_MINUTO(valor);break;
+
         }
     }
 
