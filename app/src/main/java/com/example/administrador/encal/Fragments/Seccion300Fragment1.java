@@ -127,6 +127,8 @@ public class Seccion300Fragment1 extends Fragment {
     private CardView p305_card;
     private Sec300PojoF1 sec300;
 
+    private EditText edtobs3;
+
     private IdentificacionPojo identificacion;
 
     private String idEmpresa;
@@ -216,6 +218,7 @@ public class Seccion300Fragment1 extends Fragment {
     int P_304;
 
     String P_305;
+    String OBS_SEC300;
 
 
     public Seccion300Fragment1() {
@@ -337,6 +340,9 @@ public class Seccion300Fragment1 extends Fragment {
 
         p305_edt = (TextInputEditText) view.findViewById(R.id.sec300_p305_edt1);
         p305_card = (CardView) view.findViewById(R.id.p305_card);
+
+        edtobs3 = (EditText) view.findViewById(R.id.edt_obs);
+
 
 
 
@@ -631,7 +637,8 @@ public class Seccion300Fragment1 extends Fragment {
             //PREGUNTA 305
             p305_edt.setText(sec300.getP_305());
 
-            //PREGUNTA ONS
+            //OBS
+            edtobs3.setText(sec300.getOBS());
 
 
 
@@ -811,8 +818,10 @@ public class Seccion300Fragment1 extends Fragment {
         //PREGUNTA 305
         P_305 = p305_edt.getText().toString();
 
-
+        OBS_SEC300 = edtobs3.getText().toString();
     }
+
+
     public void guardarDatos(){
         llenarMapaVariables();
         data = new Data(context);
@@ -897,7 +906,7 @@ public class Seccion300Fragment1 extends Fragment {
             contentValues.put(SQLConstantes.SECCION300_P_303_5,P_303_5+"");
             contentValues.put(SQLConstantes.SECCION300_P_304,P_304+"");
             contentValues.put(SQLConstantes.SECCION300_P_305,P_305);
-            //contentValues.put(SQLConstantes.SECCION300_OBS,OBS);
+            contentValues.put(SQLConstantes.SECCION300_OBS,OBS_SEC300);
             data.actualizarModulo3(idEmpresa,contentValues);
         }else{
             //si no existe el elemento, lo construye para insertarlo
@@ -982,6 +991,7 @@ public class Seccion300Fragment1 extends Fragment {
             sec300.setP_303_5(P_303_5+"");
             sec300.setP_304(P_304+"");
             sec300.setP_305(P_305);
+            sec300.setOBS(OBS_SEC300);
             data.insertarModulo3(sec300);
         }
         data.close();

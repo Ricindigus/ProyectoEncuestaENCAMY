@@ -52,11 +52,13 @@ public class Seccion100Fragment3 extends Fragment {
     private CheckBox p114_ck7;
     private EditText p114_edt;
     private CardView p114_card;
+    private EditText edtObservacion1;
 
     private String idempresa;
     private Sec100PojoF1 sec100PojoF1;
     private Context context;
     private Data data;
+
 
     //mapeo de variables
     int P_111;
@@ -76,7 +78,7 @@ public class Seccion100Fragment3 extends Fragment {
     int P_114_6;
     int P_114_7;
     String P_114_7_O;
-    ;
+    String OBS_SEC100;
 
 
     public Seccion100Fragment3() {
@@ -120,6 +122,7 @@ public class Seccion100Fragment3 extends Fragment {
         p114_ck7 = (CheckBox) view.findViewById(R.id.sec100_p114_ck7);
         p114_edt = (EditText) view.findViewById(R.id.txtEspecifique_p114);
         p114_card = (CardView) view.findViewById(R.id.p114_card);
+        edtObservacion1 =(EditText) view.findViewById(R.id.edt_obs);
 
         return view;
     }
@@ -241,6 +244,8 @@ public class Seccion100Fragment3 extends Fragment {
             if (sec100PojoF1.getP_114_7().equals("1")) p114_ck7.setChecked(true);
             if (sec100PojoF1.getP_114_7().equals("0")) p114_ck7.setChecked(false);
             p114_edt.setText(sec100PojoF1.getP_114_7_O());
+            edtObservacion1.setText(sec100PojoF1.getOBS());
+
         }
         data.close();
     }
@@ -285,7 +290,8 @@ public class Seccion100Fragment3 extends Fragment {
         if (p114_ck7.isChecked()) P_114_7 = 1;
         else P_114_7 = 0;
 
-            P_114_7_O = p114_edt.getText().toString();
+        P_114_7_O = p114_edt.getText().toString();
+        OBS_SEC100 = edtObservacion1.getText().toString();
 
 
     }
@@ -313,6 +319,7 @@ public class Seccion100Fragment3 extends Fragment {
             contentValues.put(SQLConstantes.SECCION100_P_114_6, P_114_6 + "");
             contentValues.put(SQLConstantes.SECCION100_P_114_7, P_114_7 + "");
             contentValues.put(SQLConstantes.SECCION100_P_114_7_O, P_114_7_O);
+            contentValues.put(SQLConstantes.SECCION100_OBS,OBS_SEC100);
             data.actualizarModulo1(idempresa, contentValues);
         } else {
             //si no existe el elemento, lo construye para insertarlo
@@ -336,6 +343,7 @@ public class Seccion100Fragment3 extends Fragment {
             sec100PojoF1.setP_114_6(P_114_6 + "");
             sec100PojoF1.setP_114_7(P_114_7 + "");
             sec100PojoF1.setP_114_7_O(P_114_7_O);
+            sec100PojoF1.setOBS(OBS_SEC100);
             data.insertarModulo1(sec100PojoF1);
         }
         data.close();

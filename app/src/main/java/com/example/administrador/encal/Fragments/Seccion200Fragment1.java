@@ -51,6 +51,7 @@ public class Seccion200Fragment1 extends Fragment {
     private CheckBox p205_ck6;
     private EditText p205_edt;
     private CardView p205_card;
+    private EditText edtobs2;
 
     private IdentificacionPojo identificacion;
 
@@ -62,7 +63,7 @@ public class Seccion200Fragment1 extends Fragment {
     //mapeo de variables
     int P_201_1;int P_201_2;int P_201_3;int P_201_4;int P_202;
     int P_203;String P_203_O;String P_204;int P_205_1;int P_205_2;
-    int P_205_3;int P_205_4;int P_205_5;int P_205_6;String P_205_6_O;
+    int P_205_3;int P_205_4;int P_205_5;int P_205_6;String P_205_6_O; String OBS_SEC200;
 
     public Seccion200Fragment1() {
         // Required empty public constructor
@@ -105,6 +106,8 @@ public class Seccion200Fragment1 extends Fragment {
         p205_ck6 = (CheckBox) view.findViewById(R.id.sec200_p205_ck6);
         p205_edt = (EditText) view.findViewById(R.id.txtEspecifique_p205);
         p205_card = (CardView) view.findViewById(R.id.p205_card);
+
+        edtobs2 = (EditText) view.findViewById(R.id.edt_obs);
 
 
         return view;
@@ -213,6 +216,7 @@ public class Seccion200Fragment1 extends Fragment {
             if(sec200PojoF1.getP_205_6().equals("1")) p205_ck6.setChecked(true);
             if(sec200PojoF1.getP_205_6().equals("0")) p205_ck6.setChecked(false);
             p205_edt.setText(sec200PojoF1.getP_205_6_O());
+            edtobs2.setText(sec200PojoF1.getOBS());
         }
         data.close();
     }
@@ -251,12 +255,11 @@ public class Seccion200Fragment1 extends Fragment {
         else P_205_5 = 0;
         if(p205_ck6.isChecked())P_205_6 = 1;
         else P_205_6 = 0;
-            P_205_6_O =  p205_edt.getText().toString();
 
-
-
-
+        P_205_6_O =  p205_edt.getText().toString();
+        OBS_SEC200 = edtobs2.getText().toString();
     }
+
     public void guardarDatos(){
         llenarMapaVariables();
         data = new Data(context);
@@ -278,6 +281,7 @@ public class Seccion200Fragment1 extends Fragment {
             contentValues.put(SQLConstantes.SECCION200_P_205_5,P_205_5+"");
             contentValues.put(SQLConstantes.SECCION200_P_205_6,P_205_6+"");
             contentValues.put(SQLConstantes.SECCION200_P_205_6_O,P_205_6_O);
+            contentValues.put(SQLConstantes.SECCION100_OBS,OBS_SEC200);
             data.actualizarModulo2(idempresa,contentValues);
         }else{
             //si no existe el elemento, lo construye para insertarlo
@@ -299,6 +303,7 @@ public class Seccion200Fragment1 extends Fragment {
             sec200PojoF1.setP_205_5(P_205_5+"");
             sec200PojoF1.setP_205_6(P_205_6+"");
             sec200PojoF1.setP_205_6_O(P_205_6_O);
+            sec200PojoF1.setOBS(OBS_SEC200);
             data.insertarModulo2(sec200PojoF1);
         }
         data.close();

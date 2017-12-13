@@ -43,6 +43,8 @@ public class Seccion400Fragment2 extends Fragment {
     private EditText p410_edt;
     private CardView p410_card;
 
+    private EditText edtobs4;
+
     private IdentificacionPojo identificacion;
     private Sec300PojoF1 sec300PojoF1;
 
@@ -53,7 +55,7 @@ public class Seccion400Fragment2 extends Fragment {
 
     //mapeo de variables
     int P_409_1;int P_409_2;int P_409_3;int P_409_4;int P_409_5;String P_409_5_O;
-    int P_410;String P_410_O;
+    int P_410;String P_410_O; String OBS_SEC400;
 
 
     public Seccion400Fragment2() {
@@ -84,10 +86,11 @@ public class Seccion400Fragment2 extends Fragment {
         p409_edt = (EditText) view.findViewById(R.id.txtEspecifique_p409);
         p409_card = (CardView) view.findViewById(R.id.p409_card);
 
-
         p410_rg = (RadioGroup) view.findViewById(R.id.sec400_p410_rg);
         p410_edt = (EditText) view.findViewById(R.id.edtEspecifique_p410);
         p410_card = (CardView) view.findViewById(R.id.p410_card);
+
+        edtobs4 = (EditText) view.findViewById(R.id.edt_obs);
 
         return view;
     }
@@ -173,6 +176,8 @@ public class Seccion400Fragment2 extends Fragment {
             }
             p410_edt.setText(sec400PojoF1.getP_410_O());
 
+            edtobs4.setText(sec400PojoF1.getOBS());
+
         }
         data.close();
     }
@@ -197,6 +202,8 @@ public class Seccion400Fragment2 extends Fragment {
 
             P_410_O =  p410_edt.getText().toString();
 
+            OBS_SEC400 = edtobs4.getText().toString();
+
     }
 
     public void guardarDatos(){
@@ -213,6 +220,7 @@ public class Seccion400Fragment2 extends Fragment {
             contentValues.put(SQLConstantes.SECCION400_P_409_5_O,P_409_5_O);
             contentValues.put(SQLConstantes.SECCION400_P_410,P_410+"");
             contentValues.put(SQLConstantes.SECCION400_P_410_O,P_410_O);
+            contentValues.put(SQLConstantes.SECCION100_OBS,OBS_SEC400);
             data.actualizarModulo4(idempresa,contentValues);
         }else{
             //si no existe el elemento, lo construye para insertarlo
@@ -227,6 +235,7 @@ public class Seccion400Fragment2 extends Fragment {
             sec400PojoF1.setP_409_5_O(P_409_5_O);
             sec400PojoF1.setP_410(P_410+"");
             sec400PojoF1.setP_410_O(P_410_O);
+            sec400PojoF1.setOBS(OBS_SEC400);
             data.insertarModulo4(sec400PojoF1);
         }
         data.close();

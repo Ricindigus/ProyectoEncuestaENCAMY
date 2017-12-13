@@ -1,6 +1,7 @@
 package com.example.administrador.encal.activities;
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -30,6 +32,7 @@ import com.example.administrador.encal.Fragments.Seccion100Fragment3;
 import com.example.administrador.encal.Fragments.InicioFragment;
 import com.example.administrador.encal.Fragments.VisitaFragment;
 import com.example.administrador.encal.Modelo.Data;
+import com.example.administrador.encal.Modelo.SQLConstantes;
 import com.example.administrador.encal.R;
 
 public class EncuestaActivity extends AppCompatActivity {
@@ -72,6 +75,7 @@ public class EncuestaActivity extends AppCompatActivity {
                 if(cont<9){
                     if(validarFragment(cont)){
                         guardarFragment(cont);
+                        guardarObservaciones(cont);
                         boolean continuar = true;
                         if(cont == 3){
                             Seccion100Fragment1 seccion100Fragment1 = (Seccion100Fragment1) fragmentActual;
@@ -110,11 +114,7 @@ public class EncuestaActivity extends AppCompatActivity {
 
     public boolean onPrepareOptionsMenu(Menu menu) {
         menu.clear();
-        if(cont > 2 && cont!=5
-                && cont!=6
-                && cont!=7
-                && cont!=9
-                ) getMenuInflater().inflate(R.menu.menu_encuesta, menu);
+        if(cont > 2) getMenuInflater().inflate(R.menu.menu_encuesta, menu);
         else getMenuInflater().inflate(R.menu.menu_simple, menu);
         return super.onPrepareOptionsMenu(menu);
     }
@@ -122,8 +122,11 @@ public class EncuestaActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         final int id = item.getItemId();
         if (id == R.id.volver_marco || id == R.id.action_marco_simple) {
+            String men = "";
+            if(cont > 0) men = "¿Está seguro que desea guardar la encuesta hasta este punto y finalizarla?";
+            else men = "¿Está seguro que desea volver al marco y salir de la encuesta?";
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("¿Está seguro que desea volver al marco y salir de la encuesta?")
+            builder.setMessage(men)
                     .setTitle("Aviso")
                     .setCancelable(false)
                     .setNegativeButton("No",
@@ -160,9 +163,9 @@ public class EncuestaActivity extends AppCompatActivity {
         }
         if( id == R.id.registrar_observacion){
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-            final View dialogView = this.getLayoutInflater().inflate(R.layout.dialog_observaciones, null);
-            LinearLayout lytObservaciones = dialogView.findViewById(R.id.dialog_lytObservaciones);
-            final EditText edtObservaciones = dialogView.findViewById(R.id.dialog_edtObservaciones);
+            final View dialogView = this.getLayoutInflater().inflate(R.layout.observaciones, null);
+            CardView lytObservaciones = dialogView.findViewById(R.id.card_obs);
+            final EditText edtObservaciones = dialogView.findViewById(R.id.edt_obs);
             dialog.setView(dialogView);
             dialog.setTitle("Observaciones");
             dialog.setPositiveButton("Guardar",null);
@@ -187,6 +190,39 @@ public class EncuestaActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void guardarObservaciones(int tipo){
+        data = new Data(EncuestaActivity.this);
+        data.open();
+        if(cont >= 3 && cont <= 4){
+
+            ContentValues contentValues = new ContentValues(1);
+            contentValues.put(SQLConstantes.SECCION100_OBS,observaciones);
+            data.actualizarModulo1(idEmpresa,contentValues);
+
+        }
+        if(cont == 6){
+
+            ContentValues contentValues = new ContentValues(1);
+            contentValues.put(SQLConstantes.SECCION200_OBS,observaciones);
+            data.actualizarModulo2(idEmpresa,contentValues);
+
+        }
+        if(cont == 7){
+            ContentValues contentValues = new ContentValues(1);
+            contentValues.put(SQLConstantes.SECCION300_OBS,observaciones);
+            data.actualizarModulo3(idEmpresa,contentValues);
+
+        }
+        if(cont >= 8 && cont <= 8){
+
+            ContentValues contentValues = new ContentValues(1);
+            contentValues.put(SQLConstantes.SECCION400_OBS,observaciones);
+            data.actualizarModulo4(idEmpresa,contentValues);
+
+        }
+        data.close();
     }
 
     public void setFragment(int poscicion, int direccion){
