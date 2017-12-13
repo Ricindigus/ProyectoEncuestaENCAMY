@@ -133,10 +133,11 @@
         <item>1.Completa</item>
         <item>2.Incompleta</item>
         <item>3.Ausente</item>
-        <item>4.Pendiente con cita</item>
-        <item>5.Rechazo</item>
-        <item>6.No ubicado</item>
-        <item>7.Otro</item>
+        <item>4.Rechazo</item>
+        <item>5.No ubicado</item>
+        <item>6.Pendiente con cita</item>
+        <item>7.Actividad no Investigada</item>
+        <item>8.Otro</item>
     </string-array>
 
     <string name="titulo_seccion100">SECCION 100: PERFIL ORGANIZACIONAL DE LA EMPRESA</string>

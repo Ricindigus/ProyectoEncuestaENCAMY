@@ -17,9 +17,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.administrador.encal.Fragments.CaratulaFragment;
 import com.example.administrador.encal.Fragments.Seccion100Fragment1;
@@ -33,7 +36,11 @@ import com.example.administrador.encal.Fragments.InicioFragment;
 import com.example.administrador.encal.Fragments.VisitaFragment;
 import com.example.administrador.encal.Modelo.Data;
 import com.example.administrador.encal.Modelo.SQLConstantes;
+import com.example.administrador.encal.Pojos.ResultadoEncuesta;
+import com.example.administrador.encal.Pojos.Visita;
 import com.example.administrador.encal.R;
+
+import java.util.ArrayList;
 
 public class EncuestaActivity extends AppCompatActivity {
     private Fragment fragmentActual;
@@ -43,6 +50,7 @@ public class EncuestaActivity extends AppCompatActivity {
     private String observaciones = "";
     private Button btnAnterior;
     private Button btnSiguiente;
+    private Context context= this;
     private int cont;
 
 
@@ -82,7 +90,35 @@ public class EncuestaActivity extends AppCompatActivity {
                             if(seccion100Fragment1.validarFinalizar()) continuar = false;
                         }
                         if(continuar){cont++; setFragment(cont, 1);}
-                        else {cont = 0;setFragment(cont,-1);}
+                        else {
+                            int posicion=0;
+                            final Spinner spResultado = (Spinner) v.findViewById(R.id.dialog_finalizar_visita_spResultado);
+                            final TextView txtresultado = (TextView) v.findViewById(R.id.visita_txtResultadoFinal);
+                            ArrayList<Visita> visitas= new ArrayList<>();
+                            data = new Data(context);
+                            data.open();
+                            visitas=data.getVisitas(idEmpresa);
+                            Visita vis=visitas.get(visitas.size()-1);
+                            vis.setV_RESULTADO("7");
+                            data.actualizarVisita(vis.getID(),vis.toValues());
+                            ResultadoEncuesta rencusta = data.getResultados(idEmpresa);
+                            rencusta.setRESFIN_ID(idEmpresa);
+                            rencusta.setRESFIN(vis.getV_RESULTADO());
+                            rencusta.setRESFIN_ANIO(vis.getV_ANIO());
+                            rencusta.setRESFIN_MES(vis.getV_MES());
+                            rencusta.setRESFIN_DIA(vis.getV_DIA());
+                            rencusta.setRESFIN_HORA(vis.getV_HORA());
+                            rencusta.setRESFIN_MIN(vis.getV_MINUTO());
+                            rencusta.setRESFIN_O(vis.getV_RESULTADO_O());
+                            data.insertarResultado(rencusta);
+                            //txtresultado.setText("7.Actividad no Investigada");
+
+                            data.close();
+                            cont = 0;
+
+                            setFragment(cont,-1);
+
+                        }
                     }
                 }else{
                     if(validarFragment(cont)){
@@ -104,6 +140,9 @@ public class EncuestaActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    public String checkDigito (int number) {
+        return number <= 9 ? "0" + number : String.valueOf(number);
     }
 
     @Override

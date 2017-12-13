@@ -484,14 +484,14 @@ public class VisitaFragment extends Fragment {
         spResultado.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
-                if(pos == 4 || pos == 2){
+                if(pos == 6 || pos == 2){
                     ckProxVisita.setEnabled(true);
                     ckProxVisita.setChecked(true);
                 }else{
                     ckProxVisita.setChecked(false);
                     ckProxVisita.setEnabled(false);
                 }
-                if(pos == 7){
+                if(pos == 8){
                     edtEspecifique.setEnabled(true);
                     edtEspecifique.setBackgroundResource(R.drawable.fondo_edit_text);
                 }else{
@@ -692,6 +692,8 @@ public class VisitaFragment extends Fragment {
         });
         alertDialog.show();
     }
+
+
 
     public boolean coberturaCorrecta(){
         boolean correcto = true;
