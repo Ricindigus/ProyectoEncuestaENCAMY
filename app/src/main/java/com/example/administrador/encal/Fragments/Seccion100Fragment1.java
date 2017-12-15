@@ -473,7 +473,7 @@ public class Seccion100Fragment1 extends Fragment {
                     if(mensaje.equals(""))mensaje = "PREGUNTA 103: DEBE EXISTIR INFORMACION";
                 }
             }
-        }
+        }else if(mensaje.equals(""))mensaje = "PREGUNTA 103: DEBE SELECCIONAR AL MENOS UNA OPCION";
 
         //104
         if(P_104== -1 ) {

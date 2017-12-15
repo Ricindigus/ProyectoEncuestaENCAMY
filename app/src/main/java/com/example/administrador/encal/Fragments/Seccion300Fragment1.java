@@ -447,14 +447,14 @@ public class Seccion300Fragment1 extends Fragment {
                     if(b){
 
                         if (!checkBox[4].isChecked()) {
-                            p304_card.setVisibility(View.GONE);
+                            p304_card.setVisibility(View.GONE); p304_rg.clearCheck();
                         }
                         if (checkBox[4].isChecked()){
                             p304_card.setVisibility(View.VISIBLE);
                         }
                     }else{
-                        if (checkBox[0].isChecked()||checkBox[1].isChecked()||checkBox[2].isChecked()||checkBox[3].isChecked()){
-                            p304_card.setVisibility(View.GONE);
+                        if (!checkBox[4].isChecked()){
+                            p304_card.setVisibility(View.GONE);p304_rg.clearCheck();
                         }else {
                             p304_card.setVisibility(View.VISIBLE);
                         }

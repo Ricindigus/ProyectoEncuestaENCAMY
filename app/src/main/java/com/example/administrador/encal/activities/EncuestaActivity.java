@@ -178,11 +178,9 @@ public class EncuestaActivity extends AppCompatActivity {
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     if(cont > 0){
-                                        if(validarFragment(cont)){
                                             guardarFragment(cont);
                                             cont=0;
                                             setFragment(cont, 1);
-                                        }
                                     }else{
                                         VisitaFragment visitaFragment = (VisitaFragment) fragmentActual;
                                         if(visitaFragment.tieneVisitas()){
@@ -444,11 +442,9 @@ public class EncuestaActivity extends AppCompatActivity {
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                         if(cont > 0){
-                                            if(validarFragment(cont)){
                                                 guardarFragment(cont);
                                                 cont=0;
                                                 setFragment(cont, 1);
-                                            }
                                         }else{
                                             VisitaFragment visitaFragment = (VisitaFragment) fragmentActual;
                                             if(visitaFragment.tieneVisitas()){

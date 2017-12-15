@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         btnIngresar = (Button) findViewById(R.id.login_boton_ingresar);
         data = new Data(this);
 
-        txtUsuario.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(10)});
+        txtUsuario.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(15)});
         txtPassword.setFilters(new InputFilter[]{new InputFilter.AllCaps(),new InputFilter.LengthFilter(10)});
 
         btnIngresar.setOnClickListener(new View.OnClickListener() {
