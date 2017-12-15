@@ -41,7 +41,6 @@ public class MarcoAdapter extends RecyclerView.Adapter<MarcoAdapter.ViewHolder>{
         holder.txtId.setText(marcos.get(position).getId());
         holder.txtRuc.setText(marcos.get(position).getRuc());
         holder.txtRazonSocial.setText(marcos.get(position).getRazonSocial());
-        holder.txtTamanio.setText(marcos.get(position).getTamanio());
 //        holder.txtResultado.setText(marcos.get(position).getResultado());
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,7 +68,6 @@ public class MarcoAdapter extends RecyclerView.Adapter<MarcoAdapter.ViewHolder>{
             txtId = itemView.findViewById(R.id.marco_item_txtId);
             txtRuc = itemView.findViewById(R.id.marco_item_txtRuc);
             txtRazonSocial = itemView.findViewById(R.id.marco_item_txtRazonSocial);
-            txtTamanio = itemView.findViewById(R.id.marco_item_txtTamanio);
             txtResultado = itemView.findViewById(R.id.marco_item_txtResultado);
         }
     }

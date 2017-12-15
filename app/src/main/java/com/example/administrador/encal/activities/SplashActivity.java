@@ -40,9 +40,9 @@ public class SplashActivity extends AppCompatActivity {
         progressBar1 = (ProgressBar) findViewById(R.id.marco_progreso1);
 
 
-        progressBar.setMax(6052);
+        progressBar.setMax(8321);
         progressBar.setVisibility(View.GONE);
-        progressBar1.setMax(6052);
+        progressBar1.setMax(8321);
         progressBar1.setVisibility(View.GONE);
 
         new MyAsyncTask().execute(0);
@@ -85,7 +85,7 @@ public class SplashActivity extends AppCompatActivity {
                     }catch (SQLiteException e){
                         e.printStackTrace();
                     }
-                    publishProgress(i,(int)Math.floor(i/60.52));
+                    publishProgress(i,(int)Math.floor(i/83.21));
                     i++;
                 }
                 for (Usuario usuario : usuarios) {
@@ -94,7 +94,7 @@ public class SplashActivity extends AppCompatActivity {
                     }catch (SQLiteException e){
                         e.printStackTrace();
                     }
-                    publishProgress(i,(int)Math.floor(i/60.52));
+                    publishProgress(i,(int)Math.floor(i/83.21));
                     i++;
                 }
                 for (Ubigeo ubigeo : ubigeos) {
@@ -103,7 +103,7 @@ public class SplashActivity extends AppCompatActivity {
                     }catch (SQLiteException e){
                         e.printStackTrace();
                     }
-                    publishProgress(i,(int)Math.floor(i/60.52));
+                    publishProgress(i,(int)Math.floor(i/83.21));
                     i++;
                 }
                 mensaje = "LISTO, BIENVENIDO";

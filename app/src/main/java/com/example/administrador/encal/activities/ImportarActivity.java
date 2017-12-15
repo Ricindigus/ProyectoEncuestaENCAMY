@@ -211,7 +211,6 @@ public class ImportarActivity extends AppCompatActivity {
             case SQLConstantes.MARCO_PROVINCIA:marco.setPROVINCIA(valor);break;
             case SQLConstantes.MARCO_CCDI:marco.setCCDI(valor);break;
             case SQLConstantes.MARCO_DISTRITO:marco.setDISTRITO(valor);break;
-            case SQLConstantes.MARCO_T_EMPRESA:marco.setT_EMPRESA(valor);break;
             case SQLConstantes.MARCO_FRENTE:marco.setFRENTE(valor);break;
             case SQLConstantes.MARCO_ZONA:marco.setZONA(valor);break;
             case SQLConstantes.MARCO_MANZANA:marco.setMANZANA(valor);break;

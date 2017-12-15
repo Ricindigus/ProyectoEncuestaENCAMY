@@ -52,7 +52,6 @@ public class SQLConstantes {
     public static final String MARCO_PROVINCIA = "PROVINCIA";
     public static final String MARCO_CCDI = "CCDI";
     public static final String MARCO_DISTRITO = "DISTRITO";
-    public static final String MARCO_T_EMPRESA = "T_EMPRESA";
     public static final String MARCO_FRENTE = "FRENTE";
     public static final String MARCO_ZONA = "ZONA";
     public static final String MARCO_MANZANA = "MANZANA";
@@ -381,7 +380,6 @@ public class SQLConstantes {
                     MARCO_PROVINCIA + " TEXT," +
                     MARCO_CCDI + " TEXT," +
                     MARCO_DISTRITO + " TEXT," +
-                    MARCO_T_EMPRESA + " TEXT," +
                     MARCO_FRENTE + " TEXT," +
                     MARCO_ZONA + " TEXT," +
                     MARCO_MANZANA + " TEXT," +
@@ -758,8 +756,7 @@ public class SQLConstantes {
             MARCO_ID, MARCO_RUC, MARCO_RAZON_SOCIAL, MARCO_NOMBRE_COMERCIAL,
             MARCO_OPERADOR, MARCO_JEFE, MARCO_OBSERVADOR, MARCO_ANIO,
             MARCO_MES, MARCO_PERIODO, MARCO_CCDD, MARCO_DEPARTAMENTO,
-            MARCO_CCPP, MARCO_PROVINCIA, MARCO_CCDI, MARCO_DISTRITO,
-            MARCO_T_EMPRESA, MARCO_FRENTE, MARCO_ZONA, MARCO_MANZANA,
+            MARCO_CCPP, MARCO_PROVINCIA, MARCO_CCDI, MARCO_DISTRITO, MARCO_FRENTE, MARCO_ZONA, MARCO_MANZANA,
             MARCO_CAT_VIA, MARCO_NOM_VIA, MARCO_PUERTA, MARCO_INTERIOR,
             MARCO_PISO, MARCO_MZ, MARCO_LOTE
     };

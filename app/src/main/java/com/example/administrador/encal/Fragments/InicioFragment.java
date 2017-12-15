@@ -153,7 +153,6 @@ public class InicioFragment extends Fragment {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if(!charSequence.toString().equals("")){
-                   // inicio_edt9.setText((Integer.parseInt(inicio_edt9.getText().toString()) - Integer.parseInt(charSequence.toString()))+"");
                     data = new Data(context);
                     data.open();
                     identificacion = data.getIdentificacion(idEmpresa);
@@ -177,22 +176,21 @@ public class InicioFragment extends Fragment {
             public void afterTextChanged(Editable editable) {
                 String despues = "";
                 if(!editable.toString().equals("")) despues = editable.toString();
-
-                    data = new Data(context);
-                    data.open();
-                    identificacion = data.getIdentificacion(idEmpresa);
-                    Marco marco = data.getMarco(idEmpresa);
-                    if(marco.getRUC().substring(0,2).equals("10")){
-                        if(!inicio_edt9.getText().toString().equals("")){
-                            inicio_edt9.setText(inicio_edt9.getText().toString().replace(inicio_edt9.getText().toString(),despues)+"");
-                            if (inicio_sp3.getSelectedItemPosition()==1 ||inicio_sp3.getSelectedItemPosition()==3){
-                                inicio_edt14.setText(inicio_edt9.getText().toString());
-                            }
-                        }else{
-                            inicio_edt9.setText(despues+"");
-                            if (inicio_sp3.getSelectedItemPosition()==1 ||inicio_sp3.getSelectedItemPosition()==3){
-                                inicio_edt14.setText(inicio_edt9.getText().toString());
-                            }
+                data = new Data(context);
+                data.open();
+                identificacion = data.getIdentificacion(idEmpresa);
+                Marco marco = data.getMarco(idEmpresa);
+                if(marco.getRUC().substring(0,2).equals("10")){
+                    if(!inicio_edt9.getText().toString().equals("")){
+                        inicio_edt9.setText(inicio_edt9.getText().toString().replace(inicio_edt9.getText().toString(),despues)+"");
+                        if (inicio_sp3.getSelectedItemPosition()==1 ||inicio_sp3.getSelectedItemPosition()==3){
+                            inicio_edt14.setText(inicio_edt9.getText().toString());
+                        }
+                    }else{
+                        inicio_edt9.setText(despues+"");
+                        if (inicio_sp3.getSelectedItemPosition()==1 ||inicio_sp3.getSelectedItemPosition()==3){
+                            inicio_edt14.setText(inicio_edt9.getText().toString());
+                        }
 
                     }
                 }
@@ -321,6 +319,10 @@ public class InicioFragment extends Fragment {
             identificacion.setNUM_RUC(marco.getRUC());
             identificacion.setRAZON_SOCIAL(marco.getRAZON_SOCIAL());
             identificacion.setNOM_COMER_MYPE(marco.getNOMBRE_COMERCIAL());
+            if(identificacion.getNUM_RUC().substring(0,2).equals("10")){
+                identificacion.setCOND_APEL_NOM(marco.getNOMBRE_COMERCIAL());
+            }
+
         }
         data.close();
         inicio_edt1.setText(identificacion.getNUM_RUC());

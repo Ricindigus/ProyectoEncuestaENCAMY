@@ -34,7 +34,6 @@ public class MarcoPullParser {
     private static final String M_PROVINCIA = "PROVINCIA";
     private static final String M_CCDI = "CCDI";
     private static final String M_DISTRITO = "DISTRITO";
-    private static final String M_T_EMPRESA = "T_EMPRESA";
     private static final String M_FRENTE = "FRENTE";
     private static final String M_ZONA = "ZONA";
     private static final String M_MANZANA = "MANZANA";
@@ -102,7 +101,6 @@ public class MarcoPullParser {
                 case M_PROVINCIA:currentMarco.setPROVINCIA(xmlText);break;
                 case M_CCDI:currentMarco.setCCDI(xmlText);break;
                 case M_DISTRITO:currentMarco.setDISTRITO(xmlText);break;
-                case M_T_EMPRESA:currentMarco.setT_EMPRESA(xmlText);break;
                 case M_FRENTE:currentMarco.setFRENTE(xmlText);break;
                 case M_ZONA:currentMarco.setZONA(xmlText);break;
                 case M_MANZANA:currentMarco.setMANZANA(xmlText);break;

@@ -8,14 +8,12 @@ public class ItemMarco {
     private String id;
     private String ruc;
     private String razonSocial;
-    private String tamanio;
     private String resultado;
 
-    public ItemMarco(String id, String ruc, String razonSocial, String tamanio, String resultado) {
+    public ItemMarco(String id, String ruc, String razonSocial, String resultado) {
         this.id = id;
         this.ruc = ruc;
         this.razonSocial = razonSocial;
-        this.tamanio = tamanio;
         this.resultado = resultado;
     }
 
@@ -45,14 +43,6 @@ public class ItemMarco {
 
     public void setRazonSocial(String razonSocial) {
         this.razonSocial = razonSocial;
-    }
-
-    public String getTamanio() {
-        return tamanio;
-    }
-
-    public void setTamanio(String tamanio) {
-        this.tamanio = tamanio;
     }
 
     public String getResultado() {

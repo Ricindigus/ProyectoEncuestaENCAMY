@@ -90,7 +90,6 @@ public class MarcoActivity extends AppCompatActivity {
                 final TextView txtTextView1 = (TextView) rootView.findViewById(R.id.marco_item_txtId);
                 final TextView txtTextView2 = (TextView) rootView.findViewById(R.id.marco_item_txtRuc);
                 final TextView txtTextView3 = (TextView) rootView.findViewById(R.id.marco_item_txtRazonSocial);
-                final TextView txtTextView4 = (TextView) rootView.findViewById(R.id.marco_item_txtTamanio);
                 final TextView txtTextView5 = (TextView) rootView.findViewById(R.id.marco_item_txtResultado);
 
                 int colorFrom = ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary);
@@ -117,7 +116,6 @@ public class MarcoActivity extends AppCompatActivity {
                         txtTextView1.setTextColor((int) animator.getAnimatedValue());
                         txtTextView2.setTextColor((int) animator.getAnimatedValue());
                         txtTextView3.setTextColor((int) animator.getAnimatedValue());
-                        txtTextView4.setTextColor((int) animator.getAnimatedValue());
                         txtTextView5.setTextColor((int) animator.getAnimatedValue());
                     }
                 });
@@ -197,7 +195,7 @@ public class MarcoActivity extends AppCompatActivity {
         for(Marco marco : marcos){
             if(dep.equals(marco.getDEPARTAMENTO()) && prov.equals(marco.getPROVINCIA())&&
                     dis.equals(marco.getDISTRITO()) && periodo.equals(marco.getPERIODO())){
-                itemMarcos.add(new ItemMarco(marco.getID(),marco.getRUC(),marco.getRAZON_SOCIAL(),marco.getT_EMPRESA(),""));
+                itemMarcos.add(new ItemMarco(marco.getID(),marco.getRUC(),marco.getRAZON_SOCIAL(),""));
             }
         }
         marcoAdapter= new MarcoAdapter(itemMarcos, new MarcoAdapter.OnItemClickListener() {
@@ -207,7 +205,6 @@ public class MarcoActivity extends AppCompatActivity {
                 final TextView txtTextView1 = (TextView) rootView.findViewById(R.id.marco_item_txtId);
                 final TextView txtTextView2 = (TextView) rootView.findViewById(R.id.marco_item_txtRuc);
                 final TextView txtTextView3 = (TextView) rootView.findViewById(R.id.marco_item_txtRazonSocial);
-                final TextView txtTextView4 = (TextView) rootView.findViewById(R.id.marco_item_txtTamanio);
                 final TextView txtTextView5 = (TextView) rootView.findViewById(R.id.marco_item_txtResultado);
 
                 int colorFrom = ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary);
@@ -234,7 +231,6 @@ public class MarcoActivity extends AppCompatActivity {
                         txtTextView1.setTextColor((int) animator.getAnimatedValue());
                         txtTextView2.setTextColor((int) animator.getAnimatedValue());
                         txtTextView3.setTextColor((int) animator.getAnimatedValue());
-                        txtTextView4.setTextColor((int) animator.getAnimatedValue());
                         txtTextView5.setTextColor((int) animator.getAnimatedValue());
                     }
                 });
@@ -252,7 +248,7 @@ public class MarcoActivity extends AppCompatActivity {
     public void obtenerMarcoTotal(){
         itemMarcos = new ArrayList<ItemMarco>();
         for(Marco marco : marcos){
-            itemMarcos.add(new ItemMarco(marco.getID(),marco.getRUC(),marco.getRAZON_SOCIAL(),marco.getT_EMPRESA(),""));
+            itemMarcos.add(new ItemMarco(marco.getID(),marco.getRUC(),marco.getRAZON_SOCIAL(),""));
         }
         marcoAdapter= new MarcoAdapter(itemMarcos, new MarcoAdapter.OnItemClickListener() {
             @Override
@@ -261,7 +257,6 @@ public class MarcoActivity extends AppCompatActivity {
                 final TextView txtTextView1 = (TextView) rootView.findViewById(R.id.marco_item_txtId);
                 final TextView txtTextView2 = (TextView) rootView.findViewById(R.id.marco_item_txtRuc);
                 final TextView txtTextView3 = (TextView) rootView.findViewById(R.id.marco_item_txtRazonSocial);
-                final TextView txtTextView4 = (TextView) rootView.findViewById(R.id.marco_item_txtTamanio);
                 final TextView txtTextView5 = (TextView) rootView.findViewById(R.id.marco_item_txtResultado);
 
                 int colorFrom = ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary);
@@ -288,7 +283,6 @@ public class MarcoActivity extends AppCompatActivity {
                         txtTextView1.setTextColor((int) animator.getAnimatedValue());
                         txtTextView2.setTextColor((int) animator.getAnimatedValue());
                         txtTextView3.setTextColor((int) animator.getAnimatedValue());
-                        txtTextView4.setTextColor((int) animator.getAnimatedValue());
                         txtTextView5.setTextColor((int) animator.getAnimatedValue());
                     }
                 });
@@ -424,7 +418,7 @@ public class MarcoActivity extends AppCompatActivity {
         marcos = data.getAllMarcos(idUsuario,Integer.parseInt(permisoUsuario));
         data.close();
         for(Marco marco : marcos){
-            itemMarcos.add(new ItemMarco(marco.getID(),marco.getRUC(),marco.getRAZON_SOCIAL(),marco.getT_EMPRESA(),""));
+            itemMarcos.add(new ItemMarco(marco.getID(),marco.getRUC(),marco.getRAZON_SOCIAL(),""));
             String departamento = marco.getDEPARTAMENTO();
             if(!departamentos.contains(departamento)){
                 departamentos.add(departamento);

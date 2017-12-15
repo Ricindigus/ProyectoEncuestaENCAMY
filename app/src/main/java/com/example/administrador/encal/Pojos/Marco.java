@@ -26,7 +26,6 @@ public class Marco {
     private String PROVINCIA;
     private String CCDI;
     private String DISTRITO;
-    private String T_EMPRESA;
     private String FRENTE;
     private String ZONA;
     private String MANZANA;
@@ -55,7 +54,6 @@ public class Marco {
         this.PROVINCIA = "";
         this.CCDI = "";
         this.DISTRITO = "";
-        this.T_EMPRESA = "";
         this.FRENTE = "";
         this.ZONA = "";
         this.MANZANA = "";
@@ -85,7 +83,6 @@ public class Marco {
         this.PROVINCIA = PROVINCIA;
         this.CCDI = CCDI;
         this.DISTRITO = DISTRITO;
-        this.T_EMPRESA = t_EMPRESA;
         this.FRENTE = FRENTE;
         this.ZONA = ZONA;
         this.MANZANA = MANZANA;
@@ -226,14 +223,6 @@ public class Marco {
         this.DISTRITO = DISTRITO;
     }
 
-    public String getT_EMPRESA() {
-        return T_EMPRESA;
-    }
-
-    public void setT_EMPRESA(String t_EMPRESA) {
-        T_EMPRESA = t_EMPRESA;
-    }
-
     public String getFRENTE() {
         return FRENTE;
     }
@@ -332,7 +321,6 @@ public class Marco {
         contentValues.put(SQLConstantes.MARCO_PROVINCIA,PROVINCIA);
         contentValues.put(SQLConstantes.MARCO_CCDI,CCDI);
         contentValues.put(SQLConstantes.MARCO_DISTRITO,DISTRITO);
-        contentValues.put(SQLConstantes.MARCO_T_EMPRESA,T_EMPRESA);
         contentValues.put(SQLConstantes.MARCO_FRENTE,FRENTE);
         contentValues.put(SQLConstantes.MARCO_ZONA,ZONA);
         contentValues.put(SQLConstantes.MARCO_MANZANA,MANZANA);

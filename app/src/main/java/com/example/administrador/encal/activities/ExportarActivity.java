@@ -179,7 +179,6 @@ public class ExportarActivity extends AppCompatActivity {
             escribirCampoXml(serializer,SQLConstantes.MARCO_PROVINCIA,marco.getPROVINCIA());
             escribirCampoXml(serializer,SQLConstantes.MARCO_CCDI,marco.getCCDI());
             escribirCampoXml(serializer,SQLConstantes.MARCO_DISTRITO,marco.getDISTRITO());
-            escribirCampoXml(serializer,SQLConstantes.MARCO_T_EMPRESA,marco.getT_EMPRESA());
             escribirCampoXml(serializer,SQLConstantes.MARCO_FRENTE,marco.getFRENTE());
             escribirCampoXml(serializer,SQLConstantes.MARCO_ZONA,marco.getZONA());
             escribirCampoXml(serializer,SQLConstantes.MARCO_MANZANA,marco.getMANZANA());
