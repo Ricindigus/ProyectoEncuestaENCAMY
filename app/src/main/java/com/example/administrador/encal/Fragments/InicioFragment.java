@@ -148,11 +148,14 @@ public class InicioFragment extends Fragment {
         for (EditText r: edtsNumero) { r.setTransformationMethod(new NumericKeyBoardTransformationMethod());}
 
         inicio_edt1.setFilters(new InputFilter[]{new InputFilter.LengthFilter(11)});
+        inicio_edt7.setFilters(new InputFilter[]{new InputFilter.LengthFilter(9)});
+        inicio_edt8.setFilters(new InputFilter[]{new InputFilter.LengthFilter(9)});
 
-        inicio_edt3.addTextChangedListener(new TextWatcher() {
+
+        inicio_edt2.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(!charSequence.toString().equals("")){
+
                     data = new Data(context);
                     data.open();
                     identificacion = data.getIdentificacion(idEmpresa);
@@ -165,7 +168,7 @@ public class InicioFragment extends Fragment {
                     }
                     data.close();
 
-                }
+
             }
 
             @Override
@@ -320,7 +323,7 @@ public class InicioFragment extends Fragment {
             identificacion.setRAZON_SOCIAL(marco.getRAZON_SOCIAL());
             identificacion.setNOM_COMER_MYPE(marco.getNOMBRE_COMERCIAL());
             if(identificacion.getNUM_RUC().substring(0,2).equals("10")){
-                identificacion.setCOND_APEL_NOM(marco.getNOMBRE_COMERCIAL());
+                identificacion.setCOND_APEL_NOM(marco.getRAZON_SOCIAL());
             }
 
         }
@@ -471,7 +474,7 @@ public class InicioFragment extends Fragment {
         if(NOM_COMER_MYPE.trim().length() != 0)vNOM_COMER_MYPE=true;
         else if(mensaje.equals(""))mensaje = "DEBE EXISTIR NOMBRE COMERCIAL DE LA MYPE";
         if(ANO_INI.trim().length() != 0){
-            if(Integer.parseInt(ANO_INI)>=1900 && Integer.parseInt(ANO_INI)<=2017) vANIO_FUNDACION=true;
+            if(Integer.parseInt(ANO_INI)>=1900 && Integer.parseInt(ANO_INI)<=2016) vANIO_FUNDACION=true;
             else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR UN AÑO VALIDO";
         }
         else if(mensaje.equals(""))mensaje = "AÑO DE INICIO DE FUNCIONAMIENTO DEBE ESTAR ENTRE LOS AÃ‘OS 1900 A 2016";
@@ -572,7 +575,7 @@ public class InicioFragment extends Fragment {
                 if(despues > 1000){
                     if(despues<1900 || despues >2017){
                         //editText.setBackgroundResource(R.drawable.fondo_edit_text_error);
-                        textView.setText("Debe ingresar un año en el rango de 1900 a 2017");
+                        textView.setText("Debe ingresar un año en el rango de 1900 a 2016");
                     } else{
                         editText.setBackgroundResource(R.drawable.fondo_edit_text);
                         textView.setText("");
@@ -588,7 +591,7 @@ public class InicioFragment extends Fragment {
                         int valor =Integer.parseInt(editText.getText().toString());
                         if(valor < 1900 || valor >2017){
                             //editText.setBackgroundResource(R.drawable.fondo_edit_text_error);
-                            textView.setText("Debe ingresar un año en el rango de 1900 a 2017");
+                            textView.setText("Debe ingresar un año en el rango de 1900 a 2016");
                         }else{
                             editText.setBackgroundResource(R.drawable.fondo_edit_text);
                             textView.setText("");

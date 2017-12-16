@@ -165,6 +165,12 @@ public class Seccion400Fragment1 extends Fragment {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                     if(b){
+                        if (checkBox[0].isChecked()){
+                            checkBox[1].setEnabled(false); checkBox[1].setChecked(false);
+                            checkBox[2].setEnabled(false); checkBox[2].setChecked(false);
+                            checkBox[3].setEnabled(false); checkBox[3].setChecked(false);
+                            checkBox[4].setEnabled(false); checkBox[4].setChecked(false);
+                        }
                         if (!checkBox[3].isChecked() && !checkBox[4].isChecked()){
                             p402_card.setVisibility(View.GONE); p402_rg.clearCheck();
                         }
@@ -174,6 +180,12 @@ public class Seccion400Fragment1 extends Fragment {
 
 
                     }else{
+                        if (!checkBox[0].isChecked()){
+                            checkBox[1].setEnabled(true);
+                            checkBox[2].setEnabled(true);
+                            checkBox[3].setEnabled(true);
+                            checkBox[4].setEnabled(true);
+                        }
                         if (!checkBox[3].isChecked() && !checkBox[4].isChecked()){
                             p402_card.setVisibility(View.GONE); p402_rg.clearCheck();
                         }else {
@@ -191,23 +203,92 @@ public class Seccion400Fragment1 extends Fragment {
 
 
         //----pregunta 403
+        final CheckBox[] checkBoxes = {p403_ck1,p403_ck2,p403_ck3,p403_ck4};
+        for(int i=0;i<checkBoxes.length;i++){
+            checkBoxes[i].setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    if (b){
+                        if (!checkBoxes[3].isChecked()){
+                            p404_card.setVisibility(View.VISIBLE);  p403_ck1.setEnabled(true);
+                            p405_card.setVisibility(View.VISIBLE);  p403_ck2.setEnabled(true);
+                            p406_card.setVisibility(View.VISIBLE);  p403_ck3.setEnabled(true);
+                            p407_card.setVisibility(View.VISIBLE);
+                            p408_card.setVisibility(View.GONE);
+                            p408_card.setVisibility(View.GONE);
+                            p408_ck1.setChecked(false);p408_ck2.setChecked(false);p408_ck3.setChecked(false);
+                            p408_ck4.setChecked(false);p408_ck5.setChecked(false);p408_ck6.setChecked(false);p408_edt.setText("");
+                        }
+                        if (checkBoxes[3].isChecked()){
+                            p403_ck1.setEnabled(false); p403_ck1.setChecked(false);
+                            p403_ck2.setEnabled(false); p403_ck2.setChecked(false);
+                            p403_ck3.setEnabled(false); p403_ck3.setChecked(false);
+
+                            p404_card.setVisibility(View.GONE);  p404_rg.clearCheck();
+                            p405_card.setVisibility(View.GONE);  p405_rg.clearCheck();
+                            p406_card.setVisibility(View.GONE);  p406_edt1.setText("");
+                            p407_card.setVisibility(View.GONE);  p407_ck1.setChecked(false);p407_ck2.setChecked(false);p407_ck3.setChecked(false);
+                            p407_ck4.setChecked(false);p407_ck5.setChecked(false);p407_ck6.setChecked(false);p407_ck7.setChecked(false);p407_edt.setText("");
+                            p408_card.setVisibility(View.VISIBLE);
+                        }
+
+                    }else{
+                        if (!checkBoxes[3].isChecked()){
+                            p404_card.setVisibility(View.VISIBLE);  p403_ck1.setEnabled(true);
+                            p405_card.setVisibility(View.VISIBLE);  p403_ck2.setEnabled(true);
+                            p406_card.setVisibility(View.VISIBLE);  p403_ck3.setEnabled(true);
+                            p407_card.setVisibility(View.VISIBLE);
+                            p408_card.setVisibility(View.GONE);
+                            p408_card.setVisibility(View.GONE);
+                            p408_ck1.setChecked(false);p408_ck2.setChecked(false);p408_ck3.setChecked(false);
+                            p408_ck4.setChecked(false);p408_ck5.setChecked(false);p408_ck6.setChecked(false);p408_edt.setText("");
+                        }
+                        if (checkBoxes[3].isChecked()){
+                            p403_ck1.setEnabled(false); p403_ck1.setChecked(false);
+                            p403_ck2.setEnabled(false); p403_ck2.setChecked(false);
+                            p403_ck3.setEnabled(false); p403_ck3.setChecked(false);
+
+                            p404_card.setVisibility(View.GONE);  p404_rg.clearCheck();
+                            p405_card.setVisibility(View.GONE);  p405_rg.clearCheck();
+                            p406_card.setVisibility(View.GONE);  p406_edt1.setText("");
+                            p407_card.setVisibility(View.GONE);  p407_ck1.setChecked(false);p407_ck2.setChecked(false);p407_ck3.setChecked(false);
+                            p407_ck4.setChecked(false);p407_ck5.setChecked(false);p407_ck6.setChecked(false);p407_ck7.setChecked(false);p407_edt.setText("");
+                            p408_card.setVisibility(View.VISIBLE);
+                        }
+
+                    }
+
+                }
+            });
+        }
         p403_ck4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked){
-                    p404_card.setVisibility(View.GONE);  p403_ck1.setEnabled(false); p403_ck1.setChecked(false);
-                    p405_card.setVisibility(View.GONE);  p403_ck2.setEnabled(false); p403_ck2.setChecked(false);
-                    p406_card.setVisibility(View.GONE);  p403_ck3.setEnabled(false); p403_ck3.setChecked(false);
-                    p407_card.setVisibility(View.GONE);
+                    p403_ck1.setEnabled(false); p403_ck1.setChecked(false);
+                    p403_ck2.setEnabled(false); p403_ck2.setChecked(false);
+                    p403_ck3.setEnabled(false); p403_ck3.setChecked(false);
+
+                    p404_card.setVisibility(View.GONE);  p404_rg.clearCheck();
+                    p405_card.setVisibility(View.GONE);  p405_rg.clearCheck();
+                    p406_card.setVisibility(View.GONE);  p406_edt1.setText("");
+                    p407_card.setVisibility(View.GONE);  p407_ck1.setChecked(false);p407_ck2.setChecked(false);p407_ck3.setChecked(false);
+                    p407_ck4.setChecked(false);p407_ck5.setChecked(false);p407_ck6.setChecked(false);p407_ck7.setChecked(false);p407_edt.setText("");
+                    p408_card.setVisibility(View.VISIBLE);
                 }else{
+
                     p404_card.setVisibility(View.VISIBLE);  p403_ck1.setEnabled(true);
                     p405_card.setVisibility(View.VISIBLE);  p403_ck2.setEnabled(true);
                     p406_card.setVisibility(View.VISIBLE);  p403_ck3.setEnabled(true);
                     p407_card.setVisibility(View.VISIBLE);
+                    p408_card.setVisibility(View.GONE);
+                    p408_ck1.setChecked(false);p408_ck2.setChecked(false);p408_ck3.setChecked(false);
+                    p408_ck4.setChecked(false);p408_ck5.setChecked(false);p408_ck6.setChecked(false);p408_edt.setText("");
                 }
 
             }
         });
+
 
         //----pregunta 407
         p407_ck7.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -562,19 +643,20 @@ public class Seccion400Fragment1 extends Fragment {
                         }
                     }
                 }
+            }else{
+                if(P_408_1 != 1 && P_408_2 != 1 && P_408_3 != 1 && P_408_4 != 1 && P_408_5 != 1 && P_408_6 != 1 ) {
+                    valido = false;
+                    if(mensaje.equals(""))mensaje = "PREGUNTA 408: DEBE SELECCIONAR AL MENOS UNA OPCION";
+                }
+                if (P_408_6==1){
+                    if (P_408_6_O.trim().length() < 2) {
+                        valido = false;
+                        if (mensaje.equals("")) mensaje = "PREGUNTA 408: DEBE REGISTRAR INFORMACION";
+                    }
+                }
             }
         }
-        //408
-        if(P_408_1 != 1 && P_408_2 != 1 && P_408_3 != 1 && P_408_4 != 1 && P_408_5 != 1 && P_408_6 != 1 ) {
-            valido = false;
-            if(mensaje.equals(""))mensaje = "PREGUNTA 408: DEBE SELECCIONAR AL MENOS UNA OPCION";
-        }
-        if (P_408_6==1){
-            if (P_408_6_O.trim().length() < 2) {
-                valido = false;
-                if (mensaje.equals("")) mensaje = "PREGUNTA 408: DEBE REGISTRAR INFORMACION";
-            }
-        }
+
 
         if(!valido){
             mostrarMensaje(mensaje);

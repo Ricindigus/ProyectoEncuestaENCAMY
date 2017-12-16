@@ -134,22 +134,23 @@ public class Seccion100Fragment2 extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //---pregunta106
+        p106_edt1.setText("0");
         EditText[] editTexts1 = {p106_edt1,p106_edt2,p106_edt3,p106_edt4};
         for (int i = 0; i <editTexts1.length ; i++) {
             final EditText editText = editTexts1[i];
-            editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-                @Override
-                public void onFocusChange(View view, boolean conFocus) {
-                    if(view.isEnabled()){
-                        if(conFocus) {
-                            editText.setBackgroundResource(R.drawable.fondo_edit_text);
-                        }
-                        else editText.setBackgroundResource(R.drawable.fondo_edit_text);
-                    }else{
-                        ocultarTeclado(editText);
-                    }
-                }
-            });
+//            editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+//                @Override
+//                public void onFocusChange(View view, boolean conFocus) {
+//                    if(view.isEnabled()){
+//                        if(conFocus) {
+//                            editText.setBackgroundResource(R.drawable.fondo_edit_text);
+//                        }
+//                        else editText.setBackgroundResource(R.drawable.fondo_edit_text);
+//                    }else{
+//                        ocultarTeclado(editText);
+//                    }
+//                }
+//            });
             editText.setTransformationMethod(new NumericKeyBoardTransformationMethod());
             editText.addTextChangedListener(new TextWatcher() {
                 @Override
@@ -227,13 +228,20 @@ public class Seccion100Fragment2 extends Fragment {
         if(data.existeModulo1(idempresa)){
             //si existe traigo el objeto
             sec100PojoF1 = data.getModulo1(idempresa);
-            //saco los datos del objeto para llenarlos en los elementos del fragment
-            //datos cabecera
             //106
-            p106_edt1.setText(sec100PojoF1.getP_106_1());
-            p106_edt2.setText(sec100PojoF1.getP_106_2());
-            p106_edt3.setText(sec100PojoF1.getP_106_3());
-            p106_edt4.setText(sec100PojoF1.getP_106_4());
+            if (!sec100PojoF1.getP_106_1().equals("")){
+                p106_edt1.setText(sec100PojoF1.getP_106_1());
+            }
+            if (!sec100PojoF1.getP_106_2().equals("")){
+                p106_edt2.setText(sec100PojoF1.getP_106_2());
+            }
+            if (!sec100PojoF1.getP_106_3().equals("")){
+                p106_edt3.setText(sec100PojoF1.getP_106_3());
+            }
+            if (!sec100PojoF1.getP_106_4().equals("")){
+                p106_edt4.setText(sec100PojoF1.getP_106_4());
+            }
+
             //107
             if(sec100PojoF1.getP_107_1().equals("1")) p107_ck1.setChecked(true);
             if(sec100PojoF1.getP_107_1().equals("0")) p107_ck1.setChecked(false);

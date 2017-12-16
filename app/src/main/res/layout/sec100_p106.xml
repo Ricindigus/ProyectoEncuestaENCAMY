@@ -93,7 +93,8 @@
                     android:padding="5dp"
                     android:textAlignment="center"
                     android:background="@drawable/fondo_login"
-                    android:inputType="number"/>
+                    android:inputType="number"
+                    android:text="0"/>
                 <View
                     android:layout_width="2dp"
                     android:layout_height="match_parent"
@@ -135,6 +136,7 @@
                     android:textAlignment="center"
                     android:background="@drawable/fondo_login"
                     android:inputType="number"
+                    android:text="0"
                     />
                 <View
                     android:layout_width="2dp"
@@ -174,7 +176,8 @@
                     android:padding="5dp"
                     android:textAlignment="center"
                     android:background="@drawable/fondo_login"
-                    android:inputType="number"/>
+                    android:inputType="number"
+                    android:text="0"/>
                 <View
                     android:layout_width="2dp"
                     android:layout_height="match_parent"
@@ -214,7 +217,8 @@
                     android:padding="5dp"
                     android:textAlignment="center"
                     android:background="@drawable/fondo_login"
-                    android:inputType="number"/>
+                    android:inputType="number"
+                    android:text="0"/>
                 <View
                     android:layout_width="2dp"
                     android:layout_height="match_parent"

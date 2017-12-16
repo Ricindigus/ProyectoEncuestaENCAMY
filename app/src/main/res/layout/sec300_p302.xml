@@ -241,7 +241,9 @@
                             android:hint="Otro"
                             android:textAlignment="center"
                             android:padding="5dp"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:enabled="false"
+                            android:background="@drawable/fondo_bluegray"/>
 
                     </LinearLayout>
                     <View
@@ -565,7 +567,8 @@
                             android:hint="Otro"
                             android:textAlignment="center"
                             android:padding="5dp"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:enabled="false"/>
 
                     </LinearLayout>
                     <View
@@ -901,7 +904,8 @@
                             android:hint="Otro"
                             android:textAlignment="center"
                             android:padding="5dp"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:enabled="false"/>
 
                     </LinearLayout>
                     <View
@@ -1280,7 +1284,8 @@
                             android:hint="Otro"
                             android:textAlignment="center"
                             android:padding="5dp"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:enabled="false"/>
 
                     </LinearLayout>
                     <View
@@ -1595,7 +1600,8 @@
                             android:hint="Otro"
                             android:textAlignment="center"
                             android:padding="5dp"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:enabled="false"/>
 
                     </LinearLayout>
                     <View
@@ -1821,7 +1827,8 @@
                             android:hint="Otro"
                             android:textAlignment="center"
                             android:padding="5dp"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:enabled="false"/>
 
                     </LinearLayout>
                     <View

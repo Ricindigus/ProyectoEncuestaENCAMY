@@ -411,8 +411,51 @@ public class Seccion300Fragment1 extends Fragment {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                     if(b){
+                        if(checkBox_ck_col1[3].isChecked()){
+                            p302_masaotro.setEnabled(true);
+                        }
+                        if(checkBox_ck_col1[7].isChecked()){
+                            p302_longotro.setEnabled(true);
+                        }
+                        if(checkBox_ck_col1[12].isChecked()){
+                            p302_presotro.setEnabled(true);
+                        }
+                        if(checkBox_ck_col1[16].isChecked()){
+                            p302_temotro.setEnabled(true);
+                        }
+                        if(checkBox_ck_col1[19].isChecked()){
+                            p302_volotro.setEnabled(true);
+                        }
+                        if(checkBox_ck_col1[20].isChecked()){
+                            p302_ototro.setEnabled(true);
+                        }
                         checkBox_ck_col2[m].setEnabled(true);
                     }else{
+                        if(!checkBox_ck_col1[3].isChecked()){
+                            p302_masaotro.setEnabled(false);
+                            p302_masaotro.setText("");
+                        }
+                        if(!checkBox_ck_col1[7].isChecked()){
+                            p302_longotro.setEnabled(false);
+                            p302_longotro.setText("");
+                        }
+                        if(!checkBox_ck_col1[12].isChecked()){
+                            p302_presotro.setEnabled(false);
+                            p302_presotro.setText("");
+                        }
+                        if(!checkBox_ck_col1[16].isChecked()){
+                            p302_temotro.setEnabled(false);
+                            p302_temotro.setText("");
+                        }
+                        if(!checkBox_ck_col1[19].isChecked()){
+                            p302_volotro.setEnabled(false);
+                            p302_volotro.setText("");
+                        }
+                        if(!checkBox_ck_col1[20].isChecked()){
+                            p302_temotro.setEnabled(false);
+                            p302_ototro.setText("");
+                        }
+
                         checkBox_ck_col2[m].setEnabled(false);
                         checkBox_ck_col2[m].setChecked(false);
                     }
@@ -435,6 +478,24 @@ public class Seccion300Fragment1 extends Fragment {
                 }
             });
         }
+
+//        final CheckBox[] checkBoxes1 = {p302_ckM4,p302_ckL4,p302_ckP5,p302_ckT4,p302_ckV3,p302_ckO1};
+//        final EditText[] editTexts = {p302_masaotro,p302_longotro,p302_presotro,p302_temotro,p302_volotro,p302_ototro};
+//
+//        for(int i=0;i<checkBoxes1.length;i++){
+//            final int q=i;
+//            checkBoxes1[q].setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//                @Override
+//                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+//                    if (b){
+//                        editTexts[q].setEnabled(true);
+//                    }else{
+//                        editTexts[q].setEnabled(false);
+//                        editTexts[q].setText("");
+//                    }
+//                }
+//            });
+//        }
 
 
         //----pregunta 303
