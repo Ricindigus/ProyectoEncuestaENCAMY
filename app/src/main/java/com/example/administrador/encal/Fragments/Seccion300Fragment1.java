@@ -413,47 +413,61 @@ public class Seccion300Fragment1 extends Fragment {
                     if(b){
                         if(checkBox_ck_col1[3].isChecked()){
                             p302_masaotro.setEnabled(true);
+                            p302_masaotro.setBackgroundResource(R.drawable.fondo_blanco);
                         }
                         if(checkBox_ck_col1[7].isChecked()){
                             p302_longotro.setEnabled(true);
+                            p302_longotro.setBackgroundResource(R.drawable.fondo_blanco);
                         }
                         if(checkBox_ck_col1[12].isChecked()){
                             p302_presotro.setEnabled(true);
+                            p302_presotro.setBackgroundResource(R.drawable.fondo_blanco);
                         }
                         if(checkBox_ck_col1[16].isChecked()){
                             p302_temotro.setEnabled(true);
+                            p302_temotro.setBackgroundResource(R.drawable.fondo_blanco);
                         }
                         if(checkBox_ck_col1[19].isChecked()){
                             p302_volotro.setEnabled(true);
+                            p302_volotro.setBackgroundResource(R.drawable.fondo_blanco);
                         }
                         if(checkBox_ck_col1[20].isChecked()){
                             p302_ototro.setEnabled(true);
+                            p302_ototro.setBackgroundResource(R.drawable.fondo_blanco);
                         }
                         checkBox_ck_col2[m].setEnabled(true);
+
                     }else{
                         if(!checkBox_ck_col1[3].isChecked()){
                             p302_masaotro.setEnabled(false);
                             p302_masaotro.setText("");
+                            p302_masaotro.setBackgroundResource(R.drawable.fondo_disable);
+
                         }
                         if(!checkBox_ck_col1[7].isChecked()){
                             p302_longotro.setEnabled(false);
                             p302_longotro.setText("");
+                            p302_longotro.setBackgroundResource(R.drawable.fondo_disable);
                         }
                         if(!checkBox_ck_col1[12].isChecked()){
                             p302_presotro.setEnabled(false);
                             p302_presotro.setText("");
+                            p302_presotro.setBackgroundResource(R.drawable.fondo_disable);
                         }
                         if(!checkBox_ck_col1[16].isChecked()){
                             p302_temotro.setEnabled(false);
                             p302_temotro.setText("");
+                            p302_temotro.setBackgroundResource(R.drawable.fondo_disable);
                         }
                         if(!checkBox_ck_col1[19].isChecked()){
                             p302_volotro.setEnabled(false);
                             p302_volotro.setText("");
+                            p302_volotro.setBackgroundResource(R.drawable.fondo_disable);
                         }
                         if(!checkBox_ck_col1[20].isChecked()){
-                            p302_temotro.setEnabled(false);
+                            p302_ototro.setEnabled(false);
                             p302_ototro.setText("");
+                            p302_ototro.setBackgroundResource(R.drawable.fondo_disable);
                         }
 
                         checkBox_ck_col2[m].setEnabled(false);
@@ -471,9 +485,11 @@ public class Seccion300Fragment1 extends Fragment {
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                     if(b){
                         editText_edt_col3[k].setEnabled(true);
+                        editText_edt_col3[k].setBackgroundResource(R.drawable.fondo_blanco);
                     }else{
                         editText_edt_col3[k].setEnabled(false);
                         editText_edt_col3[k].setText("");
+                        editText_edt_col3[k].setBackgroundResource(R.drawable.fondo_disable);
                     }
                 }
             });

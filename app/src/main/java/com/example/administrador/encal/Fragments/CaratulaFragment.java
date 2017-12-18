@@ -34,6 +34,7 @@ import android.widget.TextView;
 
 import com.example.administrador.encal.Modelo.Data;
 import com.example.administrador.encal.Modelo.SQLConstantes;
+import com.example.administrador.encal.NumericKeyBoardTransformationMethod;
 import com.example.administrador.encal.Pojos.CaratulaPojo;
 import com.example.administrador.encal.Pojos.Marco;
 import com.example.administrador.encal.R;
@@ -55,8 +56,8 @@ public class CaratulaFragment extends Fragment {
     private Spinner spProvincia;
     private Spinner spDistrito;
 
-    private TextView txtLatitud;
-    private TextView txtLongitud;
+    private EditText txtLatitud;
+    private EditText txtLongitud;
 
     private EditText edtSector;
     private EditText edtArea;
@@ -145,8 +146,8 @@ public class CaratulaFragment extends Fragment {
         spDepartamento = (Spinner) rootView.findViewById(R.id.caratula_spDepartamento);
         spProvincia = (Spinner) rootView.findViewById(R.id.caratula_spProvincia);
         spDistrito = (Spinner) rootView.findViewById(R.id.caratula_spDistrito);
-        txtLatitud = (TextView) rootView.findViewById(R.id.caratula_txtLatitud);
-        txtLongitud = (TextView) rootView.findViewById(R.id.caratula_txtLongitud);
+        txtLatitud = (EditText) rootView.findViewById(R.id.caratula_txtLatitud);
+        txtLongitud = (EditText) rootView.findViewById(R.id.caratula_txtLongitud);
         edtSector = (EditText) rootView.findViewById(R.id.caratula_edtSector);
         edtArea = (EditText) rootView.findViewById(R.id.caratula_edtArea);
         edtZona = (EditText) rootView.findViewById(R.id.caratula_edtZona);
@@ -238,8 +239,8 @@ public class CaratulaFragment extends Fragment {
                     return;
                 if (btnGPS.getText().equals(getResources().getString(R.string.cancelar_gps))) {
                     locationManager.removeUpdates(locationListenerGPS);
-                    txtLongitud.setText("99,99999999");
-                    txtLatitud.setText("99,99999999");
+                    txtLongitud.setText("99.99999999");
+                    txtLatitud.setText("99.99999999");
                     btnGPS.setText(getResources().getString(R.string.capturar_gps));
                 } else {
                     txtLatitud.setText("Buscando, puede tardar 1 min...");
@@ -310,7 +311,6 @@ public class CaratulaFragment extends Fragment {
     }
 
     public void cargarCaratula(){
-        Context contexto2 = context;
         Context contexto3 = context;
         data = new Data(contexto3);
         data.open();
@@ -329,6 +329,7 @@ public class CaratulaFragment extends Fragment {
             caratula.setFRENTE(marco.getFRENTE());
             caratula.setZONA(marco.getZONA());
             caratula.setMANZANA_ID(marco.getMANZANA());
+            caratula.setTIPVIA(marco.getCAT_VIA());
         }
         data.close();
     }
@@ -369,12 +370,12 @@ public class CaratulaFragment extends Fragment {
         edtZona.setText(caratula.getZONA());
         edtManzana.setText(caratula.getMANZANA_ID());
         edtFrente.setText(caratula.getFRENTE());
-        if(!caratula.getTIPVIA().equals("")){
-            spTipoVia.setSelection(Integer.parseInt(caratula.getTIPVIA()));
-            if(Integer.parseInt(caratula.getTIPVIA()) == 7){
-                edtEspecifiqueVia.setText(caratula.getTIPVIA_ESPEC());
-            }
-        }
+//        if(!caratula.getTIPVIA().equals("")){
+//            spTipoVia.setSelection(Integer.parseInt(caratula.getTIPVIA()));
+//            if(Integer.parseInt(caratula.getTIPVIA()) == 7){
+//                edtEspecifiqueVia.setText(caratula.getTIPVIA_ESPEC());
+//            }
+//        }
         edtNombreVia.setText(caratula.getTIPVIA_D());
         edtNPuerta.setText(caratula.getNROPTA());
         edtBlock.setText(caratula.getBLOCK());
@@ -385,33 +386,7 @@ public class CaratulaFragment extends Fragment {
         edtKm.setText(caratula.getKM());
         edtReferencia.setText(caratula.getREF_DIREC());
     }
-//    public void cargarUbigeoInicial(){
-//        Thread thread = new Thread(){
-//            @Override
-//            public void run() {
-//                final String[] departamentos = context.getResources().getStringArray(R.array.DEPARTAMENTOS);
-//                data = new Data(context);
-//                data.open();
-//                final Marco marco = data.getMarco(idCaratula);
-//                final String[] provincias = context.getResources().getStringArray(arreglosDepartamentos[Integer.parseInt(marco.getCCDD())-1]);
-//                final String idUbi = checkDigito(Integer.parseInt(marco.getCCDD())) + checkDigito(Integer.parseInt(marco.getCCPP()));
-//                final ArrayList<String> distritos = data.getUbigeos(idUbi);
-//                data.close();
-//                getActivity().runOnUiThread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        cargarSpinerDepartamentos(departamentos);
-//                        cargarSpinerProvincias(provincias);
-//                        cargarSpinerDistritos(distritos);
-//                        spDepartamento.setSelection(Integer.parseInt(marco.getCCDD()));
-//                        spProvincia.setSelection(Integer.parseInt(marco.getCCPP()));
-//                        spDistrito.setSelection(obtenerPosDistrito(idUbi,Integer.parseInt(marco.getCCDI())));
-//                    }
-//                });
-//            }
-//        };
-//        thread.start();
-//    }
+
     public void cargarSpinerDepartamentos(String[] datos){
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,datos);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -549,7 +524,7 @@ public class CaratulaFragment extends Fragment {
             try{
                 longitudeGPS = location.getLongitude();
                 latitudeGPS = location.getLatitude();
-                altitudGPS = location.getAltitude();
+//                altitudGPS = location.getAltitude();
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

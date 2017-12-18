@@ -475,7 +475,7 @@ public class InicioFragment extends Fragment {
         else if(mensaje.equals(""))mensaje = "DEBE EXISTIR NOMBRE COMERCIAL DE LA MYPE";
         if(ANO_INI.trim().length() != 0){
             if(Integer.parseInt(ANO_INI)>=1900 && Integer.parseInt(ANO_INI)<=2016) vANIO_FUNDACION=true;
-            else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR UN AÑO VALIDO";
+            else if(mensaje.equals(""))mensaje = "AÑO DE INICIO DE FUNCIONAMIENTO DEBE ESTAR ENTRE LOS AÃ‘OS 1900 A 2016";
         }
         else if(mensaje.equals(""))mensaje = "AÑO DE INICIO DE FUNCIONAMIENTO DEBE ESTAR ENTRE LOS AÃ‘OS 1900 A 2016";
         if(PAGWEB_NO==1) vPAG_WEB=true;
@@ -483,7 +483,7 @@ public class InicioFragment extends Fragment {
             if(PAGWEB.trim().length() != 0) {
                 if (PAGWEB.indexOf(".")!=-1){
                     vPAG_WEB = true;
-                }else if(mensaje.equals(""))mensaje = "DEBE INCLUIR EL (.PUNTO)";
+                }else if(mensaje.equals(""))mensaje = "PAGINA WEB: DEBE INCLUIR EL (.PUNTO)";
             }
             else if(mensaje.equals(""))mensaje = "DEBE EXISTIR INFORMACUION EN PAGINA WEB";
         }
@@ -492,7 +492,7 @@ public class InicioFragment extends Fragment {
             if(CORREO.trim().length() != 0){
                 if (CORREO.indexOf("@")!=-1){
                     vCORREO=true;
-                }else if(mensaje.equals(""))mensaje = "DEBE INCLUIR EL @";
+                }else if(mensaje.equals(""))mensaje = "CORREO: DEBE INCLUIR EL @";
             }
             else if(mensaje.equals(""))mensaje = "DEBE REGISTRAR CORREO ELECTRONICO O INDICAR QUE NO TIENE";
         }

@@ -221,16 +221,19 @@ public class ExportarActivity extends AppCompatActivity {
                 serializer.endTag("", "CARATULA");
             }
 
-            serializer.startTag("","RESULTADO_ENCUESTA");
-            escribirCampoXml(serializer,SQLConstantes.RESULTADO_ID,resultadoEncuesta.getRESFIN_ID());
-            escribirCampoXml(serializer,SQLConstantes.RESULTADO_DIA,resultadoEncuesta.getRESFIN_DIA());
-            escribirCampoXml(serializer,SQLConstantes.RESULTADO_MES,resultadoEncuesta.getRESFIN_MES());
-            escribirCampoXml(serializer,SQLConstantes.RESULTADO_ANIO,resultadoEncuesta.getRESFIN_ANIO());
-            escribirCampoXml(serializer,SQLConstantes.RESULTADO_HORA,resultadoEncuesta.getRESFIN_HORA());
-            escribirCampoXml(serializer,SQLConstantes.RESULTADO_MIN,resultadoEncuesta.getRESFIN_MIN());
-            escribirCampoXml(serializer,SQLConstantes.RESULTADO_RESULTADO,resultadoEncuesta.getRESFIN());
-            escribirCampoXml(serializer,SQLConstantes.RESULTADO_RESULTADO_ESP,resultadoEncuesta.getRESFIN_O());
-            serializer.endTag("","RESULTADO_ENCUESTA");
+            if (!resultadoEncuesta.getRESFIN_ID().equals("")){
+                serializer.startTag("","RESULTADO_ENCUESTA");
+                escribirCampoXml(serializer,SQLConstantes.RESULTADO_ID,resultadoEncuesta.getRESFIN_ID());
+                escribirCampoXml(serializer,SQLConstantes.RESULTADO_DIA,resultadoEncuesta.getRESFIN_DIA());
+                escribirCampoXml(serializer,SQLConstantes.RESULTADO_MES,resultadoEncuesta.getRESFIN_MES());
+                escribirCampoXml(serializer,SQLConstantes.RESULTADO_ANIO,resultadoEncuesta.getRESFIN_ANIO());
+                escribirCampoXml(serializer,SQLConstantes.RESULTADO_HORA,resultadoEncuesta.getRESFIN_HORA());
+                escribirCampoXml(serializer,SQLConstantes.RESULTADO_MIN,resultadoEncuesta.getRESFIN_MIN());
+                escribirCampoXml(serializer,SQLConstantes.RESULTADO_RESULTADO,resultadoEncuesta.getRESFIN());
+                escribirCampoXml(serializer,SQLConstantes.RESULTADO_RESULTADO_ESP,resultadoEncuesta.getRESFIN_O());
+                serializer.endTag("","RESULTADO_ENCUESTA");
+            }
+
 
 
 

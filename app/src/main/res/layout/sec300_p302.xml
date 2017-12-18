@@ -243,7 +243,7 @@
                             android:padding="5dp"
                             android:gravity="center"
                             android:enabled="false"
-                            android:background="@drawable/fondo_bluegray"/>
+                            android:background="@drawable/fondo_disable"/>
 
                     </LinearLayout>
                     <View
@@ -256,17 +256,18 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical"
                         android:gravity="center">
+
                         <LinearLayout
-                            android:layout_weight="4"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:gravity="center"
-                            >
+                            android:layout_weight="4"
+                            android:gravity="center">
+
                             <CheckBox
                                 android:id="@+id/sec300_p302_ckM1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"/>
+                                android:gravity="center" />
 
                         </LinearLayout>
 
@@ -435,9 +436,11 @@
                             android:layout_height="0dp"
                             android:textAlignment="center"
                             android:padding="5dp"
+                            android:layout_marginRight="1.2dp"
                             android:enabled="false"
                             android:inputType="numberPassword"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/fondo_disable"/>
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="2dp"
@@ -453,7 +456,9 @@
                             android:padding="5dp"
                             android:enabled="false"
                             android:inputType="numberPassword"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:layout_marginRight="1.2dp"
+                            android:background="@drawable/fondo_disable"/>
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="2dp"
@@ -467,9 +472,11 @@
                             android:layout_height="0dp"
                             android:textAlignment="center"
                             android:padding="5dp"
+                            android:layout_marginRight="1.2dp"
                             android:enabled="false"
                             android:inputType="numberPassword"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/fondo_disable"/>
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="2dp"
@@ -485,7 +492,9 @@
                             android:padding="5dp"
                             android:enabled="false"
                             android:inputType="numberPassword"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:layout_marginRight="1.2dp"
+                            android:background="@drawable/fondo_disable"/>
                     </LinearLayout>
                 </LinearLayout>
                 <View
@@ -568,7 +577,8 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:gravity="center"
-                            android:enabled="false"/>
+                            android:enabled="false"
+                            android:background="@drawable/fondo_disable"/>
 
                     </LinearLayout>
                     <View
@@ -760,7 +770,9 @@
                             android:padding="5dp"
                             android:enabled="false"
                             android:inputType="numberPassword"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:layout_marginRight="1.2dp"
+                            android:background="@drawable/fondo_disable"/>
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="2dp"
@@ -776,7 +788,9 @@
                             android:padding="5dp"
                             android:enabled="false"
                             android:inputType="numberPassword"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:layout_marginRight="1.2dp"
+                            android:background="@drawable/fondo_disable"/>
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="2dp"
@@ -790,9 +804,11 @@
                             android:layout_height="0dp"
                             android:textAlignment="center"
                             android:padding="5dp"
+                            android:layout_marginRight="1.2dp"
                             android:enabled="false"
                             android:inputType="numberPassword"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/fondo_disable"/>
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="2dp"
@@ -806,9 +822,11 @@
                             android:layout_height="0dp"
                             android:textAlignment="center"
                             android:padding="5dp"
+                            android:layout_marginRight="1.2dp"
                             android:enabled="false"
                             android:inputType="numberPassword"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/fondo_disable"/>
                     </LinearLayout>
                 </LinearLayout>
                 <View
@@ -905,7 +923,8 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:gravity="center"
-                            android:enabled="false"/>
+                            android:enabled="false"
+                            android:background="@drawable/fondo_disable"/>
 
                     </LinearLayout>
                     <View
@@ -1135,9 +1154,11 @@
                             android:layout_height="0dp"
                             android:textAlignment="center"
                             android:padding="5dp"
+                            android:layout_marginRight="1.2dp"
                             android:enabled="false"
                             android:inputType="numberPassword"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/fondo_disable"/>
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="2dp"
@@ -1151,9 +1172,11 @@
                             android:layout_height="0dp"
                             android:textAlignment="center"
                             android:padding="5dp"
+                            android:layout_marginRight="1.2dp"
                             android:enabled="false"
                             android:inputType="numberPassword"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/fondo_disable"/>
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="2dp"
@@ -1167,9 +1190,11 @@
                             android:layout_height="0dp"
                             android:textAlignment="center"
                             android:padding="5dp"
+                            android:layout_marginRight="1.2dp"
                             android:enabled="false"
                             android:inputType="numberPassword"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/fondo_disable"/>
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="2dp"
@@ -1183,9 +1208,11 @@
                             android:layout_height="0dp"
                             android:textAlignment="center"
                             android:padding="5dp"
+                            android:layout_marginRight="1.2dp"
                             android:enabled="false"
                             android:inputType="numberPassword"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/fondo_disable"/>
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="2dp"
@@ -1199,9 +1226,11 @@
                             android:layout_height="0dp"
                             android:textAlignment="center"
                             android:padding="5dp"
+                            android:layout_marginRight="1.2dp"
                             android:enabled="false"
                             android:inputType="numberPassword"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/fondo_disable"/>
                     </LinearLayout>
                 </LinearLayout>
                 <View
@@ -1285,7 +1314,8 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:gravity="center"
-                            android:enabled="false"/>
+                            android:enabled="false"
+                            android:background="@drawable/fondo_disable"/>
 
                     </LinearLayout>
                     <View
@@ -1482,9 +1512,11 @@
                             android:layout_height="0dp"
                             android:textAlignment="center"
                             android:padding="5dp"
+                            android:layout_marginRight="1.2dp"
                             android:enabled="false"
                             android:inputType="numberPassword"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/fondo_disable"/>
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="2dp"
@@ -1498,9 +1530,11 @@
                             android:layout_height="0dp"
                             android:textAlignment="center"
                             android:padding="5dp"
+                            android:layout_marginRight="1.2dp"
                             android:enabled="false"
                             android:inputType="numberPassword"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/fondo_disable"/>
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="2dp"
@@ -1514,9 +1548,11 @@
                             android:layout_height="0dp"
                             android:textAlignment="center"
                             android:padding="5dp"
+                            android:layout_marginRight="1.2dp"
                             android:enabled="false"
                             android:inputType="numberPassword"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/fondo_disable"/>
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="2dp"
@@ -1530,9 +1566,11 @@
                             android:layout_height="0dp"
                             android:textAlignment="center"
                             android:padding="5dp"
+                            android:layout_marginRight="1.2dp"
                             android:enabled="false"
                             android:inputType="numberPassword"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/fondo_disable"/>
                     </LinearLayout>
                 </LinearLayout>
                 <View
@@ -1601,7 +1639,8 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:gravity="center"
-                            android:enabled="false"/>
+                            android:enabled="false"
+                            android:background="@drawable/fondo_disable"/>
 
                     </LinearLayout>
                     <View
@@ -1752,9 +1791,11 @@
                             android:layout_height="0dp"
                             android:textAlignment="center"
                             android:padding="5dp"
+                            android:layout_marginRight="1.2dp"
                             android:enabled="false"
                             android:inputType="numberPassword"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/fondo_disable"/>
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="2dp"
@@ -1768,9 +1809,11 @@
                             android:layout_height="0dp"
                             android:textAlignment="center"
                             android:padding="5dp"
+                            android:layout_marginRight="1.2dp"
                             android:enabled="false"
                             android:inputType="numberPassword"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/fondo_disable"/>
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="2dp"
@@ -1784,9 +1827,11 @@
                             android:layout_height="0dp"
                             android:textAlignment="center"
                             android:padding="5dp"
+                            android:layout_marginRight="1.2dp"
                             android:enabled="false"
                             android:inputType="numberPassword"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/fondo_disable"/>
                     </LinearLayout>
                 </LinearLayout>
                 <View
@@ -1828,7 +1873,14 @@
                             android:textAlignment="center"
                             android:padding="5dp"
                             android:gravity="center"
-                            android:enabled="false"/>
+                            android:enabled="false"
+                            android:background="@drawable/fondo_disable"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="#607d8b"
+                            >
+                        </View>
 
                     </LinearLayout>
                     <View
@@ -1902,9 +1954,11 @@
                             android:layout_height="0dp"
                             android:textAlignment="center"
                             android:padding="5dp"
+                            android:layout_marginRight="1.2dp"
                             android:enabled="false"
                             android:inputType="numberPassword"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:background="@drawable/fondo_disable"/>
                     </LinearLayout>
                 </LinearLayout>
 
